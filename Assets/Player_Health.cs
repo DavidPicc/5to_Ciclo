@@ -43,8 +43,14 @@ public class Player_Health : MonoBehaviour
     }
     public void Death()
     {
-        Destroy(gameObject, 0.2f);
-        Destroy(this);
+        //Destroy(gameObject, 0.2f);
+        //Destroy(this);
+        Invoke("SetPlayerDeath", 0.2f);
+    }
+
+    public void SetPlayerDeath()
+    {
+        gameObject.SetActive(false);
     }
 
     void UpdateHealthBar()

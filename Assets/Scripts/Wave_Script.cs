@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Wave_Script : MonoBehaviour
+[System.Serializable]
+
+public class Wave_Values
 {
     public enum SpawnType
     {
@@ -11,15 +13,19 @@ public class Wave_Script : MonoBehaviour
         oneAfterTheOther
     }
     public SpawnType spawnType;
-    [SerializeField] GameObject[] enemies;
+    [SerializeField] public GameObject[] enemies;
 
-    [SerializeField] Transform[] spawnPositions;
+    [SerializeField] public Transform[] spawnPositions;
     [Range(0.0f, 10.0f)]
-    [SerializeField] float offset_X;
+    [SerializeField] public float offset_X; // Distancia en X entre naves "oneAfterTheOther".
     [Range(0.0f, 10.0f)]
-    [SerializeField] float offset_Y;
-
-    int lastRandom = 0;
+    [SerializeField] public float offset_Y; // Distancia en Y entre naves "allAtOnce".
+    [Range(3.0f, 20.0f)]
+    [SerializeField] public float time; // Tiempo para la siguiente WAVE.
+}
+public class Wave_Script : MonoBehaviour
+{
+    public Wave_Values waveValues;
 
     [SerializeField] Transform moveParent;
 
@@ -28,57 +34,45 @@ public class Wave_Script : MonoBehaviour
     void Start()
     {
         _camera = FindObjectOfType<StageMovement>().transform;
+    }
 
-        switch(spawnType)
+    public void SpawnWave()
+    {
+        switch (waveValues.spawnType)
         {
-            case SpawnType.allAtOnce:
+            case Wave_Values.SpawnType.allAtOnce:
                 Spawn_All();
                 break;
-            case SpawnType.oneAfterTheOther:
+            case Wave_Values.SpawnType.oneAfterTheOther:
                 Spawn_OneByOne();
                 break;
         }
     }
 
-    //public void Spawn_All()
-    //{
-    //    for (int i = 0; i < enemyQuantity; i++)
-    //    {
-    //        int random = Random.Range(0, spawnPositions.Length);
-    //        if (lastRandom != random)
-    //        {
-    //            Vector3 spawnPos = spawnPositions[random].position + new Vector3(offset_X * i, 0, 0);
-    //            var enemy = Instantiate(enemies[0], spawnPos, enemies[0].transform.rotation, moveParent);
-    //        }
-    //        else i--;
-    //        lastRandom = random;
-    //    }
-    //}
-
     public void Spawn_All()
     {
         float offset = 0;
-        if(enemies.Length > 1)
+        if(waveValues.enemies.Length > 1)
         {
-            offset -= offset_Y / 2;
+            offset -= waveValues.offset_Y / 2;
         }
 
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < waveValues.enemies.Length; i++)
         {
             Debug.Log(offset);
             Vector3 offsetVector = new Vector3(0, offset, 0);
-            var enemy = Instantiate(enemies[i], transform.position + offsetVector, enemies[i].transform.rotation, moveParent);
-            offset += offset_Y / (enemies.Length-1);
+            var enemy = Instantiate(waveValues.enemies[i], transform.position + offsetVector, waveValues.enemies[i].transform.rotation, moveParent);
+            offset += waveValues.offset_Y / (waveValues.enemies.Length-1);
         }
     }
 
     public void Spawn_OneByOne()
     {
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < waveValues.enemies.Length; i++)
         {
             float randomY = Random.Range(-5f, 5f);
-            Vector3 offsetVector = new Vector3(offset_X * i, randomY,0);
-            var enemy = Instantiate(enemies[i], transform.position + offsetVector, enemies[i].transform.rotation, moveParent);
+            Vector3 offsetVector = new Vector3(waveValues.offset_X * i, randomY,0);
+            var enemy = Instantiate(waveValues.enemies[i], transform.position + offsetVector, waveValues.enemies[i].transform.rotation, moveParent);
         }
     }
 }
