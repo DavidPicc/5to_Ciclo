@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1_Shoot : MonoBehaviour
+public class Enemy5_Shoot : MonoBehaviour
 {
+    [SerializeField] int numberOfBullets;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform shootPoint;
+    [SerializeField] public Transform shootPoint;
     Transform player;
     [SerializeField] float bulletSpeed;
     [SerializeField] float fireRate;
@@ -29,7 +30,7 @@ public class Enemy1_Shoot : MonoBehaviour
         CheckIfShot();
         if (canShoot)
         {
-            Shoot_Normal();
+            Shoot();
         }
     }
 
@@ -51,11 +52,18 @@ public class Enemy1_Shoot : MonoBehaviour
 
     }
 
-    void Shoot_Normal()
+    void Shoot()
     {
-        var bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity, _camera);
-        bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.Impulse);
-        Destroy(bullet, 5f);
+        float angle = 0;
+
+        for (int i = 0; i < numberOfBullets; i++)
+        {
+            Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
+            var bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation * offsetVector, _camera);
+            bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+            Destroy(bullet, 5f);
+            angle += 360 / numberOfBullets;
+        }
 
         shotBullet = true;
     }

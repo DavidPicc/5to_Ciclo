@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class Point_Script : MonoBehaviour
@@ -18,6 +19,11 @@ public class Point_Script : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         currentDrag = rb.drag;
+
+        float randomX = Random.Range(-1f, 1f);
+        float randomY = Random.Range(-1f, 1f);
+        Vector3 randomVector = new Vector3(randomX, randomY, 0);
+        rb.AddForce(randomVector * 10f, ForceMode.Impulse);
     }
 
     void CheckForNext()
@@ -30,15 +36,15 @@ public class Point_Script : MonoBehaviour
         switch(state)
         {
             case PointState.scatter:
-                rb.velocity = Vector3.MoveTowards(rb.velocity, Vector3.zero, Time.deltaTime * 2);
-                Invoke("CheckForNext", 0.8f);
+                rb.velocity = Vector3.MoveTowards(rb.velocity, Vector3.zero, Time.deltaTime * 5);
+                Invoke("CheckForNext", 0.5f);
                 break;
             case PointState.go:
                 //Vector3 goToPlayer = transform.position - player.position;
                 //rb.position = Vector3.MoveTowards(transform.position, player.position, 60 * Time.smoothDeltaTime);
                 var dir = (player.position - transform.position).normalized;
 
-                rb.velocity = dir * 15f;
+                rb.velocity = dir * 18f;
                 break;
         }
 

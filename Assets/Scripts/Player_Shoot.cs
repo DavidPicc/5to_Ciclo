@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player_Shoot : MonoBehaviour
 {
-    public float shootSpeed;
-    public float shootDamage;
-    public GameObject bulletPrefab;
-    public Transform[] shootPoints;
-    public float fireRate;
+    [SerializeField] float bulletSpeed;
+    [SerializeField] public float shootDamage;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] public Transform[] shootPoints;
+    [SerializeField] public float fireRate;
     float timer;
     bool canShoot => Input.GetMouseButton(0) && !shotBullet;
     bool shotBullet = false;
@@ -16,6 +16,7 @@ public class Player_Shoot : MonoBehaviour
     void Start()
     {
         timer = fireRate;
+
     }
 
 
@@ -48,23 +49,12 @@ public class Player_Shoot : MonoBehaviour
 
     void Shoot_Normal()
     {
-        //for (int i = 0; i < shootPoints.Length; i++)
-        //{
-        //    var bullet = Instantiate(bulletPrefab, shootPoints[shotIndex].position, Quaternion.identity);
-        //    bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * shootSpeed, ForceMode.Impulse);
-        //    Destroy(bullet, 2f);
-        //}
-
-        var bullet = Instantiate(bulletPrefab, shootPoints[shotIndex].position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * shootSpeed, ForceMode.Impulse);
-        Destroy(bullet, 2f);
-
-        shotBullet = true;
-
-        if (shotIndex < 1)
+        for(int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
         {
-            shotIndex++;
+            var bullet = Instantiate(bulletPrefab, shootPoints[i].position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+            Destroy(bullet, 2f);
         }
-        else shotIndex = 0;
+        shotBullet = true;
     }
 }

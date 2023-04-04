@@ -5,11 +5,17 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     Rigidbody rb;
-    public float moveSpeed;
-    public float speedLimit;
-    public float moveX, moveY;
-    public float moveDrag, stayDrag;
-    public Vector3 moveVector;
+    public enum MovementType
+    {
+        drag,
+        noDrag
+    }
+    public MovementType moveType;
+    [SerializeField] float acceleration;
+    [SerializeField] float speedLimit;
+    float moveX, moveY;
+    [SerializeField] float moveDrag, stayDrag;
+    [HideInInspector] public Vector3 moveVector;
 
 
     void Start()
@@ -26,16 +32,31 @@ public class Player_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movement();
+        switch(moveType)
+        {
+            case MovementType.drag:
+                Movement_WithDrag();
+                break;
+            case MovementType.noDrag:
+                Movement_WithoutDrag();
+                break;
+        }
         Drag();
     }
 
-    public void Movement()
+    public void Movement_WithDrag()
     {
-        if(Mathf.Abs(rb.velocity.x) < speedLimit)
-            rb.AddForce(moveVector.x * Vector3.right * moveSpeed, ForceMode.Acceleration);
+        if (Mathf.Abs(rb.velocity.x) < speedLimit)
+            rb.AddForce(moveVector.x * Vector3.right * acceleration, ForceMode.Acceleration);
         if (Mathf.Abs(rb.velocity.y) < speedLimit)
-            rb.AddForce(moveVector.y * Vector3.up * moveSpeed, ForceMode.Acceleration);
+            rb.AddForce(moveVector.y * Vector3.up * acceleration, ForceMode.Acceleration);
+
+    }
+
+    public void Movement_WithoutDrag()
+    {
+        if(!GetComponent<Player_Dodge>().isDodging)
+            rb.velocity = moveVector * speedLimit;
     }
 
     public void Drag()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBullet_Script : MonoBehaviour
 {
-    public float distanceToAutotrack;
+    [SerializeField] float distanceToAutotrack;
     void Start()
     {
         

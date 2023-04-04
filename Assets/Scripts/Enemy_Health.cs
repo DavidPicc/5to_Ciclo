@@ -7,21 +7,21 @@ public class Enemy_Health : MonoBehaviour
 {
     Transform player;
     Transform _camera;
-    public float maxHealth;
-    public float health;
-    bool canBeDamaged => transform.position.x - _camera.position.x <= 8f && timer >= invulnerabilityTime;
-    public float invulnerabilityTime;
+    [SerializeField] float maxHealth;
+    [SerializeField] public float currentHealth;
+    bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
+    [SerializeField] float invulnerabilityTime;
     float timer;
 
-    public GameObject pointsPrefab;
-    public int enemyValueInPoints;
+    [SerializeField] GameObject pointsPrefab;
+    [SerializeField] int enemyValueInPoints;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         _camera = FindObjectOfType<StageMovement>().transform;
 
         timer = invulnerabilityTime;
-        health = maxHealth;
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -39,9 +39,9 @@ public class Enemy_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if(health > damage)
+        if(currentHealth > damage)
         {
-            health -= damage;
+            currentHealth -= damage;
         }
         else
         {
@@ -52,15 +52,16 @@ public class Enemy_Health : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject, 0.2f);
-        for(int i= 0; i < enemyValueInPoints; i++)
+        SpawnPoints();
+        Destroy(this);
+    }
+
+    void SpawnPoints()
+    {
+        for (int i = 0; i < enemyValueInPoints; i++)
         {
             var point = Instantiate(pointsPrefab, transform.position, Quaternion.identity);
-            float randomX = Random.Range(-1f, 1f);
-            float randomY = Random.Range(-1f, 1f);
-            Vector3 randomVector = new Vector3(randomX,randomY, 0);
-            point.GetComponent<Rigidbody>().AddForce(randomVector * 4f, ForceMode.Impulse);
         }
-        Destroy(this);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -70,8 +71,13 @@ public class Enemy_Health : MonoBehaviour
             if(canBeDamaged)
             {
                 TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
-                Destroy(other.gameObject);
+                
             }
+            Destroy(other.gameObject);
+        }
+        if(other.CompareTag("Destroy"))
+        {
+            Destroy(gameObject);
         }
     }
 }
