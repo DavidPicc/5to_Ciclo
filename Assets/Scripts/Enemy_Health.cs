@@ -75,7 +75,7 @@ public class Enemy_Health : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-        if(other.CompareTag("Destroy"))
+        if(other.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
         }

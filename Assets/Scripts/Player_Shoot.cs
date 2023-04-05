@@ -12,7 +12,6 @@ public class Player_Shoot : MonoBehaviour
     float timer;
     bool canShoot => Input.GetMouseButton(0) && !shotBullet;
     bool shotBullet = false;
-    int shotIndex = 0;
     void Start()
     {
         timer = fireRate;

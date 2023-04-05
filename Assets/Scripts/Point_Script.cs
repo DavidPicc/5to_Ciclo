@@ -54,7 +54,6 @@ public class Point_Script : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("CHOCOOOO");
             GameScore.instance.AddScore(1);
             Destroy(gameObject);
         }

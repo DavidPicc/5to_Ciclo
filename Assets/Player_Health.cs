@@ -34,6 +34,8 @@ public class Player_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage/2), 0.1f);
+
         currentHealth -= damage;
         UpdateHealthBar();
         if (currentHealth <= 0)
@@ -66,6 +68,14 @@ public class Player_Health : MonoBehaviour
             {
                 TakeDamage(2);
                 Destroy(other.gameObject);
+            }
+        }
+
+        if (other.CompareTag("Obstacle"))
+        {
+            if (canBeDamaged)
+            {
+                TakeDamage(maxHealth/3);
             }
         }
     }

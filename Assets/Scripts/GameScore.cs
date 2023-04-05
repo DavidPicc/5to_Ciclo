@@ -11,8 +11,6 @@ public class GameScore : MonoBehaviour
     [SerializeField] public int playerLevel = 0;
     [SerializeField] public int scoreToLevelUp;
     public int invisibleScore;
-    [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] TextMeshProUGUI playerLevelText;
     private void Awake()
     {
         instance = this;
@@ -44,13 +42,13 @@ public class GameScore : MonoBehaviour
         {
             AddLevel();
         }
-        scoreText.text = "Score: " + totalScore.ToString();
+        CanvasUI.instance.scoreText.text = "Score: " + totalScore.ToString();
     }
 
     public void AddLevel()
     {
         playerLevel++;
-        playerLevelText.text = "Player level: " + playerLevel.ToString();
+        CanvasUI.instance.playerLevelText.text = "Player level: " + playerLevel.ToString();
         invisibleScore = 0;
         scoreToLevelUp += 30; // Para el siguiente nivel tienes que hacer 30 puntos más que en el anterior.
         if(playerLevel == 1)

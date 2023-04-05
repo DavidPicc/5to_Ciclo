@@ -29,7 +29,10 @@ public class Player_Dodge : MonoBehaviour
         isDodging = true;
         dodgeVisual.SetActive(true);
         yield return new WaitForSeconds(0.05f);
-        if(GetComponent<Player_Movement>().moveType == Player_Movement.MovementType.noDrag)
+
+        FindObjectOfType<CameraShake>().ShakeCamera(2f, 0.15f);
+
+        if (GetComponent<Player_Movement>().moveType == Player_Movement.MovementType.noDrag)
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             extraHelp = 2f;
