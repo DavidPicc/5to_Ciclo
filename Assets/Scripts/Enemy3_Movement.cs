@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy5_Movement : MonoBehaviour
+public class Enemy3_Movement : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] float moveSpeed;
@@ -15,6 +15,6 @@ public class Enemy5_Movement : MonoBehaviour
     void Update()
     {
         rb.velocity = transform.right * moveSpeed;
-        GetComponent<Enemy5_Shoot>().shootPoint.Rotate(0,0, rotationSpeed * Time.deltaTime);
+        GetComponent<Enemy3_Shoot>().shootPoint.Rotate(0,0, rotationSpeed * Time.deltaTime);
     }
 }

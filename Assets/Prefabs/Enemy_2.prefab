@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5823159030186141536}
   - component: {fileID: 5823159030186141537}
-  - component: {fileID: 985668037838112676}
-  - component: {fileID: 2399108867849341800}
+  - component: {fileID: 5823159030186141550}
+  - component: {fileID: 5823159030186141551}
   - component: {fileID: 7146940198062375573}
   m_Layer: 0
   m_Name: Enemy_2
@@ -52,7 +52,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &985668037838112676
+--- !u!114 &5823159030186141550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,14 +61,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5823159030186141538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd8d1be97eab7174eae8d4efa34ad397, type: 3}
+  m_Script: {fileID: 11500000, guid: 525e76b9930f9204abf1c5ca9fdf2b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  states: 0
-  hoverPoints: []
-  hoverPosition: {fileID: 0}
-  moveSpeed: 0
---- !u!114 &2399108867849341800
+  moveSpeed: 4
+--- !u!114 &5823159030186141551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,14 +74,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5823159030186141538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57dc39a8503f9d04d8b6ea1670fe77dc, type: 3}
+  m_Script: {fileID: 11500000, guid: ca62c74a0445bb94593031ef57e97b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  shootPoint: {fileID: 0}
-  prepRay: 0
-  rayTime: 0
-  distanceToShoot: 0
+  bulletPrefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944,
+    type: 3}
+  shootPoint: {fileID: 5823159031386488646}
+  bulletSpeed: 6
+  fireRate: 1.5
+  distanceToShoot: 15
 --- !u!114 &7146940198062375573
 MonoBehaviour:
   m_ObjectHideFlags: 0
