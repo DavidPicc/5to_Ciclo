@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemi4_buller : MonoBehaviour
+public class Enemi8_buller : MonoBehaviour
 {
     public float speed = 2;
     public float lifetime = 1;

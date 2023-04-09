@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy4_enemy : MonoBehaviour
+public class Enemy8_enemy : MonoBehaviour
 {
     private float wtime;
     public float tiempoataque = 3;

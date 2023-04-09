@@ -4,9 +4,9 @@ using UnityEngine;
 
 
 
-public class Enemy4_movement : MonoBehaviour
+public class Enemy8_movement : MonoBehaviour
 {
-    public GameObject enemigo4;
+    public GameObject enemigo8;
     public Transform punto1;
     public Transform punto2;
     public float Velocidad;
@@ -19,12 +19,12 @@ public class Enemy4_movement : MonoBehaviour
 
     void Update()
     {
-        enemigo4.transform.position = Vector3.MoveTowards(enemigo4.transform.position, moverhacia, Velocidad * Time.deltaTime);
-            if(enemigo4.transform.position== punto2.position)
+        enemigo8.transform.position = Vector3.MoveTowards(enemigo8.transform.position, moverhacia, Velocidad * Time.deltaTime);
+            if(enemigo8.transform.position== punto2.position)
         {
             moverhacia = punto1.position;
         }
-        if (enemigo4.transform.position == punto1.position)
+        if (enemigo8.transform.position == punto1.position)
         {
             moverhacia = punto2.position;
         }
