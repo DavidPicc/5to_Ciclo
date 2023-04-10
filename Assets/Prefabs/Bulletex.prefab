@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8935857031081825373}
   - component: {fileID: 1262353323521310679}
   - component: {fileID: -1190566823947088509}
+  - component: {fileID: 335297105976396062}
   m_Layer: 0
   m_Name: Bulletex
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,3 +133,22 @@ MonoBehaviour:
   invulnerabilityTime: 0
   pointsPrefab: {fileID: 0}
   enemyValueInPoints: 0
+--- !u!114 &335297105976396062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383194172604871235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54272e19990dc124eb841b6ecaccd4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  invulnerabilityTime: 0
+  pointsPrefab: {fileID: 0}
+  enemyValueInPoints: 0
+  explocion: {fileID: 7231310787960772443, guid: 030a784796f3477418bb581df51446b2,
+    type: 3}
