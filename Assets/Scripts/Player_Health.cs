@@ -66,7 +66,7 @@ public class Player_Health : MonoBehaviour
         {
             if (canBeDamaged)
             {
-                TakeDamage(2);
+                TakeDamage(1);
                 Destroy(other.gameObject);
             }
         }
@@ -75,7 +75,7 @@ public class Player_Health : MonoBehaviour
         {
             if (canBeDamaged)
             {
-                TakeDamage(maxHealth/3);
+                TakeDamage(1);
             }
         }
     }

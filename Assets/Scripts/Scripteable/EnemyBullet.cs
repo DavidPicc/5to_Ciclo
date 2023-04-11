@@ -13,5 +13,5 @@ public class EnemyBullet : ScriptableObject
     public float bulletDisappear;
     public float bulletAng;
     public float bulletOffset;
-
+    public float anticipation;
 }

@@ -21,14 +21,21 @@ public class CreateEnemy : MonoBehaviour
     private bool shotBullet;
     public float distanceToShoot;
     private GameObject prefab;
-    bool canShoot => !shotBullet && Mathf.Abs(transform.localPosition.x) <= distanceToShoot;
+    //bool canShoot => !shotBullet && Mathf.Abs(transform.localPosition.x) <= distanceToShoot;
+    bool canShoot => !shotBullet && Vector3.Distance(_camera.position, transform.position) <= distanceToShoot;
+    GameObject antiSphere;
 
     public void Start()
     {
-        //_camera = FindObjectOfType<StageMovement>().transform;
+        if(FindObjectOfType<StageMovement>() != null)
+        {
+            _camera = FindObjectOfType<StageMovement>().transform;
+        }
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
-        if(positionPack != null)
+        antiSphere = GetComponentInChildren<SphereCollider>().gameObject;
+        antiSphere.SetActive(false);
+        if (positionPack != null)
         {
             positions = positionPack.GetComponentsInChildren<Transform>();
         }
@@ -51,8 +58,6 @@ public class CreateEnemy : MonoBehaviour
         {
             Shoot();
         }
-        
-        
     }
 
     void Movement()
@@ -94,7 +99,8 @@ public class CreateEnemy : MonoBehaviour
     {
         if (transform.localPosition.x <= enemyMovement.xLock)
         {
-            rb.velocity = Vector3.zero;
+            //rb.velocity = Vector3.zero;
+            transform.parent = _camera;
         }
         else
         {
@@ -132,8 +138,10 @@ public class CreateEnemy : MonoBehaviour
     void Shoot()
     {
         CheckIfShot();
+        Anticipation();
         if (canShoot)
         {
+            antiSphere.SetActive(false);
             if (typeToShoot.bulletAng > 0)
             {
                 ShootAngular();
@@ -159,6 +167,15 @@ public class CreateEnemy : MonoBehaviour
         else
         {
             shootTimer = typeToShoot.fireRate;
+        }
+    }
+
+    void Anticipation()
+    {
+        if(shootTimer <= typeToShoot.anticipation)
+        {
+            //Play ANTICIPATION animation.
+            antiSphere.SetActive(true);
         }
     }
 

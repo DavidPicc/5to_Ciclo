@@ -36,8 +36,8 @@ public class GameScore : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        totalScore += amount;
-        invisibleScore += amount;
+        totalScore = totalScore + amount;
+        invisibleScore = invisibleScore + amount;
         if (invisibleScore >= scoreToLevelUp)
         {
             AddLevel();

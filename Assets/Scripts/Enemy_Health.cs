@@ -15,6 +15,8 @@ public class Enemy_Health : MonoBehaviour
 
     [SerializeField] GameObject pointsPrefab;
     [SerializeField] int enemyValueInPoints;
+
+    bool spawnedPoints = false;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -51,13 +53,15 @@ public class Enemy_Health : MonoBehaviour
 
     public void Death()
     {
-        Destroy(gameObject, 0.2f);
-        SpawnPoints();
         Destroy(this);
+        Destroy(gameObject, 0.2f);
+        if(!spawnedPoints)
+            SpawnPoints();
     }
 
     void SpawnPoints()
     {
+        spawnedPoints = true;
         for (int i = 0; i < enemyValueInPoints; i++)
         {
             var point = Instantiate(pointsPrefab, transform.position, Quaternion.identity);
