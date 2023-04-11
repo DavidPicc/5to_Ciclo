@@ -4,29 +4,125 @@ using UnityEngine;
 
 public class CreateEnemy : MonoBehaviour
 {
-    public EnemyBullet typeToShoot;
+    public Transform _camera;
+    public Transform player;
+    public Rigidbody rb;
+
+    [Header("Movement")]
     public EnemyMovement enemyMovement;
+    public GameObject positionPack;
+    Transform[] positions;
+    int positionIndex = 0;
+
+    [Header("Shooting")]
+    public EnemyBullet typeToShoot;
     public Transform pointShoot;
-    private float timer;
+    private float shootTimer;
     private bool shotBullet;
     public float distanceToShoot;
     private GameObject prefab;
-
-    public Transform _camera;
     bool canShoot => !shotBullet && Mathf.Abs(transform.localPosition.x) <= distanceToShoot;
+
     public void Start()
     {
-        prefab = typeToShoot.bulletPrefab;
         //_camera = FindObjectOfType<StageMovement>().transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody>();
+        if(positionPack != null)
+        {
+            positions = positionPack.GetComponentsInChildren<Transform>();
+        }
+
+        prefab = typeToShoot.bulletPrefab;
         shotBullet = false;
-        timer = typeToShoot.fireRate;
+        shootTimer = typeToShoot.fireRate;
     }
     public void Update()
+    {
+        Movement();
+        Shoot();
+    }
+
+    void Movement()
+    {
+        if (enemyMovement.rotationSpeed > 0) // Si su rotación es mayor a 0.
+        {
+            RotateAndMove();
+        }
+        if (enemyMovement.followPlayer) // Sigue al jugador.
+        {
+            MoveToPlayer();
+        }
+        else // No sigue al jugador.
+        {
+            if (positionPack != null) // Alterna su movimiento.
+            {
+                MoveFromPointToPoint();
+            }
+            else // No alterna su movimiento.
+            {
+                if (enemyMovement.xLock == 0) // Sigue de largo hasta desaparecer.
+                {
+                    MoveToLeft();
+                }
+                else // Se queda quieto en cierto momento.
+                {
+                    MoveAndStop();
+                }
+            }
+        }
+    }
+
+    void MoveToLeft()
+    {
+        rb.velocity = transform.right * enemyMovement.velocity;
+    }
+
+    void MoveAndStop()
+    {
+        if (transform.localPosition.x <= enemyMovement.xLock)
+        {
+            rb.velocity = Vector3.zero;
+        }
+        else
+        {
+            MoveToLeft();
+        }
+    }
+
+    void RotateAndMove()
+    {
+        GetComponent<Enemy3_Shoot>().shootPoint.Rotate(0, 0, enemyMovement.rotationSpeed * Time.deltaTime);
+    }
+
+    void MoveToPlayer()
+    {
+
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        rb.velocity = direction * enemyMovement.velocity;
+    }
+
+    void MoveFromPointToPoint()
+    {
+        if(Vector3.Distance(transform.position, positions[positionIndex].position) <= 0.05f)
+        {
+            if (positionIndex < positions.Length - 1)
+            {
+                positionIndex++;
+            }
+            else
+            {
+                positionIndex = 0;
+            }
+        }
+    }
+
+    void Shoot()
     {
         CheckIfShot();
         if (canShoot)
         {
-            if ( typeToShoot.bulletAng>0)
+            if (typeToShoot.bulletAng > 0)
             {
                 ShootAngular();
             }
@@ -34,25 +130,23 @@ public class CreateEnemy : MonoBehaviour
             {
                 ShootLinear();
             }
-           
         }
     }
 
-
     void CheckIfShot()
     {
-        if (timer <= 0)
+        if (shootTimer <= 0)
         {
             shotBullet = false;
         }
 
         if (shotBullet)
         {
-            timer -= Time.deltaTime;
+            shootTimer -= Time.deltaTime;
         }
         else
         {
-            timer = typeToShoot.fireRate;
+            shootTimer = typeToShoot.fireRate;
         }
     }
 
