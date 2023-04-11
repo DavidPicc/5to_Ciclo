@@ -32,15 +32,27 @@ public class CreateEnemy : MonoBehaviour
         {
             positions = positionPack.GetComponentsInChildren<Transform>();
         }
-
-        prefab = typeToShoot.bulletPrefab;
+        if (typeToShoot)
+        {
+            prefab = typeToShoot.bulletPrefab;
+            shootTimer = typeToShoot.fireRate;
+        }
+        
         shotBullet = false;
-        shootTimer = typeToShoot.fireRate;
+        
     }
     public void Update()
     {
-        Movement();
-        Shoot();
+        if (enemyMovement)
+        {
+            Movement();
+        }
+        if (typeToShoot)
+        {
+            Shoot();
+        }
+        
+        
     }
 
     void Movement()
