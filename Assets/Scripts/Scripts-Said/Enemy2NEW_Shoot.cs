@@ -6,8 +6,8 @@ public class Enemy2NEW_Shoot : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform shootPoint;
-    private float shootInterval = 1f; 
-    private float timeSinceLastShot = 0f; 
+    [SerializeField] float shootInterval;
+    [SerializeField] float timeSinceLastShot; 
 
     void Update()
     {
