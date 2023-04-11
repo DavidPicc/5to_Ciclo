@@ -92,7 +92,7 @@ public class CreateEnemy : MonoBehaviour
 
     void RotateAndMove()
     {
-        GetComponent<Enemy3_Shoot>().shootPoint.Rotate(0, 0, enemyMovement.rotationSpeed * Time.deltaTime);
+        pointShoot.Rotate(0, 0, enemyMovement.rotationSpeed * Time.deltaTime);
     }
 
     void MoveToPlayer()
@@ -163,7 +163,7 @@ public class CreateEnemy : MonoBehaviour
         {
             Vector3 offsetVector = new Vector3(0, offset, 0);
             var bullet = Instantiate(prefab, pointShoot.position + offsetVector, Quaternion.identity, _camera);
-            bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, 5f);
             offset += (typeToShoot.bulletOffset / 100) / (typeToShoot.bulletNumber - 1);
         }
@@ -181,10 +181,13 @@ public class CreateEnemy : MonoBehaviour
         for (int i = 0; i < typeToShoot.bulletNumber; i++)
         {
             Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
-            var bullet = Instantiate(prefab, pointShoot.position, Quaternion.identity * offsetVector, _camera);
-            bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
+            var bullet = Instantiate(prefab, pointShoot.position, pointShoot.rotation * offsetVector, _camera);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
+            //Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
+            //var bullet = Instantiate(prefab, pointShoot.position, Quaternion.identity * offsetVector, _camera);
+            //bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, 5f);
-            angle += typeToShoot.bulletAng / (typeToShoot.bulletNumber - 1);
+            angle += typeToShoot.bulletAng / (typeToShoot.bulletNumber);
         }
 
         shotBullet = true;
