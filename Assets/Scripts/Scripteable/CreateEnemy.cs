@@ -32,15 +32,27 @@ public class CreateEnemy : MonoBehaviour
         {
             positions = positionPack.GetComponentsInChildren<Transform>();
         }
-
-        prefab = typeToShoot.bulletPrefab;
+        if (typeToShoot)
+        {
+            prefab = typeToShoot.bulletPrefab;
+            shootTimer = typeToShoot.fireRate;
+        }
+        
         shotBullet = false;
-        shootTimer = typeToShoot.fireRate;
+        
     }
     public void Update()
     {
-        Movement();
-        Shoot();
+        if (enemyMovement)
+        {
+            Movement();
+        }
+        if (typeToShoot)
+        {
+            Shoot();
+        }
+        
+        
     }
 
     void Movement()
@@ -92,7 +104,7 @@ public class CreateEnemy : MonoBehaviour
 
     void RotateAndMove()
     {
-        GetComponent<Enemy3_Shoot>().shootPoint.Rotate(0, 0, enemyMovement.rotationSpeed * Time.deltaTime);
+        pointShoot.Rotate(0, 0, enemyMovement.rotationSpeed * Time.deltaTime);
     }
 
     void MoveToPlayer()
@@ -184,7 +196,7 @@ public class CreateEnemy : MonoBehaviour
             var bullet = Instantiate(prefab, pointShoot.position, Quaternion.identity * offsetVector, _camera);
             bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, 5f);
-            angle += typeToShoot.bulletAng / (typeToShoot.bulletNumber - 1);
+            angle += typeToShoot.bulletAng / (typeToShoot.bulletNumber);
         }
 
         shotBullet = true;
