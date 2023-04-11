@@ -4,31 +4,43 @@ using UnityEngine;
 
 public class CreateEnemy : MonoBehaviour
 {
-    public EnemyBullet typetoshoot;
+    public EnemyBullet typeToShoot;
     public EnemyMovement enemyMovement;
+    public Transform pointShoot;
     private float timer;
-    public bool shotBullet;
+    private bool shotBullet;
+    public float distanceToShoot;
+    private GameObject prefab;
 
-    Transform _camera;
-    
+    public Transform _camera;
+    bool canShoot => !shotBullet && Mathf.Abs(transform.localPosition.x) <= distanceToShoot;
     public void Start()
     {
-        _camera = FindObjectOfType<StageMovement>().transform;
-        shotBullet = true;
+        prefab = typeToShoot.bulletPrefab;
+        //_camera = FindObjectOfType<StageMovement>().transform;
+        shotBullet = false;
+        timer = typeToShoot.fireRate;
     }
     public void Update()
     {
-        if (typetoshoot!= null) 
+        CheckIfShot();
+        if (canShoot)
         {
-            Shoot();
+            if ( typeToShoot.bulletAng>0)
+            {
+                ShootAngular();
+            }
+            else
+            {
+                ShootLinear();
+            }
+           
         }
-        
     }
 
 
-    public  void Shoot()
+    void CheckIfShot()
     {
-
         if (timer <= 0)
         {
             shotBullet = false;
@@ -40,33 +52,48 @@ public class CreateEnemy : MonoBehaviour
         }
         else
         {
-            timer = typetoshoot.timetoshot;
-        }
-
-        if (typetoshoot.bulletAng == 0)
-        {
-            float offset = 0;
-            if (shotBullet)
-            {
-                if (typetoshoot.NumbulletShoot > 1)
-                {
-                    offset -= (typetoshoot.bulletoffset / 100) / 2;
-                }
-
-                for (int i = 0; i < typetoshoot.NumbulletShoot; i++)
-                {
-                    Vector3 offsetVector = new Vector3(0, offset, 0);
-                    var bullet = Instantiate(typetoshoot.BulletPrefab, typetoshoot.shootPoint.transform.position + offsetVector, Quaternion.identity, _camera);
-                    bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typetoshoot.bulletSpeed, ForceMode.Impulse);
-                    Destroy(bullet, 5f);
-                    offset += (typetoshoot.bulletoffset / 100) / (typetoshoot.NumbulletShoot - 1);
-                }
-                shotBullet = true;
-            }
-           
-
-            
+            timer = typeToShoot.fireRate;
         }
     }
-    
+
+    public  void ShootLinear()
+    {
+
+        float offset = 0;
+        if (typeToShoot.bulletNumber > 1)
+        {
+            offset -= (typeToShoot.bulletOffset / 100) / 2;
+        }
+
+        for (int i = 0; i < typeToShoot.bulletNumber; i++)
+        {
+            Vector3 offsetVector = new Vector3(0, offset, 0);
+            var bullet = Instantiate(prefab, pointShoot.position + offsetVector, Quaternion.identity, _camera);
+            bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
+            Destroy(bullet, 5f);
+            offset += (typeToShoot.bulletOffset / 100) / (typeToShoot.bulletNumber - 1);
+        }
+
+        shotBullet = true;
+    }
+    void ShootAngular()
+    {
+        float angle = 0;
+        if (typeToShoot.bulletNumber > 1)
+        {
+            angle -= (typeToShoot.bulletAng) / 2;
+        }
+
+        for (int i = 0; i < typeToShoot.bulletNumber; i++)
+        {
+            Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
+            var bullet = Instantiate(prefab, pointShoot.position, Quaternion.identity * offsetVector, _camera);
+            bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
+            Destroy(bullet, 5f);
+            angle += typeToShoot.bulletAng / (typeToShoot.bulletNumber - 1);
+        }
+
+        shotBullet = true;
+    }
+
 }
