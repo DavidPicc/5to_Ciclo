@@ -13,6 +13,7 @@ public class CreateEnemy : MonoBehaviour
     public GameObject positionPack;
     Transform[] positions;
     int positionIndex = 0;
+    bool locked = false;
 
     [Header("Shooting")]
     public EnemyBullet typeToShoot;
@@ -97,14 +98,26 @@ public class CreateEnemy : MonoBehaviour
 
     void MoveAndStop()
     {
-        if (transform.localPosition.x <= enemyMovement.xLock)
-        {
+        //if (transform.localPosition.x <= enemyMovement.xLock)
+        //if(Vector3.Distance(_camera.position, transform.position) <= enemyMovement.xLock)
+        Vector3 _camVec = new Vector3(_camera.position.x, 0, 0);
+        Vector3 enemyVec = new Vector3(transform.position.x, 0, 0);
+
+        if (Vector3.Distance(_camVec, enemyVec) <= enemyMovement.xLock)
+            {
             //rb.velocity = Vector3.zero;
-            transform.parent = _camera;
+            locked = true;
+
         }
         else
         {
             MoveToLeft();
+        }
+
+        if (locked)
+        {
+            transform.parent = _camera;
+            rb.velocity = Vector3.zero;
         }
     }
 
@@ -192,8 +205,8 @@ public class CreateEnemy : MonoBehaviour
         {
             Vector3 offsetVector = new Vector3(0, offset, 0);
             var bullet = Instantiate(prefab, pointShoot.position + offsetVector, Quaternion.identity, _camera);
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
-            Destroy(bullet, 5f);
+            bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
+            Destroy(bullet, typeToShoot.bulletDisappear);
             offset += (typeToShoot.bulletOffset / 100) / (typeToShoot.bulletNumber - 1);
         }
 
@@ -215,7 +228,7 @@ public class CreateEnemy : MonoBehaviour
             //Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
             //var bullet = Instantiate(prefab, pointShoot.position, Quaternion.identity * offsetVector, _camera);
             //bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * typeToShoot.bulletSpeed, ForceMode.Impulse);
-            Destroy(bullet, 5f);
+            Destroy(bullet, typeToShoot.bulletDisappear);
             angle += typeToShoot.bulletAng / (typeToShoot.bulletNumber);
         }
 
