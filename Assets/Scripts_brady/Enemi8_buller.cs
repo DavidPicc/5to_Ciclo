@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemi8_buller : MonoBehaviour
 {
-    public float speed = 2;
-    public float lifetime = 1;
-    public bool left;
+    [SerializeField] float speed = 2;
+    [SerializeField] float lifetime = 1;
+    [SerializeField] bool left;
     // Start is called before the first frame update
     void Start()
     {

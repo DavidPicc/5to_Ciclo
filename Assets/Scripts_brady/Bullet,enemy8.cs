@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletenemy8 : MonoBehaviour
+public class Bulletenemy8 : MonoBehaviour
 {
     Transform player;
     Transform _camera;

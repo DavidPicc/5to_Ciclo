@@ -5,19 +5,19 @@ using UnityEngine;
 public class Enemy8_enemy : MonoBehaviour
 {
     private float wtime;
-    public float tiempoataque = 3;
-    public GameObject bullet;
-    public Transform spawnpoint;
+    [SerializeField] float timeatack = 3;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform spawnpoint;
 
     private void Start()
     {
-        wtime = tiempoataque;
+        wtime = timeatack;
     }
     private void Update()
     {
         if(wtime<=0)
         {
-            wtime = tiempoataque;
+            wtime = timeatack;
             Invoke("luchebullet", 0.5f);
         }
         else
