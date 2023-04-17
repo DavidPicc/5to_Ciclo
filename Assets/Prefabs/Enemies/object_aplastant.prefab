@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1777362932467260022}
   - component: {fileID: 1777362932467260017}
   - component: {fileID: 1777362932467260016}
-  - component: {fileID: 1777362932467259978}
+  - component: {fileID: 5540794489360490380}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: chains
@@ -152,7 +152,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1777362932467259978
+--- !u!114 &5540794489360490380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,9 +161,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777362932467260019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f263e574fb6eae42b2fd23f572eac0e, type: 3}
+  m_Script: {fileID: 11500000, guid: a79e90a59aa6c3c44b53a706f19a3fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  invulnerabilityTime: 0
+  enemyValueInPoints: 0
 --- !u!1 &1777362932517314295
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +182,7 @@ GameObject:
   - component: {fileID: 1777362932517314250}
   - component: {fileID: 1777362932517314293}
   - component: {fileID: 1777362932517314292}
-  - component: {fileID: 1777362932517314254}
+  - component: {fileID: 3619346762981082707}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: chains
@@ -316,7 +320,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1777362932517314254
+--- !u!114 &3619346762981082707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,9 +329,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777362932517314295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f263e574fb6eae42b2fd23f572eac0e, type: 3}
+  m_Script: {fileID: 11500000, guid: a79e90a59aa6c3c44b53a706f19a3fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  invulnerabilityTime: 0
+  enemyValueInPoints: 0
 --- !u!1 &1777362932768008855
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +350,7 @@ GameObject:
   - component: {fileID: 1777362932768008554}
   - component: {fileID: 1777362932768008853}
   - component: {fileID: 1777362932768008852}
-  - component: {fileID: 1777362932768008558}
+  - component: {fileID: 4904027999232533465}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: chains
@@ -480,7 +488,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1777362932768008558
+--- !u!114 &4904027999232533465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,9 +497,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777362932768008855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f263e574fb6eae42b2fd23f572eac0e, type: 3}
+  m_Script: {fileID: 11500000, guid: a79e90a59aa6c3c44b53a706f19a3fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  invulnerabilityTime: 0
+  enemyValueInPoints: 0
 --- !u!1 &1777362933531963414
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +603,7 @@ GameObject:
   - component: {fileID: 1777362933546969082}
   - component: {fileID: 1777362933546969061}
   - component: {fileID: 1777362933546969060}
-  - component: {fileID: 1777362933546969086}
+  - component: {fileID: 7805914813997195073}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: chains
@@ -729,7 +741,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1777362933546969086
+--- !u!114 &7805914813997195073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -738,9 +750,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777362933546969063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f263e574fb6eae42b2fd23f572eac0e, type: 3}
+  m_Script: {fileID: 11500000, guid: a79e90a59aa6c3c44b53a706f19a3fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  invulnerabilityTime: 0
+  enemyValueInPoints: 0
 --- !u!1 &1777362933853269188
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +774,7 @@ GameObject:
   - component: {fileID: 1777362933853269215}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -916,7 +932,7 @@ GameObject:
   - component: {fileID: 1777362934005482391}
   m_Layer: 0
   m_Name: object_aplastant
-  m_TagString: Untagged
+  m_TagString: weigh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -957,7 +973,7 @@ GameObject:
   - component: {fileID: 1777362934200589264}
   - component: {fileID: 1777362934200589267}
   - component: {fileID: 1777362934200589266}
-  - component: {fileID: 1777362934200589268}
+  - component: {fileID: 8336192245847139937}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: chains
@@ -1095,7 +1111,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1777362934200589268
+--- !u!114 &8336192245847139937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1104,6 +1120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777362934200589277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f263e574fb6eae42b2fd23f572eac0e, type: 3}
+  m_Script: {fileID: 11500000, guid: a79e90a59aa6c3c44b53a706f19a3fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  invulnerabilityTime: 0
+  enemyValueInPoints: 0

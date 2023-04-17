@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
-public class Enemy_Health : MonoBehaviour
+public class chain_life : MonoBehaviour
 {
     Transform player;
     Transform _camera;
@@ -12,8 +11,6 @@ public class Enemy_Health : MonoBehaviour
     bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
-
-    [SerializeField] GameObject pointsPrefab;
     [SerializeField] int enemyValueInPoints;
 
     bool spawnedPoints = false;
@@ -33,7 +30,7 @@ public class Enemy_Health : MonoBehaviour
             timer = invulnerabilityTime;
         }
 
-        if(!canBeDamaged)
+        if (!canBeDamaged)
         {
             timer -= Time.deltaTime;
         }
@@ -41,7 +38,7 @@ public class Enemy_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if(currentHealth > damage)
+        if (currentHealth > damage)
         {
             currentHealth -= damage;
         }
@@ -55,31 +52,24 @@ public class Enemy_Health : MonoBehaviour
     {
         Destroy(this);
         Destroy(gameObject, 0.2f);
-        if(!spawnedPoints)
-            SpawnPoints();
+        
     }
 
-    void SpawnPoints()
-    {
-        spawnedPoints = true;
-        for (int i = 0; i < enemyValueInPoints; i++)
-        {
-            var point = Instantiate(pointsPrefab, transform.position, Quaternion.identity);
-        }
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("PlayerBullet"))
+        if (other.CompareTag("PlayerBullet"))
         {
-            if(canBeDamaged)
+            if (canBeDamaged)
             {
                 TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
-                
+
             }
-            Destroy(other.gameObject);
+        
+
         }
-        if(other.CompareTag("Obstacle") || other.CompareTag("weigh"))
+        if (other.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
         }

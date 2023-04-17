@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Destroy_Enemy : MonoBehaviour
 {
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +19,15 @@ public class Destroy_Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
 
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet") || other.CompareTag("Player"))
+        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
+        }
+
+    if (other.CompareTag("s"))
+
+        {
+            Destroy(gameObject,0.1f);
         }
     }
  
