@@ -78,5 +78,13 @@ public class Player_Health : MonoBehaviour
                 TakeDamage(1);
             }
         }
+
+        if (other.CompareTag("Explosion"))
+        {
+            if (canBeDamaged)
+            {
+                TakeDamage(1);
+            }
+        }
     }
 }

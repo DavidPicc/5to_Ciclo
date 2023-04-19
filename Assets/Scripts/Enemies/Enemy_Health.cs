@@ -83,5 +83,14 @@ public class Enemy_Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Explosion"))
+        {
+            if (canBeDamaged)
+            {
+                TakeDamage(100);
+            }
+           
+        }
     }
 }
