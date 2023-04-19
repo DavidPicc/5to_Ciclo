@@ -75,7 +75,7 @@ public class Enemy_Health : MonoBehaviour
             if(canBeDamaged)
             {
                 TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
-                
+
             }
             Destroy(other.gameObject);
         }
