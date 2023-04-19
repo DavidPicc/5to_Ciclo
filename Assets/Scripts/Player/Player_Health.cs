@@ -60,31 +60,31 @@ public class Player_Health : MonoBehaviour
         healthFillBar.fillAmount = currentHealth / maxHealth;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("EnemyBullet") || (other.CompareTag("weigh")))
-        {
-            if (canBeDamaged)
-            {
-                TakeDamage(1);
-                Destroy(other.gameObject);
-            }
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("EnemyBullet") || (other.CompareTag("weigh")))
+    //    {
+    //        if (canBeDamaged)
+    //        {
+    //            TakeDamage(1);
+    //            Destroy(other.gameObject);
+    //        }
+    //    }
 
-        if (other.CompareTag("Obstacle"))
-        {
-            if (canBeDamaged)
-            {
-                TakeDamage(1);
-            }
-        }
+    //    if (other.CompareTag("Obstacle"))
+    //    {
+    //        if (canBeDamaged)
+    //        {
+    //            TakeDamage(1);
+    //        }
+    //    }
 
-        if (other.CompareTag("Explosion"))
-        {
-            if (canBeDamaged)
-            {
-                TakeDamage(1);
-            }
-        }
-    }
+    //    if (other.CompareTag("Explosion"))
+    //    {
+    //        if (canBeDamaged)
+    //        {
+    //            TakeDamage(1);
+    //        }
+    //    }
+    //}
 }

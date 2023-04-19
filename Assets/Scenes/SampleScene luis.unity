@@ -1760,7 +1760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalScore: 0
-  playerLevel: 0
   scoreToLevelUp: 0
   invisibleScore: 0
 --- !u!4 &490937430
@@ -2480,11 +2479,6 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8386808950858862066, guid: c218c5c6b7cb9b746b379fa68bfa9a46,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8815139531701235272, guid: c218c5c6b7cb9b746b379fa68bfa9a46,
         type: 3}
       propertyPath: m_Name
@@ -2499,6 +2493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815139531701235272, guid: c218c5c6b7cb9b746b379fa68bfa9a46,
+        type: 3}
+      propertyPath: m_TagString
+      value: Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c218c5c6b7cb9b746b379fa68bfa9a46, type: 3}
@@ -4909,6 +4908,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 658705025}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1052494073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052494068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019359179, y: 0.018252216, z: 0.021646153}
+  m_Center: {x: -7.483935e-10, y: 0.0016149394, z: -0.0010648287}
+--- !u!114 &1052494074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052494068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf9e31097ed11f4280754f7958dc4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098584215
 GameObject:
   m_ObjectHideFlags: 0
@@ -8540,8 +8564,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2117927902}
-  - component: {fileID: 2117927903}
-  - component: {fileID: 2117927904}
   - component: {fileID: 2117927905}
   m_Layer: 0
   m_Name: EnemyWaves
@@ -8565,30 +8587,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2117927903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117927901}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a2a4aac9400c14b97c0f7655b7a14a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2117927904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117927901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be1b7793d95a234db323b432ad6f100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2117927905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8652,6 +8650,7 @@ GameObject:
   - component: {fileID: 5476329912934615228}
   - component: {fileID: 5376880893721219103}
   - component: {fileID: 7400509135818809854}
+  - component: {fileID: 7400509135818809855}
   m_Layer: 6
   m_Name: DodgeVisual
   m_TagString: Untagged
@@ -8816,6 +8815,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7400509135818809855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409249974669944868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf9e31097ed11f4280754f7958dc4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7589268379739479497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8902,7 +8913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e8e0f7b51d05646b14ba70a2d21335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCannons: 0
+  maxCannons: 1
   importantLevels: 3200000064000000
 --- !u!114 &7628401452694169997
 MonoBehaviour:
@@ -8916,13 +8927,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ba43ebed8b57c45aa8e101799dd919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shield: {fileID: 1052494068}
+  shieldObj: {fileID: 1052494068}
   rechargeBar: 0
-  maxrechargeBar: 200
+  maxrechargeBar: 100
   endShield: 0
   Activate: 0
   timer: 0
   Maxtimer: 2
+  tk: 0
+  TakeDmg: 0
+  range: 19.71
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  currentTarget: {fileID: 0}
+  bulletPrefab: {fileID: 1300772526029512616, guid: dc124bcc2d8846b47b6df14288aa9b21,
+    type: 3}
 --- !u!1 &8190871838794104366
 GameObject:
   m_ObjectHideFlags: 0

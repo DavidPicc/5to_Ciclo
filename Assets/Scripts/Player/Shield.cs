@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    // Start is called before the first frame update
+      
     void Start()
     {
         
@@ -19,6 +19,9 @@ public class Shield : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
+
+            //Destroy(other.gameObject);
+
             Debug.Log("HOla");
         }
     }
