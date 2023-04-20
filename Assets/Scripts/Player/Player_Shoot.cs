@@ -10,12 +10,11 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     float timer;
-    bool canShoot => Input.GetMouseButton(0) && !shotBullet;
+    bool canShoot => Input.GetMouseButton(0) && !shotBullet && !GameManager.instance.isPaused;
     bool shotBullet = false;
     void Start()
     {
         timer = fireRate;
-
     }
 
 

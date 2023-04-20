@@ -47,12 +47,13 @@ public class Player_Health : MonoBehaviour
     {
         //Destroy(gameObject, 0.2f);
         //Destroy(this);
-        Invoke("SetPlayerDeath", 0.2f);
+        Invoke("SetPlayerDeath", 0.3f);
     }
 
     public void SetPlayerDeath()
     {
         gameObject.SetActive(false);
+        GameManager.instance.DeathMenu();
     }
 
     void UpdateHealthBar()
