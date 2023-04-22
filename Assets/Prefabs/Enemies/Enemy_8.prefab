@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3233051802188340049}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -3.1, y: -1.64, z: 0.17}
+  m_LocalPosition: {x: -1.56, y: -1.64, z: 0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402aee59228709e46a67bbda1f67c29c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigo8: {fileID: 2314694825097208867}
-  punto1: {fileID: 3233051802188340048}
-  punto2: {fileID: 3233051803482345339}
-  Velocidad: 3
+  enemy: {fileID: 2314694825097208867}
+  point1: {fileID: 3233051802188340048}
+  point2: {fileID: 3233051803482345339}
+  Velocidad: 2
 --- !u!54 &3233051803075331895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b8a7f37019a094cb751159803ce440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoataque: 3
+  timeatack: 3
   bullet: {fileID: 2383194172604871235, guid: e24db3ca0f04d644bb78a83184f67b93, type: 3}
   spawnpoint: {fileID: 7366489911597041063}
 --- !u!1 &3233051803482345336
@@ -158,7 +158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3233051803482345336}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -3.18, y: 4.53, z: 0.17}
+  m_LocalPosition: {x: -1.75, y: 4.53, z: 0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -34,6 +34,7 @@ public class Player_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+       
         FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage/2), 0.1f);
 
         currentHealth -= damage;
@@ -61,31 +62,17 @@ public class Player_Health : MonoBehaviour
         healthFillBar.fillAmount = currentHealth / maxHealth;
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("EnemyBullet") || (other.CompareTag("weigh")))
-    //    {
-    //        if (canBeDamaged)
-    //        {
-    //            TakeDamage(1);
-    //            Destroy(other.gameObject);
-    //        }
-    //    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("weigh"))
+        {
+            if (canBeDamaged)
+           {
+               TakeDamage(1);
+              
+           }
+        }
 
-    //    if (other.CompareTag("Obstacle"))
-    //    {
-    //        if (canBeDamaged)
-    //        {
-    //            TakeDamage(1);
-    //        }
-    //    }
 
-    //    if (other.CompareTag("Explosion"))
-    //    {
-    //        if (canBeDamaged)
-    //        {
-    //            TakeDamage(1);
-    //        }
-    //    }
-    //}
+    }
 }
