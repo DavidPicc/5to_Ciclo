@@ -43,6 +43,7 @@ public class Player_Health : MonoBehaviour
         {
             Death();
         }
+        Debug.Log("Player has been damaged!!!!");
     }
     public void Death()
     {

@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &571389862404535161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6188283836707857409}
+  - component: {fileID: 49428078765522906}
+  m_Layer: 8
+  m_Name: RandomPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6188283836707857409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571389862404535161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4525412024875919517}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &49428078765522906
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571389862404535161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1028026982369369737
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,10 +118,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4525412024875919517}
   - component: {fileID: 8565232482527796345}
-  - component: {fileID: 2764809002981298485}
+  - component: {fileID: -4189062751187495589}
   - component: {fileID: -6158682819534291632}
   m_Layer: 8
-  m_Name: Enemy8_
+  m_Name: Enemy8
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,6 +141,7 @@ Transform:
   m_Children:
   - {fileID: 3557273608347222736}
   - {fileID: 6772402426529056697}
+  - {fileID: 6188283836707857409}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -115,7 +161,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &2764809002981298485
+--- !u!114 &-4189062751187495589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,17 +170,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4775852444701093714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b1439c0b7834f43bc2a1f398d1d355, type: 3}
+  m_Script: {fileID: 11500000, guid: e273c08de79bfd249b14966af6d98bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  player: {fileID: 0}
-  rb: {fileID: 0}
-  enemyMovement: {fileID: 11400000, guid: ec88ae64875d18848a5b8c67f7866473, type: 2}
-  positionPack: {fileID: 0}
-  typeToShoot: {fileID: 11400000, guid: d9851a1a50973594a99025f61223340f, type: 2}
-  pointShoot: {fileID: 9068361706830314513}
-  distanceToShoot: 12
+  randomPoint: {fileID: 0}
+  maxDistance: 0
+  cameraBorderLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  moveSpeed: 0
+  timeToMove: 0
 --- !u!114 &-6158682819534291632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1, type: 3}

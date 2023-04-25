@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  MoveTime: 0
 --- !u!114 &46986388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +99,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944,
     type: 3}
   shootPoint: {fileID: 5823159030885408488}
+  shootInterval: 0
+  timeSinceLastShot: 0
 --- !u!1 &5823159030885408489
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1, type: 3}

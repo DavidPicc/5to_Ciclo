@@ -11,5 +11,14 @@ public class PlayerBullet_Script : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.CompareTag("Enemy"))
+        {
+            if (other.GetComponent<Enemy_Health>().canBeDamaged)
+            {
+                other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
+
+            }
+            Destroy(gameObject);
+        }
     }
 }

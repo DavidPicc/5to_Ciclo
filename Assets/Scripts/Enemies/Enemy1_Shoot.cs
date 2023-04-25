@@ -59,4 +59,12 @@ public class Enemy1_Shoot : MonoBehaviour
 
         shotBullet = true;
     }
+
+    void Shoot_Exploding()
+    {
+        var bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity, _camera);
+        bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.Impulse);
+
+        shotBullet = true;
+    }
 }

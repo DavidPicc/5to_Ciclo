@@ -9,7 +9,7 @@ public class Enemy_Health : MonoBehaviour
     Transform _camera;
     [SerializeField] float maxHealth;
     [SerializeField] public float currentHealth;
-    bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
+    public bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
 
@@ -70,15 +70,15 @@ public class Enemy_Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("PlayerBullet"))
-        {
-            if(canBeDamaged)
-            {
-                TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
+        //if(other.CompareTag("PlayerBullet"))
+        //{
+        //    if(canBeDamaged)
+        //    {
+        //        TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
 
-            }
-            Destroy(other.gameObject);
-        }
+        //    }
+        //    Destroy(other.gameObject);
+        //}
         if(other.CompareTag("Obstacle") || other.CompareTag("weigh"))
         {
             Destroy(gameObject);

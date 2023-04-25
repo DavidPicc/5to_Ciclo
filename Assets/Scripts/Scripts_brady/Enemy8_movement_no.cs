@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class Enemy8_movement : MonoBehaviour
+public class Enemy8_movement_no : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
     [SerializeField] Transform point1;

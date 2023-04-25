@@ -9,7 +9,6 @@ public class SituationManager : MonoBehaviour
     int index = 0;
     public int wave = 0;
     public float situationOffset = 27f;
-    float lastSituationX = 0;
     public float timeToSpawn;
     float timer;
     public Vector3 spawnPosition;
