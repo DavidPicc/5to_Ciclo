@@ -42,7 +42,7 @@ public class GameScore : MonoBehaviour
         {
             AddLevel();
         }
-        CanvasUI.instance.scoreText.text = "Score: " + totalScore.ToString();
+        CanvasUI.instance.gearsText.text = totalScore.ToString();
     }
 
     public void AddLevel()

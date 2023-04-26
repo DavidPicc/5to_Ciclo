@@ -11,9 +11,7 @@ public class chain_life : MonoBehaviour
     bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
-    [SerializeField] int enemyValueInPoints;
 
-    bool spawnedPoints = false;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -52,10 +50,7 @@ public class chain_life : MonoBehaviour
     {
         Destroy(this);
         Destroy(gameObject, 0.2f);
-        
     }
-
-    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -66,8 +61,6 @@ public class chain_life : MonoBehaviour
                 TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
 
             }
-        
-
         }
         if (other.CompareTag("Obstacle"))
         {

@@ -13,12 +13,17 @@ public class PlayerBullet_Script : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
-            if (other.GetComponent<Enemy_Health>().canBeDamaged)
+            Debug.Log(("joadshnioasjkda"));
+            if(other.GetComponent<Enemy_Health>() != null)
             {
-                other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
+                if (other.GetComponent<Enemy_Health>().canBeDamaged)
+                {
+                    other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
 
+                }
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+            
         }
     }
 }

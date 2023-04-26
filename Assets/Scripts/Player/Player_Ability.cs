@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Hability : MonoBehaviour
+public class Player_Ability : MonoBehaviour
 {
     [SerializeField] GameObject shieldObj;
     [SerializeField] float rechargeBar;
     [SerializeField] float maxrechargeBar;
- 
-
 
     public bool endShield;
     public bool Activate;
@@ -27,14 +25,12 @@ public class Player_Hability : MonoBehaviour
     public Transform currentTarget;
     private List<Transform> previousTargets = new List<Transform>();
     public GameObject bulletPrefab;
+
     void Start()
     {
         rechargeBar = maxrechargeBar;
-        
-        
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
         
@@ -125,8 +121,6 @@ public class Player_Hability : MonoBehaviour
         {
             CancelInvoke("Shoot");
         }
-        
-       
     }
     private void FindNewTarget()
     {
@@ -191,7 +185,4 @@ public class Player_Hability : MonoBehaviour
         }
        
     }
-
-    
-
 }

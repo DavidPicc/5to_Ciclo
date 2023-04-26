@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyBullet_Script : MonoBehaviour
 {
     public Player_Health playerHealth;
-    public Player_Hability playerHability;
+    public Player_Ability playerAbility;
 
     private void Start()
     {
         playerHealth = FindAnyObjectByType<Player_Health>();
-        playerHability = FindObjectOfType<Player_Hability>();
+        playerAbility = FindObjectOfType<Player_Ability>();
 
     }
     private void OnTriggerEnter(Collider other)
@@ -26,7 +26,7 @@ public class EnemyBullet_Script : MonoBehaviour
         if (other.CompareTag("Shield"))
         {
             Destroy(gameObject);
-            playerHability.TakeDmg++;
+            playerAbility.TakeDmg++;
         }
 
         

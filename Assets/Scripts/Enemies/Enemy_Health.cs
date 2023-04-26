@@ -70,16 +70,16 @@ public class Enemy_Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.CompareTag("PlayerBullet"))
-        //{
-        //    if(canBeDamaged)
-        //    {
-        //        TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
+        if (other.CompareTag("PlayerBullet"))
+        {
+            if (canBeDamaged)
+            {
+                TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
 
-        //    }
-        //    Destroy(other.gameObject);
-        //}
-        if(other.CompareTag("Obstacle") || other.CompareTag("weigh"))
+            }
+            Destroy(other.gameObject, 1f);
+        }
+        if (other.CompareTag("Obstacle") || other.CompareTag("weigh"))
         {
             Destroy(gameObject);
         }
