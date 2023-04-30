@@ -13,7 +13,7 @@ public class Player_Health : MonoBehaviour
 
     [SerializeField] Image healthFillBar;
 
-        void Start()
+    void Start()
     {
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
@@ -68,10 +68,10 @@ public class Player_Health : MonoBehaviour
         if (other.CompareTag("weigh"))
         {
             if (canBeDamaged)
-           {
+            {
                TakeDamage(1);
               
-           }
+            }
         }
 
 

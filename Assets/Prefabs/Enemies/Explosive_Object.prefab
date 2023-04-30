@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492858936250344114}
   - component: {fileID: 1492858936250344117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Radius
   m_TagString: Explosion
   m_Icon: {fileID: 0}
@@ -59,9 +59,9 @@ GameObject:
   - component: {fileID: 1492858937839092298}
   - component: {fileID: 1492858937839092299}
   - component: {fileID: 1492858937839092296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Explosive_Object
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,4 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1492858936250344115}
-  coldown: 1.5
+  coldown: 0.6
+  explosionEffect: {fileID: 978339248184089227, guid: 5d93c7f387a862f48b8071c5804d9f4e,
+    type: 3}
