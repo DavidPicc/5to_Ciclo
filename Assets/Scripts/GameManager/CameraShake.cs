@@ -37,10 +37,10 @@ public class CameraShake : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            ShakeCamera(shakeIntensity, shakeDuration);
-        }
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    ShakeCamera(shakeIntensity, shakeDuration);
+        //}
 
         if(timer > 0)
         {

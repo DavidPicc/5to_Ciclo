@@ -31,4 +31,13 @@ public class Player_Manager : MonoBehaviour
             maxCannons = 5;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("NextSituation"))
+        {
+            SituationManager.instance.SpawnSituation();
+            Destroy(other.gameObject);
+        }
+    }
 }

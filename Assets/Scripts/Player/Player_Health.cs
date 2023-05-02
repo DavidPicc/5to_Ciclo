@@ -9,7 +9,7 @@ public class Player_Health : MonoBehaviour
     [SerializeField] public float currentHealth;
     [SerializeField] public float invulnerabilityTime;
     float timer;
-    bool canBeDamaged => timer >= invulnerabilityTime && !GetComponent<Player_Dodge>().isDodging;
+    bool canBeDamaged => timer >= invulnerabilityTime;
 
     [SerializeField] Image healthFillBar;
 

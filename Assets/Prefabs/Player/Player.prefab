@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 6093436275180687690}
   - component: {fileID: 5813331617710626669}
   - component: {fileID: 9206331676554157252}
-  - component: {fileID: 8439004252336728952}
   - component: {fileID: 4417392101379186583}
   m_Layer: 6
   m_Name: Player
@@ -328,6 +327,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a05513c79f58a49ab941dfd556ea69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletSpeed: 0
+  shootDamage: 0
+  bulletPrefab: {fileID: 0}
+  shootPoints: []
+  fireRate: 0
 --- !u!114 &9206331676554157252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,22 +348,6 @@ MonoBehaviour:
   currentHealth: 0
   invulnerabilityTime: 0.2
   healthFillBar: {fileID: 0}
---- !u!114 &8439004252336728952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6093436275180687703}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d6a1b3fcc64b724387dab9320a27629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dodgeVisual: {fileID: 5124697669038792254}
-  dodgeTime: 0.2
-  dodgeForce: 20
-  isDodging: 0
 --- !u!114 &4417392101379186583
 MonoBehaviour:
   m_ObjectHideFlags: 0
