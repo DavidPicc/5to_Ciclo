@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Ability : MonoBehaviour
 {
     [SerializeField] GameObject shieldObj;
     [SerializeField] float rechargeBar;
     [SerializeField] float maxrechargeBar;
+    [SerializeField] Image AbilityBar;
 
     public bool endShield;
     public bool Activate;
@@ -33,7 +35,7 @@ public class Player_Ability : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        AbilityBar.fillAmount = rechargeBar / maxrechargeBar;
         ActivateShield();
         if (currentTarget == null)
         {
@@ -65,11 +67,13 @@ public class Player_Ability : MonoBehaviour
                 if (rechargeBar >= 0)
                 {
                     shieldObj.SetActive(true);
+                    
                 }
                 else
                 {
                     endShield = true;
                     shieldObj.SetActive(false);
+                    
                 }
             }
         }
@@ -85,7 +89,7 @@ public class Player_Ability : MonoBehaviour
         {
             rechargeBar = maxrechargeBar;
 
-            
+            AbilityBar.fillAmount = 0;
             timer += Time.deltaTime;
             if (timer >= Maxtimer)
             {

@@ -8,9 +8,11 @@ public class GameScore : MonoBehaviour
     public static GameScore instance;
     GameObject player;
     public int totalScore;
+
     [SerializeField] public int playerLevel = 0;
     [SerializeField] public int scoreToLevelUp;
     public int invisibleScore;
+
     private void Awake()
     {
         instance = this;
@@ -44,7 +46,7 @@ public class GameScore : MonoBehaviour
         }
         CanvasUI.instance.gearsText.text = totalScore.ToString();
     }
-
+  
     public void AddLevel()
     {
         playerLevel++;

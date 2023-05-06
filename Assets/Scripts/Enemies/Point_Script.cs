@@ -57,5 +57,6 @@ public class Point_Script : MonoBehaviour
             GameScore.instance.AddScore(1);
             Destroy(gameObject);
         }
+
     }
 }
