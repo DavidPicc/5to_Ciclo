@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerBullet_Script : MonoBehaviour
 {
     [SerializeField] float distanceToAutotrack;
+    [SerializeField] public float damage;
+    [SerializeField] public float dissapearAfterColliding;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Obstacle"))
@@ -13,15 +15,15 @@ public class PlayerBullet_Script : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log(("joadshnioasjkda"));
-            if(other.GetComponent<Enemy_Health>() != null)
+            if(other.GetComponentInParent<Enemy_Health>() != null)
             {
-                if (other.GetComponent<Enemy_Health>().canBeDamaged)
+                if (other.GetComponentInParent<Enemy_Health>().canBeDamaged)
                 {
-                    other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
 
+                    //other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
+                    other.GetComponentInParent<Enemy_Health>().TakeDamage(damage);
                 }
-                Destroy(gameObject);
+                Destroy(gameObject, dissapearAfterColliding);
             }
             
         }

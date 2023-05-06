@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Shoot : MonoBehaviour
+public class Player_Shoot2 : MonoBehaviour
 {
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -47,11 +47,11 @@ public class Player_Shoot : MonoBehaviour
 
     void Shoot_Normal()
     {
-        for(int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
+        for (int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
         {
-            var bullet = Instantiate(bulletPrefab, shootPoints[i].position, Quaternion.identity);
+            var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
-            Destroy(bullet, 2f);
+            Destroy(bullet, 8f);
         }
         shotBullet = true;
     }

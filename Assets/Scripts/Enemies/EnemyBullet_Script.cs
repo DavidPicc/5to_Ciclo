@@ -26,7 +26,7 @@ public class EnemyBullet_Script : MonoBehaviour
         if (other.CompareTag("Shield"))
         {
             Destroy(gameObject);
-            playerAbility.TakeDmg++;
+            playerAbility.takeDmg++;
         }
 
         

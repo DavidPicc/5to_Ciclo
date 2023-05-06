@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1811562, g: 0.22674379, b: 0.30732033, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2653,8 +2653,18 @@ PrefabInstance:
       objectReference: {fileID: 1975918226}
     - target: {fileID: 4417392101379186583, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: abilityBar
+      value: 
+      objectReference: {fileID: 1975918226}
+    - target: {fileID: 4417392101379186583, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: rechargeBar
-      value: 100
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417392101379186583, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxRechargeBar
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -2687,6 +2697,47 @@ PrefabInstance:
       propertyPath: shootPoints.Array.data[0]
       value: 
       objectReference: {fileID: 387115591}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: pivot
+      value: 
+      objectReference: {fileID: 1701449401}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxtimer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: AbilityBar
+      value: 
+      objectReference: {fileID: 1975918226}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: abilityBar
+      value: 
+      objectReference: {fileID: 1975918226}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: rechargeBar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
+        type: 3}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxRechargeBar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839818785944250779, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shieldDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Enabled
@@ -2752,6 +2803,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shootDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
+        type: 3}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shootPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shootPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 387115591}
     - target: {fileID: 9206331676554157252, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: healthFillBar
@@ -3255,24 +3342,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602054903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &623537921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6093436275180687703, guid: e9aa5d11abe99f24382d1683cf9d502a,
-    type: 3}
-  m_PrefabInstance: {fileID: 448131770}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &623537930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623537921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 435c9b6fc6674bc499bc8a5de6aa9c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &636387670
 GameObject:
   m_ObjectHideFlags: 0
@@ -10267,6 +10336,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693907023}
   m_CullTransparentMesh: 1
+--- !u!1 &1701449400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701449401}
+  m_Layer: 6
+  m_Name: Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701449401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701449400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531565660}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705180475
 GameObject:
   m_ObjectHideFlags: 0
@@ -12078,7 +12178,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: f5f7eed0442c99f449ee7936a83e216b,
       type: 3}
     dialogue:
-    - Use the WASD keys to MOVE.
+    - Use the directional keys to MOVE.
   - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
       type: 3}
     dialogue: []
@@ -12088,7 +12188,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: e8a94d9e9750d764785f1b739911c25d,
       type: 3}
     dialogue:
-    - Use the mouse left click to SHOOT!
+    - Use the Z button to SHOOT!
   - situationPrefab: {fileID: 4520026764095519211, guid: 291c332126c29a24bbde134f1f4cd7d3,
       type: 3}
     dialogue: []
@@ -12098,7 +12198,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 2275291b669e7c1448b8290c0d9175ac,
       type: 3}
     dialogue:
-    - Use the mouse left click to SHOOT!
+    - We'll go ahead! See you in a bit!
   - situationPrefab: {fileID: 4520026764095519211, guid: c2a5ec346cb15a34a8c7f47fc9ec54ae,
       type: 3}
     dialogue: []
@@ -12109,15 +12209,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 59233405d23d9b445b02740a54a20cf8,
-      type: 3}
-    dialogue: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
-      type: 3}
-    dialogue: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 13c67248f79d42048b6856fa5de31e85,
-      type: 3}
-    dialogue: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 66cf151e2b40a8e409563cc5fceacb04,
       type: 3}
     dialogue: []
   wave: 0

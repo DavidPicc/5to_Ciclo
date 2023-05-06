@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7456350539005260493}
   - component: {fileID: 3921472227587025292}
-  - component: {fileID: 7212247350006759317}
+  - component: {fileID: 2886324841749402952}
   - component: {fileID: 7623915793563678680}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet_Shield
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1300772526029512616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1047138983487967157}
@@ -51,8 +51,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!136 &7212247350006759317
-CapsuleCollider:
+--- !u!135 &2886324841749402952
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -61,10 +61,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.02
-  m_Height: 0.25
-  m_Direction: 0
-  m_Center: {x: 0.03, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7623915793563678680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToAutotrack: 0
-  damage: 3
+  damage: 5
 --- !u!1 &5925132106182276262
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,8 +104,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925132106182276262}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -1.24, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7456350539005260493}
@@ -119,7 +118,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925132106182276262}
-  m_Mesh: {fileID: -7204647971529134275, guid: 4e761c1ee7b186949bc68db382ad6e8c, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &343413663666800620
 MeshRenderer:
   m_ObjectHideFlags: 0

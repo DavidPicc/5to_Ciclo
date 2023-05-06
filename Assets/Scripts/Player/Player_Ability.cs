@@ -7,17 +7,17 @@ public class Player_Ability : MonoBehaviour
 {
     [SerializeField] GameObject shieldObj;
     [SerializeField] float rechargeBar;
-    [SerializeField] float maxrechargeBar;
-    [SerializeField] Image AbilityBar;
+    [SerializeField] float maxRechargeBar;
+    [SerializeField] Image abilityBar;
 
     public bool endShield;
-    public bool Activate;
+    public bool activate;
     public float timer;
-    public float Maxtimer;
+    public float maxtimer;
     private int cant=10;
 
     public float tk;
-    public float TakeDmg;
+    public float takeDmg;
 
 
     public float range = 10f;
@@ -30,12 +30,13 @@ public class Player_Ability : MonoBehaviour
 
     void Start()
     {
-        rechargeBar = maxrechargeBar;
+        rechargeBar = maxRechargeBar;
+        abilityBar.fillAmount = rechargeBar / maxRechargeBar;
     }
 
     private void FixedUpdate()
     {
-        AbilityBar.fillAmount = rechargeBar / maxrechargeBar;
+        abilityBar.fillAmount = rechargeBar / maxRechargeBar;
         ActivateShield();
         if (currentTarget == null)
         {
@@ -44,23 +45,23 @@ public class Player_Ability : MonoBehaviour
     }
     public  void ActivateShield()
     {
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.X))
         {
-            Activate = true;
+            activate = true;
 
-            tk = TakeDmg;
+            tk = takeDmg;
         }
         else
         {
-            Activate = false;
-            TakeDmg = 0;
-            intancia();
+            activate = false;
+            takeDmg = 0;
+            Instantia();
 
         }
 
-        if (Activate)
+        if (activate)
         {
-            rechargeBar--;
+            rechargeBar -= Time.deltaTime;
 
             if (!endShield)
             {
@@ -81,17 +82,19 @@ public class Player_Ability : MonoBehaviour
         {
             
             shieldObj.SetActive(false);
-            
+            rechargeBar += Time.deltaTime;
+            abilityBar.fillAmount = rechargeBar / maxRechargeBar;
+
         }
 
 
         if (endShield)
         {
-            rechargeBar = maxrechargeBar;
+            //rechargeBar = maxRechargeBar;
 
-            AbilityBar.fillAmount = 0;
+            //abilityBar.fillAmount = 0;
             timer += Time.deltaTime;
-            if (timer >= Maxtimer)
+            if (timer >= maxtimer)
             {
                 endShield = false;
                 timer = 0;
@@ -103,7 +106,7 @@ public class Player_Ability : MonoBehaviour
     }
 
 
-    void intancia()
+    void Instantia()
     {
          InvokeRepeating("Shoot", 0.0f, cant);
     }
@@ -185,7 +188,7 @@ public class Player_Ability : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            maxrechargeBar += 100;
+            maxRechargeBar += 100;
         }
        
     }

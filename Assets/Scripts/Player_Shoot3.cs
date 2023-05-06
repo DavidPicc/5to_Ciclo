@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Shoot2 : MonoBehaviour
+public class Player_Shoot3 : MonoBehaviour
 {
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
+    [SerializeField] public float maxAngle;
     float timer;
-    bool canShoot => Input.GetMouseButton(0) && !shotBullet && !GameManager.instance.isPaused;
+    bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused;
     bool shotBullet = false;
     void Start()
     {
@@ -23,7 +24,8 @@ public class Player_Shoot2 : MonoBehaviour
         CheckIfShot();
         if (canShoot)
         {
-            Shoot_Normal();
+            Shoot_Angle();
+            //Shoot_Normal();
         }
     }
 
@@ -52,6 +54,20 @@ public class Player_Shoot2 : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, 8f);
+        }
+        shotBullet = true;
+    }
+
+    void Shoot_Angle()
+    {
+        float angle = 0;
+        angle = Random.Range(-maxAngle, maxAngle);
+        for (int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
+        {
+            Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
+            var bullet = Instantiate(bulletPrefab, shootPoints[0].position, shootPoints[0].rotation * offsetVector);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+            Destroy(bullet, 0.7f);
         }
         shotBullet = true;
     }

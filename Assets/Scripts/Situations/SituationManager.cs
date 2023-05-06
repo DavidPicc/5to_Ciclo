@@ -25,6 +25,7 @@ public class SituationManager : MonoBehaviour
         _camera = FindObjectOfType<StageMovement>().transform;
         //timer = timeToSpawn;
         spawnPosition = _camera.position + new Vector3(0, 0, 0);
+        index = wave;
 
         SpawnSituation();
     }
