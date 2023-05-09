@@ -16,6 +16,9 @@ public class SituationManager : MonoBehaviour
     float timer;
     public Vector3 spawnPosition;
 
+    public int bossWave;
+    public GameObject boss;
+
     void Awake()
     {
         instance = this;
@@ -36,7 +39,10 @@ public class SituationManager : MonoBehaviour
         //{
         //    SpawnSituation();
         //}
-
+        if(wave == bossWave)
+        {
+            boss.SetActive(true);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -82,10 +88,12 @@ public class SituationManager : MonoBehaviour
         if (situations[index].dialogue.Length > 0)
         {
             CanvasUI.instance.dialogueObject.SetActive(true);
-            //CanvasUI.instance.dialogueText.text = situations[index].dialogue[dialogueIndex];
             TextAppear();
         }
-        //lastSituationX = sit.gameObject.transform.position.x;
+        if (situations[index].isShop)
+        {
+            GameManager.instance.OpenShop();
+        }
         spawnPosition += new Vector3(situationOffset, 0, 0);
         timer = timeToSpawn;
         wave++;
@@ -93,9 +101,5 @@ public class SituationManager : MonoBehaviour
         {
             index++;
         }
-        //else
-        //{
-        //    index = 0;
-        //}
     }
 }

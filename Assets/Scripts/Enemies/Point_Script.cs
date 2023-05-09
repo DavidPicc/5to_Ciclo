@@ -54,7 +54,7 @@ public class Point_Script : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            GameScore.instance.AddScore(1);
+            GameScore.instance.AddGears(1);
             Destroy(gameObject);
         }
 

@@ -9,7 +9,7 @@ public class Player_Health : MonoBehaviour
     [SerializeField] public float currentHealth;
     [SerializeField] public float invulnerabilityTime;
     float timer;
-    bool canBeDamaged => timer >= invulnerabilityTime;
+    bool canBeDamaged = true;
 
     [SerializeField] Image healthFillBar;
 
@@ -23,6 +23,7 @@ public class Player_Health : MonoBehaviour
     {
         if (timer <= 0)
         {
+            canBeDamaged = true;
             timer = invulnerabilityTime;
         }
 
@@ -34,22 +35,37 @@ public class Player_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-       
-        FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage/2), 0.1f);
-
-        currentHealth -= damage;
-        UpdateHealthBar();
-        if (currentHealth <= 0)
+        if(canBeDamaged)
         {
-            Death();
+            FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage / 2), 0.1f);
+
+            currentHealth -= damage;
+            UpdateHealthBar();
+            if (currentHealth <= 0)
+            {
+                Death();
+            }
+            Debug.Log("Player has been damaged!!!!");
+            canBeDamaged = false;
         }
-        Debug.Log("Player has been damaged!!!!");
     }
     public void Death()
     {
         //Destroy(gameObject, 0.2f);
         //Destroy(this);
-        Invoke("SetPlayerDeath", 0.3f);
+
+        // TUTORIAL
+        if(FindObjectOfType<BossT_Shoot>() != null && SituationManager.instance.wave >= SituationManager.instance.bossWave+3)
+        {
+            gameObject.SetActive(false);
+            TutorialManager.instance.bossDeathTutorial.SetActive(true);
+            Debug.Log("NIVEL 1 DESBLOQUEADO");
+        }
+        else
+        {
+            Invoke("SetPlayerDeath", 0.3f);
+        }
+
     }
 
     public void SetPlayerDeath()
@@ -67,11 +83,7 @@ public class Player_Health : MonoBehaviour
     {
         if (other.CompareTag("weigh"))
         {
-            if (canBeDamaged)
-            {
-               TakeDamage(1);
-              
-            }
+            TakeDamage(1);
         }
 
 

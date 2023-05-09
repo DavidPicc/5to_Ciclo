@@ -46,21 +46,16 @@ public class FriendScript : MonoBehaviour
         {
             if(allyLocked)
             {
-                // calculate the direction and distance to the target
                 Vector3 dir = allyPos.position - transform.position;
                 float dist = dir.magnitude;
 
-                // calculate the current speed based on distance
                 float speed = Mathf.Lerp(minSpeed, maxSpeed, dist / distance);
 
-                // normalize the direction and scale it by the current speed
                 dir.Normalize();
                 Vector3 moveVector = dir * speed;
 
-                // move towards the target
                 rb.velocity = moveVector;
             }
-            
         }
     }
 }

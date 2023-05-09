@@ -18,6 +18,8 @@ public class Enemy_Health : MonoBehaviour
 
     bool spawnedPoints = false;
 
+    [SerializeField] bool obstacle = false;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -84,7 +86,12 @@ public class Enemy_Health : MonoBehaviour
         //}
         if (other.CompareTag("Obstacle") || other.CompareTag("weigh"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            if(!obstacle)
+            {
+                TakeDamage(100);
+            }
+
         }
 
         if (other.CompareTag("Explosion"))

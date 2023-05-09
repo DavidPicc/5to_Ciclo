@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject pauseMenu;
     public GameObject deathMenu;
+    public GameObject shopMenu;
     public bool isPaused = false;
 
     void Awake()
@@ -63,5 +64,17 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenShop()
+    {
+        Time.timeScale = 0f;
+        shopMenu.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        Time.timeScale = 1f;
+        shopMenu.SetActive(false);
     }
 }

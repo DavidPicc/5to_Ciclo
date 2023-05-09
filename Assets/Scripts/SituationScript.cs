@@ -7,4 +7,5 @@ public class SituationScript
 {
     public GameObject situationPrefab;
     public string[] dialogue;
+    public bool isShop;
 }

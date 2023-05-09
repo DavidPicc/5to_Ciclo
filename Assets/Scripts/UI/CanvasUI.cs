@@ -16,6 +16,7 @@ public class CanvasUI : MonoBehaviour
     [SerializeField] public Image dialoguePortrait;
     [SerializeField] public TextMeshProUGUI dialogueName;
     [SerializeField] public TextMeshProUGUI dialogueText;
+    [SerializeField] public GameObject shopObject;
 
     private void Awake()
     {

@@ -7,66 +7,56 @@ public class GameScore : MonoBehaviour
 {
     public static GameScore instance;
     GameObject player;
-    public int totalScore;
+    public int gearScore, coreScore;
 
     [SerializeField] public int playerLevel = 0;
     [SerializeField] public int scoreToLevelUp;
-    public int invisibleScore;
+    //public int invisibleScore;
 
     private void Awake()
     {
         instance = this;
+
+        AddGears(200);
+        AddCores(0);
     }
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        AddLevel();
+        //AddLevel();
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            AddLevel();
-        }
-
         //if(scoreToNextLevel >= scoreToLevelUp)
         //{
         //    AddLevel();
         //}
     }
 
-    public void AddScore(int amount)
+    public void AddGears(int amount)
     {
-        totalScore = totalScore + amount;
-        invisibleScore = invisibleScore + amount;
-        if (invisibleScore >= scoreToLevelUp)
-        {
-            AddLevel();
-        }
-        CanvasUI.instance.gearsText.text = totalScore.ToString();
+        gearScore = gearScore + amount;
+        //invisibleScore = invisibleScore + amount;
+        CanvasUI.instance.gearsText.text = gearScore.ToString();
     }
-  
-    public void AddLevel()
-    {
-        playerLevel++;
-        CanvasUI.instance.playerLevelText.text = "Player level: " + playerLevel.ToString();
-        invisibleScore = 0;
-        scoreToLevelUp += 30; // Para el siguiente nivel tienes que hacer 30 puntos más que en el anterior.
-        if(playerLevel == 1)
-        {
-            player.GetComponent<Player_Manager>().maxCannons = 1;
 
-        }
-        else if(playerLevel == 2)
-        {
-            player.GetComponent<Player_Manager>().maxCannons = 3;
-            player.GetComponent<Player_Shoot>().fireRate += 0.1f;
-        }
-        else if (playerLevel == 3)
-        {
-            player.GetComponent<Player_Manager>().maxCannons = 5;
-            player.GetComponent<Player_Shoot>().fireRate += 0.05f;
-        }
+    public void RemoveGears(int amount)
+    {
+        gearScore = gearScore - amount;
+        CanvasUI.instance.gearsText.text = gearScore.ToString();
     }
+
+    public void AddCores(int amount)
+    {
+        coreScore = coreScore + amount;
+        CanvasUI.instance.coresText.text = coreScore.ToString();
+    }
+
+    //public void AddLevel()
+    //{
+    //    playerLevel++;
+    //    CanvasUI.instance.playerLevelText.text = "Player level: " + playerLevel.ToString();
+    //    scoreToLevelUp += 30; // Para el siguiente nivel tienes que hacer 30 puntos más que en el anterior.
+    //}
 }

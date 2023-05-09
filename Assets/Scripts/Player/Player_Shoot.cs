@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Shoot : MonoBehaviour
 {
+    [HideInInspector] public int gunLevel = 0;
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
@@ -54,5 +55,24 @@ public class Player_Shoot : MonoBehaviour
             Destroy(bullet, 2f);
         }
         shotBullet = true;
+    }
+
+    public void Upgrades()
+    {
+        switch(gunLevel)
+        {
+            case 0:
+                fireRate = 0.15f;
+                break;
+            case 1:
+                fireRate = 0.08f;
+                break;
+            case 2:
+                fireRate = 0.05f;
+                break;
+            case 3:
+                fireRate = 0.03f;
+                break;
+        }
     }
 }
