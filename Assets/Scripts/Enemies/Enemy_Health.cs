@@ -14,12 +14,9 @@ public class Enemy_Health : MonoBehaviour
     float timer;
 
     [SerializeField] GameObject pointsPrefab;
-    [SerializeField] GameObject coresPrefab;
     [SerializeField] int enemyValueInPoints;
-    [SerializeField] int enemyValueInCores;
 
     bool spawnedPoints = false;
-    bool spawnedCores = false;
 
     void Start()
     {
@@ -61,8 +58,6 @@ public class Enemy_Health : MonoBehaviour
         Destroy(gameObject, 0.2f);
         if(!spawnedPoints)
             SpawnPoints();
-        if (!spawnedCores)
-            SpawnCores();
     }
 
     void SpawnPoints()
@@ -76,15 +71,6 @@ public class Enemy_Health : MonoBehaviour
        
     }
 
-    void SpawnCores()
-    {
-        spawnedCores = true;
-
-        for (int i = 0; i < enemyValueInCores; i++)
-        {
-            var cores = Instantiate(coresPrefab, transform.position, Quaternion.identity);
-        }
-    }
     private void OnTriggerEnter(Collider other)
     {
         //if (other.CompareTag("PlayerBullet"))

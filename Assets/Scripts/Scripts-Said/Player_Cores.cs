@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Cores : MonoBehaviour
+public class Player_Cores : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     private int score;
@@ -17,7 +17,7 @@ public class Cores : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Cores"))
-        {   
+        {
             Destroy(other.gameObject);
             score++;
             UpdateScoreText();
