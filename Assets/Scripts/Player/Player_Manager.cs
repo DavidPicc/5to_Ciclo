@@ -13,7 +13,18 @@ public class Player_Manager : MonoBehaviour
 
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            CreateEnemy[] enemyObjects = GameObject.FindObjectsOfType<CreateEnemy>();
+            foreach (CreateEnemy obj in enemyObjects)
+            {
+                if (obj.GetComponent<CreateEnemy>() != null)
+                {
+                    // call the specified function in the class
+                    obj.GetComponent<CreateEnemy>().gotToGo = true;
+                }
+            }
+        }
     }
 
     public void CheckLevel()
@@ -37,6 +48,15 @@ public class Player_Manager : MonoBehaviour
         if(other.CompareTag("NextSituation"))
         {
             SituationManager.instance.SpawnSituation();
+            CreateEnemy[] enemyObjects = GameObject.FindObjectsOfType<CreateEnemy>();
+            foreach (CreateEnemy obj in enemyObjects)
+            {
+                if (obj.GetComponent<CreateEnemy>() != null)
+                {
+                    // call the specified function in the class
+                    obj.GetComponent<CreateEnemy>().gotToGo = true;
+                }
+            }
             Destroy(other.gameObject);
         }
     }

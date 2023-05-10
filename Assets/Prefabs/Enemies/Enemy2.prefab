@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 823059254895797917}
   - component: {fileID: 823059254895797916}
   - component: {fileID: 8255692731863192835}
+  - component: {fileID: 9003849983948745529}
+  - component: {fileID: 2917267043045400783}
   - component: {fileID: -1445078093506867928}
+  - component: {fileID: 9055630759235677620}
   m_Layer: 8
   m_Name: Enemy2
   m_TagString: Enemy
@@ -59,7 +62,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823059254895797919}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b1439c0b7834f43bc2a1f398d1d355, type: 3}
   m_Name: 
@@ -69,9 +72,51 @@ MonoBehaviour:
   rb: {fileID: 0}
   enemyMovement: {fileID: 11400000, guid: 9def3958b910114449eb92efa1673090, type: 2}
   positionPack: {fileID: 0}
+  gotToGo: 0
   typeToShoot: {fileID: 11400000, guid: aaa456aa360623a4d876c156b8d87b92, type: 2}
   pointShoot: {fileID: 823059256379260603}
   distanceToShoot: 12
+--- !u!114 &9003849983948745529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823059254895797919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3939bd1b858e7f4e96443a0b270927e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
+  player: {fileID: 0}
+  rb: {fileID: 0}
+  speed: 1.2
+  xLock: 9
+--- !u!114 &2917267043045400783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823059254895797919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c463e07fe61b3a442bb6ed8143b43abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944,
+    type: 3}
+  damage: 1
+  bulletSpeed: 5
+  fireRate: 2.5
+  bulletNumber: 1
+  bulletDisappear: 10
+  bulletOffset: 0
+  anticipation: 0.25
+  pointShoot: {fileID: 823059256379260603}
+  distanceToShoot: 10
+  antiSphere: {fileID: 4653625559226697551}
 --- !u!114 &-1445078093506867928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,9 +134,21 @@ MonoBehaviour:
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
-  coresPrefab: {fileID: 0}
   enemyValueInPoints: 10
-  enemyValueInCores: 0
+  obstacle: 0
+--- !u!65 &9055630759235677620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823059254895797919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.0110636, z: 3.2069101}
+  m_Center: {x: -0, y: 0, z: -0}
 --- !u!1 &823059255874248468
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,19 +415,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 823059255785188418}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &425313637407390142
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553223508979699987}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 2.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &823059255785188420
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -385,20 +429,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -9032557090061056480, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1, type: 3}
---- !u!136 &3805865093131636348
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553223508979699987}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.27
-  m_Height: 1.51
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &929607897863752617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,

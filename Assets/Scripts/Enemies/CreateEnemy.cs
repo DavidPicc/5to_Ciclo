@@ -14,6 +14,7 @@ public class CreateEnemy : MonoBehaviour
     Transform[] positions;
     int positionIndex = 0;
     bool locked = false;
+    [HideInInspector] public bool gotToGo = false;
 
     [Header("Shooting")]
     public EnemyBullet typeToShoot;
@@ -36,10 +37,7 @@ public class CreateEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         antiSphere = GetComponentInChildren<SphereCollider>().gameObject;
         antiSphere.SetActive(false);
-        if (positionPack != null)
-        {
-            positions = positionPack.GetComponentsInChildren<Transform>();
-        }
+
         if (typeToShoot)
         {
             prefab = typeToShoot.bulletPrefab;
@@ -59,6 +57,21 @@ public class CreateEnemy : MonoBehaviour
         {
             Shoot();
         }
+
+        if(gotToGo)
+        {
+            TimeToGo();
+        }
+    }
+
+    public void TimeToGo()
+    {
+        if(locked)
+        {
+            rb.velocity = Vector3.zero;
+            locked = false;
+        }
+        rb.AddForce(transform.right * 5f, ForceMode.Acceleration);
     }
 
     void Movement()
@@ -128,8 +141,7 @@ public class CreateEnemy : MonoBehaviour
 
     void MoveToPlayer()
     {
-
-        Vector2 direction = (player.transform.position - transform.position).normalized;
+        Vector3 direction = (player.transform.position - transform.position).normalized;
         rb.velocity = direction * enemyMovement.velocity;
     }
 

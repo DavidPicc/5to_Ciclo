@@ -123,7 +123,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730544752869789959}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -139,7 +139,10 @@ GameObject:
   - component: {fileID: 3342192591010956721}
   - component: {fileID: 3019960710852617529}
   - component: {fileID: 4473040864796639113}
+  - component: {fileID: 2306539701729206812}
+  - component: {fileID: 6358926905762887219}
   - component: {fileID: 2357079030098041128}
+  - component: {fileID: 5517978649688884003}
   m_Layer: 8
   m_Name: Enemy5
   m_TagString: Enemy
@@ -187,7 +190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6357955088167139633}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b1439c0b7834f43bc2a1f398d1d355, type: 3}
   m_Name: 
@@ -197,9 +200,51 @@ MonoBehaviour:
   rb: {fileID: 0}
   enemyMovement: {fileID: 11400000, guid: 9def3958b910114449eb92efa1673090, type: 2}
   positionPack: {fileID: 0}
+  gotToGo: 0
   typeToShoot: {fileID: 11400000, guid: 05052c8476f24564bb770cb9201eb173, type: 2}
   pointShoot: {fileID: 4924584803395569830}
   distanceToShoot: 12
+--- !u!114 &2306539701729206812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357955088167139633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3939bd1b858e7f4e96443a0b270927e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
+  player: {fileID: 0}
+  rb: {fileID: 0}
+  speed: 5
+  xLock: 8
+--- !u!114 &6358926905762887219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357955088167139633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e039861eae83dc4b8766e532e2c8ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944,
+    type: 3}
+  damage: 1
+  bulletSpeed: 5
+  fireRate: 0.05
+  bulletNumber: 5
+  bulletDisappear: 0.8
+  bulletAng: 20
+  anticipation: 0.2
+  pointShoot: {fileID: 4924584803395569830}
+  distanceToShoot: 8
+  antiSphere: {fileID: 1730544752869789959}
 --- !u!114 &2357079030098041128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +263,20 @@ MonoBehaviour:
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
   enemyValueInPoints: 25
+  obstacle: 0
+--- !u!65 &5517978649688884003
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357955088167139633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.0110636, z: 3.2069101}
+  m_Center: {x: -0, y: 0, z: -0}
 --- !u!1 &8065179853421830430
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,33 +415,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7946603938511039876}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &5042024303227536264
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7100325018569445589}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.27
-  m_Height: 1.51
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &5171040034334584112
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7100325018569445589}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 2.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &8323262826819615935
 MeshCollider:
   m_ObjectHideFlags: 0

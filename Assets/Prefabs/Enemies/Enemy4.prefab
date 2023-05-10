@@ -43,7 +43,9 @@ GameObject:
   - component: {fileID: 8098880415147464378}
   - component: {fileID: 4650324917289444815}
   - component: {fileID: 7607855897119378799}
+  - component: {fileID: 5070404262845726613}
   - component: {fileID: 1746475625234883629}
+  - component: {fileID: 877809034084349314}
   m_Layer: 8
   m_Name: Enemy4
   m_TagString: Enemy
@@ -91,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3549922622884585454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b1439c0b7834f43bc2a1f398d1d355, type: 3}
   m_Name: 
@@ -101,9 +103,27 @@ MonoBehaviour:
   rb: {fileID: 0}
   enemyMovement: {fileID: 11400000, guid: 38c79122b31f56e479e27569594e57ef, type: 2}
   positionPack: {fileID: 0}
+  gotToGo: 0
   typeToShoot: {fileID: 0}
   pointShoot: {fileID: 6707486525226790454}
   distanceToShoot: 12
+--- !u!114 &5070404262845726613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549922622884585454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd57180cdee0c6643a3cb11221f436b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
+  player: {fileID: 0}
+  rb: {fileID: 0}
+  speed: 5
+  rotationSpeed: 1.2
 --- !u!114 &1746475625234883629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,9 +141,21 @@ MonoBehaviour:
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
-  coresPrefab: {fileID: 0}
   enemyValueInPoints: 20
-  enemyValueInCores: 0
+  obstacle: 0
+--- !u!65 &877809034084349314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549922622884585454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.0110636, z: 3.2069101}
+  m_Center: {x: -0, y: 0, z: -0}
 --- !u!1 &6636933357845796499
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,33 +396,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7441170931315943852}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3861141678893961284
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747651891126965501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 2.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &5765834887698274970
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747651891126965501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.27
-  m_Height: 1.51
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &6328411671488456002
 MeshCollider:
   m_ObjectHideFlags: 0
