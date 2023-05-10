@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 445335173282424116}
   m_Layer: 0
   m_Name: Boss_Tutorial
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,12 +80,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690f4300f0fd525478adb2f9a03e996f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 9999999
   currentHealth: 0
-  invulnerabilityTime: 0
-  pointsPrefab: {fileID: 0}
-  enemyValueInPoints: 0
+  invulnerabilityTime: 1000
+  pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
+    type: 3}
+  enemyValueInPoints: 10000
   obstacle: 0
+  invulnerable: 1
 --- !u!114 &5208833675417366057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,13 +103,13 @@ MonoBehaviour:
   _camera: {fileID: 0}
   player: {fileID: 0}
   rb: {fileID: 0}
-  pointShoot: {fileID: 0}
-  bulletNumber: 0
-  bulletOffset: 0
-  bulletSpeed: 0
-  shootTimer: 0
-  distanceToShoot: 0
-  prefab: {fileID: 0}
+  pointShoot: {fileID: 2610691428748536209}
+  bulletNumber: 15
+  bulletOffset: 50
+  bulletSpeed: 4
+  shootTimer: 3
+  distanceToShoot: 10
+  prefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944, type: 3}
 --- !u!114 &7301318070509212514
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,18 +24,14 @@ public class PlayerBullet2 : MonoBehaviour
             {
                 collider.GetComponentInParent<Enemy_Health>().TakeDamage(10);
             }
-
-            Debug.Log(collider.name + " has been damaged!");
         }
-        Debug.Log(transform.position);
         Destroy(gameObject, 0.1f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle") || other.CompareTag("EnemyBullet"))
         {
-            Debug.Log("ENENENENENE");
             Explosion();
         }
     }

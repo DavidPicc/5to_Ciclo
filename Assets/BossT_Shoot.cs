@@ -19,7 +19,7 @@ public class BossT_Shoot : MonoBehaviour
     public float distanceToShoot;
     public GameObject prefab;
     //bool canShoot => !shotBullet && Mathf.Abs(transform.localPosition.x) <= distanceToShoot;
-    bool canShoot => !shotBullet && Vector3.Distance(_camera.position, transform.position) <= distanceToShoot;
+    bool canShoot => !shotBullet;
     GameObject antiSphere;
     void Start()
     {
@@ -50,6 +50,7 @@ public class BossT_Shoot : MonoBehaviour
             {
                 if(SituationManager.instance.wave >= SituationManager.instance.bossWave+3)
                 {
+                    Debug.Log("DISPARAAA");
                     CheckIfShot();
                     //Anticipation();
                 }

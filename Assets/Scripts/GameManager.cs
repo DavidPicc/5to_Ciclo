@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         ResumeGame();
         deathMenu.SetActive(false);
+        shopMenu.SetActive(false);
     }
 
     void Update()
@@ -59,6 +60,12 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ReloadScene()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
     }
 
     public void QuitGame()

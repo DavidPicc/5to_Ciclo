@@ -15,13 +15,14 @@ public class Player_Manager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.K))
         {
-            CreateEnemy[] enemyObjects = GameObject.FindObjectsOfType<CreateEnemy>();
-            foreach (CreateEnemy obj in enemyObjects)
+            Enemy2_Movement[] staticEnemies = GameObject.FindObjectsOfType<Enemy2_Movement>();
+            foreach (Enemy2_Movement obj in staticEnemies)
             {
-                if (obj.GetComponent<CreateEnemy>() != null)
+                if (obj.GetComponent<Enemy2_Movement>() != null)
                 {
                     // call the specified function in the class
-                    obj.GetComponent<CreateEnemy>().gotToGo = true;
+                    obj.GetComponent<Enemy2_Movement>().timeToGo = true;
+                    obj.GetComponent<Enemy2_Movement>().locked = false;
                 }
             }
         }
@@ -43,20 +44,28 @@ public class Player_Manager : MonoBehaviour
         }
     }
 
+    void InvokeSituation()
+    {
+        SituationManager.instance.SpawnSituation();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("NextSituation"))
         {
-            SituationManager.instance.SpawnSituation();
-            CreateEnemy[] enemyObjects = GameObject.FindObjectsOfType<CreateEnemy>();
-            foreach (CreateEnemy obj in enemyObjects)
+            Enemy2_Movement[] staticEnemies = GameObject.FindObjectsOfType<Enemy2_Movement>();
+            foreach (Enemy2_Movement obj in staticEnemies)
             {
-                if (obj.GetComponent<CreateEnemy>() != null)
+                if (obj.GetComponent<Enemy2_Movement>() != null)
                 {
                     // call the specified function in the class
-                    obj.GetComponent<CreateEnemy>().gotToGo = true;
+                    obj.GetComponent<Enemy2_Movement>().timeToGo = true;
+                    obj.GetComponent<Enemy2_Movement>().locked = false;
                 }
             }
+
+            //SituationManager.instance.SpawnSituation();
+            Invoke("InvokeSituation", 0.2f);
             Destroy(other.gameObject);
         }
     }

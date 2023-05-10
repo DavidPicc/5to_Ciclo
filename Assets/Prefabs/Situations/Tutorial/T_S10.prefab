@@ -266,11 +266,9 @@ MonoBehaviour:
   invulnerabilityTime: 0
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
-  coresPrefab: {fileID: 234343255855426183, guid: 0816cc9bbf332a943ae2f3efc81c876a,
-    type: 3}
   enemyValueInPoints: 25
-  enemyValueInCores: 1
   obstacle: 0
+  invulnerable: 0
 --- !u!114 &8585273330568076013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,11 +400,9 @@ MonoBehaviour:
   invulnerabilityTime: 0
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
-  coresPrefab: {fileID: 234343255855426183, guid: 0816cc9bbf332a943ae2f3efc81c876a,
-    type: 3}
   enemyValueInPoints: 25
-  enemyValueInCores: 0
   obstacle: 0
+  invulnerable: 0
 --- !u!1001 &7643708410536426275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,6 +410,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8691393238860293462}
     m_Modifications:
+    - target: {fileID: -8541697086108414824, guid: 2d8692a3bf489024785e152d8d195988,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.04
+      objectReference: {fileID: 0}
     - target: {fileID: -6445208341637299704, guid: 2d8692a3bf489024785e152d8d195988,
         type: 3}
       propertyPath: obstacle
@@ -427,7 +428,7 @@ PrefabInstance:
     - target: {fileID: 1605535042003311611, guid: 2d8692a3bf489024785e152d8d195988,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.43356
+      value: 4.5021415
       objectReference: {fileID: 0}
     - target: {fileID: 1605535042003311611, guid: 2d8692a3bf489024785e152d8d195988,
         type: 3}
@@ -516,6 +517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1605535042003311611, guid: 672c2610198feee42bd5309e7c6de9c0,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605535042003311611, guid: 672c2610198feee42bd5309e7c6de9c0,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.110001
       objectReference: {fileID: 0}
@@ -593,6 +599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 4.4568
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605535042003311611, guid: 672c2610198feee42bd5309e7c6de9c0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1605535042003311611, guid: 672c2610198feee42bd5309e7c6de9c0,
         type: 3}

@@ -13,6 +13,9 @@ public class Player_Health : MonoBehaviour
 
     [SerializeField] Image healthFillBar;
 
+    [Header("Crushed")]
+    public int crushed = 0;
+
     void Start()
     {
         timer = invulnerabilityTime;

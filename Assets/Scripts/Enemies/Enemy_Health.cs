@@ -19,6 +19,7 @@ public class Enemy_Health : MonoBehaviour
     bool spawnedPoints = false;
 
     [SerializeField] bool obstacle = false;
+    [SerializeField] public bool invulnerable = false;
 
     void Start()
     {
@@ -56,6 +57,11 @@ public class Enemy_Health : MonoBehaviour
 
     public void Death()
     {
+        Debug.Log("MURIO " + name);
+        if(GetComponent<Enemy4_ShootExplode>() != null)
+        {
+            GetComponent<Enemy4_ShootExplode>().ShootAngular();
+        }
         Destroy(this);
         Destroy(gameObject, 0.2f);
         if(!spawnedPoints)
@@ -75,32 +81,32 @@ public class Enemy_Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("PlayerBullet"))
-        //{
-        //    if (canBeDamaged)
-        //    {
-        //        TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
-
-        //    }
-        //    Destroy(other.gameObject, 1f);
-        //}
-        if (other.CompareTag("Obstacle") || other.CompareTag("weigh"))
+        if(!invulnerable)
         {
-            //Destroy(gameObject);
-            if(!obstacle)
-            {
-                TakeDamage(100);
-            }
+            //if (other.CompareTag("PlayerBullet"))
+            //{
+            //    if (canBeDamaged)
+            //    {
+            //        TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
 
-        }
-
-        if (other.CompareTag("Explosion"))
-        {
-            if (canBeDamaged)
+            //    }
+            //    Destroy(other.gameObject, 1f);
+            //}
+            if (other.CompareTag("Obstacle") || other.CompareTag("weigh"))
             {
-                TakeDamage(100);
+                //Destroy(gameObject);
+                if (!obstacle)
+                {
+                    TakeDamage(100);
+                }
             }
-           
+            if (other.CompareTag("Explosion"))
+            {
+                if (canBeDamaged)
+                {
+                    TakeDamage(100);
+                }
+            }
         }
     }
 }

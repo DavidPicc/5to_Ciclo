@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Enemy8_Bullet : MonoBehaviour
 {
-    public float explosionRadius = 3f; // The radius of the explosion
-    public float explosionForce = 100f; // The force of the explosion
-    public float explosionDamage = 10f; // The damage of the explosion
-    public float explosionDelay = 2f; // The delay before the bullet explodes
+    public float explosionRadius; // The radius of the explosion
+    public float explosionDamage; // The damage of the explosion
+    public float explosionDelay; // The delay before the bullet explodes
     public float bulletMaxHealth;
     float health;
     [SerializeField] public float invulnerabilityTime;
     float timer;
-    bool canBeDamaged => timer >= invulnerabilityTime;
+    public bool canBeDamaged => timer >= invulnerabilityTime;
+    public GameObject explosionRadVisual;
 
     void Start()
     {
+        explosionRadVisual.SetActive(false);
         // Start the explosion delay coroutine
         StartCoroutine(ExplosionDelay());
 
@@ -26,7 +27,7 @@ public class Enemy8_Bullet : MonoBehaviour
 
     void Update()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, Vector3.zero, 35 * Time.deltaTime);
+        //GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, Vector3.zero, 35 * Time.deltaTime);
     }
 
     private IEnumerator ExplosionDelay()
@@ -40,6 +41,7 @@ public class Enemy8_Bullet : MonoBehaviour
     public void Explosion()
     {
         Debug.DrawRay(transform.position, Vector3.up, Color.red, explosionRadius);
+        explosionRadVisual.SetActive(true);
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {
@@ -54,8 +56,7 @@ public class Enemy8_Bullet : MonoBehaviour
 
             Debug.Log(collider.name + " has been damaged!");
         }
-        Debug.Log(transform.position);
-        Destroy(gameObject);
+        Destroy(gameObject, 0.1f);
     }
 
     public void TakeDamage(float damage)
@@ -72,19 +73,9 @@ public class Enemy8_Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("PlayerBullet"))
+        if(other.CompareTag("Player") || other.CompareTag("Obstacle"))
         {
-            if(canBeDamaged)
-            {
-                TakeDamage(1);
-            }
-
+            Explosion();
         }
     }
-
-    //private void OnDestroy()
-    //{
-    //    // If the bullet is destroyed before the explosion, cancel the explosion delay coroutine
-    //    StopCoroutine(ExplosionDelay());
-    //}
 }

@@ -2,81 +2,102 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot_Angular : MonoBehaviour
+public class Enemy4_ShootExplode : MonoBehaviour
 {
     Transform _camera;
+    Transform player;
 
     [Header("General")]
     public GameObject bulletPrefab;
     public float damage;
     public float bulletSpeed;
-    public float fireRate;
     public float bulletNumber;
     public float bulletDisappear;
     public float bulletAng;
     public float anticipation;
-    [Header("Shooting")]
+    [Header("Exploding")]
     public Transform pointShoot;
-    private float shootTimer;
+    private float explodeTimer;
     private bool shotBullet;
-    public float distanceToShoot;
+    public float distanceToExplode;
     //bool canShoot => !shotBullet && Mathf.Abs(transform.localPosition.x) <= distanceToShoot;
-    bool canShoot => !shotBullet && Mathf.Abs(Vector3.Distance(_camera.position, transform.position)) <= distanceToShoot;
+    bool canShoot => !shotBullet;
+    bool willExplode = false;
     public GameObject antiSphere;
     void Start()
     {
         _camera = FindObjectOfType<StageMovement>().transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        explodeTimer = anticipation;
         antiSphere.SetActive(false);
     }
 
     void Update()
     {
-        Shoot();
-      
-    }
-
-    void CheckIfShot()
-    {
-        if (shootTimer <= 0)
+        CloseToPlayer();
+        if(willExplode)
         {
-            shotBullet = false;
-        }
-
-        if (shotBullet)
-        {
-            shootTimer -= Time.deltaTime;
-        }
-        else
-        {
-            shootTimer = fireRate;
+            Shoot();
         }
     }
+
+    //void CheckIfShot()
+    //{
+    //    if (shootTimer <= 0)
+    //    {
+    //        shotBullet = false;
+    //    }
+
+    //    if (shotBullet)
+    //    {
+    //        shootTimer -= Time.deltaTime;
+    //    }
+    //    else
+    //    {
+    //        shootTimer = fireRate;
+    //    }
+    //}
 
     void Shoot()
     {
-        CheckIfShot();
+        //CheckIfShot();
         Anticipation();
-        if (canShoot)
+        if (explodeTimer <= 0)
         {
             antiSphere.SetActive(false);
             ShootAngular();
+            Destroy(gameObject);
+        }
+        //if (canShoot)
+        //{
+        //    antiSphere.SetActive(false);
+        //    ShootAngular();
+        //}
+    }
+
+    void CloseToPlayer()
+    {
+        if(Vector3.Distance(player.position, transform.position) <= distanceToExplode)
+        {
+            willExplode = true;
         }
     }
 
     void Anticipation()
     {
-        if (!canShoot)
+        explodeTimer -= Time.deltaTime;
+        if(explodeTimer < anticipation)
         {
-            antiSphere.SetActive(false);
-        }
-        if (shootTimer <= anticipation)
-        {
-            //Play ANTICIPATION animation.
             antiSphere.SetActive(true);
         }
+        //if (shootTimer <= anticipation)
+        //{
+        //    //Play ANTICIPATION animation.
+        //    antiSphere.SetActive(true);
+        //}
     }
 
-    void ShootAngular()
+    public void ShootAngular()
     {
         float angle = 0;
         if (bulletNumber > 1)

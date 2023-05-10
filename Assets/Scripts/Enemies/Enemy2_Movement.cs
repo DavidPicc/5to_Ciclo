@@ -13,7 +13,8 @@ public class Enemy2_Movement : MonoBehaviour
     [Header("Movement")]
     public float speed;
     public float xLock;
-    bool locked = false;
+    public bool locked = false;
+    public bool timeToGo = false;
 
     void Start()
     {
@@ -32,19 +33,26 @@ public class Enemy2_Movement : MonoBehaviour
         Vector3 _camVec = new Vector3(_camera.position.x, 0, 0);
         Vector3 enemyVec = new Vector3(transform.position.x, 0, 0);
 
-        if (Vector3.Distance(_camVec, enemyVec) <= xLock)
+        if(!locked)
         {
-            locked = true;
+            transform.parent = null;
+            if(!timeToGo)
+            {
+                if (Vector3.Distance(_camVec, enemyVec) <= xLock)
+                {
+                    locked = true;
+                }
+            }
         }
-        //else
-        //{
-        //    rb.velocity = transform.right * speed;
-        //}
-
-        if (locked)
+        else
         {
             transform.parent = _camera;
             rb.velocity = Vector3.zero;
         }
+
+        //else
+        //{
+        //    rb.velocity = transform.right * speed;
+        //}
     }
 }

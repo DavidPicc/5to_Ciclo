@@ -27,11 +27,13 @@ public class Shoot_Linear : MonoBehaviour
     void Start()
     {
         _camera = FindObjectOfType<StageMovement>().transform;
+        antiSphere.SetActive(false);
     }
 
     void Update()
     {
         Shoot();
+        Debug.Log(canShoot);
     }
 
     void CheckIfShot()
@@ -64,6 +66,10 @@ public class Shoot_Linear : MonoBehaviour
 
     void Anticipation()
     {
+        if(!canShoot)
+        {
+            antiSphere.SetActive(false);
+        }
         if (shootTimer <= anticipation)
         {
             //Play ANTICIPATION animation.

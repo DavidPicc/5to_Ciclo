@@ -16,6 +16,7 @@ public class Player_Shoot : MonoBehaviour
     void Start()
     {
         timer = fireRate;
+        Upgrades();
     }
 
 

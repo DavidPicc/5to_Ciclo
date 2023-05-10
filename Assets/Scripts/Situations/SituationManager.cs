@@ -19,6 +19,9 @@ public class SituationManager : MonoBehaviour
     public int bossWave;
     public GameObject boss;
 
+    public float textTimerDisappear;
+    float textTimer;
+
     void Awake()
     {
         instance = this;

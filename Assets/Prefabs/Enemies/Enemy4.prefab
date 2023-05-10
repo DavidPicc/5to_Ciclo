@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4650324917289444815}
   - component: {fileID: 7607855897119378799}
   - component: {fileID: 5070404262845726613}
+  - component: {fileID: 3886003254385394887}
   - component: {fileID: 1746475625234883629}
   - component: {fileID: 877809034084349314}
   m_Layer: 8
@@ -123,7 +124,29 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: 0}
   speed: 5
-  rotationSpeed: 1.2
+--- !u!114 &3886003254385394887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549922622884585454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81c2354f00563b4bb690482fbe83e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944,
+    type: 3}
+  damage: 1
+  bulletSpeed: 5
+  bulletNumber: 5
+  bulletDisappear: 10
+  bulletAng: 360
+  anticipation: 0.25
+  pointShoot: {fileID: 8098880415147464378}
+  distanceToExplode: 2.5
+  antiSphere: {fileID: 9205587714493683308}
 --- !u!114 &1746475625234883629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 15
-  currentHealth: 0
+  currentHealth: 1
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
