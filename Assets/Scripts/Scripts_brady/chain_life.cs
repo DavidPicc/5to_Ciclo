@@ -52,15 +52,15 @@ public class chain_life : MonoBehaviour
         Destroy(gameObject, 0.2f);
     }
 
-    private void OnCollisionEnter (Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerBullet"))
         {
             if (canBeDamaged)
             {
                 TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
-
-            }
+                Destroy(other.gameObject);
+           }
         }
         if (other.CompareTag("Obstacle"))
         {
