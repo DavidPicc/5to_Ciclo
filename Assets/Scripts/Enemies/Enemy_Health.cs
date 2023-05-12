@@ -20,7 +20,7 @@ public class Enemy_Health : MonoBehaviour
 
     [SerializeField] bool obstacle = false;
     [SerializeField] public bool invulnerable = false;
-
+    [SerializeField] GameObject vfxexplosion;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -52,20 +52,23 @@ public class Enemy_Health : MonoBehaviour
         else
         {
             Death();
+            
         }
     }
 
     public void Death()
     {
         Debug.Log("MURIO " + name);
-        if(GetComponent<Enemy4_ShootExplode>() != null)
+        if (GetComponent<Enemy4_ShootExplode>() != null)
         {
             GetComponent<Enemy4_ShootExplode>().ShootAngular();
         }
-        Destroy(this);
+        
         Destroy(gameObject, 0.2f);
-        if(!spawnedPoints)
+        if (!spawnedPoints)
             SpawnPoints();
+        Instantiate(vfxexplosion, transform.position, Quaternion.identity);
+        Destroy(this);
     }
 
     void SpawnPoints()

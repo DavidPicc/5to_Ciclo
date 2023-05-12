@@ -52,7 +52,7 @@ public class chain_life : MonoBehaviour
         Destroy(gameObject, 0.2f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter (Collider other)
     {
         if (other.CompareTag("PlayerBullet"))
         {
