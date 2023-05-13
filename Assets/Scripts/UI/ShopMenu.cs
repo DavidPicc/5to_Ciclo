@@ -77,7 +77,6 @@ public class ShopMenu : MonoBehaviour
             {
                 if(GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore)
                 {
-                    upgrading = false;
                     upgradingTimer = 0f;
                     selectedItem.upgradingAnim.SetFloat("fill", 0f);
 
