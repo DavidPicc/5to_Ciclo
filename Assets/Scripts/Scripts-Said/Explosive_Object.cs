@@ -31,7 +31,7 @@ public class Explosive_Object : MonoBehaviour
     {
         if (other.CompareTag("PlayerBullet")) 
         {
-            Instantiate(vfxexplosion, transform.position, transform.rotation);
+            //Instantiate(vfxexplosion, transform.position, transform.rotation);
             exploded = true;
             explosion.SetActive(true);
            
