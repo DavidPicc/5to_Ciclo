@@ -8,7 +8,8 @@ public class Explosive_Object : MonoBehaviour
     [SerializeField] public float coldown;
     float timer;
     bool exploded = false;
-    public GameObject explosionEffect;
+    [SerializeField] GameObject vfxexplosion;
+
     void Start()
     {
 
@@ -30,7 +31,7 @@ public class Explosive_Object : MonoBehaviour
     {
         if (other.CompareTag("PlayerBullet")) 
         {
-            Instantiate(explosionEffect,transform.position, transform.rotation);
+            Instantiate(vfxexplosion, transform.position, transform.rotation);
             exploded = true;
             explosion.SetActive(true);
            

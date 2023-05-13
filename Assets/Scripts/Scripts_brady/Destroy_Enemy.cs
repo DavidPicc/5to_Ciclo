@@ -16,7 +16,7 @@ public class Destroy_Enemy : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter (Collider other)
+    private void OnCollisionEnter (Collision other)
 
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
