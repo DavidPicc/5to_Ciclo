@@ -19,13 +19,13 @@ public class Destroy_Enemy : MonoBehaviour
     private void OnCollisionEnter (Collider other)
 
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
         {
             playerHealth.TakeDamage(1);
             Destroy(other.gameObject);
         }
 
-    if (other.CompareTag("s"))
+    if (other.gameObject.CompareTag("s"))
 
         {
             Destroy(gameObject);
