@@ -35,24 +35,30 @@ public class ShopMenu : MonoBehaviour
 
     void Update()
     {
+        ShopItem selectedItem = GetSelectedItem();
+
+        //Labels
+        titleItemShop.text = selectedItem.title;
         gearsScoreShop.text = GameScore.instance.gearScore.ToString();
         coresScoreShop.text = GameScore.instance.coreScore.ToString();
 
-        if (Input.GetButtonDown("Horizontal")) { 
-            int horizontal = (int) Input.GetAxisRaw("Horizontal");
-            upgradeSelected = (upgradeSelected + horizontal + upgradeCount) % upgradeCount;
-        }
-
-        if (Input.GetButtonDown("Vertical"))
+        //Navigation
+        if (!Input.GetKey(key))
         {
-            selectedGuns = !selectedGuns;
-            upgradeSelected = Mathf.Clamp(upgradeSelected, 0, upgradeCount - 1);
+            if (Input.GetButtonDown("Horizontal"))
+            {
+                int horizontal = (int)Input.GetAxisRaw("Horizontal");
+                upgradeSelected = (upgradeSelected + horizontal + upgradeCount) % upgradeCount;
+            }
+
+            if (Input.GetButtonDown("Vertical"))
+            {
+                selectedGuns = !selectedGuns;
+                upgradeSelected = Mathf.Clamp(upgradeSelected, 0, upgradeCount - 1);
+            }
         }
 
-        ShopItem selectedItem = GetSelectedItem();
-
-        titleItemShop.text = selectedItem.title;
-
+        //Equipping
         if(Input.GetKeyUp(key) && !upgrading)
         {
 
@@ -74,37 +80,22 @@ public class ShopMenu : MonoBehaviour
             }
         }
 
+        //Upgrading
+        if(Input.GetKeyDown(key))
+        {
+            StartCoroutine(Upgrade());
+        }
+
         if (Input.GetKeyUp(key))
         {
             upgrading = false;
             upgradingTimer = 0f;
             selectedItem.upgradingAnim.SetFloat("fill", 0f);
+
+            StopAllCoroutines();
         }
 
-        if (Input.GetKey(key))
-        {
-            upgradingTimer += Time.deltaTime;
-            if (upgradingTimer > .2f) upgrading = true;
-
-            if(upgradingTimer > upgradeTime)
-            {
-                if(GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore)
-                {
-                    upgradingTimer = 0f;
-                    selectedItem.upgradingAnim.SetFloat("fill", 0f);
-
-                    GameScore.instance.gearScore -= selectedItem.costGear;
-                    GameScore.instance.coreScore -= selectedItem.costCore;
-                    selectedItem.Upgrade();
-                }
-            }
-
-            if(upgrading && GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore)
-            {
-                selectedItem.upgradingAnim.SetFloat("fill", upgradingTimer / upgradeTime);
-            }
-        }
-
+        //Equipped 
         ShopItem equippedGunItem = Array.Find(gunUpgrades, e => e.Equipped == true);
         ShopItem equippedSkillItem = Array.Find(skillUpgrades, e => e.Equipped == true);
 
@@ -116,5 +107,37 @@ public class ShopMenu : MonoBehaviour
     {
         if(selectedGuns) return gunUpgrades[upgradeSelected];
         else return skillUpgrades[upgradeSelected];
+    }
+
+    IEnumerator Upgrade()
+    {
+        while(upgradingTimer < upgradeTime)
+        {
+            ShopItem selectedItemTime = GetSelectedItem();
+
+            if (upgradingTimer > .2f) upgrading = true;
+
+            if (upgrading && GameScore.instance.gearScore >= selectedItemTime.costGear && GameScore.instance.coreScore >= selectedItemTime.costCore)
+            {
+                selectedItemTime.upgradingAnim.SetFloat("fill", upgradingTimer / upgradeTime);
+            }
+
+            yield return new WaitForSecondsRealtime(.1f);
+            upgradingTimer += .1f;
+        }
+
+        ShopItem selectedItem = GetSelectedItem();
+
+        if (GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore)
+        {
+            upgradingTimer = 0f;
+            selectedItem.upgradingAnim.SetFloat("fill", 0f);
+
+            GameScore.instance.gearScore -= selectedItem.costGear;
+            GameScore.instance.coreScore -= selectedItem.costCore;
+            selectedItem.Upgrade();
+        }
+
+        if(Input.GetKey(key)) StartCoroutine(Upgrade());
     }
 }
