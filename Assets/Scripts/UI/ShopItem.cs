@@ -16,9 +16,10 @@ public class ShopItem : MonoBehaviour
     bool selected;
 
     [SerializeField] GameObject equippedText;
-    bool equipped;
+    [SerializeField] bool equipped;
     public bool Equipped
     {
+        get { return equipped; }
         set { equipped = value; }
     }
 

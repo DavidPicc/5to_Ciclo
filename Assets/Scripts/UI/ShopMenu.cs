@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,7 +8,7 @@ public class ShopMenu : MonoBehaviour
 {
     public KeyCode key;
     
-    [SerializeField] TextMeshProUGUI gearsScoreShop, coresScoreShop, titleItemShop;
+    [SerializeField] TextMeshProUGUI gearsScoreShop, coresScoreShop, titleItemShop, equippedGun, equippedSkill;
     [SerializeField] ShopItem[] gunUpgrades;
     [SerializeField] ShopItem[] skillUpgrades;
     int upgradeCount => selectedGuns ? gunUpgrades.Length : skillUpgrades.Length;
@@ -52,12 +53,24 @@ public class ShopMenu : MonoBehaviour
 
         titleItemShop.text = selectedItem.title;
 
-        if(Input.GetKeyUp(key) && !upgrading && !selectedGuns)
+        if(Input.GetKeyUp(key) && !upgrading)
         {
-            for(int i = 0; i < skillUpgrades.Length; i++)
+
+            if (selectedGuns)
             {
-                if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
-                else skillUpgrades[i].Equipped = true;
+                for (int i = 0; i < gunUpgrades.Length; i++)
+                {
+                    if (i != upgradeSelected) gunUpgrades[i].Equipped = false;
+                    else gunUpgrades[i].Equipped = true;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < skillUpgrades.Length; i++)
+                {
+                    if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
+                    else skillUpgrades[i].Equipped = true;
+                }
             }
         }
 
@@ -91,6 +104,12 @@ public class ShopMenu : MonoBehaviour
                 selectedItem.upgradingAnim.SetFloat("fill", upgradingTimer / upgradeTime);
             }
         }
+
+        ShopItem equippedGunItem = Array.Find(gunUpgrades, e => e.Equipped == true);
+        ShopItem equippedSkillItem = Array.Find(skillUpgrades, e => e.Equipped == true);
+
+        if (equippedGunItem != null) equippedGun.text = equippedGunItem.title;
+        if (equippedSkillItem != null) equippedSkill.text = equippedSkillItem.title;
     }
 
     public ShopItem GetSelectedItem()
