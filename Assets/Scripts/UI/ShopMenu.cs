@@ -61,21 +61,23 @@ public class ShopMenu : MonoBehaviour
         //Equipping
         if(Input.GetKeyUp(key) && !upgrading)
         {
-
-            if (selectedGuns)
+            if(selectedItem.level > 0)
             {
-                for (int i = 0; i < gunUpgrades.Length; i++)
+                if (selectedGuns)
                 {
-                    if (i != upgradeSelected) gunUpgrades[i].Equipped = false;
-                    else gunUpgrades[i].Equipped = true;
+                    for (int i = 0; i < gunUpgrades.Length; i++)
+                    {
+                        if (i != upgradeSelected) gunUpgrades[i].Equipped = false;
+                        else gunUpgrades[i].Equipped = true;
+                    }
                 }
-            }
-            else
-            {
-                for (int i = 0; i < skillUpgrades.Length; i++)
+                else
                 {
-                    if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
-                    else skillUpgrades[i].Equipped = true;
+                    for (int i = 0; i < skillUpgrades.Length; i++)
+                    {
+                        if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
+                        else skillUpgrades[i].Equipped = true;
+                    }
                 }
             }
         }
@@ -117,7 +119,7 @@ public class ShopMenu : MonoBehaviour
 
             if (upgradingTimer > .2f) upgrading = true;
 
-            if (upgrading && GameScore.instance.gearScore >= selectedItemTime.costGear && GameScore.instance.coreScore >= selectedItemTime.costCore)
+            if (upgrading && GameScore.instance.gearScore >= selectedItemTime.costGear && GameScore.instance.coreScore >= selectedItemTime.costCore && selectedItemTime.level < selectedItemTime.maxLevel)
             {
                 selectedItemTime.upgradingAnim.SetFloat("fill", upgradingTimer / upgradeTime);
             }
@@ -128,7 +130,7 @@ public class ShopMenu : MonoBehaviour
 
         ShopItem selectedItem = GetSelectedItem();
 
-        if (GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore)
+        if (GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore && selectedItem.level < selectedItem.maxLevel)
         {
             upgradingTimer = 0f;
             selectedItem.upgradingAnim.SetFloat("fill", 0f);

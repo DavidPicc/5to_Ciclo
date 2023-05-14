@@ -21,11 +21,17 @@ public class UpgradeTracker : MonoBehaviour
     private void Start()
     {
         levels = new Dictionary<string, int>();
-
-        levels.Add("gun1", 1);
-        levels.Add("gun2", 1);
-        levels.Add("gun3", 1);
-        levels.Add("skill1", 1);
-        levels.Add("skill2", 1);
+        levels.Add("BulletShield", 3);
     }
-}
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            foreach(KeyValuePair<string, int> pair in levels)
+            {
+                Debug.Log(pair.Key + " : " + pair.Value);
+            }
+        }
+    }
+}   

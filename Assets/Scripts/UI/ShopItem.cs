@@ -17,6 +17,8 @@ public class ShopItem : MonoBehaviour
 
     [SerializeField] GameObject equippedText;
     [SerializeField] bool equipped;
+    [SerializeField] GameObject maxLevelText;
+
     public bool Equipped
     {
         get { return equipped; }
@@ -28,6 +30,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] TextMeshProUGUI costGearText, costCoreText, labelText;
     [SerializeField] string type;
     public int level;
+    public int maxLevel;
     public int costGear;
     public int costCore;
     public int upgradeGearScaling;
@@ -37,7 +40,7 @@ public class ShopItem : MonoBehaviour
 
     void Start()
     {
-        level = 1;
+        SetStartLevel();
 
         upgradingAnim.SetFloat("fill", 0f);
     }
@@ -51,19 +54,48 @@ public class ShopItem : MonoBehaviour
     
         if (equipped != equippedText.activeSelf) equippedText.SetActive(equipped);
 
-        labelText.text = title + " " + level;
+        if (level > 0) labelText.text = title + " " + level;
+        else labelText.text = "Buy " + title;
 
-        costGearText.text = costGear.ToString();
-        costCoreText.text = costCore.ToString();
+        if(level < maxLevel)
+        {
+            costGearText.text = costGear.ToString();
+            costCoreText.text = costCore.ToString();
+            if(maxLevelText.activeSelf) maxLevelText.SetActive(false);
+        } else
+        {
+            costGearText.text = "";
+            costCoreText.text = "";
+            if (!maxLevelText.activeSelf) maxLevelText.SetActive(true);
+        }
     }
 
     public void Upgrade()
     {
-        level++;
-        costCore += upgradeCoreScaling;
-        costGear += upgradeGearScaling;
+        if(level < maxLevel)
+        {
+            level++;
+            costCore += upgradeCoreScaling;
+            costGear += upgradeGearScaling;
 
-        UpgradeTracker.instance.levels[type] = level;
+            UpgradeTracker.instance.levels[type] = level;
+        }
     }
 
+    public void SetStartLevel()
+    {
+        if (UpgradeTracker.instance.levels.ContainsKey(type))
+        {
+            level = FindObjectOfType<UpgradeTracker>().levels[type];
+            if(level > maxLevel)
+            {
+                level = maxLevel;
+                UpgradeTracker.instance.levels[type] = level;
+            }
+
+        } else UpgradeTracker.instance.levels.Add(type, level);
+
+        if(level > 0) costCore += upgradeCoreScaling * (level - 1);
+        if(level > 0) costGear += upgradeGearScaling * (level - 1);
+    }
 }
