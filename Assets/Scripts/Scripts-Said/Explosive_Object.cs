@@ -9,10 +9,12 @@ public class Explosive_Object : MonoBehaviour
     float timer;
     bool exploded = false;
     [SerializeField] GameObject vfxexplosion;
+    [SerializeField] float proximityDistance = 2f;
+    Transform playerTransform;
 
     void Start()
     {
-
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -25,7 +27,12 @@ public class Explosive_Object : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-   
+
+        if (!exploded && playerTransform != null && Vector3.Distance(transform.position, playerTransform.position) <= proximityDistance)
+        {
+            exploded = true;
+            explosion.SetActive(true);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -37,6 +44,10 @@ public class Explosive_Object : MonoBehaviour
            
         }
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, proximityDistance);
+    }
 
-   
 }
