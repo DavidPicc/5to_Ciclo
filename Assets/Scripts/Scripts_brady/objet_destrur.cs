@@ -87,9 +87,10 @@ public class objet_destrur : MonoBehaviour
                 if (canBeDamaged)
                 {
                     TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
-
+                    Destroy(gameObject);
                 }
-                Destroy(other.gameObject, 1f);
+                Destroy(other.gameObject);
+            }
             }
             if (other.CompareTag("Obstacle") || other.CompareTag("weigh"))
             {
@@ -108,4 +109,4 @@ public class objet_destrur : MonoBehaviour
             }
         }
     }
-}
+

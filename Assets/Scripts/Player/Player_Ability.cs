@@ -100,9 +100,7 @@ public class Player_Ability : MonoBehaviour
                 timer = 0;
             }
 
-        }
-       
-        
+        }     
     }
 
 
@@ -113,9 +111,6 @@ public class Player_Ability : MonoBehaviour
    
     void Shoot()
     {
-       
-          
-
         if (tk > 0)
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation); // instancia la bala en la posición y rotación del objeto actual

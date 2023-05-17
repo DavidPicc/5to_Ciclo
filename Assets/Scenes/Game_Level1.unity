@@ -2877,6 +2877,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6188278525516821975, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: checkDistance
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: fireRate
@@ -2920,9 +2925,19 @@ PrefabInstance:
       objectReference: {fileID: 387115591}
     - target: {fileID: 9206331676554157252, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: canDie
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206331676554157252, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: healthFillBar
       value: 
       objectReference: {fileID: 716831648}
+    - target: {fileID: 9206331676554157252, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: invulnerabilityTime
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9aa5d11abe99f24382d1683cf9d502a, type: 3}
 --- !u!1 &455414455
@@ -14019,10 +14034,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 960882cba8b5e19418f3a30ec19d628f,
-      type: 3}
-    dialogue: []
-    isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
       type: 3}
     dialogue: []
@@ -14041,8 +14052,7 @@ MonoBehaviour:
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 33fe2ece6483d864d98dcb53e661e11a,
       type: 3}
-    dialogue:
-    - Use the Z button to SHOOT!
+    dialogue: []
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 25a6606cb181c8c4d822bb62550c4388,
       type: 3}
@@ -14102,8 +14112,7 @@ MonoBehaviour:
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
       type: 3}
-    dialogue:
-    - aqui va checkpoint
+    dialogue: []
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 20e8059c45457854ab2ccd5677b9041b,
       type: 3}
@@ -14187,8 +14196,7 @@ MonoBehaviour:
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
       type: 3}
-    dialogue:
-    - aqui va checkpoint
+    dialogue: []
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 5718ab45a544cd8418955016828e6606,
       type: 3}
@@ -14262,7 +14270,7 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-  wave: 0
+  wave: 5
   situationOffset: 26.88
   timeToSpawn: 10
   spawnPosition: {x: 0, y: 0, z: 0}
