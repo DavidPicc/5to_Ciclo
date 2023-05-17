@@ -6,9 +6,11 @@ public class PlayerCrushed : MonoBehaviour
 {
     public GameObject objectInCollider;
     bool done = false;
+    public LayerMask crushedLayers;
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Obstacle") || other.gameObject.layer == 7 || other.gameObject.layer == 10)
+        if(other.CompareTag("Obstacle") || (((1 << other.gameObject.layer) & crushedLayers) != 0))
         {
             objectInCollider = other.gameObject;
             if(!done)
