@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2694,6 +2694,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3739483314158535259, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4354603533848090311, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Enabled
@@ -2811,6 +2816,22 @@ PrefabInstance:
       propertyPath: shieldDistance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6018749998876825457, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: vfxShoot
+      value: 
+      objectReference: {fileID: 6703323202980141181, guid: c74d457e28670464a9a9660f2b556349,
+        type: 3}
     - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Enabled
@@ -2875,6 +2896,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188278525516821975, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188278525516821975, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: checkDistance
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154364237148156367, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.279
       objectReference: {fileID: 0}
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -2987,6 +3023,7 @@ GameObject:
   - component: {fileID: 490937429}
   - component: {fileID: 490937431}
   - component: {fileID: 490937432}
+  - component: {fileID: 490937433}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3053,7 +3090,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b3f41639dfb634096ddc182fff13d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossDeathTutorial: {fileID: 587352546}
+  bossDeathTutorialTransition: {fileID: 587352546}
+  boss: {fileID: 2069578587}
+--- !u!114 &490937433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490937428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7cd0d958804a742b02c1751da6d09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.05
+  fullText: 
+  currentText: 
+  characterText: {fileID: 2145034186}
+  dialogueText: {fileID: 1948964079}
+  finishedTyping: 0
+  timeBetweenText: 2
+  dialogues: []
 --- !u!1 &507788393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,6 +4884,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701238986}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &715412832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8627737689325719621, guid: e9aa5d11abe99f24382d1683cf9d502a,
+    type: 3}
+  m_PrefabInstance: {fileID: 448131770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &715412835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715412832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce4d4b90b43a9b42ae5c269b554e33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectInCollider: {fileID: 0}
+  crushedLayers:
+    serializedVersion: 2
+    m_Bits: 1152
+--- !u!1 &716185406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8530996292833212343, guid: e9aa5d11abe99f24382d1683cf9d502a,
+    type: 3}
+  m_PrefabInstance: {fileID: 448131770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &716185409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716185406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce4d4b90b43a9b42ae5c269b554e33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectInCollider: {fileID: 0}
+  crushedLayers:
+    serializedVersion: 2
+    m_Bits: 1152
 --- !u!1 &716831646
 GameObject:
   m_ObjectHideFlags: 0
@@ -11465,7 +11567,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690640827}
-  - component: {fileID: 1690640828}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -11495,22 +11596,6 @@ RectTransform:
   m_AnchoredPosition: {x: -38.33499, y: -244.63}
   m_SizeDelta: {x: 748.07, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1690640828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690640826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e7cd0d958804a742b02c1751da6d09d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0.07
-  fullText: 
-  currentText: 
-  running: 0
 --- !u!1 &1693907023
 GameObject:
   m_ObjectHideFlags: 0
@@ -13803,7 +13888,8 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: f5f7eed0442c99f449ee7936a83e216b,
       type: 3}
     dialogue:
-    - Use the directional keys to MOVE.
+    - Robot1;Use the directional keys to MOVE.
+    - Robot2;Yeah! Yeah! Just move!
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
       type: 3}
@@ -13816,7 +13902,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: e8a94d9e9750d764785f1b739911c25d,
       type: 3}
     dialogue:
-    - Use the Z button to SHOOT!
+    - Robot1;Use the Z button to SHOOT!
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 291c332126c29a24bbde134f1f4cd7d3,
       type: 3}
@@ -13828,8 +13914,7 @@ MonoBehaviour:
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 2275291b669e7c1448b8290c0d9175ac,
       type: 3}
-    dialogue:
-    - We'll go ahead! See you in a bit!
+    dialogue: []
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: c2a5ec346cb15a34a8c7f47fc9ec54ae,
       type: 3}
@@ -13845,8 +13930,7 @@ MonoBehaviour:
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: b1dda07c469d5ca448a274231b71d0cc,
       type: 3}
-    dialogue:
-    - "Sorry, but we\xB4ll leave this to you!"
+    dialogue: []
     isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 59233405d23d9b445b02740a54a20cf8,
       type: 3}
@@ -13855,7 +13939,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
     dialogue: []
-    isShop: 1
+    isShop: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
       type: 3}
     dialogue: []
@@ -13873,7 +13957,6 @@ MonoBehaviour:
   timeToSpawn: 10
   spawnPosition: {x: 0, y: 0, z: 0}
   bossWave: 13
-  boss: {fileID: 2069578587}
   textTimerDisappear: 0
 --- !u!1 &2121626748
 GameObject:

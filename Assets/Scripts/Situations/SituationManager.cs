@@ -7,7 +7,6 @@ public class SituationManager : MonoBehaviour
     public static SituationManager instance;
     //public GameObject[] situations;
     public SituationScript[] situations;
-    int dialogueIndex = 0;
     Transform _camera;
     int index = 0;
     public int wave = 0;
@@ -17,7 +16,6 @@ public class SituationManager : MonoBehaviour
     public Vector3 spawnPosition;
 
     public int bossWave;
-    public GameObject boss;
 
     public float textTimerDisappear;
     float textTimer;
@@ -37,52 +35,24 @@ public class SituationManager : MonoBehaviour
     }
     void Update()
     {
-        //timer -= Time.deltaTime;
-        //if (timer <= 0)
-        //{
-        //    SpawnSituation();
-        //}
-        if(wave == bossWave)
-        {
-            boss.SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (CanvasUI.instance.dialogueObject.activeSelf)
-            {
-                if(TypeWriterText.instance.currentText != TypeWriterText.instance.fullText)
-                {
-                    FullText();
-                }
-                else
-                {
-                    if (dialogueIndex < situations[index].dialogue.Length - 1)
-                    {
-                        dialogueIndex++;
-                    }
-                    else
-                    {
-                        CanvasUI.instance.dialogueObject.SetActive(false);
-                    }
-                }
-            }
-        }
     }
 
-    public void TextAppear()
+    void SpecialSituationsTutorial()
     {
-        TypeWriterText.instance.fullText = situations[index].dialogue[dialogueIndex];
-        StartCoroutine(TypeWriterText.instance.ShowText());
-    }
+        if (situations[index].isShop)
+        {
+            GameManager.instance.OpenShop();
+        }
 
-    public void FullText()
-    {
-        //CanvasUI.instance.dialogueText.text = TypeWriterText.instance.fullText;
-        StopCoroutine(TypeWriterText.instance.ShowText());
-        TypeWriterText.instance.currentText = TypeWriterText.instance.fullText;
-        //TypeWriterText.instance.running = false;
-
+        if(wave == situations.Length)
+        {
+            TutorialManager.instance.VulnerableFriendsAndYou();
+        }
+        else if (wave == bossWave)
+        {
+            TutorialManager.instance.ActivateBoss();
+        }
     }
 
     public void SpawnSituation()
@@ -90,16 +60,14 @@ public class SituationManager : MonoBehaviour
         var sit = Instantiate(situations[index].situationPrefab, spawnPosition, Quaternion.identity);
         if (situations[index].dialogue.Length > 0)
         {
-            CanvasUI.instance.dialogueObject.SetActive(true);
-            TextAppear();
-        }
-        if (situations[index].isShop)
-        {
-            GameManager.instance.OpenShop();
+            DialogueScript.instance.SetDialogue(situations[index].dialogue);
         }
         spawnPosition += new Vector3(situationOffset, 0, 0);
         timer = timeToSpawn;
         wave++;
+
+        SpecialSituationsTutorial();
+
         if (index < situations.Length - 1)
         {
             index++;

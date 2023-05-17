@@ -10,6 +10,11 @@ public class FriendScript : MonoBehaviour
     Transform allyPos;
     public int friendPos;
     bool allyLocked = true;
+
+    public string[] talkingThings;
+
+    public bool canDie = true;
+    public GameObject explosionVFX;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,6 +22,8 @@ public class FriendScript : MonoBehaviour
 
         SetAllyPosition();
         gameObject.transform.parent = FindObjectOfType<StageMovement>().transform;
+
+        canDie = false;
     }
 
     void SetAllyPosition()
@@ -29,15 +36,34 @@ public class FriendScript : MonoBehaviour
     {
         if(FindObjectOfType<SituationManager>().wave == 7)
         {
-            GoAhead();
+            //GoAhead();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Death();
         }
     }
 
-    void GoAhead()
+    //void GoAhead()
+    //{
+    //    allyLocked = false;
+    //    rb.velocity = Vector3.right * maxSpeed * 500 * Time.deltaTime;
+    //    GetComponentInChildren<Collider>().enabled = false;
+    //}
+
+    public string RandomTalk()
     {
-        allyLocked = false;
-        rb.velocity = Vector3.right * maxSpeed * 500 * Time.deltaTime;
-        GetComponentInChildren<Collider>().enabled = false;
+        int random = Random.Range(0,talkingThings.Length);
+        return talkingThings[random];
+    }
+
+    public void Death()
+    {
+        Instantiate(explosionVFX, transform.position, Quaternion.identity);
+        allyPos = null;
+        rb.useGravity = true;
+        Destroy(gameObject, 1f);
     }
 
     void FixedUpdate()
@@ -55,6 +81,18 @@ public class FriendScript : MonoBehaviour
                 Vector3 moveVector = dir * speed;
 
                 rb.velocity = moveVector;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("EnemyBullet"))
+        {
+            if(canDie)
+            {
+                Death();
+                Destroy(other.gameObject);
             }
         }
     }

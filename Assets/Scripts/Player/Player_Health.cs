@@ -10,6 +10,7 @@ public class Player_Health : MonoBehaviour
     [SerializeField] public float invulnerabilityTime;
     float timer;
     bool canBeDamaged = true;
+    [SerializeField] public bool canDie = true;
 
     [SerializeField] Image healthFillBar;
 
@@ -20,6 +21,15 @@ public class Player_Health : MonoBehaviour
     {
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
+
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            canDie = false;
+        }
+        else
+        {
+            canDie = true;
+        }
     }
 
     void Update()
@@ -34,6 +44,11 @@ public class Player_Health : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            TakeDamage(1);
+        }
     }
 
     public void TakeDamage(float damage)
@@ -46,7 +61,19 @@ public class Player_Health : MonoBehaviour
             UpdateHealthBar();
             if (currentHealth <= 0)
             {
-                Death();
+                if(canDie)
+                {
+                    Death();
+                }
+            }
+            if(!canDie)
+            {
+                if(currentHealth <= 1)
+                {
+                    DialogueScript.instance.SetDialogue(FindAnyObjectByType<FriendScript>().RandomTalk());
+                    currentHealth = maxHealth;
+                    UpdateHealthBar();
+                }
             }
             Debug.Log("Player has been damaged!!!!");
             canBeDamaged = false;
@@ -61,7 +88,7 @@ public class Player_Health : MonoBehaviour
         if(FindObjectOfType<BossT_Shoot>() != null && SituationManager.instance.wave >= SituationManager.instance.bossWave+3)
         {
             gameObject.SetActive(false);
-            TutorialManager.instance.bossDeathTutorial.SetActive(true);
+            TutorialManager.instance.bossDeathTutorialTransition.SetActive(true);
             Debug.Log("NIVEL 1 DESBLOQUEADO");
         }
         else
@@ -84,18 +111,12 @@ public class Player_Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("weigh"))
-        {
-            TakeDamage(1);
-        }
-
-        if (other.CompareTag("Explosion"))
+        if (other.CompareTag("weigh") || other.CompareTag("Explosion") || other.CompareTag("Enemy"))
         {
             if (canBeDamaged)
             {
                 TakeDamage(1);
             }
         }
-
     }
 }
