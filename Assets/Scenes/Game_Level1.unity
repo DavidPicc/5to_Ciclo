@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8115,7 +8115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c3d04942dffe94f9d9d3fe104b8609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
 --- !u!4 &1150865511
 Transform:
   m_ObjectHideFlags: 0
@@ -11874,7 +11874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705180475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25, y: 0, z: 0}
+  m_LocalPosition: {x: -46.5, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 25, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12416,7 +12416,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Game
+          m_StringArgument: Game_Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1884384014
@@ -14114,80 +14114,253 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   situations:
-  - situationPrefab: {fileID: 4520026764095519211, guid: f5f7eed0442c99f449ee7936a83e216b,
-      type: 3}
-    dialogue:
-    - Use the directional keys to MOVE.
-    isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
+  - situationPrefab: {fileID: 4520026764095519211, guid: f27729606ab59df4d82028af002d06dd,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 0c01b24cf84511642b0ea981b51501cf,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 178a31cbd19794a4b801626cca1f5700,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: e8a94d9e9750d764785f1b739911c25d,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 905060677ebe8304a8f60c45fadf5885,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 33fe2ece6483d864d98dcb53e661e11a,
       type: 3}
     dialogue:
     - Use the Z button to SHOOT!
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 291c332126c29a24bbde134f1f4cd7d3,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 25a6606cb181c8c4d822bb62550c4388,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 1fff9cbf0a9241b45a47483b4149c221,
+  - situationPrefab: {fileID: 4520026764095519211, guid: f1e82930aa267844fb86aaa453fec057,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 2275291b669e7c1448b8290c0d9175ac,
+  - situationPrefab: {fileID: 4520026764095519211, guid: ccaa88553c13e9345b0048077e75981b,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 01a660a3067305241992cadd62510be9,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: b63e90ff5038b36478ac7aa4cb8c9b7e,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 716210b1b2cc1ac42830aab9f9631362,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 440d21b27eef81644b294ec6aa113e1f,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: e3ca6d1854d5c07489a22950beac3734,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 2d5e9b3f5f541f6408f196ea809b7b51,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 658a3ae2af18ef14891b9dcbf5ba1b2a,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 47e177b8dc4687542ab206ca71420d18,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 79e2f4d73464b3645b23ab64fe812b1e,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 06bf868c179e1104e990320fabffb403,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
       type: 3}
     dialogue:
-    - We'll go ahead! See you in a bit!
+    - aqui va checkpoint
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: c2a5ec346cb15a34a8c7f47fc9ec54ae,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 20e8059c45457854ab2ccd5677b9041b,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 45aac0bf5070bdd4ab685f5b25953c94,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 4c8143b1b057d9f468d0d18b27042cf1,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 2a49f0bfee21b7a4891a714e6c376041,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: b1dda07c469d5ca448a274231b71d0cc,
+  - situationPrefab: {fileID: 4520026764095519211, guid: d9508bfc09364b04c8eba6ae3e1c33cc,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 4422501e7536316419f201118c72ca0b,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: dedffae913bdd0b4c911f21e34319365,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 66579c9ceac276e4f9601f98f0e542be,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 960882cba8b5e19418f3a30ec19d628f,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 981b1ee0fbb12ed4b96ffe1145c41ff8,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: c82b39d5d25e4a648b31107b25d0d463,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: dedffae913bdd0b4c911f21e34319365,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: c5a8183e30363454094dc2eed8954dd8,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0c721f307489bb14caeaa83a489e1f46,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 52f4856d5310c164f94b991a5d253bcc,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 9cbf541cbc7e1154eb2f30c325b59048,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: c6eadd99c6ecd704a915a25e371e4160,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: c8b3f7e1e5599594d8967da039497afd,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: a9fec86b7d96a2e42b85b5b794143030,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 3cb50278cde3dd54e9d3e3bba80043a7,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
       type: 3}
     dialogue:
-    - "We\xB4ll leave this to you!"
+    - aqui va checkpoint
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 59233405d23d9b445b02740a54a20cf8,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 5718ab45a544cd8418955016828e6606,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
-      type: 3}
-    dialogue: []
-    isShop: 1
-  - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 9cbf541cbc7e1154eb2f30c325b59048,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 13c67248f79d42048b6856fa5de31e85,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0bad83eead523b34cb8d13bbf109550d,
       type: 3}
     dialogue: []
     isShop: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 66cf151e2b40a8e409563cc5fceacb04,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 658a3ae2af18ef14891b9dcbf5ba1b2a,
       type: 3}
     dialogue: []
     isShop: 0
-  wave: 11
+  - situationPrefab: {fileID: 4520026764095519211, guid: c8d689e3c6e3fb049b989a28e8c00c9e,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: c5a8183e30363454094dc2eed8954dd8,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 6d629bee597a7bb418c6afa87d017599,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 9fa1def9f4926c1499855fe2ae14b29b,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: c6eadd99c6ecd704a915a25e371e4160,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 5135d67bb523f8c41864db9860b44d96,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: a9fec86b7d96a2e42b85b5b794143030,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 8311da6df51a6a04799bc8e7d8676d0c,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 44503878e6b3fbe44a35c23dd8fbe509,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 5135d67bb523f8c41864db9860b44d96,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: cec747f9a7c02de42a42e816d4cb8895,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 343bb5518dd658e41911238e29113b2d,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: ca7a7606fb5b36b409f46ae450bb578a,
+      type: 3}
+    dialogue: []
+    isShop: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: fd6d4c510df2c384a8d39bec1ab6ba06,
+      type: 3}
+    dialogue:
+    - aqui va checkpoint
+    isShop: 0
+  wave: 0
   situationOffset: 26.88
   timeToSpawn: 10
   spawnPosition: {x: 0, y: 0, z: 0}
   bossWave: 13
   boss: {fileID: 2069578587}
+  textTimerDisappear: 0
 --- !u!1 &2130925346
 GameObject:
   m_ObjectHideFlags: 0
