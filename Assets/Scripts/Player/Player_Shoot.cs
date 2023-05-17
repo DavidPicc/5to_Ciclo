@@ -10,6 +10,7 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
+    [SerializeField] GameObject vfxShoot;
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused;
     bool shotBullet = false;
@@ -53,6 +54,10 @@ public class Player_Shoot : MonoBehaviour
         {
             var bullet = Instantiate(bulletPrefab, shootPoints[i].position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+            
+            GameObject vfx = Instantiate(vfxShoot, shootPoints[i].position, Quaternion.Euler(0f, 90f, 90f));
+            //vfx.transform.SetParent(bullet.transform, false);
+
             Destroy(bullet, 2f);
         }
         shotBullet = true;

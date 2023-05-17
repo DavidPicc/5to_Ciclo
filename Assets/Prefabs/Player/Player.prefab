@@ -102,6 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3131858323664841127}
+  - component: {fileID: 6188278525516821975}
   m_Layer: 6
   m_Name: CrushedPoints
   m_TagString: Untagged
@@ -126,6 +127,25 @@ Transform:
   m_Father: {fileID: 6093436275180687701}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6188278525516821975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422573940281953423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084a285df3aaac4aa4ecaa6f11ca447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crushedLayers:
+    serializedVersion: 2
+    m_Bits: 1152
+  checkDistance: 0.1
+  maxAngleDeviation: 15
+  leftPoint: {fileID: 8154364237148156367}
+  rightPoint: {fileID: 1529905563085313441}
 --- !u!1 &6093436275180687703
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +262,7 @@ MonoBehaviour:
   - {fileID: 5817455465880146418}
   - {fileID: 6478061047812268404}
   fireRate: 0.05
+  vfxShoot: {fileID: 0}
 --- !u!114 &5813331617710626669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +696,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8154364237148156367}
   - component: {fileID: 3739483314158535259}
-  - component: {fileID: 3580255324055861334}
   m_Layer: 6
   m_Name: Behind
   m_TagString: Untagged
@@ -711,22 +731,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3580255324055861334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8530996292833212343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce4d4b90b43a9b42ae5c269b554e33f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectInCollider: {fileID: 0}
-  crushedLayers:
-    serializedVersion: 2
-    m_Bits: 1152
 --- !u!1 &8627737689325719621
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +741,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1529905563085313441}
   - component: {fileID: 6018749998876825457}
-  - component: {fileID: 4414675710788920366}
   m_Layer: 6
   m_Name: Front
   m_TagString: Untagged
@@ -773,19 +776,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4414675710788920366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8627737689325719621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce4d4b90b43a9b42ae5c269b554e33f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectInCollider: {fileID: 0}
-  crushedLayers:
-    serializedVersion: 2
-    m_Bits: 1152

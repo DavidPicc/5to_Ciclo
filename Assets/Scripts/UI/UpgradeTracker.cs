@@ -21,7 +21,6 @@ public class UpgradeTracker : MonoBehaviour
     private void Start()
     {
         levels = new Dictionary<string, int>();
-        levels.Add("BulletShield", 3);
     }
 
     private void Update()

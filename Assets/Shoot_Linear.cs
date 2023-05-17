@@ -33,7 +33,7 @@ public class Shoot_Linear : MonoBehaviour
     void Update()
     {
         Shoot();
-        Debug.Log(canShoot);
+        //Debug.Log(canShoot);
     }
 
     void CheckIfShot()
