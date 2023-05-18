@@ -25,7 +25,7 @@ public class Destroy_Enemy : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-    if (other.gameObject.CompareTag("s"))
+    if (other.gameObject.CompareTag("Obstacle"))
 
         {
             Destroy(gameObject);

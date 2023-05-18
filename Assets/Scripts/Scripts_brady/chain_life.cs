@@ -48,7 +48,7 @@ public class chain_life : MonoBehaviour
 
     public void Death()
     {
-        Destroy(this);
+      Destroy(this);
         Destroy(gameObject, 0.2f);
     }
 
@@ -62,6 +62,11 @@ public class chain_life : MonoBehaviour
                 Destroy(other.gameObject);
            }
         }
-  
+        if (other.gameObject.CompareTag("Obstacle"))
+
+        {
+            Destroy(gameObject);
+        }
     }
 }
+
