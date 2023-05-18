@@ -62,9 +62,6 @@ public class chain_life : MonoBehaviour
                 Destroy(other.gameObject);
            }
         }
-        if (other.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);
-        }
+  
     }
 }

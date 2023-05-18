@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1777362932467260017}
   - component: {fileID: 1777362932467260016}
   - component: {fileID: 5540794489360490380}
+  - component: {fileID: 5967501335840056512}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: chains
@@ -98,8 +99,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.51891565
+  m_Center: {x: 0, y: 0, z: 0.018915812}
 --- !u!54 &1777362932467260017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,6 +168,19 @@ MonoBehaviour:
   maxHealth: 40
   currentHealth: 0
   invulnerabilityTime: 0
+--- !u!135 &5967501335840056512
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777362932467260019}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: -0.000000092666596}
 --- !u!1 &1777362932517314295
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +196,7 @@ GameObject:
   - component: {fileID: 1777362932517314293}
   - component: {fileID: 1777362932517314292}
   - component: {fileID: 3619346762981082707}
+  - component: {fileID: 3196219122083632860}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: chains
@@ -334,6 +349,19 @@ MonoBehaviour:
   maxHealth: 40
   currentHealth: 0
   invulnerabilityTime: 0
+--- !u!135 &3196219122083632860
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777362932517314295}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.51612455
+  m_Center: {x: 0, y: 0.00000009828428, z: 0.016124386}
 --- !u!1 &1777362932768008855
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +377,7 @@ GameObject:
   - component: {fileID: 1777362932768008853}
   - component: {fileID: 1777362932768008852}
   - component: {fileID: 4904027999232533465}
+  - component: {fileID: 328218533183087467}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: chains
@@ -501,6 +530,19 @@ MonoBehaviour:
   maxHealth: 40
   currentHealth: 0
   invulnerabilityTime: 0
+--- !u!135 &328218533183087467
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777362932768008855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.51058114
+  m_Center: {x: 0, y: 0, z: 0.010581106}
 --- !u!1 &1777362933531963414
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +643,7 @@ GameObject:
   - component: {fileID: 1777362933546969061}
   - component: {fileID: 1777362933546969060}
   - component: {fileID: 7805914813997195073}
+  - component: {fileID: 7055597040616179134}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: chains
@@ -753,6 +796,19 @@ MonoBehaviour:
   maxHealth: 40
   currentHealth: 0
   invulnerabilityTime: 0
+--- !u!135 &7055597040616179134
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777362933546969063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.51568866
+  m_Center: {x: 0, y: 0, z: 0.015688617}
 --- !u!1 &1777362933853269188
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +824,7 @@ GameObject:
   - component: {fileID: 1777362933853269210}
   - component: {fileID: 1777362933853269189}
   - component: {fileID: 1777362933853269215}
+  - component: {fileID: 6928412437337407043}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Explosion
@@ -851,8 +908,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.92144144, y: 0.9689585, z: 1}
+  m_Center: {x: 0.0035931468, y: 0.0155207515, z: 0}
 --- !u!54 &1777362933853269210
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -918,6 +975,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+--- !u!65 &6928412437337407043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777362933853269188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1777362934005482390
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +1042,7 @@ GameObject:
   - component: {fileID: 1777362934200589267}
   - component: {fileID: 1777362934200589266}
   - component: {fileID: 8336192245847139937}
+  - component: {fileID: 2327155998047539157}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: chains
@@ -1124,6 +1195,19 @@ MonoBehaviour:
   maxHealth: 40
   currentHealth: 0
   invulnerabilityTime: 0
+--- !u!135 &2327155998047539157
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777362934200589277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.51152015
+  m_Center: {x: 0, y: 0.0000004914214, z: 0.01152001}
 --- !u!1 &7656418629699328805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7656418629699328805}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6374, y: -6.8031, z: -1.744}
+  m_LocalPosition: {x: -0.03, y: -6.8031, z: -1.744}
   m_LocalScale: {x: 0.33215308, y: 6.634539, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
