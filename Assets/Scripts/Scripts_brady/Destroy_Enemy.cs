@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destroy_Enemy : MonoBehaviour
 {
-    public Player_Health playerHealth;
+    private Player_Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +25,7 @@ public class Destroy_Enemy : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-    if (other.gameObject.CompareTag("Obstacle"))
-
+        if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

@@ -11,6 +11,7 @@ public class chain_life : MonoBehaviour
     bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
+    private Player_Health playerHealth;
 
     void Start()
     {
@@ -66,6 +67,11 @@ public class chain_life : MonoBehaviour
 
         {
             Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            playerHealth.TakeDamage(1);
         }
     }
 }
