@@ -6,9 +6,9 @@ public class detec_player : MonoBehaviour
 {
     public GameObject obj;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (other.tag == "Player")
+        if (collider.tag == "Player")
         {
             obj.SetActive(true);  
         }
