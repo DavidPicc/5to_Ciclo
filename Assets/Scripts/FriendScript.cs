@@ -34,11 +34,6 @@ public class FriendScript : MonoBehaviour
     }
     void Update()
     {
-        if(FindObjectOfType<SituationManager>().wave == 7)
-        {
-            //GoAhead();
-        }
-
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Death();

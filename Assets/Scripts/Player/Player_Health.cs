@@ -22,6 +22,9 @@ public class Player_Health : MonoBehaviour
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
 
+        //transform.position = CheckPointScript.savedPoint;
+
+
         if (FindObjectOfType<TutorialManager>() != null)
         {
             canDie = false;

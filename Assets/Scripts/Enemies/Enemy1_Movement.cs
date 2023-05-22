@@ -6,8 +6,16 @@ using UnityEngine;
 public class Enemy1_Movement : MonoBehaviour
 {
     Rigidbody rb;
+    [Header("Movement")]
+    public float speed;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        rb.velocity = transform.right * speed;
     }
 }

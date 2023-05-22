@@ -29,6 +29,7 @@ public class SituationManager : MonoBehaviour
         _camera = FindObjectOfType<StageMovement>().transform;
         //timer = timeToSpawn;
         spawnPosition = _camera.position + new Vector3(0, 0, 0);
+        //wave = CheckPointScript.savedWave;
         index = wave;
 
         SpawnSituation();
@@ -40,11 +41,6 @@ public class SituationManager : MonoBehaviour
 
     void SpecialSituationsTutorial()
     {
-        if (situations[index].isShop)
-        {
-            GameManager.instance.OpenShop();
-        }
-
         if(wave == situations.Length)
         {
             TutorialManager.instance.VulnerableFriendsAndYou();
@@ -52,6 +48,18 @@ public class SituationManager : MonoBehaviour
         else if (wave == bossWave)
         {
             TutorialManager.instance.ActivateBoss();
+        }
+    }
+
+    void SpecialSituations()
+    {
+        if (situations[index].isShop)
+        {
+            GameManager.instance.OpenShop();
+        }
+        if (situations[index].isCheckpoint)
+        {
+            CheckPointScript.instance.UpdateCheckpoints();
         }
     }
 
@@ -66,7 +74,12 @@ public class SituationManager : MonoBehaviour
         timer = timeToSpawn;
         wave++;
 
-        SpecialSituationsTutorial();
+        SpecialSituations();
+        if(FindObjectOfType<TutorialManager>() != null)
+        {
+            SpecialSituationsTutorial();
+        }
+
 
         if (index < situations.Length - 1)
         {

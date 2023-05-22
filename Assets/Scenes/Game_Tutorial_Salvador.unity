@@ -3618,7 +3618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b3f41639dfb634096ddc182fff13d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossDeathTutorial: {fileID: 587352546}
+  bossDeathTutorialTransition: {fileID: 587352546}
+  boss: {fileID: 2069578587}
 --- !u!1 &507788393
 GameObject:
   m_ObjectHideFlags: 0
@@ -14088,7 +14089,11 @@ MonoBehaviour:
   delay: 0.07
   fullText: 
   currentText: 
-  running: 0
+  characterText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  finishedTyping: 0
+  timeBetweenText: 0
+  dialogues: []
 --- !u!1 &1693907023
 GameObject:
   m_ObjectHideFlags: 0
@@ -16523,75 +16528,90 @@ MonoBehaviour:
     dialogue:
     - Use the directional keys to MOVE.
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 0c01b24cf84511642b0ea981b51501cf,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: e8a94d9e9750d764785f1b739911c25d,
       type: 3}
     dialogue:
     - Use the Z button to SHOOT!
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 291c332126c29a24bbde134f1f4cd7d3,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 1fff9cbf0a9241b45a47483b4149c221,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 2275291b669e7c1448b8290c0d9175ac,
       type: 3}
     dialogue:
     - We'll go ahead! See you in a bit!
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: c2a5ec346cb15a34a8c7f47fc9ec54ae,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 45aac0bf5070bdd4ab685f5b25953c94,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: b1dda07c469d5ca448a274231b71d0cc,
       type: 3}
     dialogue:
     - "Sorry, but we\xB4ll leave this to you!"
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 59233405d23d9b445b02740a54a20cf8,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
     dialogue: []
     isShop: 1
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 13c67248f79d42048b6856fa5de31e85,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 66cf151e2b40a8e409563cc5fceacb04,
       type: 3}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   wave: 6
   situationOffset: 26.88
   timeToSpawn: 10
   spawnPosition: {x: 0, y: 0, z: 0}
   bossWave: 13
-  boss: {fileID: 2069578587}
   textTimerDisappear: 0
 --- !u!1 &2121626748
 GameObject:
