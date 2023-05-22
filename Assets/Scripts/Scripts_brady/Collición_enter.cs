@@ -8,10 +8,9 @@ public class Collición_enter : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet")
+        if (collision.gameObject.tag == "EnemyBullet")
         {
             gameObject.SetActive(false);
-   
         }
 
     }
