@@ -6,13 +6,28 @@ public class Player_Shoot3 : MonoBehaviour
 {
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
+    public float upgradedShootDamage;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] public float maxAngle;
+    public float upgradedBulletSpeed;
+    public float upgradedFireRate;
     float timer;
-    bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused;
+    bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
+    public bool equipped;
+
+    private void OnEnable()
+    {
+        GameManager.onShopApply += Shopping;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onShopApply -= Shopping;
+    }
+
     void Start()
     {
         timer = fireRate;
@@ -70,5 +85,19 @@ public class Player_Shoot3 : MonoBehaviour
             Destroy(bullet, 0.7f);
         }
         shotBullet = true;
+    }
+
+    void Shopping()
+    {
+        int levelShoot = UpgradeTracker.instance.levels["Flamethrower"];
+
+        if (levelShoot > 1){
+            bulletSpeed = upgradedBulletSpeed;
+            fireRate = upgradedFireRate;
+        }
+
+        if (levelShoot > 2) shootDamage = upgradedShootDamage;
+
+        equipped = UpgradeTracker.instance.equippedGun == "Flamethrower";
     }
 }

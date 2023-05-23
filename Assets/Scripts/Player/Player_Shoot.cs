@@ -103,6 +103,8 @@ public class Player_Shoot : MonoBehaviour
 
         if (levelShoot > 2) shootDamage = upgradedShootDamage;
 
+        gunLevel = levelShoot;
+
         equipped = UpgradeTracker.instance.equippedGun == "StraightGun";
     }
 }

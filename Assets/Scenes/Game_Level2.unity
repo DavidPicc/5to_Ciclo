@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3054,6 +3054,16 @@ PrefabInstance:
       propertyPath: maxLevel
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: upgradeCoreScaling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: upgradeGearScaling
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4201254911680461931, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3661,7 +3671,7 @@ PrefabInstance:
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -3679,6 +3689,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
         type: 3}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedFireRate
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedMaxAngle
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedBulletSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: shootPoints.Array.size
