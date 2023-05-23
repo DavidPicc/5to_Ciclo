@@ -8,7 +8,7 @@ public class fire : MonoBehaviour
     public float firerate;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,4 +23,12 @@ public class fire : MonoBehaviour
             Debug.Log("ola");
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
+
