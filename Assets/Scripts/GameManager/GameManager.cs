@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public GameObject shopMenu;
     public bool isPaused = false;
 
+    public delegate void ShopApply();
+    public static event ShopApply onShopApply;
+
     void Awake()
     {
         instance = this;
@@ -49,6 +52,8 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+
+        if (shopMenu.activeSelf) CloseShop();
     }
 
     public void DeathMenu()
@@ -83,6 +88,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         shopMenu.SetActive(false);
-        CheckPointScript.instance.UpdateCheckpoints();
+        //CheckPointScript.instance.UpdateCheckpoints();
+
+        if(onShopApply != null) onShopApply();
     }
 }

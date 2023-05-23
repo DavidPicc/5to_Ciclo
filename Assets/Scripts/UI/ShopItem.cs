@@ -29,6 +29,10 @@ public class ShopItem : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI costGearText, costCoreText, labelText;
     [SerializeField] string type;
+    public string Type
+    {
+        get { return  type; }
+    }
     public int level;
     public int maxLevel;
     public int costGear;

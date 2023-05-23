@@ -6,6 +6,7 @@ public class PlayerBullet2 : MonoBehaviour
 {
     public float explosionRadius = 3f; // The radius of the explosion
     public float explosionDelay = 0.5f; // The delay before the bullet explodes
+    public float explosionDamage = 10f;
     public GameObject explosionRadVisual;
 
     void Start()
@@ -22,7 +23,7 @@ public class PlayerBullet2 : MonoBehaviour
         {
             if (collider.GetComponentInParent<Enemy_Health>() != null)
             {
-                collider.GetComponentInParent<Enemy_Health>().TakeDamage(10);
+                collider.GetComponentInParent<Enemy_Health>().TakeDamage(explosionDamage);
             }
         }
         Destroy(gameObject, 0.1f);

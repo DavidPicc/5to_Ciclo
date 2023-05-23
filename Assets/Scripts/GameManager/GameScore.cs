@@ -17,7 +17,7 @@ public class GameScore : MonoBehaviour
     {
         instance = this;
 
-        AddGears(200);
+        AddGears(500);
         AddCores(0);
     }
     void Start()

@@ -7,6 +7,8 @@ public class UpgradeTracker : MonoBehaviour
     public static UpgradeTracker instance;
 
     public Dictionary<string, int> levels;
+    public string equippedGun;
+    public string equippedSkill;
 
     void Awake()
     {
@@ -31,6 +33,8 @@ public class UpgradeTracker : MonoBehaviour
             {
                 Debug.Log(pair.Key + " : " + pair.Value);
             }
+
+            Debug.Log("Equipped Gun: " + equippedGun + ", Equipped Skill: " + equippedSkill);
         }
     }
 }   

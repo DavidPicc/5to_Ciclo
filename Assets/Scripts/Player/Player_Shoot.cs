@@ -7,13 +7,27 @@ public class Player_Shoot : MonoBehaviour
     [HideInInspector] public int gunLevel = 0;
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
+    public float upgradedShootDamage;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] GameObject vfxShoot;
     float timer;
-    bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused;
+    bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
+    public bool equipped;
+
+
+    private void OnEnable()
+    {
+        GameManager.onShopApply += Shopping;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onShopApply -= Shopping;
+    }
+
     void Start()
     {
         timer = fireRate;
@@ -54,6 +68,7 @@ public class Player_Shoot : MonoBehaviour
         {
             var bullet = Instantiate(bulletPrefab, shootPoints[i].position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+            bullet.GetComponent<PlayerBullet_Script>().damage = shootDamage;
             
             GameObject vfx = Instantiate(vfxShoot, shootPoints[i].position, Quaternion.Euler(0f, 90f, 90f));
             //vfx.transform.SetParent(bullet.transform, false);
@@ -80,5 +95,14 @@ public class Player_Shoot : MonoBehaviour
                 fireRate = 0.03f;
                 break;
         }
+    }
+
+    void Shopping()
+    {
+        int levelShoot = UpgradeTracker.instance.levels["StraightGun"];
+
+        if (levelShoot > 2) shootDamage = upgradedShootDamage;
+
+        equipped = UpgradeTracker.instance.equippedGun == "StraightGun";
     }
 }

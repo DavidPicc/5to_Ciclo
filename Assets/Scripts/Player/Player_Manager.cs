@@ -5,7 +5,20 @@ using UnityEngine;
 public class Player_Manager : MonoBehaviour
 {
     public int maxCannons;
+
+    public int upgradeMaxCannons;
     [SerializeField] public int[] importantLevels;
+
+    private void OnEnable()
+    {
+        GameManager.onShopApply += Shopping;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onShopApply -= Shopping;
+    }
+
     void Start()
     {
         
@@ -68,5 +81,12 @@ public class Player_Manager : MonoBehaviour
             Invoke("InvokeSituation", 0.2f);
             Destroy(other.gameObject);
         }
+    }
+
+    void Shopping()
+    {
+        int levelShoot = UpgradeTracker.instance.levels["StraightGun"];
+
+        if (levelShoot > 1) maxCannons = upgradeMaxCannons;
     }
 }

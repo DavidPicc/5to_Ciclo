@@ -22,6 +22,8 @@ public class ShopMenu : MonoBehaviour
 
     void Start()
     {
+        SetEquipped();
+
         foreach(ShopItem gun in gunUpgrades)
         {
             gun.Shop = this;
@@ -68,7 +70,10 @@ public class ShopMenu : MonoBehaviour
                     for (int i = 0; i < gunUpgrades.Length; i++)
                     {
                         if (i != upgradeSelected) gunUpgrades[i].Equipped = false;
-                        else gunUpgrades[i].Equipped = true;
+                        else {
+                            gunUpgrades[i].Equipped = true;
+                            UpgradeTracker.instance.equippedGun = gunUpgrades[i].Type;
+                        }
                     }
                 }
                 else
@@ -76,7 +81,10 @@ public class ShopMenu : MonoBehaviour
                     for (int i = 0; i < skillUpgrades.Length; i++)
                     {
                         if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
-                        else skillUpgrades[i].Equipped = true;
+                        else {
+                            skillUpgrades[i].Equipped = true;
+                            UpgradeTracker.instance.equippedSkill = skillUpgrades[i].Type;
+                        }
                     }
                 }
             }
@@ -141,5 +149,38 @@ public class ShopMenu : MonoBehaviour
         }
 
         if(Input.GetKey(key)) StartCoroutine(Upgrade());
+    }
+
+    void SetEquipped()
+    {
+        //Gun Equipped
+        if(UpgradeTracker.instance.equippedGun != "")
+        {     
+            foreach(ShopItem shopItem in gunUpgrades)
+            {
+                if(shopItem.Type == UpgradeTracker.instance.equippedGun) shopItem.Equipped = true;
+                else shopItem.Equipped = false;
+            }
+        } else
+        {
+            ShopItem shopItem = Array.Find(gunUpgrades, e => e.Equipped == true);
+
+            if(shopItem != null) UpgradeTracker.instance.equippedGun = shopItem.Type;
+        }
+
+        //Skill Equipped
+        if (UpgradeTracker.instance.equippedSkill != "")
+        {
+            foreach (ShopItem shopItem in skillUpgrades)
+            {
+                if (shopItem.Type == UpgradeTracker.instance.equippedSkill) shopItem.Equipped = true;
+                else shopItem.Equipped = false;
+            }
+        } else
+        {
+            ShopItem shopItem = Array.Find(skillUpgrades, e => e.Equipped == true);
+
+            if(shopItem != null) UpgradeTracker.instance.equippedSkill = shopItem.Type;
+        }
     }
 }
