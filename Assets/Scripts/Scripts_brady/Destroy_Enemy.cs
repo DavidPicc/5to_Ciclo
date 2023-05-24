@@ -21,12 +21,16 @@ public class Destroy_Enemy : MonoBehaviour
     {
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet"))
         {
-            playerHealth.TakeDamage(1);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Player"))
         {
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("Player"))
+        {
+            playerHealth.TakeDamage(1);
             Destroy(gameObject);
         }
     }
