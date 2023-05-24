@@ -92,7 +92,7 @@ public class objet_destrur : MonoBehaviour
               
             }
             }
-            if (CompareTag("Obstacle") || other.CompareTag("weigh") || other.CompareTag("destructible"))
+            if (CompareTag("Obstacle") || other.CompareTag("weigh"))
             {
                Destroy(gameObject);
                 if (!obstacle)

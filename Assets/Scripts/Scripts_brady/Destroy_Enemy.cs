@@ -31,7 +31,7 @@ public class Destroy_Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerHealth.TakeDamage(1);
-            Destroy(gameObject);
+         
         }
     }
  

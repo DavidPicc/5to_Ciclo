@@ -50,7 +50,7 @@ public class chain_life : MonoBehaviour
     public void Death()
     {
       Destroy(this);
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,17 +61,13 @@ public class chain_life : MonoBehaviour
             {
                 TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
                 Destroy(other.gameObject);
+
            }
         }
-        if (other.gameObject.CompareTag("Obstacle"))
-
+      
+        if (other.CompareTag("Obstacle")|| (other.CompareTag("destructible")))
         {
             Destroy(gameObject);
-        }
-
-        if (other.CompareTag("Player"))
-        {
-            playerHealth.TakeDamage(1);
         }
     }
 }

@@ -5,12 +5,15 @@ using UnityEngine;
 public class player_detect : MonoBehaviour
 {
     public GameObject chain;
+
+
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.tag=="Player")
         {
             chain.SetActive(false);
         }
+      
     }
 }
 

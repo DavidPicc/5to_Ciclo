@@ -25,7 +25,7 @@ public class fire : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle")||other.CompareTag("destructible")|| other.CompareTag("Enemy")|| other.CompareTag("chains"))
         {
             Destroy(gameObject);
         }
