@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3306,6 +3306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: equipped
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -16848,14 +16853,19 @@ MonoBehaviour:
   situations:
   - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
-    dialogue:
-    - Robot1;Use the directional keys to MOVE.
-    - Robot2;Yeah! Yeah! Just move!
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
+      type: 3}
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Robot1;Use the directional keys to MOVE.
+    - Robot2;Yeah! Yeah! Just move!
     isShop: 0
     isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 0c01b24cf84511642b0ea981b51501cf,
@@ -16896,15 +16906,11 @@ MonoBehaviour:
     isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Robot 2;This looks bad, very bad
     isShop: 0
     isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: b1dda07c469d5ca448a274231b71d0cc,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-  - situationPrefab: {fileID: 4520026764095519211, guid: 59233405d23d9b445b02740a54a20cf8,
       type: 3}
     dialogue: []
     isShop: 0
