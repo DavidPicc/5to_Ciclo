@@ -23,6 +23,7 @@ public class PlayerBullet_Script : MonoBehaviour
                     other.GetComponent<Enemy_Health>().TakeDamage(damage);
                 }
                 Destroy(gameObject, dissapearAfterColliding);
+                Destroy(gameObject, 2.5f);
             }
         }
         if (other.CompareTag("EnemyBullet"))
@@ -36,5 +37,6 @@ public class PlayerBullet_Script : MonoBehaviour
             }
             
         }
+        
     }
 }
