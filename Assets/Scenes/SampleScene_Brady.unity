@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1764,7 +1764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &403153844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7046,6 +7046,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242564627}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1267776457
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342192591010956721, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357955088167139633, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358926905762887219, guid: 5ccecb1d5c447f247899b107c881a718,
+        type: 3}
+      propertyPath: bulletAng
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ccecb1d5c447f247899b107c881a718, type: 3}
 --- !u!1 &1275080750
 GameObject:
   m_ObjectHideFlags: 0
@@ -7770,7 +7844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1472073884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8412,6 +8486,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150865511}
     m_Modifications:
+    - target: {fileID: 4417392101379186583, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6093436275180687701, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_RootOrder
@@ -10026,15 +10105,19 @@ MonoBehaviour:
   - situationPrefab: {fileID: 0}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 0}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 0}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   - situationPrefab: {fileID: 0}
     dialogue: []
     isShop: 0
+    isCheckpoint: 0
   wave: 0
   situationOffset: 26.88
   timeToSpawn: 5
