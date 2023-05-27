@@ -29,7 +29,6 @@ public class fire : MonoBehaviour
         {
             Destroy(gameObject);
         }
-       
     }
 }
 
