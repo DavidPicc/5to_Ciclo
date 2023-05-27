@@ -6,6 +6,12 @@ public class PlayerBullet_Script : MonoBehaviour
 {
     [SerializeField] public float damage;
     [SerializeField] public float dissapearAfterColliding;
+   
+        public void Start()
+    {
+        Destroy(gameObject, 3f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Obstacle"))
