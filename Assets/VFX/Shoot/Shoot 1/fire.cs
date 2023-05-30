@@ -8,7 +8,7 @@ public class fire : MonoBehaviour
     public float firerate;
     void Start()
     {
-
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame

@@ -10,7 +10,7 @@ public class detec_player : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            obj.SetActive(true);  
+            obj.SetActive(false);  
         }
     }
 }
