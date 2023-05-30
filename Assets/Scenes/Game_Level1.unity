@@ -2852,11 +2852,11 @@ GameObject:
   - component: {fileID: 403153844}
   m_Layer: 5
   m_Name: DeathMenu
-  m_TagString: Untagged
+  m_TagString: deathMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &403153844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3681,6 +3681,16 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: triboltOpeningAngle
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: shootPoints.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3737,6 +3747,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: cannons
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: equipped
       value: 1
       objectReference: {fileID: 0}
@@ -3750,6 +3765,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradeCannons
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedCannon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6093436275180687701, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -3847,6 +3877,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
         type: 3}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedFireRate
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedBulletSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: shootPoints.Array.size
@@ -4430,6 +4475,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544521788}
   m_CullTransparentMesh: 1
+--- !u!1 &560001718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560001720}
+  - component: {fileID: 560001719}
+  m_Layer: 0
+  m_Name: CheckPoint Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &560001719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560001718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb1038d20e56984d8cfa2cc01946829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &560001720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560001718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.36, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &564380921
 GameObject:
   m_ObjectHideFlags: 0
@@ -13105,11 +13194,11 @@ GameObject:
   - component: {fileID: 1472073884}
   m_Layer: 5
   m_Name: PauseMenu
-  m_TagString: Untagged
+  m_TagString: pauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1472073884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15058,11 +15147,11 @@ GameObject:
   - component: {fileID: 1811509488}
   m_Layer: 5
   m_Name: ShopMenu_1
-  m_TagString: Untagged
+  m_TagString: shopMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1811509487
 RectTransform:
   m_ObjectHideFlags: 0

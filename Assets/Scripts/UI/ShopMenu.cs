@@ -143,8 +143,8 @@ public class ShopMenu : MonoBehaviour
             upgradingTimer = 0f;
             selectedItem.upgradingAnim.SetFloat("fill", 0f);
 
-            GameScore.instance.gearScore -= selectedItem.costGear;
-            GameScore.instance.coreScore -= selectedItem.costCore;
+            GameScore.instance.RemoveGears(selectedItem.costGear);
+            GameScore.instance.RemoveCores(selectedItem.costCore);
             selectedItem.Upgrade();
         }
 

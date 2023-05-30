@@ -6,9 +6,6 @@ public class Player_Shoot2 : MonoBehaviour
 {
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
-    public float upgradedShootDamage;
-    [SerializeField] bool tribolt;
-    public float triboltOpeningAngle;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
@@ -16,6 +13,12 @@ public class Player_Shoot2 : MonoBehaviour
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
     public bool equipped;
+
+    [Header("Upgrade System")]
+    [SerializeField] int levelShoot;
+    public float upgradedShootDamage;
+    [SerializeField] bool tribolt;
+    public float triboltOpeningAngle;
 
     private void OnEnable()
     {
@@ -30,6 +33,7 @@ public class Player_Shoot2 : MonoBehaviour
     void Start()
     {
         timer = fireRate;
+        levelShoot = 0;
     }
 
 
@@ -87,12 +91,14 @@ public class Player_Shoot2 : MonoBehaviour
 
     void Shopping()
     {
-        tribolt = UpgradeTracker.instance.levels["AreaGun"] > 1;
-
-        if (UpgradeTracker.instance.levels["AreaGun"] > 2)
+        if (UpgradeTracker.instance.levels.ContainsKey("AreaGun"))
         {
-            shootDamage = upgradedShootDamage;
+            levelShoot = UpgradeTracker.instance.levels["AreaGun"];
         }
+
+        tribolt = levelShoot > 1;
+
+        if (levelShoot > 2) shootDamage = upgradedShootDamage;
 
         equipped = UpgradeTracker.instance.equippedGun == "AreaGun";
     }

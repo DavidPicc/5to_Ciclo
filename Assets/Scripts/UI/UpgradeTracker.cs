@@ -17,12 +17,8 @@ public class UpgradeTracker : MonoBehaviour
             instance = this;
 
             DontDestroyOnLoad(this.gameObject);
+            levels = new Dictionary<string, int>();
         } else Destroy(this.gameObject);
-    }
-
-    private void Start()
-    {
-        levels = new Dictionary<string, int>();
     }
 
     private void Update()

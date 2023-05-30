@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2683000271644706868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.439, y: -0.021, z: -0.906}
+  m_LocalPosition: {x: 1.15, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -263,6 +263,11 @@ MonoBehaviour:
   - {fileID: 6478061047812268404}
   fireRate: 0.05
   vfxShoot: {fileID: 0}
+  cannons: 0
+  equipped: 0
+  levelShoot: 0
+  upgradedShootDamage: 0
+  upgradeCannons: 0
 --- !u!114 &5813331617710626669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +285,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   shootPoints: []
   fireRate: 0
+  equipped: 0
+  levelShoot: 0
+  upgradedShootDamage: 0
+  tribolt: 0
+  triboltOpeningAngle: 0
 --- !u!114 &8777242574744229124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +308,11 @@ MonoBehaviour:
   shootPoints: []
   fireRate: 0
   maxAngle: 0
+  equipped: 0
+  levelShoot: 0
+  upgradedShootDamage: 0
+  upgradedBulletSpeed: 0
+  upgradedFireRate: 0
 --- !u!114 &9206331676554157252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +328,7 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 0
   invulnerabilityTime: 0.2
+  canDie: 1
   healthFillBar: {fileID: 0}
   crushed: 0
 --- !u!114 &4417392101379186583
@@ -612,7 +628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6093436276308831541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.439, y: -0.021, z: 0.906}
+  m_LocalPosition: {x: 1.15, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

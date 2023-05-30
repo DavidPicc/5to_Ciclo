@@ -7,16 +7,22 @@ public class Player_Shoot : MonoBehaviour
     [HideInInspector] public int gunLevel = 0;
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
-    public float upgradedShootDamage;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] GameObject vfxShoot;
+    public int cannons;
+    public int cannon;
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
     public bool equipped;
 
+    [Header("Upgrade System")]
+    [SerializeField] int levelShoot;
+    public float upgradedShootDamage;
+    public int upgradeCannons;
+    public int upgradedCannon;
 
     private void OnEnable()
     {
@@ -31,7 +37,7 @@ public class Player_Shoot : MonoBehaviour
     void Start()
     {
         timer = fireRate;
-        Upgrades();
+        levelShoot = 1;
     }
 
 
@@ -64,7 +70,7 @@ public class Player_Shoot : MonoBehaviour
 
     void Shoot_Normal()
     {
-        for(int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
+        for(int i = cannon; i < cannons; i++)
         {
             var bullet = Instantiate(bulletPrefab, shootPoints[i].position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
@@ -78,32 +84,16 @@ public class Player_Shoot : MonoBehaviour
         shotBullet = true;
     }
 
-    public void Upgrades()
-    {
-        switch(gunLevel)
-        {
-            case 0:
-                fireRate = 0.15f;
-                break;
-            case 1:
-                fireRate = 0.08f;
-                break;
-            case 2:
-                fireRate = 0.05f;
-                break;
-            case 3:
-                fireRate = 0.03f;
-                break;
-        }
-    }
-
     void Shopping()
     {
-        int levelShoot = UpgradeTracker.instance.levels["StraightGun"];
+        if (UpgradeTracker.instance.levels.ContainsKey("StraightGun"))
+        {
+            levelShoot = UpgradeTracker.instance.levels["StraightGun"];
+        }
 
         if (levelShoot > 2) shootDamage = upgradedShootDamage;
 
-        gunLevel = levelShoot;
+        if (levelShoot > 1) cannons = upgradeCannons;
 
         equipped = UpgradeTracker.instance.equippedGun == "StraightGun";
     }

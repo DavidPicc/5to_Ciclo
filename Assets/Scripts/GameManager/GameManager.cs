@@ -16,13 +16,39 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+        } else Destroy(gameObject);
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        pauseMenu = GameObject.FindGameObjectWithTag("pauseMenu");
+        deathMenu = GameObject.FindGameObjectWithTag("deathMenu");
+        shopMenu = GameObject.FindGameObjectWithTag("shopMenu");
+
+        deathMenu.SetActive(false);
+        shopMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+    }
+
     void Start()
     {
         ResumeGame();
         deathMenu.SetActive(false);
         shopMenu.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     void Update()
@@ -80,6 +106,8 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
+        isPaused = true;
+
         Time.timeScale = 0f;
         shopMenu.SetActive(true);
     }

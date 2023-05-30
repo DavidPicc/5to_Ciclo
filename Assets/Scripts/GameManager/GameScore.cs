@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameScore : MonoBehaviour
 {
@@ -15,11 +16,32 @@ public class GameScore : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else Destroy(gameObject);
 
         AddGears(0);
         AddCores(0);
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        CanvasUI.instance.gearsText.text = gearScore.ToString();
+        CanvasUI.instance.coresText.text = coreScore.ToString();
+    }
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -50,6 +72,12 @@ public class GameScore : MonoBehaviour
     public void AddCores(int amount)
     {
         coreScore = coreScore + amount;
+        CanvasUI.instance.coresText.text = coreScore.ToString();
+    }
+
+    public void RemoveCores(int amount)
+    {
+        coreScore = coreScore - amount;
         CanvasUI.instance.coresText.text = coreScore.ToString();
     }
 

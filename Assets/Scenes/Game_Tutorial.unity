@@ -2661,11 +2661,11 @@ GameObject:
   - component: {fileID: 403153844}
   m_Layer: 5
   m_Name: DeathMenu
-  m_TagString: Untagged
+  m_TagString: deathMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &403153844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3248,6 +3248,16 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: triboltOpeningAngle
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: shootPoints.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3309,6 +3319,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: cannon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: cannons
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: equipped
       value: 1
       objectReference: {fileID: 0}
@@ -3327,6 +3347,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradeCannons
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093436275180687690, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6093436275180687701, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -3434,6 +3464,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
         type: 3}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedFireRate
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedBulletSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: shootPoints.Array.size
@@ -12992,11 +13037,11 @@ GameObject:
   - component: {fileID: 1472073884}
   m_Layer: 5
   m_Name: PauseMenu
-  m_TagString: Untagged
+  m_TagString: pauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1472073884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13662,11 +13707,11 @@ GameObject:
   - component: {fileID: 1615336152}
   m_Layer: 5
   m_Name: ShopMenu_1
-  m_TagString: Untagged
+  m_TagString: shopMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1615336151
 RectTransform:
   m_ObjectHideFlags: 0

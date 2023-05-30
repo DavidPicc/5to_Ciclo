@@ -6,17 +6,20 @@ public class Player_Shoot3 : MonoBehaviour
 {
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
-    public float upgradedShootDamage;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] public float maxAngle;
-    public float upgradedBulletSpeed;
-    public float upgradedFireRate;
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
     public bool equipped;
+
+    [Header("Upgrades System")]
+    [SerializeField] int levelShoot;
+    public float upgradedShootDamage;
+    public float upgradedBulletSpeed;
+    public float upgradedFireRate;
 
     private void OnEnable()
     {
@@ -31,6 +34,7 @@ public class Player_Shoot3 : MonoBehaviour
     void Start()
     {
         timer = fireRate;
+        levelShoot = 0;
     }
 
 
@@ -89,7 +93,11 @@ public class Player_Shoot3 : MonoBehaviour
 
     void Shopping()
     {
-        int levelShoot = UpgradeTracker.instance.levels["Flamethrower"];
+        
+        if (UpgradeTracker.instance.levels.ContainsKey("Flamethrower"))
+        {
+            levelShoot = UpgradeTracker.instance.levels["Flamethrower"];
+        }
 
         if (levelShoot > 1){
             bulletSpeed = upgradedBulletSpeed;
