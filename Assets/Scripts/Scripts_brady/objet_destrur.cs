@@ -14,9 +14,9 @@ public class objet_destrur : MonoBehaviour
 
     [SerializeField] GameObject pointsPrefab;
     [SerializeField] int enemyValueInPoints;
-
+  
     bool spawnedPoints = false;
-
+    [SerializeField] GameObject vfxexplosion;
     [SerializeField] bool obstacle = false;
     [SerializeField] public bool invulnerable = false;
     void Start()
@@ -65,6 +65,7 @@ public class objet_destrur : MonoBehaviour
         Destroy(gameObject, 0.2f);
         if (!spawnedPoints)
             SpawnPoints();
+        Instantiate(vfxexplosion, transform.position, Quaternion.identity);
         Destroy(this);
     }
 

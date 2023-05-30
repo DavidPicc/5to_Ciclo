@@ -19,6 +19,8 @@ public class Player_Ability2 : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+
+   
     void Start()
     {
         rechargeBar = maxRechargeBar;
@@ -79,4 +81,5 @@ public class Player_Ability2 : MonoBehaviour
             }
         }
     }
+
 }

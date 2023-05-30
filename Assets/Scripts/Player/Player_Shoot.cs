@@ -10,7 +10,7 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
-    [SerializeField] GameObject vfxShoot;
+   //[SerializeField] GameObject vfxShoot;
     public int cannons;
     public int cannon;
     float timer;
@@ -36,8 +36,14 @@ public class Player_Shoot : MonoBehaviour
 
     void Start()
     {
+     //   if (vfxShoot != null)
+     //   {
+     //       var vfxShootp = Instantiate(vfxShoot, transform.position, Quaternion.identity);
+      //      vfxShootp.transform.forward = gameObject.transform.forward;
+     //   }
         timer = fireRate;
         levelShoot = 1;
+ 
     }
 
 
@@ -48,6 +54,7 @@ public class Player_Shoot : MonoBehaviour
         {
             Shoot_Normal();
         }
+
     }
 
     void CheckIfShot()
@@ -75,8 +82,8 @@ public class Player_Shoot : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, shootPoints[i].position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             bullet.GetComponent<PlayerBullet_Script>().damage = shootDamage;
-            
-            GameObject vfx = Instantiate(vfxShoot, shootPoints[i].position, Quaternion.Euler(0f, 90f, 90f));
+           
+         //   GameObject vfx = Instantiate(vfxShoot, shootPoints[i].position, Quaternion.Euler(0f, 90f, 90f));
             //vfx.transform.SetParent(bullet.transform, false);
 
             Destroy(bullet, 2f);
