@@ -82,6 +82,13 @@ public class Player_Health : MonoBehaviour
             canBeDamaged = false;
         }
     }
+
+    public void GetFullHealth()
+    {
+        currentHealth = maxHealth;
+        UpdateHealthBar();
+        Debug.Log("Player has been fully healed!");
+    }
     public void Death()
     {
         //Destroy(gameObject, 0.2f);
