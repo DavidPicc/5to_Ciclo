@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class DialogueScript : MonoBehaviour
 {
@@ -20,13 +21,31 @@ public class DialogueScript : MonoBehaviour
 
     public List<string> dialogues = new List<string>();
     int index = 0;
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        characterText = GameObject.FindGameObjectWithTag("nameText").GetComponent<TextMeshProUGUI>();
+        dialogueText = GameObject.FindGameObjectWithTag("dialogueText").GetComponent<TextMeshProUGUI>();
+    }
+
     void Awake()
     {
-        instance = this;
-    }
-    void Start()
-    {
-
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
     }
 
     bool isRunning = false;

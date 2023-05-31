@@ -16,7 +16,13 @@ public class CheckPointScript : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+
+            PlayerPrefs.SetInt("wave", 0);
+        }
+        else Destroy(gameObject);
     }
 
     void Start()
