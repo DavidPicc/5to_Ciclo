@@ -9,7 +9,7 @@ public class SituationManager : MonoBehaviour
     public SituationScript[] situations;
     Transform _camera;
     int index = 0;
-    public int wave = 0;
+    public int wave;
     public float situationOffset = 27f;
     public float timeToSpawn;
     float timer;

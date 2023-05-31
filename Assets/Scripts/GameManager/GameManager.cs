@@ -55,13 +55,16 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!isPaused)
+            if (!deathMenu.activeSelf)
             {
-                PauseGame();
-            }
-            else
-            {
-                ResumeGame();
+                if (!isPaused)
+                {
+                    PauseGame();
+                }
+                else
+                {
+                    ResumeGame();
+                }
             }
         }
     }
@@ -90,11 +93,13 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        ResumeGame();
         SceneManager.LoadScene(sceneName);
     }
 
     public void ReloadScene()
     {
+        ResumeGame();
         string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
     }

@@ -12,6 +12,8 @@ public class CheckPointScript : MonoBehaviour
     public static int gearsSaved;
     public static int coresSaved;
 
+    public bool resetCheckpoint = false;
+
     private void Awake()
     {
         instance = this;
@@ -20,8 +22,10 @@ public class CheckPointScript : MonoBehaviour
     void Start()
     {
         /// PARA RESETEAR LOS PLAYERPREFS SIEMPRE (BORRAR LUEGO) ///
-        ResetCheckpoints();
-
+        if(resetCheckpoint)
+        {
+            ResetCheckpoints();
+        }
 
         savedWave = PlayerPrefs.GetInt("wave");
         //savedPoint = new Vector3(PlayerPrefs.GetFloat("pointX"), PlayerPrefs.GetFloat("pointY"), PlayerPrefs.GetFloat("pointZ"));
@@ -30,7 +34,6 @@ public class CheckPointScript : MonoBehaviour
 
         LoadCheckpoints();
 
-        Debug.Log("CHECKPOINT: " + savedPoint.x + ", " + savedPoint.y + ", " + savedPoint.z);
         Debug.Log("WAVE: " + savedWave);
 
         //if (FindObjectOfType<Player_Movement>() != null)
@@ -67,26 +70,22 @@ public class CheckPointScript : MonoBehaviour
 
     public void ResetCheckpoints()
     {
-        savedPoint = Vector3.zero;
         savedWave = 0;
 
         PlayerPrefs.DeleteAll();
     }
     public void UpdateCheckpoints()
     {
-        //savedPoint = player.position;
         savedWave = SituationManager.instance.wave;
         gearsSaved = GameScore.instance.gearScore;
         coresSaved = GameScore.instance.coreScore;
 
         PlayerPrefs.SetInt("wave", savedWave);
-        //PlayerPrefs.SetFloat("pointX", savedPoint.x);
-        //PlayerPrefs.SetFloat("pointY", savedPoint.y);
-        //PlayerPrefs.SetFloat("pointZ", savedPoint.z);
         PlayerPrefs.SetInt("gears", gearsSaved);
         PlayerPrefs.SetInt("cores", coresSaved);
 
-        //Debug.Log("CHECKPOINT SAVED: " + savedPoint.x + ", " + savedPoint.y + ", " + savedPoint.z);
+        FindObjectOfType<Player_Health>().GetFullHealth();
+
         Debug.Log("WAVE SAVED: " + savedWave);
     }
 }
