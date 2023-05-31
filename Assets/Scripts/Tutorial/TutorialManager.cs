@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -8,9 +11,34 @@ public class TutorialManager : MonoBehaviour
     public GameObject bossDeathTutorialTransition;
     public GameObject boss;
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        bossDeathTutorialTransition = GameObject.FindGameObjectWithTag("transitionLevel");
+        boss = GameObject.FindGameObjectWithTag("bossTutorial");
+
+        if(bossDeathTutorialTransition != null) bossDeathTutorialTransition.SetActive(false);
+        if(boss) boss.SetActive(false);
+    }
+
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+
     }
     void Start()
     {

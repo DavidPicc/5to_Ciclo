@@ -4607,11 +4607,11 @@ GameObject:
   - component: {fileID: 587352551}
   m_Layer: 5
   m_Name: NextLevel
-  m_TagString: Untagged
+  m_TagString: transitionLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &587352547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14007,14 +14007,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690640827}
-  - component: {fileID: 1690640828}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1690640827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14037,26 +14036,6 @@ RectTransform:
   m_AnchoredPosition: {x: -38.33499, y: -244.63}
   m_SizeDelta: {x: 748.07, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1690640828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690640826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e7cd0d958804a742b02c1751da6d09d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0.07
-  fullText: 
-  currentText: 
-  characterText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  finishedTyping: 0
-  timeBetweenText: 0
-  dialogues: []
 --- !u!1 &1693907023
 GameObject:
   m_ObjectHideFlags: 0
@@ -15602,7 +15581,7 @@ GameObject:
   - component: {fileID: 1948964079}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: dialogueText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17641,7 +17620,7 @@ GameObject:
   - component: {fileID: 2145034186}
   m_Layer: 5
   m_Name: Name
-  m_TagString: Untagged
+  m_TagString: nameText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

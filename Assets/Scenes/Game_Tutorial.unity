@@ -3215,6 +3215,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150865511}
     m_Modifications:
+    - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: abilityBar
+      value: 
+      objectReference: {fileID: 716831648}
     - target: {fileID: 2165871524759528965, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Enabled
@@ -3473,6 +3478,11 @@ PrefabInstance:
       propertyPath: checkDistance
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6562598885265835713, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: healthFillBar
+      value: 
+      objectReference: {fileID: 716831648}
     - target: {fileID: 8154364237148156367, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4370,11 +4380,11 @@ GameObject:
   - component: {fileID: 587352551}
   m_Layer: 5
   m_Name: NextLevel
-  m_TagString: Untagged
+  m_TagString: transitionLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &587352547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14029,6 +14039,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e59351242f861674c8029ff821d3d566, type: 3}
+--- !u!4 &1655830673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8088536440039082832, guid: e9aa5d11abe99f24382d1683cf9d502a,
+    type: 3}
+  m_PrefabInstance: {fileID: 448131770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1668959633
 GameObject:
   m_ObjectHideFlags: 0
@@ -14159,7 +14175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1690640827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15531,7 +15547,7 @@ GameObject:
   - component: {fileID: 1948964079}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: dialogueText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16349,7 +16365,12 @@ PrefabInstance:
     - target: {fileID: 445335173282424117, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445335173282424117, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: m_TagString
+      value: bossTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
@@ -17078,7 +17099,7 @@ GameObject:
   - component: {fileID: 2145034186}
   m_Layer: 5
   m_Name: Name
-  m_TagString: Untagged
+  m_TagString: nameText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
