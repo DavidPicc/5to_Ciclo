@@ -2060,7 +2060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.39, y: -1, z: -13.5}
+  m_LocalPosition: {x: 4.29, y: -1, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3515,7 +3515,7 @@ PrefabInstance:
     - target: {fileID: 8088536440039082832, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.9
+      value: -12.959999
       objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082833, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -3700,7 +3700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7cd0d958804a742b02c1751da6d09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.05
+  delay: 0.06
   fullText: 
   currentText: 
   characterText: {fileID: 2145034186}
@@ -8300,7 +8300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902648811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.61, y: -1, z: -13.5}
+  m_LocalPosition: {x: -5.71, y: -1, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15057,7 +15057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869051634}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.1, y: 0, z: 0}
+  m_LocalPosition: {x: -5.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16423,7 +16423,7 @@ PrefabInstance:
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.94
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
@@ -16469,6 +16469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7301318070509212514, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: bossTimerIn
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9184286534516126222, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
@@ -17042,13 +17047,18 @@ MonoBehaviour:
       and end with your useless.. pitiful.. meaningless.. existence..
     isShop: 0
     isCheckpoint: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: 2275291b669e7c1448b8290c0d9175ac,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
   wave: 0
   situationOffset: 43.04
   timeToSpawn: 10
   spawnPosition: {x: 0, y: 0, z: 0}
   bossWave: 14
   textTimerDisappear: 0
-  timeCooldown: 0
+  timeCooldown: 0.0001
 --- !u!1 &2130925346
 GameObject:
   m_ObjectHideFlags: 0
@@ -17503,7 +17513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4520026763681970335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0, z: 0}
+  m_LocalPosition: {x: 13.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
