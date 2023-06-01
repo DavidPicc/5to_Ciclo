@@ -67,8 +67,8 @@ public class Player_Manager : MonoBehaviour
             }
 
             //SituationManager.instance.SpawnSituation();
-            Invoke("InvokeSituation", 0.2f);
             Destroy(other.gameObject);
+            Invoke("InvokeSituation", 0.2f);
         }
     }
 }

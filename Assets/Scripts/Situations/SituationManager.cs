@@ -20,6 +20,9 @@ public class SituationManager : MonoBehaviour
     public float textTimerDisappear;
     float textTimer;
 
+    public float timeCooldown;
+    float timerCooldown;
+
     void Awake()
     {
         instance = this;
@@ -36,7 +39,7 @@ public class SituationManager : MonoBehaviour
     }
     void Update()
     {
-
+        if(timerCooldown > 0) timerCooldown -= Time.deltaTime;
     }
 
     void SpecialSituationsTutorial()
@@ -65,6 +68,10 @@ public class SituationManager : MonoBehaviour
 
     public void SpawnSituation()
     {
+        if (timerCooldown > 0f) return;
+
+        timerCooldown = timeCooldown;
+
         var sit = Instantiate(situations[index].situationPrefab, spawnPosition, Quaternion.identity);
         if (situations[index].dialogue.Length > 0)
         {

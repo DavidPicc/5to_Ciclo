@@ -23,7 +23,7 @@ public class PlayerCrushedRays : MonoBehaviour
     {
         FindObjectOfType<Player_Health>().crushed = 0;
 
-        if (Physics.Raycast(leftPoint.position, -Vector3.right, out leftHit, checkDistance))
+        if (Physics.Raycast(leftPoint.position, -Vector3.right, out leftHit, checkDistance, crushedLayers))
         {
             if(leftHit.collider.gameObject.CompareTag("Obstacle") || (((1 << leftHit.collider.gameObject.layer) & crushedLayers) != 0))
             {
@@ -32,7 +32,7 @@ public class PlayerCrushedRays : MonoBehaviour
             }
         }
 
-        if (Physics.Raycast(rightPoint.position, Vector3.right, out rightHit, checkDistance))
+        if (Physics.Raycast(rightPoint.position, Vector3.right, out rightHit, checkDistance, crushedLayers))
         {
             if (rightHit.collider.gameObject.CompareTag("Obstacle") || (((1 << rightHit.collider.gameObject.layer) & crushedLayers) != 0))
             {

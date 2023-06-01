@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8285,7 +8285,7 @@ GameObject:
   - component: {fileID: 936578697}
   m_Layer: 7
   m_Name: InvisibleWall
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16596,6 +16596,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5959479356068048306, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011070463039015488, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6562598885265835713, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: healthFillBar
@@ -16660,6 +16670,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: leftPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: rightPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: checkDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: crushedLayers.m_Bits
+      value: 1152
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9aa5d11abe99f24382d1683cf9d502a, type: 3}
@@ -17545,6 +17580,7 @@ MonoBehaviour:
   spawnPosition: {x: 0, y: 0, z: 0}
   bossWave: 61
   textTimerDisappear: 0
+  timeCooldown: 0.0001
 --- !u!1 &2130925346
 GameObject:
   m_ObjectHideFlags: 0
