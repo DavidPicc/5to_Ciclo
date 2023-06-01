@@ -7375,10 +7375,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150865511}
     m_Modifications:
+    - target: {fileID: 2241798537447012, guid: e9aa5d11abe99f24382d1683cf9d502a, type: 3}
+      propertyPath: crushedLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 1672292630226098270, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Radius
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580208688366345285, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: crushedLayers.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6562598885265835713, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -7449,6 +7458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8599227903523507572, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -17328,6 +17342,7 @@ MonoBehaviour:
   spawnPosition: {x: 0, y: 0, z: 0}
   bossWave: 73
   textTimerDisappear: 0
+  timeCooldown: 0
 --- !u!1001 &2119368141
 PrefabInstance:
   m_ObjectHideFlags: 0

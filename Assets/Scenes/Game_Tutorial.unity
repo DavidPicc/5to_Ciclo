@@ -2060,7 +2060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.45, y: -1, z: -13.5}
+  m_LocalPosition: {x: 4.39, y: -1, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3215,6 +3215,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150865511}
     m_Modifications:
+    - target: {fileID: 2241798537447012, guid: e9aa5d11abe99f24382d1683cf9d502a, type: 3}
+      propertyPath: crushedLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: range
@@ -3269,6 +3273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxRechargeBar
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580208688366345285, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: crushedLayers.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 5124697669038792254, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -3506,12 +3515,22 @@ PrefabInstance:
     - target: {fileID: 8088536440039082832, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.8
+      value: -19.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082833, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8154364237148156367, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.279
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8777242574744229124, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -3696,7 +3715,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490937428}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fb1038d20e56984d8cfa2cc01946829, type: 3}
   m_Name: 
@@ -8281,7 +8300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902648811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.95, y: -1, z: -13.5}
+  m_LocalPosition: {x: -5.61, y: -1, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10161,7 +10180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150865509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16376,6 +16395,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 445335173282424116, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 445335173282424117, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
       propertyPath: m_Name
@@ -16399,7 +16423,7 @@ PrefabInstance:
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.5
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
@@ -17003,9 +17027,7 @@ MonoBehaviour:
     isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
       type: 3}
-    dialogue:
-    - Astartea;Well well, but if it isn't Elphis' trash.. I'll just do you a favor,
-      and end with your useless.. pitiful.. meaningless.. existence..
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 13c67248f79d42048b6856fa5de31e85,
@@ -17015,15 +17037,18 @@ MonoBehaviour:
     isCheckpoint: 0
   - situationPrefab: {fileID: 4520026764095519211, guid: 66cf151e2b40a8e409563cc5fceacb04,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Astartea;Well well, but if it isn't Elphis' trash.. I'll just do you a favor,
+      and end with your useless.. pitiful.. meaningless.. existence..
     isShop: 0
     isCheckpoint: 0
   wave: 0
   situationOffset: 43.04
   timeToSpawn: 10
   spawnPosition: {x: 0, y: 0, z: 0}
-  bossWave: 15
+  bossWave: 14
   textTimerDisappear: 0
+  timeCooldown: 0
 --- !u!1 &2130925346
 GameObject:
   m_ObjectHideFlags: 0
@@ -17478,7 +17503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4520026763681970335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.1, y: 0, z: 0}
+  m_LocalPosition: {x: 4.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
