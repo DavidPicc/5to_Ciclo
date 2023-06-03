@@ -68,12 +68,9 @@ public class Player_Shoot3 : MonoBehaviour
 
     void Shoot_Normal()
     {
-        for (int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
-        {
-            var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
-            Destroy(bullet, 8f);
-        }
+        var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+        Destroy(bullet, 8f);
         shotBullet = true;
     }
 
@@ -81,13 +78,10 @@ public class Player_Shoot3 : MonoBehaviour
     {
         float angle = 0;
         angle = Random.Range(-maxAngle, maxAngle);
-        for (int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
-        {
-            Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
-            var bullet = Instantiate(bulletPrefab, shootPoints[0].position, shootPoints[0].rotation * offsetVector);
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
-            Destroy(bullet, 0.7f);
-        }
+        Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
+        var bullet = Instantiate(bulletPrefab, shootPoints[0].position, shootPoints[0].rotation * offsetVector);
+        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+        Destroy(bullet, 0.7f);
         shotBullet = true;
     }
 

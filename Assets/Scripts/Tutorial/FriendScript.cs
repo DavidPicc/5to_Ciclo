@@ -12,6 +12,7 @@ public class FriendScript : MonoBehaviour
     bool allyLocked = true;
 
     public string[] talkingThings;
+    public string deathDialogue;
 
     public bool canDie = true;
     public GameObject explosionVFX;
@@ -58,7 +59,9 @@ public class FriendScript : MonoBehaviour
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
         allyPos = null;
         rb.useGravity = true;
-        Destroy(gameObject, 1f);
+        GetComponentInChildren<Collider>().enabled = false;
+        DialogueScript.instance.SetDialogue(deathDialogue);
+        Destroy(gameObject, 10f);
     }
 
     void FixedUpdate()

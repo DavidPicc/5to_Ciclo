@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Dispara en línea recta.
-public class Shoot_Linear : MonoBehaviour
+public class Shoot_Linear : EnemyShooting
 {
     Transform _camera;
 

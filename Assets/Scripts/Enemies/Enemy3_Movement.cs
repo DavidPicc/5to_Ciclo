@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Movimiento rotatorio.
-public class Enemy3_Movement : MonoBehaviour
+public class Enemy3_Movement : EnemyMovement
 {
     Rigidbody rb;
     [SerializeField] float rotationSpeed;

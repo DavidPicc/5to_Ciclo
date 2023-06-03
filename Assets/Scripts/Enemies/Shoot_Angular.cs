@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot_Angular : MonoBehaviour
+public class Shoot_Angular : EnemyShooting
 {
     Transform _camera;
 

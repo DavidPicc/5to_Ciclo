@@ -48,6 +48,11 @@ public class DialogueScript : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    void Start()
+    {
+        CanvasUI.instance.dialogueObject.SetActive(false);
+    }
+
     bool isRunning = false;
     public IEnumerator StartDialogue()
     {
@@ -59,7 +64,6 @@ public class DialogueScript : MonoBehaviour
             fullText = dialogues[i].Substring(dialogues[i].IndexOf(';') + 1);
 
             string speaker = dialogues[i].Substring(0, dialogues[i].IndexOf(';'));
-            //string text = dialogues[i].Substring(dialogues[i].IndexOf(';') + 1);
             characterText.text = speaker;
             foreach (char c in fullText)
             {
@@ -97,7 +101,6 @@ public class DialogueScript : MonoBehaviour
         {
             dialogues.Add(dialogue[i]);
         }
-        //fullText = dialogue;
         if(!isRunning)
             StartCoroutine(StartDialogue());
     }
@@ -106,25 +109,7 @@ public class DialogueScript : MonoBehaviour
     {
         CanvasUI.instance.dialogueObject.SetActive(true);
         dialogues.Add(dialogue);
-        //fullText = dialogue;
         if (!isRunning)
             StartCoroutine(StartDialogue());
     }
-
-    //public bool running = false;
-    //public IEnumerator ShowText()
-    //{
-    //    running = true;
-    //    if(running)
-    //    {
-    //        for (int i = 0; i < fullText.Length + 1; i++)
-    //        {
-    //            currentText = fullText.Substring(0, i);
-    //            CanvasUI.instance.dialogueText.text = currentText;
-    //            yield return new WaitForSeconds(delay);
-    //        }
-    //    }
-
-    //    running = false;
-    //}
 }

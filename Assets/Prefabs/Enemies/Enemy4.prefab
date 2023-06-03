@@ -42,11 +42,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8098880415147464378}
   - component: {fileID: 4650324917289444815}
-  - component: {fileID: 7607855897119378799}
   - component: {fileID: 5070404262845726613}
   - component: {fileID: 3886003254385394887}
   - component: {fileID: 1746475625234883629}
   - component: {fileID: 877809034084349314}
+  - component: {fileID: 7546208322771444279}
   m_Layer: 8
   m_Name: Enemy4
   m_TagString: Enemy
@@ -87,27 +87,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &7607855897119378799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3549922622884585454}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b1439c0b7834f43bc2a1f398d1d355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  player: {fileID: 0}
-  rb: {fileID: 0}
-  enemyMovement: {fileID: 11400000, guid: 38c79122b31f56e479e27569594e57ef, type: 2}
-  positionPack: {fileID: 0}
-  gotToGo: 0
-  typeToShoot: {fileID: 0}
-  pointShoot: {fileID: 6707486525226790454}
-  distanceToShoot: 12
 --- !u!114 &5070404262845726613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +161,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.0110636, z: 3.2069101}
   m_Center: {x: -0, y: 0, z: -0}
+--- !u!114 &7546208322771444279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549922622884585454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d705f632b65b048837515175770ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementScript: {fileID: 5070404262845726613}
+  enemyShooting: {fileID: 0}
+  checkTimer: 2
 --- !u!1 &6636933357845796499
 GameObject:
   m_ObjectHideFlags: 0

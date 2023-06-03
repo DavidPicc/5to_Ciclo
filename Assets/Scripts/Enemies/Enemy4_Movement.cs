@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Movimiento dirigido al jugador.
-public class Enemy4_Movement : MonoBehaviour
+public class Enemy4_Movement : EnemyMovement
 {
     public Transform _camera;
     public Transform player;

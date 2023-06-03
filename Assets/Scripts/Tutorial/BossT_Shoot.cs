@@ -18,9 +18,10 @@ public class BossT_Shoot : MonoBehaviour
     private bool shotBullet;
     public float distanceToShoot;
     public GameObject prefab;
-    //bool canShoot => !shotBullet && Mathf.Abs(transform.localPosition.x) <= distanceToShoot;
     bool canShoot => !shotBullet;
     GameObject antiSphere;
+
+    public bool startShooting = false;
     void Start()
     {
         if (FindObjectOfType<StageMovement>() != null)
@@ -29,9 +30,6 @@ public class BossT_Shoot : MonoBehaviour
         }
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
-
-        //antiSphere = GetComponentInChildren<SphereCollider>().gameObject;
-        //antiSphere.SetActive(false);
 
         shotBullet = false;
         timer = shootTimer;
@@ -44,20 +42,11 @@ public class BossT_Shoot : MonoBehaviour
 
     void Shoot()
     {
-        if(GetComponent<BossT_Animations>() != null)
+        if(startShooting)
         {
-            if(GetComponent<BossT_Animations>().bossIn)
-            {
-                if(SituationManager.instance.wave >= SituationManager.instance.bossWave+3)
-                {
-                    Debug.Log("DISPARAAA");
-                    CheckIfShot();
-                    //Anticipation();
-                }
-
-            }
+            Debug.Log("DISPARAAA");
+            CheckIfShot();
         }
-        
     }
 
     void CheckIfShot()
@@ -77,18 +66,8 @@ public class BossT_Shoot : MonoBehaviour
         }
     }
 
-    //void Anticipation()
-    //{
-    //    if (shootTimer <= typeToShoot.anticipation)
-    //    {
-    //        //Play ANTICIPATION animation.
-    //        antiSphere.SetActive(true);
-    //    }
-    //}
-
     public void ShootLinear()
     {
-
         float offset = 0;
         if (bulletNumber > 1)
         {

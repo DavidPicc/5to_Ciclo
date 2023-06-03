@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Movimiento en línea recta
-public class Enemy1_Movement : MonoBehaviour
+public class Enemy1_Movement : EnemyMovement
 {
     Rigidbody rb;
     [Header("Movement")]
