@@ -47,11 +47,14 @@ public class TutorialManager : MonoBehaviour
 
     public void ActivateBoss()
     {
+        Debug.Log("BOOOOOSSSSS!");
         boss.SetActive(true);
     }
 
     public void VulnerableFriendsAndYou()
     {
+        FindObjectOfType<BossT_Shoot>().startShooting = true;
+
         FriendScript[] friends = GameObject.FindObjectsOfType<FriendScript>();
         foreach (FriendScript friend in friends)
         {
@@ -59,5 +62,16 @@ public class TutorialManager : MonoBehaviour
         }
         Player_Health player_Health = GameObject.FindObjectOfType<Player_Health>();
         player_Health.canDie = true;
+        Debug.Log("VULNERABLE");
+    }
+
+    public void FinishedTutorial()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Player_Health>().enabled = false;
+        player.GetComponent<Player_Movement>().enabled = false;
+        player.GetComponent<Player_Shoot>().enabled = false;
+        bossDeathTutorialTransition.SetActive(true);
+        Debug.Log("NIVEL 1 DESBLOQUEADO");
     }
 }

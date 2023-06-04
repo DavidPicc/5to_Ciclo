@@ -66,25 +66,22 @@ public class Player_Shoot2 : MonoBehaviour
 
     void Shoot_Normal()
     {
-        for (int i = 0; i < GetComponent<Player_Manager>().maxCannons; i++)
+        var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+        bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
+        Destroy(bullet, 8f);
+
+        if (tribolt)
         {
-            var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
-            bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-            Destroy(bullet, 8f);
+            var bulletUp = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
+            bulletUp.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, -triboltOpeningAngle / 2) * bulletUp.transform.right * bulletSpeed, ForceMode.Impulse);
+            bulletUp.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
+            Destroy(bulletUp, 8f);
 
-            if (tribolt)
-            {
-                var bulletUp = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
-                bulletUp.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, -triboltOpeningAngle/2) * bulletUp.transform.right * bulletSpeed, ForceMode.Impulse);
-                bulletUp.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-                Destroy(bulletUp, 8f);
-
-                var bulletDown = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
-                bulletDown.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, triboltOpeningAngle/2) * bulletDown.transform.right * bulletSpeed, ForceMode.Impulse);
-                bulletDown.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-                Destroy(bulletDown, 8f);
-            }
+            var bulletDown = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
+            bulletDown.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, triboltOpeningAngle / 2) * bulletDown.transform.right * bulletSpeed, ForceMode.Impulse);
+            bulletDown.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
+            Destroy(bulletDown, 8f);
         }
         shotBullet = true;
     }

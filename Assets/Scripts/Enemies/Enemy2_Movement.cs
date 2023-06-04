@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using UnityEngine;
 
 // Movimiento en linea recta hasta cierto punto, luego pasa a quedarse quieto.
-public class Enemy2_Movement : MonoBehaviour
+public class Enemy2_Movement : EnemyMovement
 {
     public Transform _camera;
     public Transform player;
@@ -21,6 +21,7 @@ public class Enemy2_Movement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         _camera = FindObjectOfType<StageMovement>().transform;
         rb = GetComponent<Rigidbody>();
+        timeToGo = false;
     }
 
     void Update()

@@ -10,7 +10,8 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
-   //[SerializeField] GameObject vfxShoot;
+    [SerializeField] float bulletsOffset;
+    //[SerializeField] GameObject vfxShoot;
     public int cannons;
     public int cannon;
     float timer;
@@ -77,9 +78,11 @@ public class Player_Shoot : MonoBehaviour
 
     void Shoot_Normal()
     {
+        float randomOffset = Random.Range(-bulletsOffset, bulletsOffset)/10f;
+        Vector3 vecOffset = new Vector3(0, randomOffset, 0);
         for(int i = cannon; i < cannons; i++)
         {
-            var bullet = Instantiate(bulletPrefab, shootPoints[i].position, Quaternion.identity);
+            var bullet = Instantiate(bulletPrefab, shootPoints[i].position + vecOffset, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             bullet.GetComponent<PlayerBullet_Script>().damage = shootDamage;
            

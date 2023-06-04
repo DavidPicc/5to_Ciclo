@@ -73,9 +73,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3598496670325503674}
   - component: {fileID: 3598496670325503675}
-  - component: {fileID: 5192203296281904420}
   - component: {fileID: 7238318482778444724}
   - component: {fileID: -1104224402864004941}
+  - component: {fileID: 574409617318947649}
   - component: {fileID: 1199520027559409200}
   - component: {fileID: 4426578453890978523}
   m_Layer: 8
@@ -118,27 +118,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &5192203296281904420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3598496670325503672}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b1439c0b7834f43bc2a1f398d1d355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  player: {fileID: 0}
-  rb: {fileID: 0}
-  enemyMovement: {fileID: 0}
-  positionPack: {fileID: 0}
-  gotToGo: 0
-  typeToShoot: {fileID: 0}
-  pointShoot: {fileID: 3598496668587208348}
-  distanceToShoot: 12
 --- !u!114 &7238318482778444724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +153,21 @@ MonoBehaviour:
   invulnerable: 0
   vfxexplosion: {fileID: 2832440755471769679, guid: e8ce4cdee96253c4dbbe6ad2de567772,
     type: 3}
+--- !u!114 &574409617318947649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598496670325503672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d705f632b65b048837515175770ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementScript: {fileID: 7238318482778444724}
+  enemyShooting: {fileID: 0}
+  checkTimer: 2
 --- !u!64 &1199520027559409200
 MeshCollider:
   m_ObjectHideFlags: 0

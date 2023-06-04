@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SituationManager : MonoBehaviour
+public class SituationManager_RE : MonoBehaviour
 {
-    public static SituationManager instance;
-    //public GameObject[] situations;
+    public static SituationManager_RE instance;
     public SituationScript[] situations;
     Transform _camera;
     public int waveIndex = 0;
@@ -29,7 +28,7 @@ public class SituationManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        if(Input.GetKeyDown(KeyCode.U))
         {
             TutorialManager.instance.FinishedTutorial();
         }
@@ -37,13 +36,13 @@ public class SituationManager : MonoBehaviour
 
     public void SpawnSituation()
     {
-        if (waveIndex < situations.Length - 1)
+        if(waveIndex < situations.Length - 1)
         {
             var sit = Instantiate(situations[waveIndex].situationPrefab, spawnPosition, Quaternion.identity);
             spawnPosition += new Vector3(situationOffset, 0, 0);
             waveIndex += 1;
         }
-        if (currentWave - 1 >= 0)
+        if(currentWave - 1 >= 0)
         {
             if (situations[currentWave - 1].dialogue.Length > 0)
             {
@@ -58,9 +57,9 @@ public class SituationManager : MonoBehaviour
 
         // Para que los enemigos que se quedan quietos en la pantalla se muevan una vez toque su turno.
         Enemy2_Movement[] enemies = GameObject.FindObjectsOfType<Enemy2_Movement>();
-        foreach (Enemy2_Movement enemy2 in enemies)
+        foreach(Enemy2_Movement enemy2 in enemies)
         {
-            if (enemy2.locked)
+            if(enemy2.locked)
             {
                 enemy2.locked = false;
                 enemy2.timeToGo = true;

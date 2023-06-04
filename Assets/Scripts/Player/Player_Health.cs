@@ -91,21 +91,15 @@ public class Player_Health : MonoBehaviour
     }
     public void Death()
     {
-        //Destroy(gameObject, 0.2f);
-        //Destroy(this);
-
         // TUTORIAL
-        if(FindObjectOfType<BossT_Shoot>() != null && SituationManager.instance.wave >= SituationManager.instance.bossWave+3)
+        if(canDie && FindObjectOfType<TutorialManager>() != null)
         {
-            gameObject.SetActive(false);
-            TutorialManager.instance.bossDeathTutorialTransition.SetActive(true);
-            Debug.Log("NIVEL 1 DESBLOQUEADO");
+            TutorialManager.instance.FinishedTutorial();
         }
         else
         {
             Invoke("SetPlayerDeath", 0.3f);
         }
-
     }
 
     public void SetPlayerDeath()

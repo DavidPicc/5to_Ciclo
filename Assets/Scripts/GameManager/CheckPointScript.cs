@@ -27,7 +27,7 @@ public class CheckPointScript : MonoBehaviour
 
     void Start()
     {
-        /// PARA RESETEAR LOS PLAYERPREFS SIEMPRE (BORRAR LUEGO) ///
+        /// PARA RESETEAR LOS PLAYERPREFS (INICIAR PLAY CON EL BOOL ACTIVADO Y DETENERLO, DESACTIVAR EL BOOL Y EMPEZAR A JUGAR) (BORRAR LUEGO) ///
         if(resetCheckpoint)
         {
             ResetCheckpoints();
@@ -54,7 +54,7 @@ public class CheckPointScript : MonoBehaviour
 
     public void LoadCheckpoints()
     {
-        SituationManager.instance.wave = savedWave;
+        SituationManager.instance.waveIndex = savedWave;
     }
 
     void Update()
@@ -82,7 +82,7 @@ public class CheckPointScript : MonoBehaviour
     }
     public void UpdateCheckpoints()
     {
-        savedWave = SituationManager.instance.wave;
+        savedWave = SituationManager.instance.currentWave;
         gearsSaved = GameScore.instance.gearScore;
         coresSaved = GameScore.instance.coreScore;
 
