@@ -21,9 +21,6 @@ public class GameScore : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         } else Destroy(gameObject);
-
-        AddGears(0);
-        AddCores(0);
     }
 
     private void OnEnable()
