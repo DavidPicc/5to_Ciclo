@@ -14,19 +14,19 @@ public class Player_Ability : MonoBehaviour
     public bool activate;
     public float timer;
     public float maxtimer;
-    private int cant=10;
+    //private int cant=10;
 
     public float tk;
     public float takeDmg;
 
 
-    public float range = 10f;
-    public LayerMask targetLayer;
+   // public float range = 10f;
+   // public LayerMask targetLayer;
     
 
-    public Transform currentTarget;
-    private List<Transform> previousTargets = new List<Transform>();
-    public GameObject bulletPrefab;
+    //public Transform currentTarget;
+    //private List<Transform> previousTargets = new List<Transform>();
+    //public GameObject bulletPrefab;
 
     void Start()
     {
@@ -38,10 +38,10 @@ public class Player_Ability : MonoBehaviour
     {
         abilityBar.fillAmount = rechargeBar / maxRechargeBar;
         ActivateShield();
-        if (currentTarget == null)
-        {
-            FindNewTarget();
-        }
+        //if (currentTarget == null)
+        //{
+        //    FindNewTarget();
+        //}
     }
     public  void ActivateShield()
     {
@@ -55,7 +55,7 @@ public class Player_Ability : MonoBehaviour
         {
             activate = false;
             takeDmg = 0;
-            Instantia();
+          //  Instantia();
 
         }
 
@@ -83,11 +83,13 @@ public class Player_Ability : MonoBehaviour
             
             shieldObj.SetActive(false);
             rechargeBar += Time.deltaTime;
+            if (rechargeBar > maxRechargeBar)
+            {
+                rechargeBar = maxRechargeBar;
+            }
             abilityBar.fillAmount = rechargeBar / maxRechargeBar;
 
         }
-
-
         if (endShield)
         {
             //rechargeBar = maxRechargeBar;
@@ -104,81 +106,81 @@ public class Player_Ability : MonoBehaviour
     }
 
 
-    void Instantia()
-    {
-         InvokeRepeating("Shoot", 0.0f, cant);
-    }
+    //void Instantia()
+    //{
+    //     InvokeRepeating("Shoot", 0.0f, cant);
+    //}
    
-    void Shoot()
-    {
-        if (tk > 0)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation); // instancia la bala en la posición y rotación del objeto actual
-            bullet.transform.LookAt(currentTarget); // apunta la posición de la bala hacia la posición del enemigo
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            rb.AddForce(bullet.transform.forward * 30, ForceMode.Impulse);
-            tk--;
-        }
-        else
-        {
-            CancelInvoke("Shoot");
-        }
-    }
-    private void FindNewTarget()
-    {
-        Collider[] targets = Physics.OverlapSphere(transform.position, range, targetLayer);
+    //void Shoot()
+    //{
+    //    if (tk > 0)
+    //    {
+    //        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation); // instancia la bala en la posición y rotación del objeto actual
+    //        bullet.transform.LookAt(currentTarget); // apunta la posición de la bala hacia la posición del enemigo
+    //        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+    //        rb.AddForce(bullet.transform.forward * 30, ForceMode.Impulse);
+    //        tk--;
+    //    }
+    //    else
+    //    {
+    //        CancelInvoke("Shoot");
+    //    }
+    //}
+    //private void FindNewTarget()
+    //{
+    //    Collider[] targets = Physics.OverlapSphere(transform.position, range, targetLayer);
 
-        float closestDistance = Mathf.Infinity;
-        Transform closestTarget = null;
+    //    float closestDistance = Mathf.Infinity;
+    //    Transform closestTarget = null;
 
-        foreach (Collider targetCollider in targets)
-        {
-            Transform targetTransform = targetCollider.transform;
+    //    foreach (Collider targetCollider in targets)
+    //    {
+    //        Transform targetTransform = targetCollider.transform;
 
-            if (previousTargets.Contains(targetTransform))
-            {
-                // Skip targets that have already been selected
-                continue;
-            }
+    //        if (previousTargets.Contains(targetTransform))
+    //        {
+    //            // Skip targets that have already been selected
+    //            continue;
+    //        }
 
-            float distanceToTarget = Vector3.Distance(transform.position, targetTransform.position);
+    //        float distanceToTarget = Vector3.Distance(transform.position, targetTransform.position);
 
-            if (distanceToTarget < closestDistance)
-            {
-                closestDistance = distanceToTarget;
-                closestTarget = targetTransform;
-            }
-        }
+    //        if (distanceToTarget < closestDistance)
+    //        {
+    //            closestDistance = distanceToTarget;
+    //            closestTarget = targetTransform;
+    //        }
+    //    }
 
-        currentTarget = closestTarget;
-        previousTargets.Clear();
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (targetLayer == (targetLayer | (1 << other.gameObject.layer)))
-        {
-            if (other.transform == currentTarget)
-            {
+    //    currentTarget = closestTarget;
+    //    previousTargets.Clear();
+    //}
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (targetLayer == (targetLayer | (1 << other.gameObject.layer)))
+    //    {
+    //        if (other.transform == currentTarget)
+    //        {
                 
-                return;
-            }
+    //            return;
+    //        }
 
-            previousTargets.Add(currentTarget);
-            currentTarget = null;
-        }
-    }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, range);
+    //        previousTargets.Add(currentTarget);
+    //        currentTarget = null;
+    //    }
+    //}
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawWireSphere(transform.position, range);
 
-        if (currentTarget != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, currentTarget.position);
-            Gizmos.DrawWireSphere(currentTarget.position, 1f);
-        }
-    }
+    //    if (currentTarget != null)
+    //    {
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawLine(transform.position, currentTarget.position);
+    //        Gizmos.DrawWireSphere(currentTarget.position, 1f);
+    //    }
+    //}
     public void UpHability()
     {
         if (Input.GetKeyDown(KeyCode.O))
