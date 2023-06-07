@@ -100,6 +100,12 @@ public class Player_Ability : MonoBehaviour
     }
     void Shoot()
     {
+
+        if(damageCounter>=5)
+        {
+            CancelInvoke("Shoot");
+            return;
+        }
         if (tk > 0 && currentTarget != null && !isTargetDestroyed)
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation); // instancia la bala en la posición y rotación del objeto actual
@@ -108,10 +114,6 @@ public class Player_Ability : MonoBehaviour
             rb.AddForce(bullet.transform.forward * 30, ForceMode.Impulse);
             tk--;
             damageCounter++;
-        }
-        if(damageCounter>=5)
-        {
-            CancelInvoke("Shoot");
         }
     }
     private void FindNewTarget()
