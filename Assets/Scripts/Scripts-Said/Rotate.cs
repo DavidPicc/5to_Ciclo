@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    [SerializeField] float RotationSpeed = 10;
-    [SerializeField] float MovementSpeed = 5;
+    [SerializeField] float RotationSpeed;
+    [SerializeField] float MovementSpeed;
+    public Player_Health playerHealth;
     public bool rotation = true;
     public bool moveLeft = false;
+    public bool Damage = false;
+
+    private void Start()
+    {
+        playerHealth = FindAnyObjectByType<Player_Health>();
+    }
 
     void Update()
     {
@@ -19,6 +26,14 @@ public class Rotate : MonoBehaviour
         if (moveLeft == true)
         {
             transform.Translate(Vector3.left * MovementSpeed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Damage == true && other.CompareTag("Player"))
+        {
+            playerHealth.TakeDamage(1);
         }
     }
 }
