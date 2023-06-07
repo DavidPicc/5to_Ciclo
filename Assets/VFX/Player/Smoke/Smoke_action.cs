@@ -16,5 +16,6 @@ public class Smoke_action : MonoBehaviour
     void Update()
     {
        Instantiate (vfx, Firepoint.transform.position, Quaternion.identity);
+        Destroy(vfx, 0.1f);
     }
 }
