@@ -11,6 +11,7 @@ public class Player_Ability2 : MonoBehaviour
     [SerializeField] int maxBullets = 5;
     [SerializeField] Transform pivot;
     [SerializeField] float shieldDistance;
+    [SerializeField] float rotationSpeed = 90f;
     List<GameObject> bullets = new List<GameObject>();
     public bool endShield;
     public bool activate;
@@ -48,14 +49,21 @@ public class Player_Ability2 : MonoBehaviour
         else
         {
             rechargeBar += Time.deltaTime;
+            rechargeBar = Mathf.Clamp(rechargeBar, 0f, maxRechargeBar);
             abilityBar.fillAmount = rechargeBar / maxRechargeBar;
         }
-
+        for (int i = 0; i < bullets.Count; i++)
+        {
+            if (bullets[i] != null)
+            {
+                bullets[i].transform.RotateAround(pivot.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+            }
+        }
     }
 
     void SpawnBulletShield()
     {
-        float angleStep = 180 / (maxBullets - 1);
+        float angleStep = 360 / (maxBullets - 0);
         float angle = -180 / 2;
         for (int i = 0; i < maxBullets; i++)
         {
@@ -77,7 +85,7 @@ public class Player_Ability2 : MonoBehaviour
             if (bullets[i] != null)
             {
                 bullets[i].GetComponent<Rigidbody>().AddForce(-bullets[i].transform.up * 4f, ForceMode.Impulse);
-                Destroy(bullets[i], 5f);
+                Destroy(bullets[i], 8f);
             }
         }
     }

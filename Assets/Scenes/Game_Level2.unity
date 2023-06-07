@@ -7369,14 +7369,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: range
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: abilityBar
       value: 
       objectReference: {fileID: 1975918226}
+    - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
+        type: 3}
     - target: {fileID: 2652757669124389384, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_IsActive
@@ -7462,6 +7473,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8088536441087026405, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8088536441087026406, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_IsTrigger
@@ -7471,6 +7487,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxtimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: abilityBar
+      value: 
+      objectReference: {fileID: 1975918226}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxBullets
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxRechargeBar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shieldDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8599227903523507572, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -17716,7 +17767,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  waveIndex: 0
+  waveIndex: 20
   currentWave: 21
   situationOffset: 43.04
   spawnPosition: {x: 0, y: 0, z: 0}
