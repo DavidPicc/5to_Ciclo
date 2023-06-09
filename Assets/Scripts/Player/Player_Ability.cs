@@ -101,8 +101,13 @@ public class Player_Ability : MonoBehaviour
     void Shoot()
     {
 
-        if(damageCounter>=5)
+        if (damageCounter >= 5 || rechargeBar <= 0)
         {
+            if (damageCounter >= 5)
+            {
+                damageCounter = 0;
+            }
+
             CancelInvoke("Shoot");
             return;
         }
@@ -114,6 +119,10 @@ public class Player_Ability : MonoBehaviour
             rb.AddForce(bullet.transform.forward * 30, ForceMode.Impulse);
             tk--;
             damageCounter++;
+            if (damageCounter >= 5)
+            {
+              CancelInvoke("Shoot");
+            }
         }
     }
     private void FindNewTarget()
