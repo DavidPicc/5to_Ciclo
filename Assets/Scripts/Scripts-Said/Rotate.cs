@@ -9,6 +9,9 @@ public class Rotate : MonoBehaviour
     public Player_Health playerHealth;
     public bool rotation = true;
     public bool moveLeft = false;
+    public bool moveRight = false;
+    public bool moveUp = false;
+    public bool moveDown = false;
     public bool Damage = false;
 
     private void Start()
@@ -26,6 +29,21 @@ public class Rotate : MonoBehaviour
         if (moveLeft == true)
         {
             transform.Translate(Vector3.left * MovementSpeed * Time.deltaTime);
+        }
+
+        if (moveRight == true)
+        {
+            transform.Translate(Vector3.right * MovementSpeed * Time.deltaTime);
+        }
+
+        if (moveUp == true)
+        {
+            transform.Translate(Vector3.up * MovementSpeed * Time.deltaTime);
+        }
+
+        if (moveDown == true)
+        {
+            transform.Translate(Vector3.down * MovementSpeed * Time.deltaTime);
         }
     }
 
