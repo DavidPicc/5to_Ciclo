@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 1777362934005482391, guid: 1cb17bde8a37aa643810b9d01ebce2a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.85
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 1777362934005482391, guid: 1cb17bde8a37aa643810b9d01ebce2a3,
         type: 3}
@@ -312,19 +312,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 218735332456330366}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &8265177725397210082
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991554807824527267}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5255735
-  m_Center: {x: -0.009759186, y: 0, z: -0.00000009651564}
 --- !u!135 &7337255392857423951
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -338,6 +325,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0.00000023841858, y: 0, z: -0.000000092666596}
+--- !u!135 &8265177725397210082
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991554807824527267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5255735
+  m_Center: {x: -0.009759186, y: 0, z: -0.00000009651564}
 --- !u!4 &1991554807985682409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1777362934005482391, guid: 1cb17bde8a37aa643810b9d01ebce2a3,
@@ -988,6 +988,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8691393238860293462}
     m_Modifications:
+    - target: {fileID: 1777362933546969063, guid: 1cb17bde8a37aa643810b9d01ebce2a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: chains
+      objectReference: {fileID: 0}
     - target: {fileID: 1777362933853269214, guid: 1cb17bde8a37aa643810b9d01ebce2a3,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1125,6 +1130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8691393238860293462}
     m_Modifications:
+    - target: {fileID: 1777362933546969063, guid: 1cb17bde8a37aa643810b9d01ebce2a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: chains
+      objectReference: {fileID: 0}
     - target: {fileID: 1777362933853269214, guid: 1cb17bde8a37aa643810b9d01ebce2a3,
         type: 3}
       propertyPath: m_LocalScale.x
