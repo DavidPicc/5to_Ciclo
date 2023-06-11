@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2967,12 +2967,12 @@ PrefabInstance:
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: equipped
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: maxLevel
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3256710647091911351, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -10086,8 +10086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96712cd1f052bd45903430ad2be4058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedGun: 
-  equippedSkill: 
+  equippedGun: StraightGun
+  equippedSkill: ReflectorShield
 --- !u!4 &1173234721
 Transform:
   m_ObjectHideFlags: 0
@@ -11254,7 +11254,7 @@ PrefabInstance:
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: equipped
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -11632,7 +11632,7 @@ PrefabInstance:
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: maxLevel
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3256710647091911351, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -16586,9 +16586,30 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: points
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: abilityBar
       value: 
       objectReference: {fileID: 1975918226}
+    - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
+        type: 3}
+    - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedPoints
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2652757669124389384, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_IsActive
@@ -16699,6 +16720,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8088536441087026406, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8156392225376399314, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: leftPoint
@@ -16723,6 +16749,32 @@ PrefabInstance:
         type: 3}
       propertyPath: crushedLayers.m_Bits
       value: 1152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: abilityBar
+      value: 
+      objectReference: {fileID: 1975918226}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxBullets
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1300772526029512616, guid: 79ce1e6cc3fbd5449a4261d403f1d652,
+        type: 3}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedMaxBullets
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8599227903523507572, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -17305,7 +17357,7 @@ MonoBehaviour:
       type: 3}
     dialogue:
     - VINDEX;I have to continue
-    isShop: 1
+    isShop: 0
     isCheckpoint: 0
     isBoss: 0
     methodEvent:
@@ -17314,7 +17366,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: b6252dac5b0e8f24cbbe4d100ce997b5,
       type: 3}
     dialogue: []
-    isShop: 1
+    isShop: 0
     isCheckpoint: 0
     isBoss: 0
     methodEvent:
@@ -17323,7 +17375,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: f27729606ab59df4d82028af002d06dd,
       type: 3}
     dialogue: []
-    isShop: 1
+    isShop: 0
     isCheckpoint: 0
     isBoss: 0
     methodEvent:
@@ -17332,7 +17384,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 178a31cbd19794a4b801626cca1f5700,
       type: 3}
     dialogue: []
-    isShop: 0
+    isShop: 1
     isCheckpoint: 0
     isBoss: 0
     methodEvent:

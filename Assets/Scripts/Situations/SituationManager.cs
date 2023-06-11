@@ -41,6 +41,9 @@ public class SituationManager : MonoBehaviour
         {
             var sit = Instantiate(situations[waveIndex].situationPrefab, spawnPosition, Quaternion.identity);
             spawnPosition += new Vector3(situationOffset, 0, 0);
+
+            if (situations[waveIndex].isShop) GameManager.instance.OpenShop();
+            
             waveIndex += 1;
         }
         if (currentWave - 1 >= 0)

@@ -35,6 +35,7 @@ public class Player_Shoot3 : MonoBehaviour
     {
         timer = fireRate;
         levelShoot = 0;
+        Shopping();
     }
 
 
@@ -44,7 +45,6 @@ public class Player_Shoot3 : MonoBehaviour
         if (canShoot)
         {
             Shoot_Angle();
-            //Shoot_Normal();
         }
     }
 
@@ -87,7 +87,6 @@ public class Player_Shoot3 : MonoBehaviour
 
     void Shopping()
     {
-        
         if (UpgradeTracker.instance.levels.ContainsKey("Flamethrower"))
         {
             levelShoot = UpgradeTracker.instance.levels["Flamethrower"];
