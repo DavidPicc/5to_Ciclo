@@ -9,7 +9,7 @@ public class Enemy_Health : MonoBehaviour
     Transform _camera;
     [SerializeField] float maxHealth;
     [SerializeField] public float currentHealth;
-
+    public bool IsEnemy = true;
     public bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
@@ -126,7 +126,7 @@ public class Enemy_Health : MonoBehaviour
             //    }
             //    Destroy(other.gameObject, 1f);
             //}
-            if (other.CompareTag("Obstacle") || other.CompareTag("weigh"))
+            if (IsEnemy == true && other.CompareTag("Obstacle") || other.CompareTag("weigh"))
             {
                 //Destroy(gameObject);
                 if (!obstacle)
@@ -138,7 +138,7 @@ public class Enemy_Health : MonoBehaviour
             {
                 if (canBeDamaged)
                 {
-                    TakeDamage(100);
+                    TakeDamage(30);
                 }
             }
         }
