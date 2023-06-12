@@ -5,12 +5,11 @@ using UnityEngine;
 public class SituationManager : MonoBehaviour
 {
     public static SituationManager instance;
-    //public GameObject[] situations;
     public SituationScript[] situations;
     Transform _camera;
     public int waveIndex = 0;
     public int currentWave = 0;
-    //public int wave;
+    float firstOffset = 5f;
     public float situationOffset = 27f;
     public Vector3 spawnPosition;
 
@@ -21,23 +20,23 @@ public class SituationManager : MonoBehaviour
     void Start()
     {
         _camera = FindObjectOfType<StageMovement>().transform;
-        spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
-        waveIndex += 1;
-        currentWave = waveIndex - 1;
-        SpawnSituation();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
+        // Si la SAVEDWAVED es cualquiera menos 0, te manda directo a la acción. Si es CERO, signfica que recién estás empezando el nivel.
+        if(CheckPointScript.savedWave != 0)
         {
-            TutorialManager.instance.FinishedTutorial();
+            spawnPosition = _camera.position + new Vector3(firstOffset, 0, 0);
         }
+        else
+        {
+            spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
+        }
+        SpawnSituation();
+        currentWave = waveIndex - 1;
+
     }
 
     public void SpawnSituation()
     {
-        if (waveIndex < situations.Length - 1)
+        if (waveIndex <= situations.Length - 1)
         {
             var sit = Instantiate(situations[waveIndex].situationPrefab, spawnPosition, Quaternion.identity);
             spawnPosition += new Vector3(situationOffset, 0, 0);

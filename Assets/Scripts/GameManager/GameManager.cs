@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject deathMenu;
     public GameObject shopMenu;
+    public GameObject nextLevelTransition;
     public bool isPaused = false;
+    public string nextLevelName;
 
     public delegate void ShopApply();
     public static event ShopApply onShopApply;
@@ -63,6 +65,11 @@ public class GameManager : MonoBehaviour
                     ResumeGame();
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            FinishedLevel();
         }
     }
 
@@ -121,5 +128,15 @@ public class GameManager : MonoBehaviour
         //CheckPointScript.instance.UpdateCheckpoints();
 
         if(onShopApply != null) onShopApply();
+    }
+
+    public void FinishedLevel()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Player_Health>().enabled = false;
+        player.GetComponent<Player_Movement>().enabled = false;
+        player.GetComponent<Player_Shoot>().enabled = false;
+        nextLevelTransition.SetActive(true);
+        Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
     }
 }

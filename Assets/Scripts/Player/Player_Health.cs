@@ -94,7 +94,7 @@ public class Player_Health : MonoBehaviour
         // TUTORIAL
         if(canDie && FindObjectOfType<TutorialManager>() != null)
         {
-            TutorialManager.instance.FinishedTutorial();
+            GameManager.instance.FinishedLevel();
         }
         else
         {

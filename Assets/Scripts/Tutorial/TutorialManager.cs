@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager instance;
-    public GameObject bossDeathTutorialTransition;
+    //public GameObject bossDeathTutorialTransition;
     public GameObject boss;
 
     private void OnEnable()
@@ -23,10 +23,10 @@ public class TutorialManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        bossDeathTutorialTransition = GameObject.FindGameObjectWithTag("transitionLevel");
+        //bossDeathTutorialTransition = GameObject.FindGameObjectWithTag("transitionLevel");
         boss = GameObject.FindGameObjectWithTag("bossTutorial");
 
-        if(bossDeathTutorialTransition != null) bossDeathTutorialTransition.SetActive(false);
+        //if(bossDeathTutorialTransition != null) bossDeathTutorialTransition.SetActive(false);
         if(boss) boss.SetActive(false);
     }
 
@@ -34,11 +34,6 @@ public class TutorialManager : MonoBehaviour
     {
         instance = this;
     }
-    void Start()
-    {
-        bossDeathTutorialTransition.SetActive(false);
-    }
-
     public void ActivateBoss()
     {
         Debug.Log("BOOOOOSSSSS!");
@@ -59,13 +54,13 @@ public class TutorialManager : MonoBehaviour
         Debug.Log("VULNERABLE");
     }
 
-    public void FinishedTutorial()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Player_Health>().enabled = false;
-        player.GetComponent<Player_Movement>().enabled = false;
-        player.GetComponent<Player_Shoot>().enabled = false;
-        bossDeathTutorialTransition.SetActive(true);
-        Debug.Log("NIVEL 1 DESBLOQUEADO");
-    }
+    //public void FinishedTutorial()
+    //{
+    //    GameObject player = GameObject.FindGameObjectWithTag("Player");
+    //    player.GetComponent<Player_Health>().enabled = false;
+    //    player.GetComponent<Player_Movement>().enabled = false;
+    //    player.GetComponent<Player_Shoot>().enabled = false;
+    //    bossDeathTutorialTransition.SetActive(true);
+    //    Debug.Log("NIVEL 1 DESBLOQUEADO");
+    //}
 }

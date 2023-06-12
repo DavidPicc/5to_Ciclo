@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115616, g: 0.22674385, b: 0.30732006, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3826,7 +3826,9 @@ MonoBehaviour:
   pauseMenu: {fileID: 1472073883}
   deathMenu: {fileID: 403153843}
   shopMenu: {fileID: 1811509486}
+  nextLevelTransition: {fileID: 587352546}
   isPaused: 0
+  nextLevelName: Game_Level2
 --- !u!114 &490937432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4148,6 +4150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560001720}
   - component: {fileID: 560001719}
+  - component: {fileID: 560001721}
   m_Layer: 0
   m_Name: CheckPoint Manager
   m_TagString: Untagged
@@ -4167,7 +4170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb1038d20e56984d8cfa2cc01946829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetCheckpoint: 0
+  tryingThings: 0
 --- !u!4 &560001720
 Transform:
   m_ObjectHideFlags: 0
@@ -4183,6 +4186,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &560001721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560001718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1562603ac66619b47927739d24bee125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &564380921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,7 +4614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587352547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12567,7 +12582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1440437011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16625,11 +16640,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.808
       objectReference: {fileID: 0}
-    - target: {fileID: 4580208688366345285, guid: e9aa5d11abe99f24382d1683cf9d502a,
-        type: 3}
-      propertyPath: crushedLayers.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5959479356068048306, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_IsActive
@@ -17370,7 +17380,19 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 560001719}
+          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
+          m_MethodName: UpdateCheckpoints
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: c7e0f3a8b7fe4fc4bb19ab7755c67c76,
       type: 3}
     dialogue: []
@@ -17379,7 +17401,19 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 560001719}
+          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
+          m_MethodName: UpdateCheckpoints
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 1b6251a9cba350043add57352a25bf13,
       type: 3}
     dialogue: []
@@ -17883,7 +17917,40 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 490937431}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: FinishedLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - situationPrefab: {fileID: 4520026764095519211, guid: 174c3fc55fddb514a8cae24b85278daf,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 490937431}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: FinishedLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 174c3fc55fddb514a8cae24b85278daf,
       type: 3}
     dialogue: []
@@ -17893,7 +17960,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  waveIndex: 0
+  waveIndex: 57
   currentWave: 0
   situationOffset: 43.04
   spawnPosition: {x: 0, y: 0, z: 0}

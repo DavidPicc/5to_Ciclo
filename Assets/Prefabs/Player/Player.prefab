@@ -330,7 +330,7 @@ MonoBehaviour:
   objectInCollider: {fileID: 0}
   crushedLayers:
     serializedVersion: 2
-    m_Bits: 1152
+    m_Bits: 128
 --- !u!1 &6011070463039015488
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +595,7 @@ MonoBehaviour:
   maxtimer: 0
   tk: 0
   takeDmg: 0
+  damageCounter: 0
   range: 19.71
   targetLayer:
     serializedVersion: 2
@@ -602,6 +603,11 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   bulletPrefab: {fileID: 1300772526029512616, guid: dc124bcc2d8846b47b6df14288aa9b21,
     type: 3}
+  points: 0
+  equipped: 0
+  levelAbb: 0
+  upgradedPoints: 0
+  currentTarget2: {fileID: 0}
 --- !u!114 &8492462015629423518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,12 +626,16 @@ MonoBehaviour:
   maxBullets: 5
   pivot: {fileID: 2652757670764029446}
   shieldDistance: 2
+  rotationSpeed: 90
   endShield: 0
   activate: 0
   timer: 0
   maxtimer: 2
   bulletPrefab: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
     type: 3}
+  equipped: 0
+  levelAbb: 0
+  upgradedMaxBullets: 0
 --- !u!114 &1783097644066262210
 MonoBehaviour:
   m_ObjectHideFlags: 0

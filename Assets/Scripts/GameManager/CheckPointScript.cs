@@ -12,28 +12,29 @@ public class CheckPointScript : MonoBehaviour
     public static int gearsSaved;
     public static int coresSaved;
 
-    public bool resetCheckpoint = false;
+    public bool tryingThings = false;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-
-            PlayerPrefs.SetInt("wave", 0);
-        }
-        else Destroy(gameObject);
+        instance = this;
+        //PlayerPrefs.SetInt("wave", 0);
     }
 
     void Start()
     {
         /// PARA RESETEAR LOS PLAYERPREFS (INICIAR PLAY CON EL BOOL ACTIVADO Y DETENERLO, DESACTIVAR EL BOOL Y EMPEZAR A JUGAR) (BORRAR LUEGO) ///
-        if(resetCheckpoint)
+        //if(resetCheckpoint)
+        //{
+        //    ResetCheckpoints();
+        //}
+        if(!tryingThings)
         {
-            ResetCheckpoints();
+            savedWave = PlayerPrefs.GetInt("wave");
         }
-
-        savedWave = PlayerPrefs.GetInt("wave");
+        else
+        {
+            savedWave = SituationManager.instance.waveIndex;
+        }
         //savedPoint = new Vector3(PlayerPrefs.GetFloat("pointX"), PlayerPrefs.GetFloat("pointY"), PlayerPrefs.GetFloat("pointZ"));
         gearsSaved = PlayerPrefs.GetInt("gears");
         coresSaved = PlayerPrefs.GetInt("cores");
@@ -41,15 +42,6 @@ public class CheckPointScript : MonoBehaviour
         LoadCheckpoints();
 
         Debug.Log("WAVE: " + savedWave);
-
-        //if (FindObjectOfType<Player_Movement>() != null)
-        //{
-        //    if(savedPoint == Vector3.zero)
-        //    {
-        //        player = FindObjectOfType<Player_Movement>().transform;
-        //        //savedPoint = player.position;
-        //    }
-        //}
     }
 
     public void LoadCheckpoints()
@@ -65,7 +57,7 @@ public class CheckPointScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ResetCheckpoints();
+            //ResetCheckpoints();
         }
         if(Input.GetKeyDown(KeyCode.B))
         {

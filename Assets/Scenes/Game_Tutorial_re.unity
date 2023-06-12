@@ -3487,7 +3487,6 @@ GameObject:
   - component: {fileID: 490937431}
   - component: {fileID: 490937432}
   - component: {fileID: 490937433}
-  - component: {fileID: 490937434}
   - component: {fileID: 490937435}
   m_Layer: 0
   m_Name: GameManager
@@ -3526,7 +3525,9 @@ MonoBehaviour:
   pauseMenu: {fileID: 1472073883}
   deathMenu: {fileID: 403153843}
   shopMenu: {fileID: 1615336150}
+  nextLevelTransition: {fileID: 587352546}
   isPaused: 0
+  nextLevelName: Game_Level1
 --- !u!114 &490937432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3539,7 +3540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b3f41639dfb634096ddc182fff13d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossDeathTutorialTransition: {fileID: 587352546}
   boss: {fileID: 2069578587}
 --- !u!114 &490937433
 MonoBehaviour:
@@ -3561,19 +3561,6 @@ MonoBehaviour:
   finishedTyping: 0
   timeBetweenText: 2
   dialogues: []
---- !u!114 &490937434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490937428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb1038d20e56984d8cfa2cc01946829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetCheckpoint: 0
 --- !u!114 &490937435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4511,7 +4498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587352547
 RectTransform:
   m_ObjectHideFlags: 0
