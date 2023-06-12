@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1811562, g: 0.22674379, b: 0.30732033, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,7 +437,7 @@ PrefabInstance:
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: maxLevel
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4201254911680461931, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -852,51 +852,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77524197}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &91962566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 91962568}
-  - component: {fileID: 91962567}
-  m_Layer: 0
-  m_Name: CheckPoint Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &91962567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91962566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb1038d20e56984d8cfa2cc01946829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetCheckpoint: 0
---- !u!4 &91962568
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91962566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.36, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &103683923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +964,7 @@ PrefabInstance:
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: maxLevel
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4201254911680461931, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -2138,6 +2093,64 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272759097}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &305371718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 305371721}
+  - component: {fileID: 305371720}
+  - component: {fileID: 305371719}
+  m_Layer: 0
+  m_Name: CheckPoint Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &305371719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305371718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1562603ac66619b47927739d24bee125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &305371720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305371718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb1038d20e56984d8cfa2cc01946829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tryingThings: 0
+--- !u!4 &305371721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305371718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.36, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328128098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,7 +2973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407476905}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 16.4, z: 0}
+  m_LocalPosition: {x: -0, y: 45, z: 0}
   m_LocalScale: {x: 5, y: 40.551006, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3883,7 +3896,9 @@ MonoBehaviour:
   pauseMenu: {fileID: 1472073883}
   deathMenu: {fileID: 403153843}
   shopMenu: {fileID: 988183216}
+  nextLevelTransition: {fileID: 587352546}
   isPaused: 0
+  nextLevelName: Test_menu
 --- !u!114 &490937432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4394,7 +4409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569351169}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -20.3, z: 0}
+  m_LocalPosition: {x: 0, y: -45, z: 0}
   m_LocalScale: {x: 5, y: 40.551003, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12699,7 +12714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1440437011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16972,6 +16987,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   situations:
+  - situationPrefab: {fileID: 4520026764095519211, guid: b96b9812d879e9c4f93aed5573f86aef,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 67e506d69b30b8f4b9c239fd03d2b0e5,
       type: 3}
     dialogue: []
@@ -16990,7 +17014,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 67e506d69b30b8f4b9c239fd03d2b0e5,
+  - situationPrefab: {fileID: 4520026764095519211, guid: b96b9812d879e9c4f93aed5573f86aef,
       type: 3}
     dialogue: []
     isShop: 0
@@ -17018,6 +17042,87 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 52771cb8965507c4f98fe11a5852fa73,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: b4a7228845bb7a84ab650c7411ae2a42,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: d3ba48973f7cea644988256d73d9e377,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 19fa731caefed07428ccc5c92c9dd864,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 4c024afb342bfc947afed65ffd644aac,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 1a6e0625eb8a8a34e946604c49a77211,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 22bf076800e2b8a48ac3a92500f3cf95,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 394e090a0d4b8c7459ee7d7ed602e744,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 2e72ac9ad855a3548bffec7d0755f7da,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 2e72ac9ad855a3548bffec7d0755f7da,
       type: 3}
     dialogue: []
     isShop: 0

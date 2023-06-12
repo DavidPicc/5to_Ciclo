@@ -25,15 +25,6 @@ public class SituationManager_RE : MonoBehaviour
         currentWave = waveIndex - 1;
         SpawnSituation();
     }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            TutorialManager.instance.FinishedTutorial();
-        }
-    }
-
     public void SpawnSituation()
     {
         if(waveIndex < situations.Length - 1)

@@ -28,11 +28,6 @@ public class Destroy_Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (other.CompareTag("Player"))
-        {
-            playerHealth.TakeDamage(1);
-         
-        }
     }
  
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpawnEnemy7 : MonoBehaviour
 {
     Transform _camera;
+    Transform player;
     public Transform point;
     public GameObject horWarnings, verWarnings;
     public float enemySpeed;
@@ -15,62 +16,87 @@ public class SpawnEnemy7 : MonoBehaviour
     float offsetX = 30f;
     float offsetY = 10f;
     public GameObject enemyPrefab;
-    public float timeToActivate;
     public float timeToSpawn;
+    public float activationDistance;
     float timer;
     bool enemySpawned = false;
     bool spawnerActive = false;
     void Start()
     {
         _camera = FindObjectOfType<StageMovement>().transform;
-        timer = timeToActivate;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        timer = timeToSpawn;
+        if(horizontal)
+        {
+            fromRight = true;
+        }
     }
 
-    bool startedSpawner = false;
     public void StartSpawner()
     {
-        timer = timeToSpawn;
+        Vector3 cameraPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
         if (horizontal)
         {
             verWarnings.SetActive(false);
             horWarnings.SetActive(true);
-            horWarnings.transform.position = new Vector3(0, point.position.y, 0);
+            //horWarnings.transform.position = _camera.position + new Vector3(0, point.position.y, 0);
+            //horWarnings.transform.parent = _camera;
+            horWarnings.transform.position = new Vector3(cameraPos.x, point.position.y, 0);
         }
         else
         {
             horWarnings.SetActive(false);
             verWarnings.SetActive(true);
-            verWarnings.transform.position = new Vector3(point.position.x, 0, 0);
+            verWarnings.transform.position = _camera.position + new Vector3(point.position.x, 0, 0);
         }
-        startedSpawner = true;
     }
 
     void Update()
     {
-        if (spawnerActive && !startedSpawner)
+        if(point.position.x - player.position.x <= activationDistance)
+        {
+            spawnerActive = true;
+        }
+
+        if (spawnerActive)
         {
             StartSpawner();
-        }
-        if (!enemySpawned)
-        {
-            timer -= Time.deltaTime;
-            if(timer <= 0)
+            if(!enemySpawned)
             {
-                if (!spawnerActive)
-                {
-                    spawnerActive = true;
-                }
-                else
+                timer -= Time.deltaTime;
+                if (timer <= 0)
                 {
                     SpawnEnemy();
                     enemySpawned = true;
                 }
             }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //if (spawnerActive && !enemySpawned)
+        //{
+        //    timer -= Time.deltaTime;
+        //    if(timer <= 0)
+        //    {
+        //        //if (!spawnerActive)
+        //        //{
+        //        //    spawnerActive = true;
+        //        //}
+        //        //else
+        //        //{
+        //        //    SpawnEnemy();
+        //        //    enemySpawned = true;
+        //        //}
+        //        SpawnEnemy();
+        //        enemySpawned = true;
+        //    }
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     public void SpawnEnemy()

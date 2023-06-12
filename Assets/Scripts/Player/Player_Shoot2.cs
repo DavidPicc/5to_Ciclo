@@ -34,6 +34,7 @@ public class Player_Shoot2 : MonoBehaviour
     {
         timer = fireRate;
         levelShoot = 0;
+        Shopping();
     }
 
 

@@ -8,7 +8,7 @@ public class Player_Ability2 : MonoBehaviour
     [SerializeField] float rechargeBar;
     [SerializeField] float maxRechargeBar;
     [SerializeField] Image abilityBar;
-    [SerializeField] int maxBullets = 5;
+    [SerializeField] int maxBullets = 3;
     [SerializeField] Transform pivot;
     [SerializeField] float shieldDistance;
     [SerializeField] float rotationSpeed = 90f;
@@ -20,17 +20,34 @@ public class Player_Ability2 : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public bool equipped;
 
-   
+    [Header("Upgrade System")]
+    [SerializeField] int levelAbb;
+    public int upgradedMaxBullets;
+
+    private void OnEnable()
+    {
+        GameManager.onShopApply += Shopping;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onShopApply -= Shopping;
+    }
+
     void Start()
     {
         rechargeBar = maxRechargeBar;
         abilityBar.fillAmount = rechargeBar / maxRechargeBar;
+
+        levelAbb = 0;
+        Shopping();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.X) && rechargeBar >= maxRechargeBar && !activate)
+        if (Input.GetKey(KeyCode.X) && rechargeBar >= maxRechargeBar && !activate && equipped)
         {
             SpawnBulletShield();
             activate = true;
@@ -90,4 +107,18 @@ public class Player_Ability2 : MonoBehaviour
         }
     }
 
+    void Shopping()
+    {
+        if (UpgradeTracker.instance.levels.ContainsKey("BulletShield"))
+        {
+            levelAbb = UpgradeTracker.instance.levels["BulletShield"];
+        }
+
+        if (levelAbb > 1)
+        {
+            maxBullets = upgradedMaxBullets;
+        }
+
+        equipped = UpgradeTracker.instance.equippedSkill == "BulletShield";
+    }
 }

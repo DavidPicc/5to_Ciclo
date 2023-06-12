@@ -44,7 +44,7 @@ public class Player_Shoot : MonoBehaviour
      //   }
         timer = fireRate;
         levelShoot = 1;
- 
+        Shopping();
     }
 
 

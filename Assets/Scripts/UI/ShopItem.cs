@@ -45,7 +45,6 @@ public class ShopItem : MonoBehaviour
     void Start()
     {
         SetStartLevel();
-
         upgradingAnim.SetFloat("fill", 0f);
     }
 
@@ -98,6 +97,8 @@ public class ShopItem : MonoBehaviour
             }
 
         } else UpgradeTracker.instance.levels.Add(type, level);
+
+        equipped = UpgradeTracker.instance.equippedGun == type || UpgradeTracker.instance.equippedSkill == type;
 
         if(level > 0) costCore += upgradeCoreScaling * (level - 1);
         if(level > 0) costGear += upgradeGearScaling * (level - 1);

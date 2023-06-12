@@ -2337,7 +2337,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399729935
 GameObject:
@@ -2437,7 +2437,7 @@ RectTransform:
   - {fileID: 665377661}
   - {fileID: 1440437011}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2806,7 +2806,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50.778, y: -169.984, z: -165.49}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -3484,11 +3484,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490937430}
-  - component: {fileID: 490937429}
   - component: {fileID: 490937431}
   - component: {fileID: 490937432}
   - component: {fileID: 490937433}
-  - component: {fileID: 490937434}
   - component: {fileID: 490937435}
   m_Layer: 0
   m_Name: GameManager
@@ -3497,22 +3495,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &490937429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490937428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1474b2d0743e2f448f02cef062ea94a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gearScore: 0
-  coreScore: 0
-  playerLevel: 0
-  scoreToLevelUp: 0
 --- !u!4 &490937430
 Transform:
   m_ObjectHideFlags: 0
@@ -3526,7 +3508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &490937431
 MonoBehaviour:
@@ -3543,7 +3525,9 @@ MonoBehaviour:
   pauseMenu: {fileID: 1472073883}
   deathMenu: {fileID: 403153843}
   shopMenu: {fileID: 1615336150}
+  nextLevelTransition: {fileID: 587352546}
   isPaused: 0
+  nextLevelName: Game_Level1
 --- !u!114 &490937432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3556,7 +3540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b3f41639dfb634096ddc182fff13d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossDeathTutorialTransition: {fileID: 587352546}
   boss: {fileID: 2069578587}
 --- !u!114 &490937433
 MonoBehaviour:
@@ -3578,19 +3561,6 @@ MonoBehaviour:
   finishedTyping: 0
   timeBetweenText: 2
   dialogues: []
---- !u!114 &490937434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490937428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb1038d20e56984d8cfa2cc01946829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetCheckpoint: 0
 --- !u!114 &490937435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4528,7 +4498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587352547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4777,7 +4747,7 @@ PrefabInstance:
     - target: {fileID: 8691393238860293462, guid: f5f7eed0442c99f449ee7936a83e216b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8691393238860293462, guid: f5f7eed0442c99f449ee7936a83e216b,
         type: 3}
@@ -5160,6 +5130,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602054903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &603487706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603487708}
+  - component: {fileID: 603487707}
+  m_Layer: 0
+  m_Name: Game Score Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &603487707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603487706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1474b2d0743e2f448f02cef062ea94a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gearScore: 0
+  coreScore: 0
+  playerLevel: 0
+  scoreToLevelUp: 0
+--- !u!4 &603487708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603487706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.0661407, y: -4.321281, z: -87.499756}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &604198722
 GameObject:
   m_ObjectHideFlags: 0
@@ -7790,7 +7808,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &837328068
 GameObject:
@@ -10162,7 +10180,7 @@ Transform:
   - {fileID: 902648813}
   - {fileID: 2069578586}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1164645691
 GameObject:
@@ -10709,6 +10727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: costCore
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: maxLevel
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -13615,7 +13638,7 @@ Transform:
   - {fileID: 1463010106}
   - {fileID: 1562604628}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1615336150
 GameObject:
@@ -13808,6 +13831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: equipped
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: maxLevel
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4201254911680461931, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -14491,6 +14519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: costCore
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: maxLevel
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4201254911680461931, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -16102,7 +16135,7 @@ Transform:
   - {fileID: 1802137909}
   - {fileID: 520361201}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032170588
 GameObject:
@@ -16850,7 +16883,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2117927905
 MonoBehaviour:
@@ -16875,10 +16908,19 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
+  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
     dialogue:
     - Robot1;Use the directional keys to MOVE.
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
+      type: 3}
+    dialogue:
     - Robot2;Yeah! Yeah! Just move!
     isShop: 0
     isCheckpoint: 0
@@ -16888,7 +16930,8 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 0c01b24cf84511642b0ea981b51501cf,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Robot1;Use the Z button to SHOOT!
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16897,8 +16940,7 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: e8a94d9e9750d764785f1b739911c25d,
       type: 3}
-    dialogue:
-    - Robot1;Use the Z button to SHOOT!
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16944,17 +16986,8 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 45aac0bf5070bdd4ab685f5b25953c94,
       type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
-      type: 3}
     dialogue:
-    - Robot 2;This looks bad, very bad
+    - Robot 2;destroys the central part of the wall
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16982,18 +17015,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Astartea;Well, well, well. If it isn't Elphis' trash.
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -17014,7 +17039,6 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 66cf151e2b40a8e409563cc5fceacb04,
       type: 3}
     dialogue:
-    - Astartea;Well, well, well. If it isn't Elphis' trash.
     - Astartea;I'll just do you a favor and end with your useless.. pitiful.. meaningless..
       existence...
     isShop: 0

@@ -7,6 +7,11 @@ public class NextLevel : MonoBehaviour
 {
     public void LoadNextLevel(string levelName)
     {
+        levelName = GameManager.instance.nextLevelName;
+        if(FindObjectOfType<CheckPointScript>() != null )
+        {
+            CheckPointScript.instance.ResetCheckpoints();
+        }
         SceneManager.LoadScene(levelName);
     }
 }
