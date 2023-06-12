@@ -16908,10 +16908,19 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
+  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
     dialogue:
     - Robot1;Use the directional keys to MOVE.
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
+      type: 3}
+    dialogue:
     - Robot2;Yeah! Yeah! Just move!
     isShop: 0
     isCheckpoint: 0
@@ -16921,7 +16930,8 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 0c01b24cf84511642b0ea981b51501cf,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Robot1;Use the Z button to SHOOT!
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16930,8 +16940,7 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: e8a94d9e9750d764785f1b739911c25d,
       type: 3}
-    dialogue:
-    - Robot1;Use the Z button to SHOOT!
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16977,17 +16986,8 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 45aac0bf5070bdd4ab685f5b25953c94,
       type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
-      type: 3}
     dialogue:
-    - Robot 2;This looks bad, very bad
+    - Robot 2;destroys the central part of the wall
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -17015,18 +17015,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Astartea;Well, well, well. If it isn't Elphis' trash.
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -17047,7 +17039,6 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 66cf151e2b40a8e409563cc5fceacb04,
       type: 3}
     dialogue:
-    - Astartea;Well, well, well. If it isn't Elphis' trash.
     - Astartea;I'll just do you a favor and end with your useless.. pitiful.. meaningless..
       existence...
     isShop: 0
