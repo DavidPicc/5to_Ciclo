@@ -93,7 +93,7 @@ SphereCollider:
   m_GameObject: {fileID: 2038570525417550524}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   currentHealth: 0
+  IsEnemy: 1
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
@@ -192,6 +193,10 @@ MonoBehaviour:
   invulnerable: 0
   vfxexplosion: {fileID: 2832440755471769679, guid: e8ce4cdee96253c4dbbe6ad2de567772,
     type: 3}
+  IsBoss: 0
+  halfthealt: 0
+  moveSpeed: 2
+  movePoints: []
 --- !u!114 &8055385419231729935
 MonoBehaviour:
   m_ObjectHideFlags: 0
