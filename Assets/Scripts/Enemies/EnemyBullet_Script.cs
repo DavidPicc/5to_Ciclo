@@ -6,13 +6,13 @@ public class EnemyBullet_Script : MonoBehaviour
 {
     public Player_Health playerHealth;
     public Player_Ability playerAbility;
-    public float destroyDelay = 1f;
+   
    
     private void Start()
     {
         playerHealth = FindAnyObjectByType<Player_Health>();
         playerAbility = FindObjectOfType<Player_Ability>();
-        Destroy(gameObject, destroyDelay);
+        
 
     }
     private void OnTriggerEnter(Collider other)
