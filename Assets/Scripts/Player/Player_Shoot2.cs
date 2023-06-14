@@ -70,19 +70,19 @@ public class Player_Shoot2 : MonoBehaviour
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-        Destroy(bullet, 8f);
+        Destroy(bullet, 1.3f);
 
         if (tribolt)
         {
             var bulletUp = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
             bulletUp.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, -triboltOpeningAngle / 2) * bulletUp.transform.right * bulletSpeed, ForceMode.Impulse);
             bulletUp.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-            Destroy(bulletUp, 8f);
+            Destroy(bulletUp, 1.3f);
 
             var bulletDown = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
             bulletDown.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, triboltOpeningAngle / 2) * bulletDown.transform.right * bulletSpeed, ForceMode.Impulse);
             bulletDown.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-            Destroy(bulletDown, 8f);
+            Destroy(bulletDown, 1.3f);
         }
         shotBullet = true;
     }
