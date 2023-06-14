@@ -35,10 +35,7 @@ public class FriendScript : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Death();
-        }
+       
     }
 
     //void GoAhead()
