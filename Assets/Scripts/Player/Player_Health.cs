@@ -58,7 +58,7 @@ public class Player_Health : MonoBehaviour
     {
         if(canBeDamaged)
         {
-            FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage / 2), 0.1f);
+            FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage), 0.1f);
 
             currentHealth -= damage;
             UpdateHealthBar();

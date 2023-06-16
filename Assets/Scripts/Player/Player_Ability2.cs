@@ -74,6 +74,7 @@ public class Player_Ability2 : MonoBehaviour
             if (bullets[i] != null)
             {
                 bullets[i].transform.RotateAround(pivot.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+                Destroy(bullets[i], rechargeBar);
             }
         }
     }
@@ -102,7 +103,7 @@ public class Player_Ability2 : MonoBehaviour
             if (bullets[i] != null)
             {
                 bullets[i].GetComponent<Rigidbody>().AddForce(-bullets[i].transform.up * 4f, ForceMode.Impulse);
-                Destroy(bullets[i], 8f);
+               
             }
         }
     }

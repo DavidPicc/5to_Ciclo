@@ -9,7 +9,6 @@ public class PlayerBullet_Script2 : MonoBehaviour
 
     public void Start()
     {
-        Destroy(gameObject, 3f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,8 +22,7 @@ public class PlayerBullet_Script2 : MonoBehaviour
 
                     //other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
                     other.GetComponent<Enemy_Health>().TakeDamage(damage);
-                }
-                Destroy(gameObject, dissapearAfterColliding);
+                }             
             }
         }
         if (other.CompareTag("EnemyBullet"))
