@@ -98,7 +98,8 @@ public class Player_Health : MonoBehaviour
         }
         else
         {
-            Invoke("SetPlayerDeath", 0.3f);
+            //Invoke("SetPlayerDeath", 0.03f);
+            SetPlayerDeath();
         }
     }
 
