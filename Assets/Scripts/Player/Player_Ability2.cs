@@ -85,14 +85,14 @@ public class Player_Ability2 : MonoBehaviour
         float angle = -180 / 2;
         for (int i = 0; i < maxBullets; i++)
         {
-            float x = shieldDistance * Mathf.Cos(Mathf.Deg2Rad * angle) + pivot.position.x;
-            float y = shieldDistance * Mathf.Sin(Mathf.Deg2Rad * angle) + pivot.position.y;
-            Vector3 spawnPosition = new Vector3(x, y, pivot.position.z);
+            float x = shieldDistance * Mathf.Cos(Mathf.Deg2Rad * angle);
+            float y = shieldDistance * Mathf.Sin(Mathf.Deg2Rad * angle);
+            Vector3 spawnPosition = pivot.position + new Vector3(x, y, 0f);
             Quaternion spawnRotation = Quaternion.Euler(0, 0, angle + 90);
             GameObject bullet = Instantiate(bulletPrefab, spawnPosition, spawnRotation);
-            bullet.transform.parent = transform;
-            angle += angleStep;
+            bullet.transform.parent = pivot;
             bullets.Add(bullet);
+            angle += angleStep;
         }
     }
 
