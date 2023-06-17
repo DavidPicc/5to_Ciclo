@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    bool isFullScreen = true;
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
