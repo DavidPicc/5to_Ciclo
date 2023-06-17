@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class DialogueScript : MonoBehaviour
 {
     public static DialogueScript instance;
-    public float delay = 0.1f;
+    public float delay = 1f;
     public string fullText;
     public string currentText = "";
 

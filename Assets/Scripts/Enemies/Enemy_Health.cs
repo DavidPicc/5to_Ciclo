@@ -128,7 +128,7 @@ public class Enemy_Health : MonoBehaviour
             //    }
             //    Destroy(other.gameObject, 1f);
             //}
-            if (IsEnemy == true && other.CompareTag("Obstacle") || other.CompareTag("weigh"))
+            if (IsEnemy == true && other.CompareTag("Obstacle") || other.CompareTag("weigh") || other.CompareTag("destructible"))
             {
                 //Destroy(gameObject);
                 if (!obstacle)

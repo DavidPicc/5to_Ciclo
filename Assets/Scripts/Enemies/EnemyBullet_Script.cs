@@ -21,6 +21,10 @@ public class EnemyBullet_Script : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.CompareTag("destructible"))
+        {
+            Destroy(gameObject);
+        }
         if (other.CompareTag("Player"))
         {
             playerHealth.TakeDamage(1);

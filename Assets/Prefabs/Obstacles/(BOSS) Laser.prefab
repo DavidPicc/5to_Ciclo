@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -8541697086108414824}
   - component: {fileID: -981668796320912641}
   - component: {fileID: 1730945218038229105}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: (BOSS) Laser
-  m_TagString: Obstacle
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,10 +143,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 0
   MovementSpeed: 0
+  time: 0
   playerHealth: {fileID: 0}
+  Advice: {fileID: 0}
   rotation: 0
   moveLeft: 0
   moveRight: 0
   moveUp: 1
   moveDown: 0
   Damage: 1
+  advice: 0
