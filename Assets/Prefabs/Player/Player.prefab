@@ -408,9 +408,8 @@ GameObject:
   - component: {fileID: 8393978830263061864}
   - component: {fileID: 6710216752889483009}
   - component: {fileID: 6562598885265835713}
-  - component: {fileID: 1845851039850841490}
-  - component: {fileID: 8492462015629423518}
   - component: {fileID: 6110213095963492988}
+  - component: {fileID: 8492462015629423518}
   - component: {fileID: 1783097644066262210}
   - component: {fileID: 680129576726480449}
   m_Layer: 6
@@ -574,41 +573,36 @@ MonoBehaviour:
   canDie: 0
   healthFillBar: {fileID: 0}
   crushed: 0
---- !u!114 &1845851039850841490
+--- !u!114 &6110213095963492988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8088536440039082834}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ba43ebed8b57c45aa8e101799dd919, type: 3}
+  m_Script: {fileID: 11500000, guid: a5f3729c47600fb42b00c1dfee68d2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldObj: {fileID: 8088536441087026411}
-  rechargeBar: 0
-  maxRechargeBar: 20
-  abilityBar: {fileID: 0}
-  endShield: 0
-  activate: 0
-  timer: 0
-  maxtimer: 0
-  tk: 0
-  takeDmg: 0
-  damageCounter: 0
-  range: 19.71
-  targetLayer:
+  shieldObj: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  barUI: {fileID: 0}
+  skillKey: 0
+  maxRechargeBar: 0
+  maxCharge: 0
+  enemyLayer:
     serializedVersion: 2
-    m_Bits: 256
-  currentTarget: {fileID: 0}
-  bulletPrefab: {fileID: 1300772526029512616, guid: dc124bcc2d8846b47b6df14288aa9b21,
-    type: 3}
-  points: 0
+    m_Bits: 0
+  searchTargetRange: 0
+  maxTargetNumber: 0
+  targets: []
+  inBetweenTime: 0
+  bulletSpeed: 0
   equipped: 0
   levelAbb: 0
-  upgradedPoints: 0
-  currentTarget2: {fileID: 0}
+  upgradeShieldMaxCharge: 0
+  upgradeMaxTargetNumber: 0
 --- !u!114 &8492462015629423518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,39 +631,6 @@ MonoBehaviour:
   equipped: 0
   levelAbb: 0
   upgradedMaxBullets: 0
---- !u!114 &6110213095963492988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088536440039082834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5f3729c47600fb42b00c1dfee68d2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldObj: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  barUI: {fileID: 0}
-  skillKey: 0
-  maxRechargeBar: 0
-  maxCharge: 0
-  enemyBulletLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  searchTargetRange: 0
-  maxTargetNumber: 0
-  targets: []
-  inBetweenTime: 0
-  bulletSpeed: 0
-  equipped: 0
-  levelAbb: 0
-  upgradeShieldMaxCharge: 0
-  upgradeMaxTargetNumber: 0
 --- !u!114 &1783097644066262210
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class Enemy_Health : MonoBehaviour
 
     [SerializeField] GameObject pointsPrefab;
     [SerializeField] int enemyValueInPoints;
+    public Player_Health playerHealth;
 
     bool spawnedPoints = false;
 
@@ -32,6 +33,7 @@ public class Enemy_Health : MonoBehaviour
 
     void Start()
     {
+        playerHealth = FindAnyObjectByType<Player_Health>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         _camera = FindObjectOfType<StageMovement>().transform;
 
@@ -139,6 +141,13 @@ public class Enemy_Health : MonoBehaviour
                 if (canBeDamaged)
                 {
                     TakeDamage(30);
+                }
+            }
+            if (other.CompareTag("Player"))
+            {
+                if (canBeDamaged)
+                {
+                    playerHealth.TakeDamage(1);
                 }
             }
         }

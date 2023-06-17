@@ -26,11 +26,11 @@ public class EnemyBullet_Script : MonoBehaviour
             playerHealth.TakeDamage(1);
             Destroy(gameObject);
         }
-        if (other.CompareTag("Shield"))
-        {
-            Destroy(gameObject);
-            playerAbility.takeDmg++;
-        }
+        //if (other.CompareTag("Shield"))
+        //{
+        //    Destroy(gameObject);
+        //    playerAbility.takeDmg++;
+        //}
 
     }
     

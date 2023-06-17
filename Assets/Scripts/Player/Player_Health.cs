@@ -115,7 +115,7 @@ public class Player_Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("weigh") || other.CompareTag("Explosion") || other.CompareTag("Enemy"))
+        if (other.CompareTag("weigh") || other.CompareTag("Explosion")) //|| other.CompareTag("Enemy"))
         {
             if (canBeDamaged)
             {
