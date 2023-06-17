@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c463e07fe61b3a442bb6ed8143b43abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944,
+  bulletPrefab: {fileID: 656531904101248445, guid: 54f2f2977e1b18a4594590f65f49a454,
     type: 3}
   damage: 1
   bulletSpeed: 8
@@ -117,6 +117,7 @@ MonoBehaviour:
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
   enemyValueInPoints: 10
+  playerHealth: {fileID: 0}
   obstacle: 0
   invulnerable: 0
   vfxexplosion: {fileID: 2832440755471769679, guid: e8ce4cdee96253c4dbbe6ad2de567772,
@@ -392,9 +393,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,
         type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8622231856638578679, guid: 4e761c1ee7b186949bc68db382ad6e8c,
+      objectReference: {fileID: -876546973899608171, guid: 702ba961ebc97fd498de695051b06f39,
         type: 3}
     - target: {fileID: -5754084199372789682, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,
         type: 3}
