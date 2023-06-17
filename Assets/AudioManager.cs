@@ -8,22 +8,34 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     public AudioSource musicSource;
-    public AudioSource sfxSource;
+    //public AudioSource sfxSource;
 
     [Header("Audio Mixer")]
     public AudioMixerGroup masterGroup;
-    public Slider masterVolumeSlider;
+    //public Slider masterVolumeSlider;
     public float masterVolume;
     public AudioMixerGroup musicGroup;
-    public Slider musicVolumeSlider;
+    //public Slider musicVolumeSlider;
     public float musicVolume;
     public AudioMixerGroup sfxGroup;
-    public Slider sfxVolumeSlider;
+    //public Slider sfxVolumeSlider;
     public float sfxVolume;
 
     private void Awake()
     {
-        instance = this;
+        // If there is not already an instance of SoundManager, set it to this.
+        if (instance == null)
+        {
+            instance = this;
+        }
+        //If an instance already exists, destroy whatever this object is to enforce the singleton.
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -89,12 +101,10 @@ public class AudioManager : MonoBehaviour
         source.PlayOneShot(clip);
     }
 
-    public void ChangeMusic(List<AudioClip> clips)
+    public void ChangeMusic(AudioClip clip)
     {
-        int randomNumber = Random.Range(0, clips.Count);
-        musicSource.clip = clips[randomNumber];
+        musicSource.clip = clip;
         musicSource.Play();
-        clips.RemoveAt(randomNumber);
     }
 
     public void UpdateMixerVolume()

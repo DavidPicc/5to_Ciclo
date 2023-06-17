@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public delegate void ShopApply();
     public static event ShopApply onShopApply;
 
+    [SerializeField] AudioClip levelMusic;
+
     void Awake()
     {
         instance = this;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.ChangeMusic(levelMusic);
         ResumeGame();
         deathMenu.SetActive(false);
         shopMenu.SetActive(false);
@@ -136,6 +139,7 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player_Health>().enabled = false;
         player.GetComponent<Player_Movement>().enabled = false;
         player.GetComponent<Player_Shoot>().enabled = false;
+        player.GetComponent<Collider>().enabled = false;
         nextLevelTransition.SetActive(true);
         Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
     }
