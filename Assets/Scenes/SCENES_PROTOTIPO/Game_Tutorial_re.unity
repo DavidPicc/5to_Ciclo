@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -395, y: 157}
+  m_AnchoredPosition: {x: -357, y: 157}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53696750
@@ -317,7 +317,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Armas
+  m_text: 'Skills
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4646,7 +4648,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Equipado
+  m_text: 'Equipped
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8953,7 +8957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -416, y: -15}
+  m_AnchoredPosition: {x: -357, y: -15}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1027747451
@@ -8976,7 +8980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Escudos
+  m_text: Guns
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9039,7 +9043,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -36.951317, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11922,7 +11926,7 @@ RectTransform:
   m_GameObject: {fileID: 1289080019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2033, y: 1.2033, z: 1.2033}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1615336151}
@@ -15169,7 +15173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397, y: 275.95}
+  m_AnchoredPosition: {x: -346.2, y: 275.95}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914011951
@@ -15192,7 +15196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tienda
+  m_text: Improve
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16897,7 +16901,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
     dialogue:
-    - Robot1;Rapido! Nos estan siguiendo!
+    - Robot1;Speed up! They are following us!
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16907,7 +16911,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: ef728ba80a348e64e83c132d3f638589,
       type: 3}
     dialogue:
-    - Robot1;Usa las flechas direccionales para MOVERTE.
+    - Robot1;Use the directional keys to MOVE.
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16917,7 +16921,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: c500573693d98e742bd5054ea319434a,
       type: 3}
     dialogue:
-    - Robot2;SI! SIII! Solo avanza!
+    - Robot2;Yeah! Yeah! Just move!
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16927,7 +16931,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 0c01b24cf84511642b0ea981b51501cf,
       type: 3}
     dialogue:
-    - Robot1;Usa la tecla Z para DISPARAR!
+    - Robot1;Use the Z button to SHOOT!
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16964,7 +16968,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 2275291b669e7c1448b8290c0d9175ac,
       type: 3}
     dialogue:
-    - Robot1;Tu encargate de atacar, nosotros te reparamos
+    - 'Robot1;You take care of the attack, we''ll fix you up '
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -16983,7 +16987,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 45aac0bf5070bdd4ab685f5b25953c94,
       type: 3}
     dialogue:
-    - Robot 2;Destruye la parte central de la pared
+    - Robot 2;destroys the central part of the wall
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -17014,7 +17018,7 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: d19de78c7a8e5d643aaa661abaa71ba3,
       type: 3}
     dialogue:
-    - Astartea;Vaya, vaya, vaya. Si no es la basura de Elphis.
+    - Astartea;Well, well, well. If it isn't Elphis' trash.
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -17024,8 +17028,8 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 13c67248f79d42048b6856fa5de31e85,
       type: 3}
     dialogue:
-    - "Robot1;TLe est\xE1n haciendo algo a nuestros escudos..."
-    - Robot2;Se siente... raro...
+    - Robot1;They are doing something to our shields...
+    - Robot2;Feeling... weird...
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -17035,8 +17039,8 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 66cf151e2b40a8e409563cc5fceacb04,
       type: 3}
     dialogue:
-    - "Astartea;Solo te har\xE9 un favor y terminar\xE9 con tu in\xFAtil... lamentable...
-      sin sentido... existencia..."
+    - Astartea;I'll just do you a favor and end with your useless.. pitiful.. meaningless..
+      existence...
     isShop: 0
     isCheckpoint: 0
     isBoss: 0

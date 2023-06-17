@@ -58,7 +58,7 @@ public class ShopItem : MonoBehaviour
         if (equipped != equippedText.activeSelf) equippedText.SetActive(equipped);
 
         if (level > 0) labelText.text = title + " " + level;
-        else labelText.text = "Comprar " + title;
+        else labelText.text = "Buy " + title;
 
         if(level < maxLevel)
         {
