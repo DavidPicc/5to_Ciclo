@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115658, g: 0.22674432, b: 0.30732152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15212,6 +15212,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847368807}
   m_CullTransparentMesh: 1
+--- !u!1 &1850086081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8088536441087026411, guid: e9aa5d11abe99f24382d1683cf9d502a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069160547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859774360
 GameObject:
   m_ObjectHideFlags: 0
@@ -16900,6 +16906,72 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
         type: 3}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: barUI
+      value: 
+      objectReference: {fileID: 1975918226}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: skillKey
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxCharge
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shieldObj
+      value: 
+      objectReference: {fileID: 1850086081}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
+        type: 3}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: inBetweenTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxRechargeBar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxTargetNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: searchTargetRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradeMaxTargetNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradeShieldMaxCharge
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6562598885265835713, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: healthFillBar

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1961,6 +1961,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213527144}
   m_CullTransparentMesh: 1
+--- !u!1 &216563877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8088536441087026411, guid: e9aa5d11abe99f24382d1683cf9d502a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069160547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216716451
 GameObject:
   m_ObjectHideFlags: 0
@@ -17582,7 +17588,7 @@ PrefabInstance:
     - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -17634,6 +17640,82 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: barUI
+      value: 
+      objectReference: {fileID: 1975918226}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: equipped
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: skillKey
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxCharge
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shieldObj
+      value: 
+      objectReference: {fileID: 216563877}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
+        type: 3}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: inBetweenTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxRechargeBar
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxTargetNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: searchTargetRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradeMaxTargetNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradeShieldMaxCharge
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6195372102864317386, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -17808,7 +17890,7 @@ PrefabInstance:
     - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: equipped
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -19194,8 +19276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1474b2d0743e2f448f02cef062ea94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gearScore: 100
-  coreScore: 0
+  gearScore: 10000
+  coreScore: 10
   playerLevel: 0
   scoreToLevelUp: 0
 --- !u!4 &2139110335

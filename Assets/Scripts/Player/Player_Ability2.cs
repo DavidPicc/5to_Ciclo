@@ -39,7 +39,6 @@ public class Player_Ability2 : MonoBehaviour
     void Start()
     {
         rechargeBar = maxRechargeBar;
-        abilityBar.fillAmount = rechargeBar / maxRechargeBar;
 
         levelAbb = 0;
         Shopping();
@@ -56,7 +55,7 @@ public class Player_Ability2 : MonoBehaviour
         if(activate)
         {
             rechargeBar -= Time.deltaTime;
-            abilityBar.fillAmount = rechargeBar/maxRechargeBar;
+            if(equipped) abilityBar.fillAmount = rechargeBar/maxRechargeBar;
             if (rechargeBar <= 0)
             {
                 PushBullets();
@@ -67,7 +66,7 @@ public class Player_Ability2 : MonoBehaviour
         {
             rechargeBar += Time.deltaTime;
             rechargeBar = Mathf.Clamp(rechargeBar, 0f, maxRechargeBar);
-            abilityBar.fillAmount = rechargeBar / maxRechargeBar;
+            if(equipped) abilityBar.fillAmount = rechargeBar / maxRechargeBar;
         }
         for (int i = 0; i < bullets.Count; i++)
         {
