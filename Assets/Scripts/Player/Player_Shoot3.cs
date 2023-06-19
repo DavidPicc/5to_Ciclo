@@ -34,7 +34,6 @@ public class Player_Shoot3 : MonoBehaviour
     void Start()
     {
         timer = fireRate;
-        levelShoot = 0;
         Shopping();
     }
 
@@ -90,7 +89,7 @@ public class Player_Shoot3 : MonoBehaviour
         if (UpgradeTracker.instance.levels.ContainsKey("Flamethrower"))
         {
             levelShoot = UpgradeTracker.instance.levels["Flamethrower"];
-        }
+        } else UpgradeTracker.instance.levels.Add("Flamethrower", levelShoot);
 
         if (levelShoot > 1){
             bulletSpeed = upgradedBulletSpeed;

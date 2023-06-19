@@ -37,10 +37,8 @@ public class GameManager : MonoBehaviour
     {
         pauseMenu = GameObject.FindGameObjectWithTag("pauseMenu");
         deathMenu = GameObject.FindGameObjectWithTag("deathMenu");
-        shopMenu = GameObject.FindGameObjectWithTag("shopMenu");
 
         deathMenu.SetActive(false);
-        shopMenu.SetActive(false);
         pauseMenu.SetActive(false);
     }
 
@@ -49,7 +47,6 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.ChangeMusic(levelMusic);
         ResumeGame();
         deathMenu.SetActive(false);
-        shopMenu.SetActive(false);
         pauseMenu.SetActive(false);
     }
 

@@ -13,12 +13,13 @@ public class Player_Shoot2 : MonoBehaviour
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
     public bool equipped;
+    int bulletCount;
+    public float inBetweenShotsTime;
 
     [Header("Upgrade System")]
     [SerializeField] int levelShoot;
     public float upgradedShootDamage;
-    [SerializeField] bool tribolt;
-    public float triboltOpeningAngle;
+
 
     private void OnEnable()
     {
@@ -33,7 +34,7 @@ public class Player_Shoot2 : MonoBehaviour
     void Start()
     {
         timer = fireRate;
-        levelShoot = 0;
+        bulletCount = 1;
         Shopping();
     }
 
@@ -43,7 +44,8 @@ public class Player_Shoot2 : MonoBehaviour
         CheckIfShot();
         if (canShoot)
         {
-            Shoot_Normal();
+            shotBullet = true;
+            StartCoroutine(BurstShot());
         }
     }
 
@@ -65,26 +67,24 @@ public class Player_Shoot2 : MonoBehaviour
 
     }
 
+    IEnumerator BurstShot()
+    {
+        for(int i = 0; i < bulletCount; i++)
+        {
+            Shoot_Normal();
+
+            yield return new WaitForSeconds(inBetweenShotsTime);
+        }
+
+        yield return null;
+    }
+
     void Shoot_Normal()
     {
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
         Destroy(bullet, 1.3f);
-
-        if (tribolt)
-        {
-            var bulletUp = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
-            bulletUp.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, -triboltOpeningAngle / 2) * bulletUp.transform.right * bulletSpeed, ForceMode.Impulse);
-            bulletUp.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-            Destroy(bulletUp, 1.3f);
-
-            var bulletDown = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
-            bulletDown.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0f, 0f, triboltOpeningAngle / 2) * bulletDown.transform.right * bulletSpeed, ForceMode.Impulse);
-            bulletDown.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-            Destroy(bulletDown, 1.3f);
-        }
-        shotBullet = true;
     }
 
     void Shopping()
@@ -92,9 +92,9 @@ public class Player_Shoot2 : MonoBehaviour
         if (UpgradeTracker.instance.levels.ContainsKey("AreaGun"))
         {
             levelShoot = UpgradeTracker.instance.levels["AreaGun"];
-        }
+        } else UpgradeTracker.instance.levels.Add("AreaGun", levelShoot);
 
-        tribolt = levelShoot > 1;
+        bulletCount = levelShoot;
 
         if (levelShoot > 2) shootDamage = upgradedShootDamage;
 

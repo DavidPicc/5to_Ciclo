@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class Player_Shoot : MonoBehaviour
 {
@@ -43,7 +44,6 @@ public class Player_Shoot : MonoBehaviour
       //      vfxShootp.transform.forward = gameObject.transform.forward;
      //   }
         timer = fireRate;
-        levelShoot = 1;
         Shopping();
     }
 
@@ -99,7 +99,7 @@ public class Player_Shoot : MonoBehaviour
         if (UpgradeTracker.instance.levels.ContainsKey("StraightGun"))
         {
             levelShoot = UpgradeTracker.instance.levels["StraightGun"];
-        }
+        } else UpgradeTracker.instance.levels.Add("StraightGun", levelShoot);
 
         if (levelShoot > 2) shootDamage = upgradedShootDamage;
 

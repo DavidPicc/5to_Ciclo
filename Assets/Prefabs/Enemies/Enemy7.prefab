@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 3245461385362301837}
   - component: {fileID: 3245461385362301836}
   - component: {fileID: 7176265919080948173}
+  - component: {fileID: 918499524374312548}
   m_Layer: 8
   m_Name: Enemy7
   m_TagString: Enemy
@@ -126,6 +127,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7879515, y: 1.0110636, z: 3.2069101}
   m_Center: {x: 0.0026688576, y: 0, z: 0}
+--- !u!114 &918499524374312548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3245461385362301839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690f4300f0fd525478adb2f9a03e996f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  currentHealth: 0
+  IsEnemy: 1
+  invulnerabilityTime: 0
+  pointsPrefab: {fileID: 0}
+  enemyValueInPoints: 0
+  playerHealth: {fileID: 0}
+  obstacle: 0
+  invulnerable: 0
+  vfxexplosion: {fileID: 0}
+  IsBoss: 0
+  halfthealt: 0
+  moveSpeed: 2
+  movePoints: []
 --- !u!1001 &3245461384338696530
 PrefabInstance:
   m_ObjectHideFlags: 0

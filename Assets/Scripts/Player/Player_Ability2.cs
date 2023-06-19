@@ -40,7 +40,6 @@ public class Player_Ability2 : MonoBehaviour
     {
         rechargeBar = maxRechargeBar;
 
-        levelAbb = 0;
         Shopping();
     }
 
@@ -112,7 +111,7 @@ public class Player_Ability2 : MonoBehaviour
         if (UpgradeTracker.instance.levels.ContainsKey("BulletShield"))
         {
             levelAbb = UpgradeTracker.instance.levels["BulletShield"];
-        }
+        } else UpgradeTracker.instance.levels.Add("BulletShield", levelAbb);
 
         if (levelAbb > 1)
         {

@@ -174,7 +174,7 @@ public class Player_Ability_Fixed: MonoBehaviour
         if (UpgradeTracker.instance.levels.ContainsKey("ReflectorShield"))
         {
             levelAbb = UpgradeTracker.instance.levels["ReflectorShield"];
-        }
+        } else UpgradeTracker.instance.levels.Add("ReflectorShield", levelAbb);
 
         if (levelAbb > 1)
         {

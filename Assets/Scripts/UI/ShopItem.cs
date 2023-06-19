@@ -89,7 +89,7 @@ public class ShopItem : MonoBehaviour
     {
         if (UpgradeTracker.instance.levels.ContainsKey(type))
         {
-            level = FindObjectOfType<UpgradeTracker>().levels[type];
+            level = UpgradeTracker.instance.levels[type];
             if(level > maxLevel)
             {
                 level = maxLevel;
