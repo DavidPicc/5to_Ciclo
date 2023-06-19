@@ -124,6 +124,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1963504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8088536441087026411, guid: e9aa5d11abe99f24382d1683cf9d502a,
+    type: 3}
+  m_PrefabInstance: {fileID: 840847592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5080970
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +434,12 @@ PrefabInstance:
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: costCore
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: costGear
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -439,6 +450,16 @@ PrefabInstance:
         type: 3}
       propertyPath: maxLevel
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: upgradeCoreScaling
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: upgradeGearScaling
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4201254911680461931, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -974,8 +995,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
+      propertyPath: costGear
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
       propertyPath: maxLevel
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: upgradeCoreScaling
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
+      propertyPath: upgradeGearScaling
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 4201254911680461931, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -3165,18 +3201,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
+      propertyPath: costGear
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
       propertyPath: maxLevel
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: upgradeCoreScaling
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: upgradeGearScaling
-      value: 0
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 3256710647091911351, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -7396,7 +7437,7 @@ PrefabInstance:
         type: 3}
       propertyPath: barUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1975918226}
     - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: skillKey
@@ -7411,7 +7452,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shieldObj
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1963504}
     - target: {fileID: 6110213095963492988, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: bulletSpeed
@@ -8285,8 +8326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96712cd1f052bd45903430ad2be4058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedGun: 
-  equippedSkill: 
+  equippedGun: StraightGun
+  equippedSkill: BulletShield
 --- !u!4 &908604773
 Transform:
   m_ObjectHideFlags: 0
@@ -15053,6 +15094,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
+      propertyPath: costGear
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
       propertyPath: equipped
       value: 1
       objectReference: {fileID: 0}
@@ -15064,12 +15110,12 @@ PrefabInstance:
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: upgradeCoreScaling
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: upgradeGearScaling
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3256710647091911351, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
@@ -18128,18 +18174,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
+      propertyPath: costGear
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
+        type: 3}
       propertyPath: maxLevel
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: upgradeCoreScaling
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2923640141814094589, guid: e59351242f861674c8029ff821d3d566,
         type: 3}
       propertyPath: upgradeGearScaling
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3256710647091911351, guid: e59351242f861674c8029ff821d3d566,
         type: 3}

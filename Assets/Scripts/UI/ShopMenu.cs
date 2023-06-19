@@ -61,33 +61,9 @@ public class ShopMenu : MonoBehaviour
         }
 
         //Equipping
-        if(Input.GetKeyUp(key) && !upgrading)
+        if(Input.GetKeyUp(key) && !upgrading && selectedItem.level > 0)
         {
-            if(selectedItem.level > 0)
-            {
-                if (selectedGuns)
-                {
-                    for (int i = 0; i < gunUpgrades.Length; i++)
-                    {
-                        if (i != upgradeSelected) gunUpgrades[i].Equipped = false;
-                        else {
-                            gunUpgrades[i].Equipped = true;
-                            UpgradeTracker.instance.equippedGun = gunUpgrades[i].Type;
-                        }
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < skillUpgrades.Length; i++)
-                    {
-                        if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
-                        else {
-                            skillUpgrades[i].Equipped = true;
-                            UpgradeTracker.instance.equippedSkill = skillUpgrades[i].Type;
-                        }
-                    }
-                }
-            }
+            EquipSelectedUpgrade();
         }
 
         //Upgrading
@@ -146,9 +122,40 @@ public class ShopMenu : MonoBehaviour
             GameScore.instance.RemoveGears(selectedItem.costGear);
             GameScore.instance.RemoveCores(selectedItem.costCore);
             selectedItem.Upgrade();
+
+            //Automatic Equipping
+            EquipSelectedUpgrade();
         }
 
         if(Input.GetKey(key)) StartCoroutine(Upgrade());
+    }
+
+    void EquipSelectedUpgrade()
+    {
+        if (selectedGuns)
+        {
+            for (int i = 0; i < gunUpgrades.Length; i++)
+            {
+                if (i != upgradeSelected) gunUpgrades[i].Equipped = false;
+                else
+                {
+                    gunUpgrades[i].Equipped = true;
+                    UpgradeTracker.instance.equippedGun = gunUpgrades[i].Type;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < skillUpgrades.Length; i++)
+            {
+                if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
+                else
+                {
+                    skillUpgrades[i].Equipped = true;
+                    UpgradeTracker.instance.equippedSkill = skillUpgrades[i].Type;
+                }
+            }
+        }
     }
 
     void SetEquipped()
