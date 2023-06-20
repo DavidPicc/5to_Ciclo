@@ -10,6 +10,9 @@ public class Player_Shoot3 : MonoBehaviour
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] public float maxAngle;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip ShootSound;
+
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
@@ -33,6 +36,7 @@ public class Player_Shoot3 : MonoBehaviour
 
     void Start()
     {
+        audioManager = GetComponent<AudioSource>();
         timer = fireRate;
         Shopping();
     }
@@ -67,6 +71,7 @@ public class Player_Shoot3 : MonoBehaviour
 
     void Shoot_Normal()
     {
+        audioManager.PlayOneShot(ShootSound);
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         Destroy(bullet, 8f);

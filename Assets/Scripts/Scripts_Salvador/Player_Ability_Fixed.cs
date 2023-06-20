@@ -9,6 +9,8 @@ public class Player_Ability_Fixed: MonoBehaviour
     public GameObject shieldObj;
     public GameObject bulletPrefab;
     public Image barUI;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip ShieldSound;
 
     [Header("Activation")]
     public KeyCode skillKey;
@@ -48,6 +50,7 @@ public class Player_Ability_Fixed: MonoBehaviour
 
     void Start()
     {
+        audioManager = GetComponent<AudioSource>();
         rechargeBar = maxRechargeBar;
         SetImageFill();
         Shopping();
@@ -66,6 +69,7 @@ public class Player_Ability_Fixed: MonoBehaviour
         {
             active = true;
             shieldObj.SetActive(true);
+            audioManager.PlayOneShot(ShieldSound);
         }
 
         //Deactivation

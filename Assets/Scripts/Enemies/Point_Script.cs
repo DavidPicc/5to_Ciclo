@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Point_Script : MonoBehaviour
 {
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip PointsSound;
+
     public enum PointState
     {
         scatter,
@@ -16,6 +19,7 @@ public class Point_Script : MonoBehaviour
     float currentDrag;
     void Start()
     {
+        audioManager = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         currentDrag = rb.drag;
@@ -54,6 +58,7 @@ public class Point_Script : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            audioManager.PlayOneShot(PointsSound);
             GameScore.instance.AddGears(1);
             Destroy(gameObject);
         }

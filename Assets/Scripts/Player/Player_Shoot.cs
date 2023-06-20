@@ -13,6 +13,9 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] public float fireRate;
     [SerializeField] float bulletsOffset;
     //[SerializeField] GameObject vfxShoot;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip ShootSound;
+
     public int cannons;
     public int cannon;
     float timer;
@@ -38,11 +41,12 @@ public class Player_Shoot : MonoBehaviour
 
     void Start()
     {
-     //   if (vfxShoot != null)
-     //   {
-     //       var vfxShootp = Instantiate(vfxShoot, transform.position, Quaternion.identity);
-      //      vfxShootp.transform.forward = gameObject.transform.forward;
-     //   }
+        //   if (vfxShoot != null)
+        //   {
+        //       var vfxShootp = Instantiate(vfxShoot, transform.position, Quaternion.identity);
+        //      vfxShootp.transform.forward = gameObject.transform.forward;
+        //   }
+        audioManager = GetComponent<AudioSource>();
         timer = fireRate;
         Shopping();
     }
@@ -85,10 +89,10 @@ public class Player_Shoot : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, shootPoints[i].position + vecOffset, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             bullet.GetComponent<PlayerBullet_Script>().damage = shootDamage;
-           
-         //   GameObject vfx = Instantiate(vfxShoot, shootPoints[i].position, Quaternion.Euler(0f, 90f, 90f));
-            //vfx.transform.SetParent(bullet.transform, false);
 
+            //   GameObject vfx = Instantiate(vfxShoot, shootPoints[i].position, Quaternion.Euler(0f, 90f, 90f));
+            //vfx.transform.SetParent(bullet.transform, false);
+            audioManager.PlayOneShot(ShootSound);
             Destroy(bullet, 2f);
         }
         shotBullet = true;

@@ -9,6 +9,8 @@ public class Enemy_Health : MonoBehaviour
     Transform _camera;
     [SerializeField] float maxHealth;
     [SerializeField] public float currentHealth;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip DeathSound;
     public bool IsEnemy = true;
     public bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
@@ -36,6 +38,7 @@ public class Enemy_Health : MonoBehaviour
         playerHealth = FindAnyObjectByType<Player_Health>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         _camera = FindObjectOfType<StageMovement>().transform;
+        audioManager = GetComponent<AudioSource>();
 
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
@@ -79,7 +82,8 @@ public class Enemy_Health : MonoBehaviour
         {
             GetComponent<Enemy4_ShootExplode>().ShootAngular();
         }
-        
+
+        audioManager.PlayOneShot(DeathSound);
         Destroy(gameObject, 0.2f);
         if (!spawnedPoints)
             SpawnPoints();

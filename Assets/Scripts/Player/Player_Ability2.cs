@@ -12,6 +12,8 @@ public class Player_Ability2 : MonoBehaviour
     [SerializeField] Transform pivot;
     [SerializeField] float shieldDistance;
     [SerializeField] float rotationSpeed = 90f;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip ShieldSound;
     List<GameObject> bullets = new List<GameObject>();
     public bool endShield;
     public bool activate;
@@ -38,6 +40,7 @@ public class Player_Ability2 : MonoBehaviour
 
     void Start()
     {
+        audioManager = GetComponent<AudioSource>();
         rechargeBar = maxRechargeBar;
 
         Shopping();
@@ -55,6 +58,7 @@ public class Player_Ability2 : MonoBehaviour
         {
             rechargeBar -= Time.deltaTime;
             if(equipped) abilityBar.fillAmount = rechargeBar/maxRechargeBar;
+            audioManager.PlayOneShot(ShieldSound);
             if (rechargeBar <= 0)
             {
                 PushBullets();

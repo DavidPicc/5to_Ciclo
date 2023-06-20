@@ -11,6 +11,9 @@ public class Player_Health : MonoBehaviour
     float timer;
     bool canBeDamaged = true;
     [SerializeField] public bool canDie = true;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip DeathSound;
+    [SerializeField] public AudioClip HitSound;
 
     [SerializeField] Image healthFillBar;
 
@@ -19,6 +22,7 @@ public class Player_Health : MonoBehaviour
 
     void Start()
     {
+        audioManager = GetComponent<AudioSource>();
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
 
@@ -59,7 +63,7 @@ public class Player_Health : MonoBehaviour
         if(canBeDamaged)
         {
             FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage), 0.1f);
-
+            audioManager.PlayOneShot(HitSound);
             currentHealth -= damage;
             UpdateHealthBar();
             if (currentHealth <= 0)
@@ -105,6 +109,7 @@ public class Player_Health : MonoBehaviour
 
     public void SetPlayerDeath()
     {
+        audioManager.PlayOneShot(DeathSound);
         gameObject.SetActive(false);
         GameManager.instance.DeathMenu();
     }
