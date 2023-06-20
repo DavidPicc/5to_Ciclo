@@ -10526,10 +10526,70 @@ Transform:
   - {fileID: 710199364}
   - {fileID: 1869051635}
   - {fileID: 902648813}
+  - {fileID: 1161672395}
   - {fileID: 2069578586}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1161672394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161672395}
+  - component: {fileID: 1161672397}
+  - component: {fileID: 1161672396}
+  m_Layer: 0
+  m_Name: Destroystage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1161672395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161672394}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -100.340004, y: 0, z: -77.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1150865511}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161672396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161672394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40924f1a2dc75e46a080eeaca5d52f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagObjetoADestruir: stage
+--- !u!65 &1161672397
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161672394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 36.11155, z: 171.51207}
+  m_Center: {x: 0, y: 0.115413666, z: 85.256035}
 --- !u!1 &1164645691
 GameObject:
   m_ObjectHideFlags: 0
@@ -15349,8 +15409,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705180475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.24, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 25, z: 5}
+  m_LocalPosition: {x: -71.24, y: 0, z: 2.8433}
+  m_LocalScale: {x: 5, y: 25, z: 75.793396}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1869051635}
@@ -18257,7 +18317,7 @@ PrefabInstance:
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
