@@ -115,6 +115,37 @@ MonoBehaviour:
   maxAngleDeviation: 15
   leftPoint: {fileID: 6195372102864317386}
   rightPoint: {fileID: 3597017155110096804}
+--- !u!1 &2007914445231140797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1582721658452703768}
+  m_Layer: 0
+  m_Name: Smoke
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1582721658452703768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007914445231140797}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.822, y: 0.015916064, z: -0.000060915947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088536440039082832}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2652757669124389384
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +443,7 @@ GameObject:
   - component: {fileID: 8492462015629423518}
   - component: {fileID: 1783097644066262210}
   - component: {fileID: 680129576726480449}
+  - component: {fileID: 3223116779692069757}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -437,6 +469,7 @@ Transform:
   - {fileID: 2652757669124389383}
   - {fileID: 2652757670764029446}
   - {fileID: 1127841124051743650}
+  - {fileID: 1582721658452703768}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -526,10 +559,9 @@ MonoBehaviour:
   - {fileID: 8088536441793631094}
   fireRate: 0.5
   equipped: 0
+  inBetweenShotsTime: 0
   levelShoot: 0
   upgradedShootDamage: 16
-  tribolt: 0
-  triboltOpeningAngle: 35
 --- !u!114 &6710216752889483009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +689,20 @@ CapsuleCollider:
   m_Height: 1.4619255
   m_Direction: 0
   m_Center: {x: 0.0066018105, y: 0, z: 0}
+--- !u!114 &3223116779692069757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088536440039082834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad84a6da15321841b164a81fdf3ef8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Firepoint: {fileID: 2007914445231140797}
+  vfx: {fileID: 3512165716195985295, guid: d2f92621074967f41a36fcfae160baae, type: 3}
 --- !u!1 &8088536440848238988
 GameObject:
   m_ObjectHideFlags: 0
