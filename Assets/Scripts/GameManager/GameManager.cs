@@ -71,6 +71,11 @@ public class GameManager : MonoBehaviour
         {
             FinishedLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("Test_menu");
+        }
     }
 
     public void PauseGame()

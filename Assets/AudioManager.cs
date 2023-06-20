@@ -13,16 +13,18 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Mixer")]
     public AudioMixerGroup masterGroup;
     //public Slider masterVolumeSlider;
-    public float masterVolume;
+    public static float masterVolume;
     public AudioMixerGroup musicGroup;
     //public Slider musicVolumeSlider;
-    public float musicVolume;
+    public static float musicVolume;
     public AudioMixerGroup sfxGroup;
     //public Slider sfxVolumeSlider;
-    public float sfxVolume;
+    public static float sfxVolume;
 
     private void Awake()
     {
+        instance = this;
+        /*
         // If there is not already an instance of SoundManager, set it to this.
         if (instance == null)
         {
@@ -36,6 +38,7 @@ public class AudioManager : MonoBehaviour
 
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);
+        */
     }
 
     void Start()
@@ -52,11 +55,11 @@ public class AudioManager : MonoBehaviour
         //masterVolumeSlider.value = 0.5f;
         //musicVolumeSlider.value = 1f;
         //sfxVolumeSlider.value = 1f;
-
+        /*
         masterVolume = 0.5f;
         musicVolume = 0.5f;
         sfxVolume = 0.5f;
-
+        */
         UpdateMixerVolume();
     }
 
