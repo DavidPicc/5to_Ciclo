@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9113706908115137911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.84, y: -0.77, z: 0.22657585}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.940232, y: 5.973954, z: 2.940232}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -135,16 +135,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690f4300f0fd525478adb2f9a03e996f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1000
   currentHealth: 0
+  audioManager: {fileID: 0}
+  DeathSound: {fileID: 0}
   IsEnemy: 0
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 0}
   enemyValueInPoints: 0
+  playerHealth: {fileID: 0}
   obstacle: 0
   invulnerable: 0
   vfxexplosion: {fileID: 0}
   IsBoss: 1
-  halfthealt: 50
+  halfthealt: 500
   moveSpeed: 2
-  movePoints: []
+  movePoints:
+  - {fileID: 0}
+  - {fileID: 0}
