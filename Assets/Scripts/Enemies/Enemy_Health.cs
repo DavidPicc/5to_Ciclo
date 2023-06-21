@@ -144,7 +144,7 @@ public class Enemy_Health : MonoBehaviour
             {
                 if (canBeDamaged)
                 {
-                    TakeDamage(30);
+                    TakeDamage(3000);
                 }
             }
             if (other.CompareTag("Player"))

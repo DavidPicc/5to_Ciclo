@@ -14,7 +14,7 @@ public class objet_destrur : MonoBehaviour
 
     [SerializeField] GameObject pointsPrefab;
     [SerializeField] int enemyValueInPoints;
-  
+
     bool spawnedPoints = false;
     [SerializeField] GameObject vfxexplosion;
     [SerializeField] bool obstacle = false;
@@ -90,12 +90,12 @@ public class objet_destrur : MonoBehaviour
                     TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
                 }
                 Destroy(other.gameObject);
-              
+
             }
-            }
+
             if (CompareTag("Obstacle") || other.CompareTag("weigh"))
             {
-               Destroy(gameObject);
+                Destroy(gameObject);
                 if (!obstacle)
                 {
                     TakeDamage(100);
@@ -105,9 +105,9 @@ public class objet_destrur : MonoBehaviour
             {
                 if (canBeDamaged)
                 {
-                    TakeDamage(100);
+                    TakeDamage(4000);
                 }
             }
         }
     }
-
+}
