@@ -108,6 +108,13 @@ public class objet_destrur : MonoBehaviour
                     TakeDamage(4000);
                 }
             }
+            if (other.CompareTag("PlayerBullet"))
+            {
+                if (canBeDamaged)
+                {
+                    TakeDamage(4000);
+                }
+            }
         }
     }
 }
