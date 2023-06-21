@@ -216,14 +216,14 @@ MonoBehaviour:
   bulletPrefab: {fileID: 656531904101248445, guid: 49a0dd756c8d4494f9d9234c8b45c944,
     type: 3}
   damage: 1
-  bulletSpeed: 10
+  bulletSpeed: 8
   fireRate: 0.05
   bulletNumber: 5
-  bulletDisappear: 0.5
-  bulletAng: 40
+  bulletDisappear: 1
+  bulletAng: 35
   anticipation: 0.2
   pointShoot: {fileID: 4924584803395569830}
-  distanceToShoot: 8
+  distanceToShoot: 10
   antiSphere: {fileID: 1730544752869789959}
 --- !u!114 &2357079030098041128
 MonoBehaviour:
@@ -237,10 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690f4300f0fd525478adb2f9a03e996f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   currentHealth: 0
+  audioManager: {fileID: 0}
+  DeathSound: {fileID: 0}
   IsEnemy: 1
-  invulnerabilityTime: 0.05
+  invulnerabilityTime: 0
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
   enemyValueInPoints: 25
