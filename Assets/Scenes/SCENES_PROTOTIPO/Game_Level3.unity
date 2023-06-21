@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18115622, g: 0.22674394, b: 0.3073205, a: 1}
+  m_IndirectSpecularColor: {r: 0.18115616, g: 0.22674385, b: 0.30732006, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7561,10 +7561,35 @@ PrefabInstance:
       propertyPath: healthFillBar
       value: 
       objectReference: {fileID: 716831648}
+    - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: moveDrag
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.15555
+      objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: levelShoot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shootDamage
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedCannon
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082832, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -7638,8 +7663,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8393978830263061864, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393978830263061864, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393978830263061864, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: shootDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393978830263061864, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: inBetweenShotsTime
-      value: 0.3
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393978830263061864, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedShootDamage
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -7658,10 +7703,20 @@ PrefabInstance:
       objectReference: {fileID: 1975918226}
     - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: maxBullets
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 1300772526029512616, guid: 79ce1e6cc3fbd5449a4261d403f1d652,
         type: 3}
+    - target: {fileID: 8492462015629423518, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: upgradedMaxBullets
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8599227903523507572, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Radius
@@ -10325,7 +10380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c3d04942dffe94f9d9d3fe104b8609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 6
 --- !u!4 &1150865511
 Transform:
   m_ObjectHideFlags: 0
