@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.84776807, g: 0.48065323, b: 0.30102718, a: 1}
+  m_IndirectSpecularColor: {r: 0.84776735, g: 0.4806527, b: 0.30102658, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17796,7 +17796,19 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2025263474}
+          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
+          m_MethodName: UpdateCheckpoints
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 379bbd9cd243c274790e3c76ddde4747,
       type: 3}
     dialogue: []
