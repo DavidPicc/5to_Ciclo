@@ -9,7 +9,6 @@ public class Smoke_action : MonoBehaviour
     
     void Start()
     {
-        
     }
 
     // Update is called once per frame
