@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.4029132, g: 0.2488875, b: 0.4433962, a: 0.48235294}
   m_FogMode: 3
-  m_FogDensity: 0.011
+  m_FogDensity: 0.044
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.2760237, g: 0.10586509, b: 0.5754717, a: 1}
@@ -7147,7 +7147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &399729936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7644,8 +7644,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.990566, g: 0.98589355, b: 0.9902964, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.9528302, g: 0.46293166, b: 0.9528302, a: 1}
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7702,14 +7702,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_LocalRotation: {x: 0.9126394, y: -0.077354684, z: -0.021496497, w: 0.40080357}
+  m_LocalRotation: {x: 0.49218646, y: -0.04917314, z: -0.06346535, w: 0.8667795}
   m_LocalPosition: {x: -37, y: 175.9, z: 282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 46.74, y: -171.504, z: -166.634}
+  m_LocalEulerAnglesHint: {x: 57.886, y: -16.133, z: -17.338}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10325,7 +10325,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 464b3c2c42b49d440add12fab18a916d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -96.7
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 464b3c2c42b49d440add12fab18a916d,
         type: 3}
@@ -10376,6 +10376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: piramide (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 464b3c2c42b49d440add12fab18a916d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 464b3c2c42b49d440add12fab18a916d, type: 3}
@@ -36015,7 +36020,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 464b3c2c42b49d440add12fab18a916d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -82.3
+      value: -101.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 464b3c2c42b49d440add12fab18a916d,
         type: 3}
@@ -36066,6 +36071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: piramide (1)_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 464b3c2c42b49d440add12fab18a916d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 464b3c2c42b49d440add12fab18a916d, type: 3}
@@ -40400,7 +40410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029063882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.15698, y: 5.538029, z: 229.3}
+  m_LocalPosition: {x: -49.15698, y: 5.538029, z: 136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
