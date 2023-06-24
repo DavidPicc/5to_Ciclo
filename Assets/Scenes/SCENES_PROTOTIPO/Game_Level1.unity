@@ -17619,6 +17619,11 @@ PrefabInstance:
       propertyPath: crushedLayers.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 1582721658452703768, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1672292630226098270, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Material
@@ -17763,13 +17768,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6710216752889483009, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
+      propertyPath: maxAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710216752889483009, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
       propertyPath: bulletSpeed
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6710216752889483009, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: shootDamage
-      value: 0.3
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -19316,8 +19326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1474b2d0743e2f448f02cef062ea94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gearScore: 1000000
-  coreScore: 2828
+  gearScore: 100
+  coreScore: 0
   playerLevel: 0
   scoreToLevelUp: 0
 --- !u!4 &2139110335
