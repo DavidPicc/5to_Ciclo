@@ -90,7 +90,9 @@ public class Enemy_Health : MonoBehaviour
         var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
         death.AddComponent<AudioSource>();
         death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
+        death.GetComponent<AudioSource>().volume = 1.0f;
         death.GetComponent<AudioSource>().PlayOneShot(DeathSound);
+        Destroy(death, 3f);
 
         Destroy(this);
     }

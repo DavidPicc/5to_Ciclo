@@ -20,7 +20,7 @@ public class UIPriority : MonoBehaviour
     void Update()
     {
         //if (optionsMenu.activeSelf && volumeSelected != null)
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Escape))
         {
             if(volumeSelected != null)
             {
@@ -34,7 +34,7 @@ public class UIPriority : MonoBehaviour
                 }  
             }
         }
-        else if (Input.anyKeyDown && !Input.GetKey(KeyCode.X))
+        else if (Input.anyKeyDown && (!Input.GetKeyDown(KeyCode.X) || !Input.GetKeyDown(KeyCode.Escape)))
         {
             if(FindObjectOfType<BackButtonMenu>() != null && FindObjectOfType<BackButtonMenu>().selected)
             {

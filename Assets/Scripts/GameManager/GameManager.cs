@@ -63,10 +63,10 @@ public class GameManager : MonoBehaviour
                 {
                     PauseGame();
                 }
-                else
-                {
-                    ResumeGame();
-                }
+                //else
+                //{
+                //    ResumeGame();
+                //}
             }
         }
 
