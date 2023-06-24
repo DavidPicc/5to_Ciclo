@@ -83,11 +83,15 @@ public class Enemy_Health : MonoBehaviour
             GetComponent<Enemy4_ShootExplode>().ShootAngular();
         }
 
-        audioManager.PlayOneShot(DeathSound);
+        //audioManager.PlayOneShot(DeathSound);
         Destroy(gameObject, 0.2f);
         if (!spawnedPoints)
             SpawnPoints();
-        Instantiate(vfxexplosion, transform.position, Quaternion.identity);
+        var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
+        death.AddComponent<AudioSource>();
+        death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
+        death.GetComponent<AudioSource>().PlayOneShot(DeathSound);
+
         Destroy(this);
     }
 

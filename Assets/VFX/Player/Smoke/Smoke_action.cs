@@ -14,7 +14,10 @@ public class Smoke_action : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Instantiate (vfx, Firepoint.transform.position, Quaternion.identity);
-        
+        if(Time.timeScale != 0)
+        {
+            var smoke = Instantiate(vfx, Firepoint.transform.position, Quaternion.identity);
+            Destroy(smoke.gameObject, 0.5f);
+        }
     }
 }
