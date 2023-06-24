@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     public static event ShopApply onShopApply;
 
     [SerializeField] AudioClip levelMusic;
+    [SerializeField] Button deathButton;
 
     void Awake()
     {
@@ -81,6 +84,11 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+
+        //AudioManager.masterVolume /= 2;
+        //AudioManager.instance.UpdateMixerVolume();
+        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
+
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -91,12 +99,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
 
+        //AudioManager.masterVolume *= 2;
+        //AudioManager.instance.UpdateMixerVolume();
+        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
+
         if (shopMenu.activeSelf) CloseShop();
     }
 
     public void DeathMenu()
     {
+        FindObjectOfType<EventSystem>().SetSelectedGameObject(deathButton.gameObject);
         deathMenu.SetActive(true);
+        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
         Time.timeScale = 0f;
     }
 
@@ -123,6 +137,7 @@ public class GameManager : MonoBehaviour
         isPaused = true;
 
         Time.timeScale = 0f;
+        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
         shopMenu.SetActive(true);
     }
 
@@ -131,13 +146,15 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         shopMenu.SetActive(false);
         //CheckPointScript.instance.UpdateCheckpoints();
+        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
 
-        if(onShopApply != null) onShopApply();
+        if (onShopApply != null) onShopApply();
     }
 
     public void FinishedLevel()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
         player.GetComponent<Player_Health>().enabled = false;
         player.GetComponent<Player_Movement>().enabled = false;
         player.GetComponent<Player_Shoot>().enabled = false;
