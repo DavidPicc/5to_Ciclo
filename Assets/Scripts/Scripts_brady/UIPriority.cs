@@ -22,16 +22,23 @@ public class UIPriority : MonoBehaviour
         //if (optionsMenu.activeSelf && volumeSelected != null)
         if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Escape))
         {
-            if(volumeSelected != null)
+            if(GameManager.instance.shopMenu.activeSelf)
             {
-                volumeSelected.GetComponent<VolumeButtonScript>().DeactivateButtons();
+                GameManager.instance.ResumeGame();
             }
             else
             {
-                if(FindObjectOfType<BackButtonMenu>() != null)
+                if (volumeSelected != null)
                 {
-                    FindObjectOfType<BackButtonMenu>().SelectButton();
-                }  
+                    volumeSelected.GetComponent<VolumeButtonScript>().DeactivateButtons();
+                }
+                else
+                {
+                    if (FindObjectOfType<BackButtonMenu>() != null)
+                    {
+                        FindObjectOfType<BackButtonMenu>().SelectButton();
+                    }
+                }
             }
         }
         else if (Input.anyKeyDown && (!Input.GetKeyDown(KeyCode.X) || !Input.GetKeyDown(KeyCode.Escape)))

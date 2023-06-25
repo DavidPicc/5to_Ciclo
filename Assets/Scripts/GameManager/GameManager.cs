@@ -57,16 +57,9 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!deathMenu.activeSelf)
+            if (!deathMenu.activeSelf && !isPaused)
             {
-                if (!isPaused)
-                {
-                    PauseGame();
-                }
-                //else
-                //{
-                //    ResumeGame();
-                //}
+                PauseGame();
             }
         }
 
