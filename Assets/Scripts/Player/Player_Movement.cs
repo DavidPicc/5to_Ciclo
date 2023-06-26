@@ -74,7 +74,11 @@ public class Player_Movement : MonoBehaviour
     {
         if (other.CompareTag("Cores"))
         {
-            other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
+            if (other.GetComponent<AudioSource>() != null && other.GetComponent<Cores_Script>() != null && other.GetComponent<Cores_Script>().CoresSound != null)
+            {
+                other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
+            }
+            
             GameScore.instance.AddCores(1);
             Destroy(other.gameObject);
         }
