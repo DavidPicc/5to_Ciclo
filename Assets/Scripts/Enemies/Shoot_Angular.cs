@@ -17,6 +17,8 @@ public class Shoot_Angular : EnemyShooting
     public float anticipation;
     [Header("Shooting")]
     public Transform pointShoot;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip ShootSound;
     private float shootTimer;
     private bool shotBullet;
     public float distanceToShoot;
@@ -91,6 +93,7 @@ public class Shoot_Angular : EnemyShooting
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, bulletDisappear);
             angle += bulletAng / (bulletNumber);
+            audioManager.PlayOneShot(ShootSound);
         }
 
         shotBullet = true;

@@ -11,6 +11,7 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] public float currentHealth;
     [SerializeField] public AudioSource audioManager;
     [SerializeField] public AudioClip DeathSound;
+
     public bool IsEnemy = true;
     public bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;

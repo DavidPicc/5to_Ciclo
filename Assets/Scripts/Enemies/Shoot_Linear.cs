@@ -18,6 +18,8 @@ public class Shoot_Linear : EnemyShooting
     public float anticipation;
     [Header("Shooting")]
     public Transform pointShoot;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip ShootSound;
     private float shootTimer;
     private bool shotBullet;
     public float distanceToShoot;
@@ -92,6 +94,7 @@ public class Shoot_Linear : EnemyShooting
             bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, bulletDisappear);
             offset += (bulletOffset / 10) / (bulletNumber - 1);
+            audioManager.PlayOneShot(ShootSound);
         }
 
         shotBullet = true;
