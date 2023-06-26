@@ -22,9 +22,26 @@ public class UIPriority : MonoBehaviour
         //if (optionsMenu.activeSelf && volumeSelected != null)
         if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameManager.instance.shopMenu.activeSelf)
+            if(FindObjectOfType<GameManager>() != null)
             {
-                GameManager.instance.ResumeGame();
+                if (GameManager.instance.shopMenu.activeSelf)
+                {
+                    GameManager.instance.ResumeGame();
+                }
+                else
+                {
+                    if (volumeSelected != null)
+                    {
+                        volumeSelected.GetComponent<VolumeButtonScript>().DeactivateButtons();
+                    }
+                    else
+                    {
+                        if (FindObjectOfType<BackButtonMenu>() != null)
+                        {
+                            FindObjectOfType<BackButtonMenu>().SelectButton();
+                        }
+                    }
+                }
             }
             else
             {
@@ -40,6 +57,7 @@ public class UIPriority : MonoBehaviour
                     }
                 }
             }
+            
         }
         else if (Input.anyKeyDown && (!Input.GetKeyDown(KeyCode.X) || !Input.GetKeyDown(KeyCode.Escape)))
         {
