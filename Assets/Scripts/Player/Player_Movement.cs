@@ -55,8 +55,7 @@ public class Player_Movement : MonoBehaviour
 
     public void Movement_WithoutDrag()
     {
-        if(!GetComponent<Player_Dodge>().isDodging)
-            rb.velocity = moveVector * speedLimit;
+        rb.velocity = moveVector * speedLimit;
     }
 
     public void Drag()
@@ -68,6 +67,16 @@ public class Player_Movement : MonoBehaviour
         else
         {
             rb.drag = stayDrag;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Cores"))
+        {
+            other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
+            GameScore.instance.AddCores(1);
+            Destroy(other.gameObject);
         }
     }
 }

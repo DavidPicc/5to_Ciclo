@@ -12,13 +12,13 @@ public class Cores_Script : MonoBehaviour
     {
         audioManager = GetComponent<AudioSource>();
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            audioManager.PlayOneShot(CoresSound);
-            GameScore.instance.AddCores(1);
-            Destroy(gameObject);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        audioManager.PlayOneShot(CoresSound);
+    //        GameScore.instance.AddCores(1);
+    //        Destroy(gameObject);
+    //    }
+    //}
 }
