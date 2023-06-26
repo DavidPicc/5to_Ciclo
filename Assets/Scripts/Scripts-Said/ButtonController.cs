@@ -33,7 +33,7 @@ public class ButtonController : MonoBehaviour
         {
             EnablePreviousImages();
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.X))
         {
             ChangeScene();
         }
