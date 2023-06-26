@@ -7,6 +7,7 @@ public class Player_Shoot2 : MonoBehaviour
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] GameObject Gun;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] public AudioSource audioManager;
@@ -50,6 +51,15 @@ public class Player_Shoot2 : MonoBehaviour
         {
             shotBullet = true;
             StartCoroutine(BurstShot());
+        }
+
+        if (equipped == true)
+        {
+            Gun.SetActive(true);
+        }
+        if (equipped == false)
+        {
+            Gun.SetActive(false);
         }
     }
 
