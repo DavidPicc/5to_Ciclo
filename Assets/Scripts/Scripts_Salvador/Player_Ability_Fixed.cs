@@ -65,7 +65,7 @@ public class Player_Ability_Fixed: MonoBehaviour
     void Shield()
     {
         //Activation
-        if(Input.GetKeyDown(skillKey) && !active && rechargeBar >= maxRechargeBar && equipped && !GameManager.instance.isPaused)
+        if(!GameManager.instance.isPaused && GameManager.instance.canUseAbilities && Input.GetKeyDown(skillKey) && !active && rechargeBar >= maxRechargeBar && equipped)
         {
             active = true;
             shieldObj.SetActive(true);

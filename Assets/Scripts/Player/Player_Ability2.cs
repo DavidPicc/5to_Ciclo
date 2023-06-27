@@ -48,7 +48,7 @@ public class Player_Ability2 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.X) && rechargeBar >= maxRechargeBar && !activate && equipped && !GameManager.instance.isPaused)
+        if (!GameManager.instance.isPaused && GameManager.instance.canUseAbilities && Input.GetKey(KeyCode.X) && rechargeBar >= maxRechargeBar && !activate && equipped)
         {
             SpawnBulletShield();
             activate = true;

@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject shopMenu;
     public GameObject nextLevelTransition;
     public bool isPaused = false;
+    public bool canUseAbilities = true;
+    bool canPause = true;
     public string nextLevelName;
 
     public delegate void ShopApply();
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!deathMenu.activeSelf && !isPaused)
+            if (canPause && !deathMenu.activeSelf && !isPaused)
             {
                 PauseGame();
             }
@@ -74,16 +76,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void UseAbilitesAfterTime()
+    {
+        canUseAbilities = true;
+    }
+
+    public void CanPauseAfterTime()
+    {
+        canPause = true;
+    }
+
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
-
+        Debug.Log("PAUSA");
         //AudioManager.masterVolume /= 2;
         //AudioManager.instance.UpdateMixerVolume();
         FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
 
         Time.timeScale = 0f;
         isPaused = true;
+        canUseAbilities = false;
+        canPause = false;
     }
     
     public void ResumeGame()
@@ -97,6 +111,9 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
 
         if (shopMenu.activeSelf) CloseShop();
+
+        Invoke("UseAbilitesAfterTime", 1f);
+        Invoke("CanPauseAfterTime", 1f);
     }
 
     public void DeathMenu()
@@ -132,6 +149,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
         shopMenu.SetActive(true);
+
+        canUseAbilities = false;
+        canPause = false;
     }
 
     public void CloseShop()
@@ -142,6 +162,9 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
 
         if (onShopApply != null) onShopApply();
+
+        Invoke("UseAbilitesAfterTime", 1f);
+        Invoke("CanPauseAfterTime", 1f);
     }
 
     public void FinishedLevel()

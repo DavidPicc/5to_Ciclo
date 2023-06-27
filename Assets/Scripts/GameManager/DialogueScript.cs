@@ -22,6 +22,8 @@ public class DialogueScript : MonoBehaviour
     public List<string> dialogues = new List<string>();
     int index = 0;
 
+    [SerializeField] AudioClip textSound;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -63,6 +65,11 @@ public class DialogueScript : MonoBehaviour
             foreach (char c in fullText)
             {
                 dialogueText.text += c;
+
+                float pitch = Random.Range(0.5f, 1.5f);
+                GetComponent<AudioSource>().pitch = pitch;
+                GetComponent<AudioSource>().PlayOneShot(textSound);
+
                 yield return new WaitForSeconds(delay);
                 if (dialogueText.text.Length >= fullText.Length)
                 {

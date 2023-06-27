@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +12,9 @@ public class TutorialManager : MonoBehaviour
     public static TutorialManager instance;
     //public GameObject bossDeathTutorialTransition;
     public GameObject boss;
+
+    public GameObject moveKeys, shootKey, abilityKey;
+    public float timerKeys;
 
     private void OnEnable()
     {
@@ -54,13 +59,28 @@ public class TutorialManager : MonoBehaviour
         Debug.Log("VULNERABLE");
     }
 
-    //public void FinishedTutorial()
-    //{
-    //    GameObject player = GameObject.FindGameObjectWithTag("Player");
-    //    player.GetComponent<Player_Health>().enabled = false;
-    //    player.GetComponent<Player_Movement>().enabled = false;
-    //    player.GetComponent<Player_Shoot>().enabled = false;
-    //    bossDeathTutorialTransition.SetActive(true);
-    //    Debug.Log("NIVEL 1 DESBLOQUEADO");
-    //}
+    public void ShowMove()
+    {
+        moveKeys.SetActive(true);
+        Invoke("HideKeys", timerKeys);
+    }
+
+    public void ShowShoot()
+    {
+        shootKey.SetActive(true);
+        Invoke("HideKeys", timerKeys);
+    }
+
+    public void ShowAbility()
+    {
+        abilityKey.SetActive(true);
+        Invoke("HideKeys", timerKeys);
+    }
+
+    void HideKeys()
+    {
+        moveKeys.SetActive(false);
+        shootKey.SetActive(false);
+        abilityKey.SetActive(false);
+    }
 }
