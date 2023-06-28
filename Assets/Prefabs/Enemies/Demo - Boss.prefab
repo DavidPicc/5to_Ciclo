@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 5742771349609310173}
   - component: {fileID: 8450264691104879584}
   - component: {fileID: 8732140501082265426}
+  - component: {fileID: 8638265720202200210}
+  - component: {fileID: 7776350714618325335}
+  - component: {fileID: 3975623573000907947}
+  - component: {fileID: 3706645426347589396}
   m_Layer: 8
   m_Name: Demo - Boss
   m_TagString: Enemy
@@ -153,3 +157,76 @@ MonoBehaviour:
   movePoints:
   - {fileID: 0}
   - {fileID: 0}
+  phase1: {fileID: 8638265720202200210}
+  phase2: {fileID: 7776350714618325335}
+  phase3: {fileID: 3975623573000907947}
+  phase4: {fileID: 3706645426347589396}
+  FinishGame: Story 5
+--- !u!114 &8638265720202200210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113706908115137911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635063e56321129478db1712850da402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  maxTimer: 0
+  attackObjects: []
+  area: {fileID: 0}
+  attackPrefabs: []
+--- !u!114 &7776350714618325335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113706908115137911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c598c24d6cd6a2c458ad85d8353be4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  maxTimer: 0
+  attackObjects: []
+  area: {fileID: 0}
+  attackPrefabs: []
+--- !u!114 &3975623573000907947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113706908115137911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1edc8152f9c25459ad52f619758c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  maxTimer: 0
+  attackObjects: []
+  area: {fileID: 0}
+  attackPrefabs: []
+--- !u!114 &3706645426347589396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113706908115137911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec98168c72c9c934582f0aa21d7d8aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  maxTimer: 0
+  attackObjects: []
+  area: {fileID: 0}
+  attackPrefabs: []

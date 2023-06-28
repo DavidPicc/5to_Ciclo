@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class Enemy_Health : MonoBehaviour
 {
@@ -33,7 +34,11 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     public Transform[] movePoints;
     private int currentMovePointIndex = 0;
-
+    public Phase1 phase1;
+    public Phase2 phase2;
+    public Phase3 phase3;
+    public Phase4 phase4;
+    public string FinishGame;
     void Start()
     {
         playerHealth = FindAnyObjectByType<Player_Health>();
@@ -57,9 +62,40 @@ public class Enemy_Health : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        if (currentHealth <= halfthealt && IsBoss == true)
+        if (IsBoss == true && currentHealth <= 1000)
         {
+            phase1.enabled = true;
+            phase2.enabled = false;
+            phase3.enabled = false;
+            phase4.enabled = false;
+        }
+        if (IsBoss == true && currentHealth <= 750)
+        {
+            phase1.enabled = false;
+            phase2.enabled = true;
+            phase3.enabled = false;
+            phase4.enabled = false;
+        }
+        if (IsBoss == true && currentHealth <= 500)
+        {
+            phase1.enabled = false;
+            phase2.enabled = false;
+            phase3.enabled = true;
+            phase4.enabled = false;
             MoveToNextPoint();
+        }
+        if (IsBoss == true && currentHealth <= 250)
+        {
+            phase1.enabled = false;
+            phase2.enabled = false;
+            phase3.enabled = false;
+            phase4.enabled = true;
+            MoveToNextPoint();
+        }
+
+        if(IsBoss == true && currentHealth == 0)
+        {
+            SceneManager.LoadScene(FinishGame);
         }
     }
 
@@ -72,7 +108,6 @@ public class Enemy_Health : MonoBehaviour
         else
         {
             Death();
-            
         }
     }
 
