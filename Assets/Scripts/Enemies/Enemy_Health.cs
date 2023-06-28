@@ -57,34 +57,17 @@ public class Enemy_Health : MonoBehaviour
             timer = invulnerabilityTime;
         }
 
-        if(!canBeDamaged)
+        if(canBeDamaged && IsBoss == false)
         {
             timer -= Time.deltaTime;
         }
 
-        if (IsBoss == true && currentHealth <= 1000)
+        if (IsBoss == true && currentHealth == 0)
         {
-            phase1.enabled = true;
-            phase2.enabled = false;
-            phase3.enabled = false;
-            phase4.enabled = false;
+            SceneManager.LoadScene(FinishGame);
         }
-        if (IsBoss == true && currentHealth <= 750)
-        {
-            phase1.enabled = false;
-            phase2.enabled = true;
-            phase3.enabled = false;
-            phase4.enabled = false;
-        }
-        if (IsBoss == true && currentHealth <= 500)
-        {
-            phase1.enabled = false;
-            phase2.enabled = false;
-            phase3.enabled = true;
-            phase4.enabled = false;
-            MoveToNextPoint();
-        }
-        if (IsBoss == true && currentHealth <= 250)
+
+        else if (IsBoss == true && currentHealth <= 250)
         {
             phase1.enabled = false;
             phase2.enabled = false;
@@ -93,9 +76,29 @@ public class Enemy_Health : MonoBehaviour
             MoveToNextPoint();
         }
 
-        if(IsBoss == true && currentHealth == 0)
+        else if (IsBoss == true && currentHealth <= 500)
         {
-            SceneManager.LoadScene(FinishGame);
+            phase1.enabled = false;
+            phase2.enabled = false;
+            phase3.enabled = true;
+            phase4.enabled = false;
+            MoveToNextPoint();
+        }
+
+        else if (IsBoss == true && currentHealth <= 750)
+        {
+            phase1.enabled = false;
+            phase2.enabled = true;
+            phase3.enabled = false;
+            phase4.enabled = false;
+        }
+
+        else if (IsBoss == true && currentHealth <= 1000)
+        {
+            phase1.enabled = true;
+            phase2.enabled = false;
+            phase3.enabled = false;
+            phase4.enabled = false;
         }
     }
 
