@@ -92,7 +92,7 @@ MonoBehaviour:
   anticipation: 0.25
   pointShoot: {fileID: 7662434409149786856}
   audioManager: {fileID: -994555737183410473}
-  ShootSound: {fileID: 8300000, guid: 8c8c40a7a1502a2489b6d657634e8cfe, type: 3}
+  ShootSound: {fileID: 8300000, guid: bbf5b8fb31737bc46a3ee569a9b61fad, type: 3}
   distanceToShoot: 10
   antiSphere: {fileID: 6119366870973227736}
 --- !u!114 &1545970297421064227
@@ -110,7 +110,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   audioManager: {fileID: -994555737183410473}
-  DeathSound: {fileID: 8300000, guid: c913988d068947142acbef97d8651b53, type: 3}
+  DeathSound: {fileID: 8300000, guid: e132d4dc051137f4aaa8be04cf22e778, type: 3}
   IsEnemy: 1
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
@@ -122,9 +122,16 @@ MonoBehaviour:
   vfxexplosion: {fileID: 2832440755471769679, guid: e8ce4cdee96253c4dbbe6ad2de567772,
     type: 3}
   IsBoss: 0
+  Form1: {fileID: 0}
+  Form2: {fileID: 0}
   halfthealt: 0
   moveSpeed: 2
   movePoints: []
+  phase1: {fileID: 0}
+  phase2: {fileID: 0}
+  phase3: {fileID: 0}
+  phase4: {fileID: 0}
+  FinishGame: 
 --- !u!65 &8722422789986847479
 BoxCollider:
   m_ObjectHideFlags: 0

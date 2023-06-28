@@ -100,7 +100,7 @@ MonoBehaviour:
   anticipation: 0.25
   pointShoot: {fileID: 823059256379260603}
   audioManager: {fileID: 8620888913373709198}
-  ShootSound: {fileID: 8300000, guid: 0d2d5357ccd023147a438831b04b5f00, type: 3}
+  ShootSound: {fileID: 8300000, guid: 33ff83af0c0162843975fdd103bf85c9, type: 3}
   distanceToShoot: 10
   antiSphere: {fileID: 4653625559226697551}
 --- !u!114 &-1445078093506867928
@@ -118,7 +118,7 @@ MonoBehaviour:
   maxHealth: 6
   currentHealth: 0
   audioManager: {fileID: 8620888913373709198}
-  DeathSound: {fileID: 8300000, guid: c9db149a84eaa464ba007c6ce5e2058c, type: 3}
+  DeathSound: {fileID: 8300000, guid: 51b40e2501c80e84c81ff61ed73d0cfc, type: 3}
   IsEnemy: 1
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
@@ -130,9 +130,16 @@ MonoBehaviour:
   vfxexplosion: {fileID: 2832440755471769679, guid: e8ce4cdee96253c4dbbe6ad2de567772,
     type: 3}
   IsBoss: 0
+  Form1: {fileID: 0}
+  Form2: {fileID: 0}
   halfthealt: 0
   moveSpeed: 2
   movePoints: []
+  phase1: {fileID: 0}
+  phase2: {fileID: 0}
+  phase3: {fileID: 0}
+  phase4: {fileID: 0}
+  FinishGame: 
 --- !u!114 &3723209677116522225
 MonoBehaviour:
   m_ObjectHideFlags: 0
