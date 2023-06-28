@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Cinemachine.DocumentationSortingAttribute;
 
-public class Player_Shoot : MonoBehaviour
+public class Player_Shoot : ShopObject
 {
-    [HideInInspector] public int gunLevel = 0;
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
@@ -22,26 +21,16 @@ public class Player_Shoot : MonoBehaviour
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
-    public bool equipped;
 
     [Header("Upgrade System")]
-    [SerializeField] int levelShoot;
     public float upgradedShootDamage;
     public int upgradeCannons;
     public int upgradedCannon;
 
-    private void OnEnable()
+    protected override void Start()
     {
-        GameManager.onShopApply += Shopping;
-    }
+        base.Start();
 
-    private void OnDisable()
-    {
-        GameManager.onShopApply -= Shopping;
-    }
-
-    void Start()
-    {
         //   if (vfxShoot != null)
         //   {
         //       var vfxShootp = Instantiate(vfxShoot, transform.position, Quaternion.identity);
@@ -49,7 +38,6 @@ public class Player_Shoot : MonoBehaviour
         //   }
         audioManager = GetComponent<AudioSource>();
         timer = fireRate;
-        Shopping();
     }
 
 
@@ -107,17 +95,12 @@ public class Player_Shoot : MonoBehaviour
         shotBullet = true;
     }
 
-    void Shopping()
+    protected override void Shopping()
     {
-        if (UpgradeTracker.instance.levels.ContainsKey("StraightGun"))
-        {
-            levelShoot = UpgradeTracker.instance.levels["StraightGun"];
-        } else UpgradeTracker.instance.levels.Add("StraightGun", levelShoot);
+        base.Shopping();
 
-        if (levelShoot > 2) shootDamage = upgradedShootDamage;
+        if (level > 2) shootDamage = upgradedShootDamage;
 
-        if (levelShoot > 1) cannons = upgradeCannons;
-
-        equipped = UpgradeTracker.instance.equippedGun == "StraightGun";
+        if (level > 1) cannons = upgradeCannons;
     }
 }

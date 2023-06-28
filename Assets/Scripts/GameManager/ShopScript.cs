@@ -30,7 +30,6 @@ public class ShopScript : MonoBehaviour
     {
         if(GameScore.instance.gearScore > gun1Cost)
         {
-            FindObjectOfType<Player_Shoot>().gunLevel += 1;
             //FindObjectOfType<Player_Shoot>().Upgrades();
             GameScore.instance.RemoveGears(gun1Cost);
             gearsScoreShop.text = GameScore.instance.gearScore.ToString();

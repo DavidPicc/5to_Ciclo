@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Shoot3 : MonoBehaviour
+public class Player_Shoot3 : ShopObject
 {
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -17,29 +17,18 @@ public class Player_Shoot3 : MonoBehaviour
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
-    public bool equipped;
 
     [Header("Upgrades System")]
-    [SerializeField] int levelShoot;
     public float upgradedShootDamage;
     public float upgradedBulletSpeed;
     public float upgradedFireRate;
 
-    private void OnEnable()
+    protected override void Start()
     {
-        GameManager.onShopApply += Shopping;
-    }
+        base.Start();
 
-    private void OnDisable()
-    {
-        GameManager.onShopApply -= Shopping;
-    }
-
-    void Start()
-    {
         audioManager = GetComponent<AudioSource>();
         timer = fireRate;
-        Shopping();
     }
 
 
@@ -99,20 +88,15 @@ public class Player_Shoot3 : MonoBehaviour
         shotBullet = true;
     }
 
-    void Shopping()
+    protected override void Shopping()
     {
-        if (UpgradeTracker.instance.levels.ContainsKey("Flamethrower"))
-        {
-            levelShoot = UpgradeTracker.instance.levels["Flamethrower"];
-        } else UpgradeTracker.instance.levels.Add("Flamethrower", levelShoot);
+        base.Shopping();
 
-        if (levelShoot > 1){
+        if (level > 1){
             bulletSpeed = upgradedBulletSpeed;
             fireRate = upgradedFireRate;
         }
 
-        if (levelShoot > 2) shootDamage = upgradedShootDamage;
-
-        equipped = UpgradeTracker.instance.equippedGun == "Flamethrower";
+        if (level > 2) shootDamage = upgradedShootDamage;
     }
 }

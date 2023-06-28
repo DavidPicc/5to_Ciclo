@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Ability_Fixed: MonoBehaviour
+public class Player_Ability_Fixed: ShopObject
 {
     [Header("References")]
     public GameObject shieldObj;
@@ -33,27 +33,16 @@ public class Player_Ability_Fixed: MonoBehaviour
     public float bulletSpeed;
 
     [Header("Upgrade System")]
-    public bool equipped;
-    [SerializeField] int levelAbb;
     public int upgradeShieldMaxCharge;
     public int upgradeMaxTargetNumber;
 
-    private void OnEnable()
+    protected override void Start()
     {
-        GameManager.onShopApply += Shopping;
-    }
+        base.Start();
 
-    private void OnDisable()
-    {
-        GameManager.onShopApply -= Shopping;
-    }
-
-    void Start()
-    {
         audioManager = GetComponent<AudioSource>();
         rechargeBar = maxRechargeBar;
         SetImageFill();
-        Shopping();
     }
 
     void Update()
@@ -173,19 +162,14 @@ public class Player_Ability_Fixed: MonoBehaviour
         }
     }
 
-    void Shopping()
+    protected override void Shopping()
     {
-        if (UpgradeTracker.instance.levels.ContainsKey("ReflectorShield"))
-        {
-            levelAbb = UpgradeTracker.instance.levels["ReflectorShield"];
-        } else UpgradeTracker.instance.levels.Add("ReflectorShield", levelAbb);
+        base.Shopping();
 
-        if (levelAbb > 1)
+        if (level > 1)
         {
             maxCharge = upgradeShieldMaxCharge;
             maxTargetNumber = upgradeMaxTargetNumber;
         }
-
-        equipped = UpgradeTracker.instance.equippedSkill == "ReflectorShield";
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopItemAct : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class ShopItemAct : MonoBehaviour
 
     [SerializeField] GameObject equippedText;
     [SerializeField] bool equipped;
-    [SerializeField] GameObject maxLevelText;
+    [SerializeField] bool purchased;
+    [SerializeField] bool isGun;
+    [SerializeField] GameObject purchasedText;
 
     public bool Equipped
     {
@@ -24,26 +27,37 @@ public class ShopItemAct : MonoBehaviour
         set { equipped = value; }
     }
 
+    public bool Purchased
+    {
+        get { return  purchased; }
+        set { purchased = value; }
+    }
+
+    public bool IsGun
+    {
+        get { return isGun; }
+    }
+
     public Animator upgradingAnim;
 
     [SerializeField] TextMeshProUGUI costGearText, costCoreText, labelText;
-    [SerializeField] string type;
+    string type;
     public string Type
     {
         get { return type; }
+        set { type = value; }
     }
     public int level;
-    public int maxLevel;
     public int costGear;
     public int costCore;
-    public int upgradeGearScaling;
-    public int upgradeCoreScaling;
 
     public string title;
+    public string description;
+    public Sprite caption;
+
 
     void Start()
     {
-        SetStartLevel();
         upgradingAnim.SetFloat("fill", 0f);
     }
 
@@ -59,49 +73,23 @@ public class ShopItemAct : MonoBehaviour
         if (level > 0) labelText.text = title + " " + level;
         else labelText.text = "Comprar " + title;
 
-        if (level < maxLevel)
+        if (!purchased)
         {
             costGearText.text = costGear.ToString();
             costCoreText.text = costCore.ToString();
-            if (maxLevelText.activeSelf) maxLevelText.SetActive(false);
+            if (purchasedText.activeSelf) purchasedText.SetActive(false);
         }
         else
         {
             costGearText.text = "";
             costCoreText.text = "";
-            if (!maxLevelText.activeSelf) maxLevelText.SetActive(true);
+            if (!purchasedText.activeSelf) purchasedText.SetActive(true);
         }
     }
 
-    public void Upgrade()
+    public void Purchase()
     {
-        if (level < maxLevel)
-        {
-            level++;
-            costCore += upgradeCoreScaling;
-            costGear += upgradeGearScaling;
-
-            UpgradeTrackerAct.instance.levels[type] = level;
-        }
-    }
-
-    public void SetStartLevel()
-    {
-        if (UpgradeTrackerAct.instance.levels.ContainsKey(type))
-        {
-            level = UpgradeTrackerAct.instance.levels[type];
-            if (level > maxLevel)
-            {
-                level = maxLevel;
-                UpgradeTrackerAct.instance.levels[type] = level;
-            }
-
-        }
-        else UpgradeTrackerAct.instance.levels.Add(type, level);
-
-        equipped = UpgradeTrackerAct.instance.equippedGun == type || UpgradeTrackerAct.instance.equippedSkill == type;
-
-        if (level > 0) costCore += upgradeCoreScaling * (level - 1);
-        if (level > 0) costGear += upgradeGearScaling * (level - 1);
+        purchased = true;
+        UpgradeTrackerAct.instance.levels[type] = level;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Ability2 : MonoBehaviour
+public class Player_Ability2 : ShopObject
 {
     [SerializeField] float rechargeBar;
     [SerializeField] float maxRechargeBar;
@@ -22,28 +22,15 @@ public class Player_Ability2 : MonoBehaviour
 
     public GameObject bulletPrefab;
 
-    public bool equipped;
-
     [Header("Upgrade System")]
-    [SerializeField] int levelAbb;
     public int upgradedMaxBullets;
 
-    private void OnEnable()
+    protected override void Start()
     {
-        GameManager.onShopApply += Shopping;
-    }
+        base.Start();
 
-    private void OnDisable()
-    {
-        GameManager.onShopApply -= Shopping;
-    }
-
-    void Start()
-    {
         audioManager = GetComponent<AudioSource>();
         rechargeBar = maxRechargeBar;
-
-        Shopping();
     }
 
     void Update()
@@ -110,18 +97,13 @@ public class Player_Ability2 : MonoBehaviour
         }
     }
 
-    void Shopping()
+    protected override void Shopping()
     {
-        if (UpgradeTracker.instance.levels.ContainsKey("BulletShield"))
-        {
-            levelAbb = UpgradeTracker.instance.levels["BulletShield"];
-        } else UpgradeTracker.instance.levels.Add("BulletShield", levelAbb);
+        base.Shopping();
 
-        if (levelAbb > 1)
+        if (level > 1)
         {
             maxBullets = upgradedMaxBullets;
         }
-
-        equipped = UpgradeTracker.instance.equippedSkill == "BulletShield";
     }
 }

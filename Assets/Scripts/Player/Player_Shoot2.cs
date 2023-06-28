@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Shoot2 : MonoBehaviour
+public class Player_Shoot2 : ShopObject
 {
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -16,31 +16,19 @@ public class Player_Shoot2 : MonoBehaviour
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
-    public bool equipped;
     int bulletCount;
     public float inBetweenShotsTime;
 
     [Header("Upgrade System")]
-    [SerializeField] int levelShoot;
     public float upgradedShootDamage;
 
-
-    private void OnEnable()
+    protected override void Start()
     {
-        GameManager.onShopApply += Shopping;
-    }
+        base.Start();
 
-    private void OnDisable()
-    {
-        GameManager.onShopApply -= Shopping;
-    }
-
-    void Start()
-    {
         audioManager = GetComponent<AudioSource>();
         timer = fireRate;
         bulletCount = 1;
-        Shopping();
     }
 
 
@@ -102,17 +90,12 @@ public class Player_Shoot2 : MonoBehaviour
         Destroy(bullet, 1.3f);
     }
 
-    void Shopping()
+    protected override void Shopping()
     {
-        if (UpgradeTracker.instance.levels.ContainsKey("AreaGun"))
-        {
-            levelShoot = UpgradeTracker.instance.levels["AreaGun"];
-        } else UpgradeTracker.instance.levels.Add("AreaGun", levelShoot);
+        base.Shopping();
 
-        bulletCount = levelShoot;
+        bulletCount = level;
 
-        if (levelShoot > 2) shootDamage = upgradedShootDamage;
-
-        equipped = UpgradeTracker.instance.equippedGun == "AreaGun";
+        if (level > 2) shootDamage = upgradedShootDamage;
     }
 }

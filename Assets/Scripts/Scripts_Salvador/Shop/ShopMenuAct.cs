@@ -3,18 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopMenuAct : MonoBehaviour
 {
     public KeyCode key;
 
-    [SerializeField] TextMeshProUGUI gearsScoreShop, coresScoreShop, titleItemShop, equippedGun, equippedSkill;
-    [SerializeField] ShopItemAct[] gunUpgrades;
-    [SerializeField] ShopItemAct[] skillUpgrades;
-    int upgradeCount => selectedGuns ? gunUpgrades.Length : skillUpgrades.Length;
+    [SerializeField] TextMeshProUGUI gearsScoreShop, coresScoreShop, titleItemShop, descriptionText, costGearsText, costCoresText;
+    [SerializeField] Image image;
+    List<ShopItemAct> flattenUpgrades;
 
-    bool selectedGuns;
+    [System.Serializable]
+    public struct UpgradeBranch
+    {
+        public ShopItemAct[] upgrades;
+        public string type;
+    }
+
+    [SerializeField] public UpgradeBranch[] branches;
+
+
     int upgradeSelected;
+    int upgradeLevel;
 
     bool upgrading;
     float upgradingTimer;
@@ -22,17 +32,21 @@ public class ShopMenuAct : MonoBehaviour
 
     void Start()
     {
-        SetEquipped();
+        flattenUpgrades = new List<ShopItemAct>();
 
-        foreach (ShopItemAct gun in gunUpgrades)
+        foreach (UpgradeBranch branch in branches)
         {
-            gun.Shop = this;
+            foreach (ShopItemAct upgrade in branch.upgrades)
+            {
+                upgrade.Shop = this;
+                upgrade.Type = branch.type;
+                //Flatten List of Upgrades
+                flattenUpgrades.Add(upgrade);
+            }
         }
 
-        foreach (ShopItemAct skill in skillUpgrades)
-        {
-            skill.Shop = this;
-        }
+        SetUpgradeKeysStart();
+        SetEquippedStart();
     }
 
     void Update()
@@ -43,6 +57,10 @@ public class ShopMenuAct : MonoBehaviour
         titleItemShop.text = selectedItem.title;
         gearsScoreShop.text = GameScore.instance.gearScore.ToString();
         coresScoreShop.text = GameScore.instance.coreScore.ToString();
+        descriptionText.text = selectedItem.description;
+        costGearsText.text = selectedItem.costGear.ToString();
+        costCoresText.text = selectedItem.costCore.ToString();
+        image.sprite = selectedItem.caption;
 
         //Navigation
         if (!Input.GetKey(key))
@@ -50,20 +68,26 @@ public class ShopMenuAct : MonoBehaviour
             if (Input.GetButtonDown("Horizontal"))
             {
                 int horizontal = (int)Input.GetAxisRaw("Horizontal");
-                upgradeSelected = (upgradeSelected + horizontal + upgradeCount) % upgradeCount;
+                upgradeSelected = (upgradeSelected + horizontal + branches.Length) % branches.Length;
+                if (horizontal != 0) {
+                    upgradeLevel = Mathf.Max(UpgradeTrackerAct.instance.levels[branches[upgradeSelected].upgrades[0].Type], 1);
+                    
+                }
             }
 
             if (Input.GetButtonDown("Vertical"))
             {
-                selectedGuns = !selectedGuns;
-                upgradeSelected = Mathf.Clamp(upgradeSelected, 0, upgradeCount - 1);
+                if (upgradeLevel == UpgradeTrackerAct.instance.levels[branches[upgradeSelected].type]) upgradeLevel++;
+                else upgradeLevel--;
+
+                upgradeLevel = Mathf.Clamp(upgradeLevel, 1, branches[upgradeSelected].upgrades.Length);
             }
         }
 
         //Equipping
-        if (Input.GetKeyUp(key) && !upgrading && selectedItem.level > 0)
+        if (Input.GetKeyUp(key) && !upgrading && selectedItem.level == UpgradeTrackerAct.instance.levels[selectedItem.Type])
         {
-            EquipSelectedUpgrade();
+            SetEquippedUpgrades();
         }
 
         //Upgrading
@@ -80,19 +104,11 @@ public class ShopMenuAct : MonoBehaviour
 
             StopAllCoroutines();
         }
-
-        //Equipped 
-        ShopItemAct equippedGunItem = Array.Find(gunUpgrades, e => e.Equipped == true);
-        ShopItemAct equippedSkillItem = Array.Find(skillUpgrades, e => e.Equipped == true);
-
-        if (equippedGunItem != null) equippedGun.text = equippedGunItem.title;
-        if (equippedSkillItem != null) equippedSkill.text = equippedSkillItem.title;
     }
 
     public ShopItemAct GetSelectedItem()
     {
-        if (selectedGuns) return gunUpgrades[upgradeSelected];
-        else return skillUpgrades[upgradeSelected];
+        return branches[upgradeSelected].upgrades[upgradeLevel - 1];
     }
 
     IEnumerator Upgrade()
@@ -103,7 +119,7 @@ public class ShopMenuAct : MonoBehaviour
 
             if (upgradingTimer > .2f) upgrading = true;
 
-            if (upgrading && GameScore.instance.gearScore >= selectedItemTime.costGear && GameScore.instance.coreScore >= selectedItemTime.costCore && selectedItemTime.level < selectedItemTime.maxLevel)
+            if (upgrading && GameScore.instance.gearScore >= selectedItemTime.costGear && GameScore.instance.coreScore >= selectedItemTime.costCore && !selectedItemTime.Purchased)
             {
                 selectedItemTime.upgradingAnim.SetFloat("fill", upgradingTimer / upgradeTime);
             }
@@ -114,82 +130,90 @@ public class ShopMenuAct : MonoBehaviour
 
         ShopItemAct selectedItem = GetSelectedItem();
 
-        if (GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore && selectedItem.level < selectedItem.maxLevel)
+        if (GameScore.instance.gearScore >= selectedItem.costGear && GameScore.instance.coreScore >= selectedItem.costCore && !selectedItem.Purchased)
         {
             upgradingTimer = 0f;
             selectedItem.upgradingAnim.SetFloat("fill", 0f);
 
             GameScore.instance.RemoveGears(selectedItem.costGear);
             GameScore.instance.RemoveCores(selectedItem.costCore);
-            selectedItem.Upgrade();
+            selectedItem.Purchase();
 
             //Automatic Equipping
-            EquipSelectedUpgrade();
+            SetEquippedUpgrades();
         }
 
         if (Input.GetKey(key)) StartCoroutine(Upgrade());
     }
 
-    void EquipSelectedUpgrade()
+    void SetEquippedUpgrades()
     {
-        if (selectedGuns)
+        ShopItemAct selectedItem = GetSelectedItem();
+
+        foreach(ShopItemAct upgrade in flattenUpgrades)
         {
-            for (int i = 0; i < gunUpgrades.Length; i++)
+            if (upgrade == selectedItem)
             {
-                if (i != upgradeSelected) gunUpgrades[i].Equipped = false;
-                else
-                {
-                    gunUpgrades[i].Equipped = true;
-                    UpgradeTrackerAct.instance.equippedGun = gunUpgrades[i].Type;
-                }
-            }
-        }
-        else
-        {
-            for (int i = 0; i < skillUpgrades.Length; i++)
+                upgrade.Equipped = true;
+                if(upgrade.IsGun) UpgradeTrackerAct.instance.equippedGun = upgrade.Type;
+                else UpgradeTrackerAct.instance.equippedSkill = upgrade.Type;
+            } else if(upgrade.IsGun == selectedItem.IsGun)
             {
-                if (i != upgradeSelected) skillUpgrades[i].Equipped = false;
-                else
-                {
-                    skillUpgrades[i].Equipped = true;
-                    UpgradeTrackerAct.instance.equippedSkill = skillUpgrades[i].Type;
-                }
+                upgrade.Equipped = false;
             }
         }
     }
 
-    void SetEquipped()
+    void SetUpgradeKeysStart()
     {
-        //Gun Equipped
-        if (UpgradeTrackerAct.instance.equippedGun != "")
+        foreach (UpgradeBranch upgradeBranch in branches)
         {
-            foreach (ShopItemAct shopItem in gunUpgrades)
+            if (UpgradeTrackerAct.instance.levels.ContainsKey(upgradeBranch.type))
             {
-                if (shopItem.Type == UpgradeTrackerAct.instance.equippedGun) shopItem.Equipped = true;
-                else shopItem.Equipped = false;
+                foreach (ShopItemAct upgrade in upgradeBranch.upgrades)
+                {
+                    if (upgrade.level <= UpgradeTrackerAct.instance.levels[upgrade.Type]) upgrade.Purchased = true;
+                }
+            }
+            else UpgradeTrackerAct.instance.levels.Add(upgradeBranch.type, 0);
+
+            //Set start upgrade level based on first upgrade branch level
+            if (branches[0].type == branches[0].type)
+            {
+                upgradeLevel = Mathf.Max(UpgradeTrackerAct.instance.levels[upgradeBranch.type], 1);
             }
         }
-        else
-        {
-            ShopItemAct shopItem = Array.Find(gunUpgrades, e => e.Equipped == true);
+    }
 
-            if (shopItem != null) UpgradeTrackerAct.instance.equippedGun = shopItem.Type;
-        }
-
-        //Skill Equipped
-        if (UpgradeTrackerAct.instance.equippedSkill != "")
+    void SetEquippedStart()
+    {
+        foreach (ShopItemAct upgrade in flattenUpgrades)
         {
-            foreach (ShopItemAct shopItem in skillUpgrades)
+            //Evaluation depending of nature of upgrade (Gun or Skill)
+            if (upgrade.IsGun)
             {
-                if (shopItem.Type == UpgradeTrackerAct.instance.equippedSkill) shopItem.Equipped = true;
-                else shopItem.Equipped = false;
+                if(UpgradeTrackerAct.instance.equippedGun != "")
+                {
+                    //Equipped Gun is already setted by tracker
+                    upgrade.Equipped = false;
+                    if(upgrade.Type == UpgradeTrackerAct.instance.equippedGun && UpgradeTrackerAct.instance.levels.ContainsKey(upgrade.Type))
+                    {
+                        if (upgrade.level == UpgradeTrackerAct.instance.levels[upgrade.Type]) upgrade.Equipped = true;
+                    }
+                } else if(upgrade.Equipped) UpgradeTrackerAct.instance.equippedGun = upgrade.Type;
+            } else
+            {
+                if (UpgradeTrackerAct.instance.equippedGun != "")
+                {
+                    //Equipped Skill is already setted by tracker
+                    upgrade.Equipped = false;
+                    if (upgrade.Type == UpgradeTrackerAct.instance.equippedSkill && UpgradeTrackerAct.instance.levels.ContainsKey(upgrade.Type))
+                    {
+                        if (upgrade.level == UpgradeTrackerAct.instance.levels[upgrade.Type]) upgrade.Equipped = true;
+                    }
+                }
+                else if (upgrade.Equipped) UpgradeTrackerAct.instance.equippedSkill = upgrade.Type;
             }
-        }
-        else
-        {
-            ShopItemAct shopItem = Array.Find(skillUpgrades, e => e.Equipped == true);
-
-            if (shopItem != null) UpgradeTrackerAct.instance.equippedSkill = shopItem.Type;
         }
     }
 }
