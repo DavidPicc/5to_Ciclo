@@ -30,6 +30,8 @@ public class Enemy_Health : MonoBehaviour
 
     [Header("Boss")]
     public bool IsBoss = false;
+    public GameObject Form1;
+    public GameObject Form2;
     [SerializeField] float halfthealt;
     [SerializeField] float moveSpeed = 2f;
     public Transform[] movePoints;
@@ -57,7 +59,7 @@ public class Enemy_Health : MonoBehaviour
             timer = invulnerabilityTime;
         }
 
-        if(canBeDamaged && IsBoss == false)
+        if(!canBeDamaged)
         {
             timer -= Time.deltaTime;
         }
@@ -83,6 +85,8 @@ public class Enemy_Health : MonoBehaviour
             phase3.enabled = true;
             phase4.enabled = false;
             MoveToNextPoint();
+            Form1.SetActive(false);
+            Form2.SetActive(true);
         }
 
         else if (IsBoss == true && currentHealth <= 750)
@@ -99,6 +103,8 @@ public class Enemy_Health : MonoBehaviour
             phase2.enabled = false;
             phase3.enabled = false;
             phase4.enabled = false;
+            Form1.SetActive(true);
+            Form2.SetActive(false);
         }
     }
 
