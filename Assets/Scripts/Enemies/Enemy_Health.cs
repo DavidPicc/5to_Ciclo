@@ -64,10 +64,7 @@ public class Enemy_Health : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        if (IsBoss == true && currentHealth == 0)
-        {
-            SceneManager.LoadScene(FinishGame);
-        }
+ 
 
         else if (IsBoss == true && currentHealth <= 250)
         {
@@ -76,6 +73,8 @@ public class Enemy_Health : MonoBehaviour
             phase3.enabled = false;
             phase4.enabled = true;
             MoveToNextPoint();
+            Form1.SetActive(false);
+            Form2.SetActive(true);
         }
 
         else if (IsBoss == true && currentHealth <= 500)
@@ -127,7 +126,10 @@ public class Enemy_Health : MonoBehaviour
         {
             GetComponent<Enemy4_ShootExplode>().ShootAngular();
         }
-
+        if (IsBoss == true)
+        {
+            SceneManager.LoadScene(FinishGame);
+        }
         //audioManager.PlayOneShot(DeathSound);
         Destroy(gameObject, 0.2f);
         if (!spawnedPoints)
