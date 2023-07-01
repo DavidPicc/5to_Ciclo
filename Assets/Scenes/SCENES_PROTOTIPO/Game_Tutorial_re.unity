@@ -11312,6 +11312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1472073883}
   deathMenu: {fileID: 403153843}
+  DeathMusic: {fileID: 0}
   shopMenu: {fileID: 1615336150}
   nextLevelTransition: {fileID: 587352546}
   isPaused: 0
@@ -14648,6 +14649,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gearScore: 0
   coreScore: 0
+  audioManager: {fileID: 0}
+  GearSound: {fileID: 0}
+  CoreSound: {fileID: 0}
   playerLevel: 0
   scoreToLevelUp: 0
 --- !u!4 &603487708
@@ -56614,6 +56618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1200578533}
+    - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
+        type: 3}
       propertyPath: deathDialogue
       value: Robot1;Nosotros confiamos... en... ti-
       objectReference: {fileID: 0}
@@ -56996,6 +57005,11 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1200578533}
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
       propertyPath: deathDialogue
