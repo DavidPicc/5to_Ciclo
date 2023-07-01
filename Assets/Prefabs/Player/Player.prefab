@@ -663,8 +663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3863536484f70a340a5aee3bf025640f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 745176014717834577}
-  MovementSound: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
   moveType: 1
   acceleration: 80
   speedLimit: 11
@@ -683,9 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf41677f24c31345ab5c2e2784d91e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: 
-  equipped: 1
+  gunLevel: 0
   bulletSpeed: 25
   shootDamage: 3
   bulletPrefab: {fileID: 1300772526029512616, guid: df77752fff479264d9559233124aa31a,
@@ -700,9 +696,11 @@ MonoBehaviour:
   fireRate: 0.05
   bulletsOffset: 1.5
   audioManager: {fileID: 745176014717834577}
-  ShootSound: {fileID: 8300000, guid: fa2cd1026243129429a7abe1571c4e0d, type: 3}
+  ShootSound: {fileID: 8300000, guid: 5f614532e875b924ea77a336de89d1c3, type: 3}
   cannons: 1
   cannon: 0
+  equipped: 1
+  levelShoot: 0
   upgradedShootDamage: 5
   upgradeCannons: 2
   upgradedCannon: 1
@@ -718,9 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a05513c79f58a49ab941dfd556ea69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: 
-  equipped: 0
   bulletSpeed: 12
   shootDamage: 8
   bulletPrefab: {fileID: 4371670380075575442, guid: 045d464f8a47d6f4ba77f2a28257de51,
@@ -730,8 +725,10 @@ MonoBehaviour:
   - {fileID: 1669496867638264088}
   fireRate: 0.5
   audioManager: {fileID: 745176014717834577}
-  ShootSound: {fileID: 8300000, guid: 153bb7050ba24fd419d992eb655c03b0, type: 3}
+  ShootSound: {fileID: 0}
+  equipped: 0
   inBetweenShotsTime: 0
+  levelShoot: 0
   upgradedShootDamage: 16
 --- !u!114 &6710216752889483009
 MonoBehaviour:
@@ -745,9 +742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b28e01e5a568414887078aa6bb5b210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: 
-  equipped: 0
   bulletSpeed: 8
   shootDamage: 0.5
   bulletPrefab: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
@@ -758,7 +752,9 @@ MonoBehaviour:
   fireRate: 0.05
   maxAngle: 10
   audioManager: {fileID: 745176014717834577}
-  ShootSound: {fileID: 8300000, guid: 4022aae561d6c96419b4bc7046829b4e, type: 3}
+  ShootSound: {fileID: 0}
+  equipped: 0
+  levelShoot: 0
   upgradedShootDamage: 1
   upgradedBulletSpeed: 16
   upgradedFireRate: 0.025
@@ -779,8 +775,8 @@ MonoBehaviour:
   invulnerabilityTime: 1.5
   canDie: 0
   audioManager: {fileID: 745176014717834577}
-  DeathSound: {fileID: 8300000, guid: 993e4f8009a3b504bb6dd4e2487c3e80, type: 3}
-  HitSound: {fileID: 8300000, guid: b2178c41e75d5194cb8c0a32bae93f87, type: 3}
+  DeathSound: {fileID: 0}
+  HitSound: {fileID: 0}
   healthFillBar: {fileID: 0}
   crushed: 0
 --- !u!114 &6110213095963492988
@@ -795,9 +791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f3729c47600fb42b00c1dfee68d2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: 
-  equipped: 0
   shieldObj: {fileID: 0}
   bulletPrefab: {fileID: 0}
   barUI: {fileID: 0}
@@ -814,6 +807,8 @@ MonoBehaviour:
   targets: []
   inBetweenTime: 0
   bulletSpeed: 0
+  equipped: 0
+  levelAbb: 0
   upgradeShieldMaxCharge: 0
   upgradeMaxTargetNumber: 0
 --- !u!114 &8492462015629423518
@@ -828,9 +823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7d789f884989148902787505acbac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: 
-  equipped: 0
   rechargeBar: 0
   maxRechargeBar: 5
   abilityBar: {fileID: 0}
@@ -846,6 +838,8 @@ MonoBehaviour:
   maxtimer: 2
   bulletPrefab: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
     type: 3}
+  equipped: 0
+  levelAbb: 0
   upgradedMaxBullets: 0
 --- !u!114 &1783097644066262210
 MonoBehaviour:
