@@ -72,7 +72,7 @@ public class GameScore : MonoBehaviour
     public void AddCores(int amount)
     {
         coreScore = coreScore + amount;
-        AudioManager.instance.PlaySFXWithDelay(audioManager, CoreSound, 0.5f);
+        AudioManager.instance.PlaySFX(audioManager, CoreSound, 0.5f);
         CanvasUI.instance.coresText.text = coreScore.ToString();
     }
 
