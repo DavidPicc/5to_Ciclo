@@ -52,12 +52,12 @@ public class Player_Movement : MonoBehaviour
             rb.AddForce(moveVector.x * Vector3.right * acceleration, ForceMode.Acceleration);
         if (Mathf.Abs(rb.velocity.y) < speedLimit)
             rb.AddForce(moveVector.y * Vector3.up * acceleration, ForceMode.Acceleration);
-        AudioManager.instance.PlaySFXOnce(audioManager, MovementSound, 0.5f);
+        AudioManager.instance.PlaySFX(audioManager, MovementSound, 0.5f);
     }
 
     public void Movement_WithoutDrag()
     {
-        AudioManager.instance.PlaySFXOnce(audioManager, MovementSound, 0.5f);
+        AudioManager.instance.PlaySFX(audioManager, MovementSound, 0.5f);
         rb.velocity = moveVector * speedLimit;
     }
 
