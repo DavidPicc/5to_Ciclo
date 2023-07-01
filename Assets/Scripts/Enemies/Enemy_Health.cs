@@ -35,6 +35,7 @@ public class Enemy_Health : MonoBehaviour
 
     [SerializeField] public AudioClip HitBoss;
     [SerializeField] public AudioClip DeathBoss;
+    public List<AudioClip> TauntBoss;
     [SerializeField] float halfthealt;
     [SerializeField] float moveSpeed = 2f;
     public Transform[] movePoints;
@@ -76,6 +77,7 @@ public class Enemy_Health : MonoBehaviour
 
         else if (IsBoss == true && currentHealth <= 250)
         {
+            PlayRandomAudioClip();
             phase1.enabled = false;
             phase2.enabled = false;
             phase3.enabled = false;
@@ -88,6 +90,7 @@ public class Enemy_Health : MonoBehaviour
 
         else if (IsBoss == true && currentHealth <= 500)
         {
+            PlayRandomAudioClip();
             phase1.enabled = false;
             phase2.enabled = false;
             phase3.enabled = true;
@@ -100,6 +103,7 @@ public class Enemy_Health : MonoBehaviour
 
         else if (IsBoss == true && currentHealth <= 750)
         {
+            PlayRandomAudioClip();
             phase1.enabled = false;
             phase2.enabled = true;
             phase3.enabled = false;
@@ -109,6 +113,7 @@ public class Enemy_Health : MonoBehaviour
 
         else if (IsBoss == true && currentHealth <= 1000)
         {
+            PlayRandomAudioClip();
             phase1.enabled = true;
             phase2.enabled = false;
             phase3.enabled = false;
@@ -225,5 +230,14 @@ public class Enemy_Health : MonoBehaviour
                 }
             }
         }
+    }
+
+    void PlayRandomAudioClip()
+    {
+        int randomIndex = Random.Range(0, TauntBoss.Count);
+
+        AudioClip randomClip = TauntBoss[randomIndex];
+
+        audioManager.PlayOneShot(randomClip);
     }
 }
