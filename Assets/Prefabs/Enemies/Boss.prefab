@@ -337,15 +337,22 @@ MonoBehaviour:
   IsBoss: 1
   Form1: {fileID: 5046431011563335107}
   Form2: {fileID: 1687115687358537522}
+  HitBoss: {fileID: 0}
+  DeathBoss: {fileID: 8300000, guid: 0fc5b47e3a71f5148b352602be94869e, type: 3}
+  TauntBoss: []
   halfthealt: 500
   moveSpeed: 2
   movePoints:
   - {fileID: 0}
   - {fileID: 0}
   phase1: {fileID: 8638265720202200210}
+  Phase1: {fileID: 0}
   phase2: {fileID: 7776350714618325335}
+  Phase2: {fileID: 0}
   phase3: {fileID: 3975623573000907947}
+  Phase3: {fileID: 0}
   phase4: {fileID: 3706645426347589396}
+  Phase4: {fileID: 0}
   FinishGame: Story 5
 --- !u!114 &8638265720202200210
 MonoBehaviour:
@@ -364,6 +371,8 @@ MonoBehaviour:
   attackObjects: []
   area: {fileID: 0}
   attackPrefabs: []
+  attackSFX: []
+  audioManager: {fileID: 0}
 --- !u!114 &7776350714618325335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +390,8 @@ MonoBehaviour:
   attackObjects: []
   area: {fileID: 0}
   attackPrefabs: []
+  attackSFX: []
+  audioManager: {fileID: 0}
 --- !u!114 &3975623573000907947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +409,8 @@ MonoBehaviour:
   attackObjects: []
   area: {fileID: 0}
   attackPrefabs: []
+  attackSFX: []
+  audioManager: {fileID: 0}
 --- !u!114 &3706645426347589396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,6 +428,8 @@ MonoBehaviour:
   attackObjects: []
   area: {fileID: 0}
   attackPrefabs: []
+  attackSFX: []
+  audioManager: {fileID: 0}
 --- !u!136 &5557354704563698507
 CapsuleCollider:
   m_ObjectHideFlags: 0
