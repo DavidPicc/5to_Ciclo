@@ -9,7 +9,8 @@ public class Phase1 : MonoBehaviour
     public List<GameObject> attackObjects;
     public Collider area;
     public GameObject[] attackPrefabs;
-
+    public List<AudioClip> attackSFX;
+    public AudioSource audioManager;
 
     void Start()
     {
@@ -32,10 +33,20 @@ public class Phase1 : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= maxTimer)
         {
+            PlayRandomAudioClip();
             int randomIndex = Random.Range(0, attackObjects.Count);
             GameObject obj = Instantiate(attackObjects[randomIndex]);
             obj.transform.position = randomPos;
             timer = 0;
         }
+    }
+
+    void PlayRandomAudioClip()
+    {
+        int randomIndex = Random.Range(0, attackSFX.Count);
+
+        AudioClip randomClip = attackSFX[randomIndex];
+
+        audioManager.PlayOneShot(randomClip);
     }
 }

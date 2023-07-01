@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8477686, g: 0.4806536, b: 0.3010276, a: 1}
+  m_IndirectSpecularColor: {r: 0.8477699, g: 0.48065326, b: 0.3010261, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14027,6 +14027,11 @@ PrefabInstance:
       propertyPath: moveType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1324113019}
     - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: type
@@ -18597,6 +18602,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gearScore: 0
   coreScore: 0
+  audioManager: {fileID: 0}
+  GearSound: {fileID: 0}
+  CoreSound: {fileID: 0}
   playerLevel: 0
   scoreToLevelUp: 0
 --- !u!4 &1154481398
@@ -25794,7 +25802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 346.445, y: 101.619995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1608272079
@@ -29268,6 +29276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 824346129}
   deathMenu: {fileID: 210054526}
+  DeathMusic: {fileID: 0}
   shopMenu: {fileID: 1385222487}
   nextLevelTransition: {fileID: 1465822963}
   isPaused: 0

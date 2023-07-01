@@ -32,14 +32,22 @@ public class Enemy_Health : MonoBehaviour
     public bool IsBoss = false;
     public GameObject Form1;
     public GameObject Form2;
+
+    [SerializeField] public AudioClip HitBoss;
+    [SerializeField] public AudioClip DeathBoss;
     [SerializeField] float halfthealt;
     [SerializeField] float moveSpeed = 2f;
     public Transform[] movePoints;
     private int currentMovePointIndex = 0;
+
     public Phase1 phase1;
+    [SerializeField] public AudioClip Phase1;
     public Phase2 phase2;
+    [SerializeField] public AudioClip Phase2;
     public Phase3 phase3;
+    [SerializeField] public AudioClip Phase3;
     public Phase4 phase4;
+    [SerializeField] public AudioClip Phase4;
     public string FinishGame;
     void Start()
     {
@@ -75,6 +83,7 @@ public class Enemy_Health : MonoBehaviour
             MoveToNextPoint();
             Form1.SetActive(false);
             Form2.SetActive(true);
+            AudioManager.instance.ChangeMusic(Phase4);
         }
 
         else if (IsBoss == true && currentHealth <= 500)
@@ -86,6 +95,7 @@ public class Enemy_Health : MonoBehaviour
             MoveToNextPoint();
             Form1.SetActive(false);
             Form2.SetActive(true);
+            AudioManager.instance.ChangeMusic(Phase3);
         }
 
         else if (IsBoss == true && currentHealth <= 750)
@@ -94,6 +104,7 @@ public class Enemy_Health : MonoBehaviour
             phase2.enabled = true;
             phase3.enabled = false;
             phase4.enabled = false;
+            AudioManager.instance.ChangeMusic(Phase2);
         }
 
         else if (IsBoss == true && currentHealth <= 1000)
@@ -104,6 +115,7 @@ public class Enemy_Health : MonoBehaviour
             phase4.enabled = false;
             Form1.SetActive(true);
             Form2.SetActive(false);
+            AudioManager.instance.ChangeMusic(Phase1);
         }
     }
 
@@ -112,6 +124,10 @@ public class Enemy_Health : MonoBehaviour
         if(currentHealth > damage)
         {
             currentHealth -= damage;
+            if(IsBoss == true)
+            {
+                AudioManager.instance.PlaySFXWithDelay(audioManager, HitBoss, 0.5f);
+            }
         }
         else
         {
@@ -128,6 +144,7 @@ public class Enemy_Health : MonoBehaviour
         }
         if (IsBoss == true)
         {
+            AudioManager.instance.PlaySFX(audioManager, DeathBoss, 0.5f);
             SceneManager.LoadScene(FinishGame);
         }
         //audioManager.PlayOneShot(DeathSound);

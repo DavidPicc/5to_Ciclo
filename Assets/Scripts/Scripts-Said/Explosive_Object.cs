@@ -41,7 +41,6 @@ public class Explosive_Object : MonoBehaviour
             //Instantiate(vfxexplosion, transform.position, transform.rotation);
             exploded = true;
             explosion.SetActive(true);
-           
         }
     }
     private void OnDrawGizmos()
@@ -49,5 +48,4 @@ public class Explosive_Object : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, proximityDistance);
     }
-
 }

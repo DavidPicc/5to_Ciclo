@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject pauseMenu;
     public GameObject deathMenu;
+    [SerializeField] AudioClip DeathMusic;
     public GameObject shopMenu;
     public GameObject nextLevelTransition;
     public bool isPaused = false;
@@ -118,6 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void DeathMenu()
     {
+        AudioManager.instance.ChangeMusic(DeathMusic);
         FindObjectOfType<EventSystem>().SetSelectedGameObject(deathButton.gameObject);
         deathMenu.SetActive(true);
         FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;

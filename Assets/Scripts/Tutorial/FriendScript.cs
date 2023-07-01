@@ -15,6 +15,8 @@ public class FriendScript : MonoBehaviour
     public string deathDialogue;
 
     public bool canDie = true;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] AudioClip MovementSound;
     public GameObject explosionVFX;
     void Start()
     {
@@ -76,6 +78,7 @@ public class FriendScript : MonoBehaviour
                 Vector3 moveVector = dir * speed;
 
                 rb.velocity = moveVector;
+                AudioManager.instance.PlaySFX(audioManager, MovementSound, 0.5f);
             }
         }
     }

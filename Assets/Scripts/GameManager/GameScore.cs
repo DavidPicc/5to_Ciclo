@@ -9,6 +9,8 @@ public class GameScore : MonoBehaviour
     public static GameScore instance;
     GameObject player;
     public int gearScore, coreScore;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip GearSound, CoreSound;
 
     [SerializeField] public int playerLevel = 0;
     [SerializeField] public int scoreToLevelUp;
@@ -56,6 +58,7 @@ public class GameScore : MonoBehaviour
     public void AddGears(int amount)
     {
         gearScore = gearScore + amount;
+        AudioManager.instance.PlaySFXWithDelay(audioManager, GearSound, 0.5f);
         //invisibleScore = invisibleScore + amount;
         CanvasUI.instance.gearsText.text = gearScore.ToString();
     }
@@ -69,6 +72,7 @@ public class GameScore : MonoBehaviour
     public void AddCores(int amount)
     {
         coreScore = coreScore + amount;
+        AudioManager.instance.PlaySFXWithDelay(audioManager, CoreSound, 0.5f);
         CanvasUI.instance.coresText.text = coreScore.ToString();
     }
 

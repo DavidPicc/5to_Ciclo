@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -63019,6 +63019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 624389353}
   deathMenu: {fileID: 592050257}
+  DeathMusic: {fileID: 0}
   shopMenu: {fileID: 843542521}
   nextLevelTransition: {fileID: 868466821}
   isPaused: 0
@@ -72429,6 +72430,11 @@ PrefabInstance:
       propertyPath: moveType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1923879375}
     - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: type
@@ -75173,6 +75179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gearScore: 0
   coreScore: 0
+  audioManager: {fileID: 0}
+  GearSound: {fileID: 0}
+  CoreSound: {fileID: 0}
   playerLevel: 0
   scoreToLevelUp: 0
 --- !u!4 &2139110335
