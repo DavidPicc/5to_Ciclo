@@ -36,7 +36,10 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] public AudioClip HitBoss;
     [SerializeField] public AudioClip DeathBoss;
     public List<AudioClip> TauntBoss;
-    [SerializeField] float halfthealt;
+    [SerializeField] float HealtPhase1;
+    [SerializeField] float HealtPhase2;
+    [SerializeField] float HealtPhase3;
+    [SerializeField] float HealtPhase4;
     [SerializeField] float moveSpeed = 2f;
     public Transform[] movePoints;
     private int currentMovePointIndex = 0;
@@ -75,7 +78,7 @@ public class Enemy_Health : MonoBehaviour
 
  
 
-        else if (IsBoss == true && currentHealth <= 250)
+        else if (IsBoss == true && currentHealth <= HealtPhase4)
         {
             PlayRandomAudioClip();
             phase1.enabled = false;
@@ -88,7 +91,7 @@ public class Enemy_Health : MonoBehaviour
             AudioManager.instance.ChangeMusic(Phase4);
         }
 
-        else if (IsBoss == true && currentHealth <= 500)
+        else if (IsBoss == true && currentHealth <= HealtPhase3)
         {
             PlayRandomAudioClip();
             phase1.enabled = false;
@@ -101,7 +104,7 @@ public class Enemy_Health : MonoBehaviour
             AudioManager.instance.ChangeMusic(Phase3);
         }
 
-        else if (IsBoss == true && currentHealth <= 750)
+        else if (IsBoss == true && currentHealth <= HealtPhase2)
         {
             PlayRandomAudioClip();
             phase1.enabled = false;
@@ -111,7 +114,7 @@ public class Enemy_Health : MonoBehaviour
             AudioManager.instance.ChangeMusic(Phase2);
         }
 
-        else if (IsBoss == true && currentHealth <= 1000)
+        else if (IsBoss == true && currentHealth <= HealtPhase1)
         {
             PlayRandomAudioClip();
             phase1.enabled = true;
