@@ -25,6 +25,10 @@ public class ShopObject : MonoBehaviour
 
     protected virtual void Shopping()
     {
+        if(UpgradeTrackerAct.instance == null)
+        {
+            return;
+        }
         if (UpgradeTrackerAct.instance.levels.ContainsKey(type))
         {
             level = UpgradeTrackerAct.instance.levels[type];
