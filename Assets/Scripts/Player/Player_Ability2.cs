@@ -45,7 +45,7 @@ public class Player_Ability2 : ShopObject
         {
             rechargeBar -= Time.deltaTime;
             if(equipped) abilityBar.fillAmount = rechargeBar/maxRechargeBar;
-            audioManager.PlayOneShot(ShieldSound);
+            AudioManager.instance.PlaySFX(audioManager, ShieldSound, 0.5f);
             if (rechargeBar <= 0)
             {
                 PushBullets();

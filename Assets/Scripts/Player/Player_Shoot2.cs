@@ -83,7 +83,7 @@ public class Player_Shoot2 : ShopObject
 
     void Shoot_Normal()
     {
-        audioManager.PlayOneShot(ShootSound);
+        AudioManager.instance.PlaySFX(audioManager, ShootSound, 0.5f);
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;

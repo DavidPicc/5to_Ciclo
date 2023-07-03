@@ -58,7 +58,7 @@ public class Player_Ability_Fixed: ShopObject
         {
             active = true;
             shieldObj.SetActive(true);
-            audioManager.PlayOneShot(ShieldSound);
+            AudioManager.instance.PlaySFX(audioManager, ShieldSound, 0.5f);
         }
 
         //Deactivation

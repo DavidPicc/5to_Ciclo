@@ -89,7 +89,7 @@ public class Player_Shoot : ShopObject
 
             //   GameObject vfx = Instantiate(vfxShoot, shootPoints[i].position, Quaternion.Euler(0f, 90f, 90f));
             //vfx.transform.SetParent(bullet.transform, false);
-            audioManager.PlayOneShot(ShootSound);
+            AudioManager.instance.PlaySFX(audioManager, ShootSound, 0.5f);
             Destroy(bullet, 2f);
         }
         shotBullet = true;
