@@ -7,14 +7,14 @@ public class Phase3 : MonoBehaviour
     public float timer;
     public float maxTimer;
     public List<GameObject> attackObjects;
-    public Collider area;
+    public Collider area2;
     public GameObject[] attackPrefabs;
     public List<AudioClip> attackSFX;
     public AudioSource audioManager;
 
     void Start()
     {
-        area = GameObject.Find("Area").GetComponent<Collider>();
+        area2 = GameObject.Find("Area2").GetComponent<Collider>();
         attackObjects = new List<GameObject>();
         foreach (GameObject attackPrefab in attackPrefabs)
         {
@@ -29,7 +29,7 @@ public class Phase3 : MonoBehaviour
 
     void ActivatePhase3()
     {
-        Vector3 randomPos = new Vector3(Random.Range(area.bounds.min.x, area.bounds.max.x), Random.Range(area.bounds.min.y, area.bounds.max.y), area.transform.position.z);
+        Vector3 randomPos = new Vector3(Random.Range(area2.bounds.min.x, area2.bounds.max.x), Random.Range(area2.bounds.min.y, area2.bounds.max.y), area2.transform.position.z);
         timer += Time.deltaTime;
         if (timer >= maxTimer)
         {

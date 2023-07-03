@@ -220,7 +220,7 @@ public class Enemy_Health : MonoBehaviour
             }
             if (other.CompareTag("Explosion"))
             {
-                if (canBeDamaged)
+                if (canBeDamaged && IsBoss==false)
                 {
                     TakeDamage(3000);
                 }
