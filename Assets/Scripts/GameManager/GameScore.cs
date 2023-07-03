@@ -18,7 +18,8 @@ public class GameScore : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        audioManager = GetComponent<AudioSource>();
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
