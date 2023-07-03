@@ -14,7 +14,7 @@ public class Phase3 : MonoBehaviour
 
     void Start()
     {
-        area = GameObject.Find("Area").GetComponent<Collider>();
+        area = GameObject.Find("Area2").GetComponent<Collider>();
         attackObjects = new List<GameObject>();
         foreach (GameObject attackPrefab in attackPrefabs)
         {
