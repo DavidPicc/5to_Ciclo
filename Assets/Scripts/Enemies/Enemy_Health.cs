@@ -131,7 +131,7 @@ public class Enemy_Health : MonoBehaviour
             currentHealth -= damage;
             if(IsBoss == true)
             {
-                AudioManager.instance.PlaySFXWithDelay(audioManager, HitBoss, 0.5f);
+                AudioManager.instance.PlaySFX(audioManager, HitBoss, 0.5f);
             }
         }
         else
