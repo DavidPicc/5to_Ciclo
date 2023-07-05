@@ -9,6 +9,7 @@ public class EnemyActivation : MonoBehaviour
 
     public EnemyMovement movementScript;
     public EnemyShooting enemyShooting;
+    public Enemy_Health enemyHealth;
 
     public float checkTimer = 2f;
     float timer;
@@ -22,6 +23,9 @@ public class EnemyActivation : MonoBehaviour
         if (enemyShooting != null)
             enemyShooting.enabled = false;
 
+        if (enemyHealth != null)
+            enemyHealth.enabled = false;
+
         timer = 0;
     }
 
@@ -30,7 +34,7 @@ public class EnemyActivation : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            if(Vector3.Distance(player.transform.position, transform.position) <= 40f)
+            if(Vector3.Distance(player.transform.position, transform.position) <= 25f)
             {
                 ActivateEnemy();
             }
@@ -45,6 +49,9 @@ public class EnemyActivation : MonoBehaviour
 
         if (enemyShooting != null)
             enemyShooting.enabled = true;
+
+        if (enemyHealth != null)
+            enemyHealth.enabled = true;
 
         Destroy(this);
     }
