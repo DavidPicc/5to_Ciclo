@@ -11,23 +11,26 @@ public class SoundClick : MonoBehaviour
 
     void Update()
     {
-        if (game.isPaused) 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (game.isPaused)
         {
-            manager.PlaySFXOnce(source, clip, 0.5f);
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                manager.PlaySFXOnce(source, clip, 0.5f);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                manager.PlaySFXOnce(source, clip, 0.5f);
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                manager.PlaySFXOnce(source, clip, 0.5f);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                manager.PlaySFXOnce(source, clip, 0.5f);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            manager.PlaySFXOnce(source, clip, 0.5f);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            manager.PlaySFXOnce(source, clip, 0.5f);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            manager.PlaySFXOnce(source, clip, 0.5f);
-        }
+       
 
     }
 }
