@@ -8,6 +8,8 @@ public class objet_destrur : MonoBehaviour
     Transform _camera;
     [SerializeField] float maxHealth;
     [SerializeField] public float currentHealth;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip DeathSound;
     public bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
@@ -23,6 +25,7 @@ public class objet_destrur : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         _camera = FindObjectOfType<StageMovement>().transform;
+        audioManager = GetComponent<AudioSource>();
 
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
@@ -65,7 +68,11 @@ public class objet_destrur : MonoBehaviour
         Destroy(gameObject, 0.2f);
         if (!spawnedPoints)
             SpawnPoints();
-        Instantiate(vfxexplosion, transform.position, Quaternion.identity);
+        var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
+        death.AddComponent<AudioSource>();
+        death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
+        death.GetComponent<AudioSource>().volume = 1.0f;
+        death.GetComponent<AudioSource>().PlayOneShot(DeathSound);
         Destroy(this);
     }
 
