@@ -13,6 +13,7 @@ public class SoundClick : MonoBehaviour
     {
         if (game.isPaused)
         {
+
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 manager.PlaySFXOnce(source, clip, 0.5f);
