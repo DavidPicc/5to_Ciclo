@@ -10,7 +10,8 @@ public class Enemy_Health : MonoBehaviour
     Transform _camera;
     [SerializeField] float maxHealth;
     [SerializeField] public float currentHealth;
-    [SerializeField] public AudioSource audioManager;
+    public AudioManager manager;
+    [SerializeField] public AudioSource audioSource;
     [SerializeField] public AudioClip DeathSound;
 
     public bool IsEnemy = true;
@@ -45,20 +46,20 @@ public class Enemy_Health : MonoBehaviour
     private int currentMovePointIndex = 0;
 
     public Phase1 phase1;
-    [SerializeField] public AudioClip Phase1;
     public Phase2 phase2;
-    [SerializeField] public AudioClip Phase2;
     public Phase3 phase3;
-    [SerializeField] public AudioClip Phase3;
     public Phase4 phase4;
-    [SerializeField] public AudioClip Phase4;
+    /*
+    [SerializeField] public AudioSource BossMusic;
+    [SerializeField] public AudioClip Phase1;
+    [SerializeField] public AudioClip Phase2;*/
     public string FinishGame;
     void Start()
     {
         playerHealth = FindAnyObjectByType<Player_Health>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         _camera = FindObjectOfType<StageMovement>().transform;
-        audioManager = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
@@ -88,7 +89,6 @@ public class Enemy_Health : MonoBehaviour
             MoveToNextPoint();
             Form1.SetActive(false);
             Form2.SetActive(true);
-            AudioManager.instance.ChangeMusic(Phase4);
         }
 
         else if (IsBoss == true && currentHealth <= HealtPhase3)
@@ -101,7 +101,7 @@ public class Enemy_Health : MonoBehaviour
             MoveToNextPoint();
             Form1.SetActive(false);
             Form2.SetActive(true);
-            AudioManager.instance.ChangeMusic(Phase3);
+          //  AudioManager.instance.ChangeMusic(Phase2);
         }
 
         else if (IsBoss == true && currentHealth <= HealtPhase2)
@@ -111,7 +111,6 @@ public class Enemy_Health : MonoBehaviour
             phase2.enabled = true;
             phase3.enabled = false;
             phase4.enabled = false;
-            AudioManager.instance.ChangeMusic(Phase2);
         }
 
         else if (IsBoss == true && currentHealth <= HealtPhase1)
@@ -123,7 +122,7 @@ public class Enemy_Health : MonoBehaviour
             phase4.enabled = false;
             Form1.SetActive(true);
             Form2.SetActive(false);
-            AudioManager.instance.ChangeMusic(Phase1);
+           // AudioManager.instance.ChangeMusic(Phase1);
         }
     }
 
@@ -134,7 +133,7 @@ public class Enemy_Health : MonoBehaviour
             currentHealth -= damage;
             if(IsBoss == true)
             {
-                AudioManager.instance.PlaySFX(audioManager, HitBoss, 0.5f);
+                AudioManager.instance.PlaySFX(audioSource, HitBoss, 1f);
             }
         }
         else
@@ -152,7 +151,7 @@ public class Enemy_Health : MonoBehaviour
         }
         if (IsBoss == true)
         {
-            AudioManager.instance.PlaySFX(audioManager, DeathBoss, 0.5f);
+            AudioManager.instance.PlaySFX(audioSource, DeathSound, 1f);
             SceneManager.LoadScene(FinishGame);
         }
         //audioManager.PlayOneShot(DeathSound);
@@ -241,6 +240,6 @@ public class Enemy_Health : MonoBehaviour
 
         AudioClip randomClip = TauntBoss[randomIndex];
 
-        audioManager.PlayOneShot(randomClip);
+        audioSource.PlayOneShot(randomClip);
     }
 }
