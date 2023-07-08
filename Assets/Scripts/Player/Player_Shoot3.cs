@@ -27,7 +27,7 @@ public class Player_Shoot3 : ShopObject
     {
         base.Start();
 
-        audioManager = GetComponent<AudioSource>();
+        //audioManager = GetComponent<AudioSource>();
         timer = fireRate;
     }
 

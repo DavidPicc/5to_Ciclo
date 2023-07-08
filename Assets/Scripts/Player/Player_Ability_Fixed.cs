@@ -40,7 +40,7 @@ public class Player_Ability_Fixed: ShopObject
     {
         base.Start();
 
-        audioManager = GetComponent<AudioSource>();
+        //audioManager = GetComponent<AudioSource>();
         rechargeBar = maxRechargeBar;
         SetImageFill();
     }

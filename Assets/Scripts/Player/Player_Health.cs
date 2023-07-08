@@ -22,7 +22,7 @@ public class Player_Health : MonoBehaviour
 
     void Start()
     {
-        audioManager = GetComponent<AudioSource>();
+        //audioManager = GetComponent<AudioSource>();
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
 

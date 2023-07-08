@@ -36,7 +36,7 @@ public class Player_Shoot : ShopObject
         //       var vfxShootp = Instantiate(vfxShoot, transform.position, Quaternion.identity);
         //      vfxShootp.transform.forward = gameObject.transform.forward;
         //   }
-        audioManager = GetComponent<AudioSource>();
+        //audioManager = GetComponent<AudioSource>();
         timer = fireRate;
     }
 

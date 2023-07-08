@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14009,7 +14009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 1
+  m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &440780006
@@ -43807,6 +43807,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1135902500}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1362743984 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 745176014717834577, guid: e9aa5d11abe99f24382d1683cf9d502a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069160547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1364182731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67446,7 +67452,7 @@ PrefabInstance:
         type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 1923879375}
+      objectReference: {fileID: 1362743984}
     - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: type
