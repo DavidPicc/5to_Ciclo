@@ -17,6 +17,13 @@ public class Player_Health : MonoBehaviour
 
     [SerializeField] Image healthFillBar;
 
+    [Header("Caritas")]
+    public Image caritaTriste;
+    public Image caritaNormal;
+    public Image caritaFeliz;
+    public Image caritaCorona;
+    public Image caritaFachera;
+
     [Header("Crushed")]
     public int crushed = 0;
 
@@ -25,7 +32,7 @@ public class Player_Health : MonoBehaviour
         //audioManager = GetComponent<AudioSource>();
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
-
+        ActualizarCaritas();
         //transform.position = CheckPointScript.savedPoint;
 
 
@@ -52,7 +59,7 @@ public class Player_Health : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             TakeDamage(1);
         }
@@ -60,7 +67,7 @@ public class Player_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if(canBeDamaged)
+        if (canBeDamaged)
         {
             FindObjectOfType<CameraShake>().ShakeCamera(1.5f * (damage), 0.1f);
             audioManager.PlayOneShot(HitSound);
@@ -68,20 +75,21 @@ public class Player_Health : MonoBehaviour
             UpdateHealthBar();
             if (currentHealth <= 0)
             {
-                if(canDie)
+                if (canDie)
                 {
                     Death();
                 }
             }
-            if(!canDie)
+            if (!canDie)
             {
-                if(currentHealth <= 1)
+                if (currentHealth <= 1)
                 {
                     DialogueScript.instance.SetDialogue(FindAnyObjectByType<FriendScript>().RandomTalk());
                     currentHealth = maxHealth;
                     UpdateHealthBar();
                 }
             }
+            ActualizarCaritas();
             Debug.Log("Player has been damaged!!!!");
             canBeDamaged = false;
         }
@@ -91,12 +99,13 @@ public class Player_Health : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthBar();
+        ActualizarCaritas();
         Debug.Log("Player has been fully healed!");
     }
     public void Death()
     {
         // TUTORIAL
-        if(canDie && FindObjectOfType<TutorialManager>() != null)
+        if (canDie && FindObjectOfType<TutorialManager>() != null)
         {
             GameManager.instance.FinishedLevel();
         }
@@ -118,7 +127,14 @@ public class Player_Health : MonoBehaviour
     {
         healthFillBar.fillAmount = currentHealth / maxHealth;
     }
-
+    void ActualizarCaritas()
+    {
+        caritaTriste.gameObject.SetActive(currentHealth == 1);
+        caritaNormal.gameObject.SetActive(currentHealth == 2);
+        caritaFeliz.gameObject.SetActive(currentHealth == 3);
+        caritaCorona.gameObject.SetActive(currentHealth == 4);
+        caritaFachera.gameObject.SetActive(currentHealth == 5);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("weigh") || other.CompareTag("Explosion")) //|| other.CompareTag("Enemy"))
