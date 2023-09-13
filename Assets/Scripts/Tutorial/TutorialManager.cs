@@ -9,6 +9,13 @@ using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
+    private bool estaRalentizado1 = false;
+    private bool estaRalentizado2 = false;
+    private bool estaRalentizado3 = false;
+
+    private float velocidadNormal = 1.0f;
+    private float velocidadRalentizada = 0.1f;
+
     public static TutorialManager instance;
     //public GameObject bossDeathTutorialTransition;
     public GameObject boss;
@@ -39,6 +46,24 @@ public class TutorialManager : MonoBehaviour
     {
         instance = this;
     }
+
+    private void Update()
+    {
+        if(estaRalentizado1 == true)
+        {
+            HideKeys1();
+        }
+
+        if (estaRalentizado2 == true)
+        {
+            HideKeys2();
+        }
+
+        if (estaRalentizado3 == true)
+        {
+            HideKeys3();
+        }
+    }
     public void ActivateBoss()
     {
         Debug.Log("BOOOOOSSSSS!");
@@ -62,25 +87,52 @@ public class TutorialManager : MonoBehaviour
     public void ShowMove()
     {
         moveKeys.SetActive(true);
-        Invoke("HideKeys", timerKeys);
+        estaRalentizado1 = true;
+        Time.timeScale = velocidadRalentizada; 
     }
 
     public void ShowShoot()
     {
         shootKey.SetActive(true);
-        Invoke("HideKeys", timerKeys);
+        estaRalentizado2 = true;
+        Time.timeScale = velocidadRalentizada;
     }
 
     public void ShowAbility()
     {
         abilityKey.SetActive(true);
-        Invoke("HideKeys", timerKeys);
+        estaRalentizado3 = true;
+        Time.timeScale = velocidadRalentizada;
     }
 
-    void HideKeys()
+    void HideKeys1()
     {
-        moveKeys.SetActive(false);
-        shootKey.SetActive(false);
-        abilityKey.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            moveKeys.SetActive(false);
+            Time.timeScale = velocidadNormal;
+            estaRalentizado1 = false;
+        }
+    }
+
+    void HideKeys2()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            shootKey.SetActive(false);
+            Time.timeScale = velocidadNormal;
+            estaRalentizado2 = false;
+        }
+    }
+
+    void HideKeys3()
+    {
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            abilityKey.SetActive(false);
+            Time.timeScale = velocidadNormal;
+            estaRalentizado3 = false;
+        }
     }
 }

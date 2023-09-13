@@ -70,10 +70,10 @@ public class DialogueScript : MonoBehaviour
                 GetComponent<AudioSource>().pitch = pitch;
                 GetComponent<AudioSource>().PlayOneShot(textSound);
 
-                yield return new WaitForSeconds(delay);
+                yield return new WaitForSecondsRealtime(delay);
                 if (dialogueText.text.Length >= fullText.Length)
                 {
-                    yield return new WaitForSeconds(timeBetweenText);
+                    yield return new WaitForSecondsRealtime(timeBetweenText);
                     FinishedTyping();
                 }
             }
