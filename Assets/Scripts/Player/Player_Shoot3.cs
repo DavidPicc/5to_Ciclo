@@ -17,6 +17,7 @@ public class Player_Shoot3 : ShopObject
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
+    bool playingShoot = false;
 
     [Header("Upgrades System")]
     public float upgradedShootDamage;
@@ -26,7 +27,6 @@ public class Player_Shoot3 : ShopObject
     protected override void Start()
     {
         base.Start();
-
         //audioManager = GetComponent<AudioSource>();
         timer = fireRate;
     }
@@ -38,15 +38,35 @@ public class Player_Shoot3 : ShopObject
         if (canShoot)
         {
             Shoot_Angle();
+            if(!playingShoot)
+            {
+                audioManager.Play();
+                audioManager.volume = 1;
+                playingShoot = true;
+            }
+            
+        }
+
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            if(playingShoot)
+            {
+                audioManager.Stop();
+                audioManager.volume = 0;
+                playingShoot = false;
+            }
         }
 
         if (equipped == true)
         {
             Gun.SetActive(true);
+            audioManager.clip = ShootSound;
+            audioManager.loop = true;
         }
         if (equipped == false)
         {
             Gun.SetActive(false);
+            audioManager.loop = false;
         }
     }
 
@@ -70,7 +90,6 @@ public class Player_Shoot3 : ShopObject
 
     void Shoot_Normal()
     {
-        AudioManager.instance.PlaySFX(audioManager, ShootSound, 0.5f);
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         Destroy(bullet, 8f);

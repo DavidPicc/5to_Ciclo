@@ -51,7 +51,7 @@ public class DialogueScript : MonoBehaviour
     }
 
     bool isRunning = false;
-    public IEnumerator StartDialogue()
+    public IEnumerator StartDialogue(AudioSource audioSource)
     {
         isRunning = true;
         for(int i = 0; i < dialogues.Count; i++)
@@ -67,8 +67,8 @@ public class DialogueScript : MonoBehaviour
                 dialogueText.text += c;
 
                 float pitch = Random.Range(0.5f, 1.5f);
-                GetComponent<AudioSource>().pitch = pitch;
-                GetComponent<AudioSource>().PlayOneShot(textSound);
+                audioSource.pitch = pitch;
+                audioSource.PlayOneShot(textSound);
 
                 yield return new WaitForSecondsRealtime(delay);
                 if (dialogueText.text.Length >= fullText.Length)
@@ -96,7 +96,7 @@ public class DialogueScript : MonoBehaviour
         }
     }
 
-    public void SetDialogue(string[] dialogue)
+    public void SetDialogue(string[] dialogue, AudioSource audioSource)
     {
         CanvasUI.instance.dialogueObject.SetActive(true);
         for(int i = 0; i < dialogue.Length; i++)
@@ -104,14 +104,14 @@ public class DialogueScript : MonoBehaviour
             dialogues.Add(dialogue[i]);
         }
         if(!isRunning)
-            StartCoroutine(StartDialogue());
+            StartCoroutine(StartDialogue(audioSource));
     }
 
-    public void SetDialogue(string dialogue)
+    public void SetDialogue(string dialogue, AudioSource audioSource)
     {
         CanvasUI.instance.dialogueObject.SetActive(true);
         dialogues.Add(dialogue);
         if (!isRunning)
-            StartCoroutine(StartDialogue());
+            StartCoroutine(StartDialogue(audioSource));
     }
 }

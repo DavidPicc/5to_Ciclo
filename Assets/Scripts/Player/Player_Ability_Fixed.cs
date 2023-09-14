@@ -56,14 +56,16 @@ public class Player_Ability_Fixed: ShopObject
         //Activation
         if(!GameManager.instance.isPaused && GameManager.instance.canUseAbilities && Input.GetKeyDown(skillKey) && !active && rechargeBar >= maxRechargeBar && equipped)
         {
+            PlayShieldSound();
             active = true;
             shieldObj.SetActive(true);
-            AudioManager.instance.PlaySFX(audioManager, ShieldSound, 0.5f);
+            //AudioManager.instance.PlaySFX(audioManager, ShieldSound, 0.5f);
         }
 
         //Deactivation
         if((Input.GetKeyUp(skillKey) || rechargeBar <= 0) && active && !GameManager.instance.isPaused)
         {
+            StopShieldSound();
             active = false;
             shieldObj.SetActive(false);
             if (shieldCharge > 0)
@@ -81,6 +83,20 @@ public class Player_Ability_Fixed: ShopObject
         {
             if (rechargeBar < maxRechargeBar) rechargeBar += Time.deltaTime;
         }
+    }
+
+    void PlayShieldSound()
+    {
+        audioManager.volume = 1;
+        audioManager.clip = ShieldSound;
+        audioManager.loop = true;
+        audioManager.Play();
+    }
+
+    void StopShieldSound()
+    {
+        audioManager.loop = false;
+        audioManager.Stop();
     }
 
     IEnumerator Shoot(int charges)

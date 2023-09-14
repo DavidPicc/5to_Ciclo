@@ -38,6 +38,7 @@ public class Player_Ability2 : ShopObject
         if (!GameManager.instance.isPaused && GameManager.instance.canUseAbilities && Input.GetKey(KeyCode.X) && rechargeBar >= maxRechargeBar && !activate && equipped)
         {
             SpawnBulletShield();
+            PlayShieldSound();
             activate = true;
         }
 
@@ -45,10 +46,11 @@ public class Player_Ability2 : ShopObject
         {
             rechargeBar -= Time.deltaTime;
             if(equipped) abilityBar.fillAmount = rechargeBar/maxRechargeBar;
-            AudioManager.instance.PlaySFX(audioManager, ShieldSound, 0.5f);
+            //AudioManager.instance.PlaySFX(audioManager, ShieldSound, 0.5f);
             if (rechargeBar <= 0)
             {
                 PushBullets();
+                StopShieldSound();
                 activate = false;
             }
         }
@@ -66,6 +68,20 @@ public class Player_Ability2 : ShopObject
                 Destroy(bullets[i], rechargeBar);
             }
         }
+    }
+
+    void PlayShieldSound()
+    {
+        audioManager.volume = 1;
+        audioManager.clip = ShieldSound;
+        audioManager.loop = true;
+        audioManager.Play();
+    }
+
+    void StopShieldSound()
+    {
+        audioManager.loop = false;
+        audioManager.Stop();
     }
 
     void SpawnBulletShield()

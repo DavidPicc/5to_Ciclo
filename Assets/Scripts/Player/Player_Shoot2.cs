@@ -87,7 +87,7 @@ public class Player_Shoot2 : ShopObject
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-        Destroy(bullet, 1.3f);
+        bullet.GetComponent<PlayerBullet2>().DelayExplosion(1.3f);
     }
 
     protected override void Shopping()

@@ -40,17 +40,17 @@ public class FriendScript : MonoBehaviour
        
     }
 
-    //void GoAhead()
-    //{
-    //    allyLocked = false;
-    //    rb.velocity = Vector3.right * maxSpeed * 500 * Time.deltaTime;
-    //    GetComponentInChildren<Collider>().enabled = false;
-    //}
-
     public string RandomTalk()
     {
         int random = Random.Range(0,talkingThings.Length);
         return talkingThings[random];
+    }
+
+    public void HealPlayer()
+    {
+        DialogueScript.instance.SetDialogue(RandomTalk(), audioManager);
+        FindObjectOfType<Player_Health>().currentHealth = FindObjectOfType<Player_Health>().maxHealth;
+        FindObjectOfType<Player_Health>().UpdateHealthBar();
     }
 
     public void Death()
@@ -59,7 +59,7 @@ public class FriendScript : MonoBehaviour
         allyPos = null;
         rb.useGravity = true;
         GetComponentInChildren<Collider>().enabled = false;
-        DialogueScript.instance.SetDialogue(deathDialogue);
+        DialogueScript.instance.SetDialogue(deathDialogue, audioManager);
         Destroy(gameObject, 10f);
     }
 

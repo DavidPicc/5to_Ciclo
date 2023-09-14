@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
-    [SerializeField] float maxHealth;
+    [SerializeField] public float maxHealth;
     [SerializeField] public float currentHealth;
     [SerializeField] public float invulnerabilityTime;
     float timer;
@@ -84,9 +84,7 @@ public class Player_Health : MonoBehaviour
             {
                 if (currentHealth <= 1)
                 {
-                    DialogueScript.instance.SetDialogue(FindAnyObjectByType<FriendScript>().RandomTalk());
-                    currentHealth = maxHealth;
-                    UpdateHealthBar();
+                    FindAnyObjectByType<FriendScript>().HealPlayer();
                 }
             }
             ActualizarCaritas();
@@ -118,12 +116,17 @@ public class Player_Health : MonoBehaviour
 
     public void SetPlayerDeath()
     {
-        audioManager.PlayOneShot(DeathSound);
+        GameObject deathSound = new GameObject();
+        deathSound.name = "DeathSound";
+        deathSound.AddComponent<AudioSource>();
+        deathSound.GetComponent<AudioSource>().outputAudioMixerGroup = AudioManager.instance.sfxGroup;
+        deathSound.GetComponent<AudioSource>().PlayOneShot(DeathSound);
+
         gameObject.SetActive(false);
         GameManager.instance.DeathMenu();
     }
 
-    void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         healthFillBar.fillAmount = currentHealth / maxHealth;
     }

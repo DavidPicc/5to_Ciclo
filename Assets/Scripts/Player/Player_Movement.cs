@@ -23,6 +23,7 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //AudioManager.instance.PlaySFX(audioManager, MovementSound, 0.5f);
     }
 
     void Update()
@@ -30,6 +31,15 @@ public class Player_Movement : MonoBehaviour
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
         moveVector = new Vector3(moveX, moveY, 0).normalized;
+
+        if(moveVector == Vector3.zero)
+        {
+            audioManager.volume = 0;
+        }
+        else
+        {
+            audioManager.volume = 1f;
+        }
     }
 
     void FixedUpdate()
@@ -52,12 +62,10 @@ public class Player_Movement : MonoBehaviour
             rb.AddForce(moveVector.x * Vector3.right * acceleration, ForceMode.Acceleration);
         if (Mathf.Abs(rb.velocity.y) < speedLimit)
             rb.AddForce(moveVector.y * Vector3.up * acceleration, ForceMode.Acceleration);
-        AudioManager.instance.PlaySFX(audioManager, MovementSound, 0.5f);
     }
 
     public void Movement_WithoutDrag()
     {
-        AudioManager.instance.PlaySFXOnce(audioManager, MovementSound, 0.5f);
         rb.velocity = moveVector * speedLimit;
     }
 
@@ -77,9 +85,9 @@ public class Player_Movement : MonoBehaviour
     {
         if (other.CompareTag("Cores"))
         {
-            if (other.GetComponent<AudioSource>() != null && other.GetComponent<Cores_Script>() != null && other.GetComponent<Cores_Script>().CoresSound != null)
+            if (other.GetComponent<AudioSource>() != null && other.GetComponent<Cores_Script>() != null)
             {
-                other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
+                //other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
             }
             
             GameScore.instance.AddCores(1);

@@ -37,7 +37,7 @@ public class SituationManager_RE : MonoBehaviour
         {
             if (situations[currentWave - 1].dialogue.Length > 0)
             {
-                DialogueScript.instance.SetDialogue(situations[currentWave - 1].dialogue);
+                DialogueScript.instance.SetDialogue(situations[currentWave - 1].dialogue, GetComponent<AudioSource>());
             }
             if (situations[currentWave - 1].methodEvent != null)
             {

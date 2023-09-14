@@ -9,7 +9,7 @@ public class GameScore : MonoBehaviour
     public static GameScore instance;
     GameObject player;
     public int gearScore, coreScore;
-    [SerializeField] public AudioSource audioManager;
+    //[SerializeField] public AudioSource audioManager;
     [SerializeField] public AudioClip GearSound, CoreSound;
 
     [SerializeField] public int playerLevel = 0;
@@ -18,7 +18,7 @@ public class GameScore : MonoBehaviour
 
     private void Awake()
     {
-        audioManager = GetComponent<AudioSource>();
+        //audioManager = GetComponent<AudioSource>();
         if (instance == null)
         {
             instance = this;
@@ -59,7 +59,8 @@ public class GameScore : MonoBehaviour
     public void AddGears(int amount)
     {
         gearScore = gearScore + amount;
-        AudioManager.instance.PlaySFXWithDelay(audioManager, GearSound, 0.5f);
+        AudioManager.instance.PlaySFX(GetComponent<AudioSource>(), GearSound, 1f);
+        Debug.Log("SONIDO");
         //invisibleScore = invisibleScore + amount;
         CanvasUI.instance.gearsText.text = gearScore.ToString();
     }
@@ -73,7 +74,7 @@ public class GameScore : MonoBehaviour
     public void AddCores(int amount)
     {
         coreScore = coreScore + amount;
-        AudioManager.instance.PlaySFX(audioManager, CoreSound, 0.5f);
+        AudioManager.instance.PlaySFX(GetComponent<AudioSource>(), CoreSound, 1f);
         CanvasUI.instance.coresText.text = coreScore.ToString();
     }
 

@@ -16,6 +16,7 @@ public class PlayerBullet2 : MonoBehaviour
 
     public void Explosion()
     {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
         Debug.DrawRay(transform.position, Vector3.up, Color.red, explosionRadius);
         explosionRadVisual.SetActive(true);
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
@@ -27,6 +28,11 @@ public class PlayerBullet2 : MonoBehaviour
             }
         }
         Destroy(gameObject, 0.1f);
+    }
+
+    public void DelayExplosion(float time)
+    {
+        Invoke("Explosion", time);
     }
 
     private void OnTriggerEnter(Collider other)

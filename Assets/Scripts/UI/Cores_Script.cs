@@ -5,13 +5,13 @@ using TMPro;
 
 public class Cores_Script : MonoBehaviour
 {
-    [SerializeField] public AudioSource audioManager;
-    [SerializeField] public AudioClip CoresSound;
+    //[SerializeField] public AudioSource audioManager;
+    //[SerializeField] public AudioClip CoresSound;
 
-    public void Start()
-    {
-        audioManager = GetComponent<AudioSource>();
-    }
+    //public void Start()
+    //{
+    //    audioManager = GetComponent<AudioSource>();
+    //}
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.CompareTag("Player"))
