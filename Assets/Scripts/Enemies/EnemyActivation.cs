@@ -28,7 +28,7 @@ public class EnemyActivation : MonoBehaviour
 
         timer = 0;
 
-        if (Mathf.Abs(transform.position.y) - Mathf.Abs(FindObjectOfType<Player_Health>().transform.position.y) > 35f)
+        if (Mathf.Abs(transform.position.y) - Mathf.Abs(FindObjectOfType<Player_Health>().transform.position.y) > 30f)
         {
             Destroy(gameObject);
         }

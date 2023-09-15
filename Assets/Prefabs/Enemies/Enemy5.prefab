@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 2357079030098041128}
   - component: {fileID: 5517978649688884003}
   - component: {fileID: 2270881831400750509}
+  - component: {fileID: 7548324477599776179}
   m_Layer: 8
   m_Name: Enemy5
   m_TagString: Enemy
@@ -243,7 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
-  audioManager: {fileID: 2270881831400750509}
+  manager: {fileID: 0}
+  audioSource: {fileID: 0}
   DeathSound: {fileID: 8300000, guid: 6d8ab59e0e98f74458cf253e419979c8, type: 3}
   IsEnemy: 1
   invulnerabilityTime: 0
@@ -268,13 +270,9 @@ MonoBehaviour:
   moveSpeed: 2
   movePoints: []
   phase1: {fileID: 0}
-  Phase1: {fileID: 0}
   phase2: {fileID: 0}
-  Phase2: {fileID: 0}
   phase3: {fileID: 0}
-  Phase3: {fileID: 0}
   phase4: {fileID: 0}
-  Phase4: {fileID: 0}
   FinishGame: 
 --- !u!65 &5517978649688884003
 BoxCollider:
@@ -386,6 +384,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7548324477599776179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357955088167139633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d705f632b65b048837515175770ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementScript: {fileID: 2306539701729206812}
+  enemyShooting: {fileID: 0}
+  enemyHealth: {fileID: 0}
+  checkTimer: 2
 --- !u!1 &8065179853421830430
 GameObject:
   m_ObjectHideFlags: 0
