@@ -27,19 +27,21 @@ public class CheckPointScript : MonoBehaviour
         //{
         //    ResetCheckpoints();
         //}
-        if(!tryingThings)
+        
+        //savedPoint = new Vector3(PlayerPrefs.GetFloat("pointX"), PlayerPrefs.GetFloat("pointY"), PlayerPrefs.GetFloat("pointZ"));
+        gearsSaved = PlayerPrefs.GetInt("gears");
+        coresSaved = PlayerPrefs.GetInt("cores");
+
+        if (!tryingThings)
         {
             savedWave = PlayerPrefs.GetInt("wave");
+            LoadCheckpoints();
         }
         else
         {
             savedWave = SituationManager.instance.waveIndex;
         }
-        //savedPoint = new Vector3(PlayerPrefs.GetFloat("pointX"), PlayerPrefs.GetFloat("pointY"), PlayerPrefs.GetFloat("pointZ"));
-        gearsSaved = PlayerPrefs.GetInt("gears");
-        coresSaved = PlayerPrefs.GetInt("cores");
-
-        LoadCheckpoints();
+        
 
         Debug.Log("WAVE: " + savedWave);
     }
