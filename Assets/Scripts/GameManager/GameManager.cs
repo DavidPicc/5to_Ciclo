@@ -87,13 +87,16 @@ public class GameManager : MonoBehaviour
         canPause = true;
     }
 
+    float oldSFXVolume = 0;
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Debug.Log("PAUSA");
-        //AudioManager.masterVolume /= 2;
-        //AudioManager.instance.UpdateMixerVolume();
-        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
+        AudioManager.masterVolume /= 2;
+        oldSFXVolume = AudioManager.sfxVolume;
+        AudioManager.sfxVolume = 0;
+        AudioManager.instance.UpdateMixerVolume();
+        //FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
 
         Time.timeScale = 0f;
         isPaused = true;
@@ -107,9 +110,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
 
-        //AudioManager.masterVolume *= 2;
-        //AudioManager.instance.UpdateMixerVolume();
-        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
+        AudioManager.masterVolume *= 2;
+        AudioManager.sfxVolume = oldSFXVolume;
+        AudioManager.instance.UpdateMixerVolume();
+        //FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
 
         if (shopMenu.activeSelf) CloseShop();
 

@@ -11,8 +11,11 @@ public class Player_Ability_Fixed: ShopObject
     public Image barUI;
     [SerializeField] public AudioSource audioManager;
     [SerializeField] public AudioClip ShieldSound;
+    [SerializeField] public AudioClip ShieldLowSound;
 
     [Header("Activation")]
+    [SerializeField] public AudioSource audioManagerSecondary;
+    [SerializeField] public AudioClip ActivationSound;
     public KeyCode skillKey;
     bool active;
     float rechargeBar;
@@ -21,6 +24,7 @@ public class Player_Ability_Fixed: ShopObject
     [Header("Shield Charge")]
     public int maxCharge;
     int shieldCharge;
+    [SerializeField] public AudioClip AbsorbSound;
 
     [Header("Target Selection")]
     public LayerMask enemyLayer;
@@ -56,6 +60,7 @@ public class Player_Ability_Fixed: ShopObject
         //Activation
         if(!GameManager.instance.isPaused && GameManager.instance.canUseAbilities && Input.GetKeyDown(skillKey) && !active && rechargeBar >= maxRechargeBar && equipped)
         {
+            AudioManager.instance.PlaySFX(audioManagerSecondary, ActivationSound, 1.0f);
             PlayShieldSound();
             active = true;
             shieldObj.SetActive(true);
@@ -78,6 +83,11 @@ public class Player_Ability_Fixed: ShopObject
         //Timer
         if (active)
         {
+            if(rechargeBar <= maxRechargeBar/3)
+            {
+                audioManager.clip = ShieldLowSound;
+            }
+            Debug.Log(rechargeBar);
             if (rechargeBar > 0) rechargeBar -= Time.deltaTime;
         } else
         {
@@ -174,6 +184,7 @@ public class Player_Ability_Fixed: ShopObject
             {
                 Destroy(other.gameObject);
                 shieldCharge = Mathf.Min(++shieldCharge, maxCharge);
+                AudioManager.instance.PlaySFX(audioManagerSecondary, AbsorbSound, 1.0f);
             }
         }
     }

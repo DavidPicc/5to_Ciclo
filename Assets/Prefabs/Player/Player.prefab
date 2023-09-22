@@ -602,8 +602,9 @@ GameObject:
   - component: {fileID: 7483420906162743093}
   - component: {fileID: 6562598885265835713}
   - component: {fileID: 6110213095963492988}
-  - component: {fileID: 8492462015629423518}
   - component: {fileID: 745176014717834577}
+  - component: {fileID: 8492462015629423518}
+  - component: {fileID: 6495181677158592591}
   - component: {fileID: 1783097644066262210}
   - component: {fileID: 680129576726480449}
   - component: {fileID: 3223116779692069757}
@@ -669,11 +670,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 5420327710605882809}
   MovementSound: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
-  moveType: 0
-  acceleration: 80
-  speedLimit: 11
-  moveDrag: 6
-  stayDrag: 25
+  moveType: 1
+  acceleration: 150
+  speedLimit: 30
+  moveDrag: 5
+  stayDrag: 1
   moveVector: {x: 0, y: 0, z: 0}
 --- !u!82 &5420327710605882809
 AudioSource:
@@ -784,8 +785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  type: 
-  equipped: 1
+  type: StraightGun
+  equipped: 0
   bulletSpeed: 25
   shootDamage: 3
   bulletPrefab: {fileID: 1300772526029512616, guid: df77752fff479264d9559233124aa31a,
@@ -819,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  type: 
+  type: AreaGun
   equipped: 0
   bulletSpeed: 12
   shootDamage: 8
@@ -831,7 +832,7 @@ MonoBehaviour:
   fireRate: 0.5
   audioManager: {fileID: 7483420906162743093}
   ShootSound: {fileID: 8300000, guid: 153bb7050ba24fd419d992eb655c03b0, type: 3}
-  inBetweenShotsTime: 0
+  inBetweenShotsTime: 0.3
   upgradedShootDamage: 16
 --- !u!114 &6710216752889483009
 MonoBehaviour:
@@ -846,8 +847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  type: 
-  equipped: 0
+  type: Flamethrower
+  equipped: 1
   bulletSpeed: 8
   shootDamage: 0.5
   bulletPrefab: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
@@ -971,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbcd2d1eb8dc914496773667fe1f68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10.5
+  maxHealth: 3
   currentHealth: 0
   invulnerabilityTime: 1.5
   canDie: 0
@@ -998,57 +999,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  type: 
+  type: ReflectorShield
   equipped: 0
-  shieldObj: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  barUI: {fileID: 0}
-  audioManager: {fileID: 745176014717834577}
-  ShieldSound: {fileID: 0}
-  skillKey: 0
-  maxRechargeBar: 0
-  maxCharge: 0
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  searchTargetRange: 0
-  maxTargetNumber: 0
-  targets: []
-  inBetweenTime: 0
-  bulletSpeed: 0
-  upgradeShieldMaxCharge: 0
-  upgradeMaxTargetNumber: 0
---- !u!114 &8492462015629423518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088536440039082834}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb7d789f884989148902787505acbac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  type: 
-  equipped: 0
-  rechargeBar: 0
-  maxRechargeBar: 5
-  abilityBar: {fileID: 0}
-  maxBullets: 5
-  pivot: {fileID: 2652757670764029446}
-  shieldDistance: 2
-  rotationSpeed: 90
-  audioManager: {fileID: 745176014717834577}
-  ShieldSound: {fileID: 0}
-  endShield: 0
-  activate: 0
-  timer: 0
-  maxtimer: 2
+  shieldObj: {fileID: 8088536441087026411}
   bulletPrefab: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
     type: 3}
-  upgradedMaxBullets: 0
+  barUI: {fileID: 0}
+  audioManager: {fileID: 745176014717834577}
+  ShieldSound: {fileID: 8300000, guid: 59103b69634b885459360c9e715c6eb8, type: 3}
+  ShieldLowSound: {fileID: 8300000, guid: e38db43c466aa294cad280b54652108f, type: 3}
+  audioManagerSecondary: {fileID: 6495181677158592591}
+  ActivationSound: {fileID: 8300000, guid: 993e4f8009a3b504bb6dd4e2487c3e80, type: 3}
+  skillKey: 120
+  maxRechargeBar: 5
+  maxCharge: 4
+  AbsorbSound: {fileID: 8300000, guid: c2bfe51e927794343b4367d2e59c6b58, type: 3}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  searchTargetRange: 20
+  maxTargetNumber: 2
+  targets: []
+  inBetweenTime: 0.1
+  bulletSpeed: 22
+  upgradeShieldMaxCharge: 8
+  upgradeMaxTargetNumber: 4
 --- !u!82 &745176014717834577
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1060,6 +1035,133 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8492462015629423518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088536440039082834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7d789f884989148902787505acbac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  type: BulletShield
+  equipped: 1
+  rechargeBar: 0
+  maxRechargeBar: 2.5
+  abilityBar: {fileID: 0}
+  maxBullets: 8
+  pivot: {fileID: 2652757670764029446}
+  shieldDistance: 2
+  rotationSpeed: 90
+  audioManager: {fileID: 745176014717834577}
+  ShieldSound: {fileID: 8300000, guid: a8f61fce875f81a40bded52a29919b49, type: 3}
+  endShield: 0
+  activate: 0
+  timer: 0
+  maxtimer: 2.5
+  bulletPrefab: {fileID: 1300772526029512616, guid: 79ce1e6cc3fbd5449a4261d403f1d652,
+    type: 3}
+  upgradedMaxBullets: 3
+--- !u!82 &6495181677158592591
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088536440039082834}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1198,7 +1300,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1295,7 +1397,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
