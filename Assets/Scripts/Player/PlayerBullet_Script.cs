@@ -9,7 +9,7 @@ public class PlayerBullet_Script : MonoBehaviour
    
         public void Start()
     {
-        Destroy(gameObject, 7f);
+        Destroy(gameObject, 20f);
     }
 
     private void OnTriggerEnter(Collider other)
