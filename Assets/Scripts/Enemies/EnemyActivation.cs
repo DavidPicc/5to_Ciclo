@@ -23,8 +23,8 @@ public class EnemyActivation : MonoBehaviour
         if (enemyShooting != null)
             enemyShooting.enabled = false;
 
-        if (enemyHealth != null)
-            enemyHealth.enabled = false;
+       // if (enemyHealth != null)
+       //     enemyHealth.enabled = false;
 
         timer = 0;
 
@@ -55,8 +55,8 @@ public class EnemyActivation : MonoBehaviour
         if (enemyShooting != null)
             enemyShooting.enabled = true;
 
-        if (enemyHealth != null)
-            enemyHealth.enabled = true;
+        //if (enemyHealth != null)
+        //    enemyHealth.enabled = true;
 
         Destroy(this);
     }
