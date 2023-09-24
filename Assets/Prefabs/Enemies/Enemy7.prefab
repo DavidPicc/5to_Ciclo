@@ -91,8 +91,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3245461385362301839}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 3.12, y: -0.08, z: -4.42}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.12, y: -0.08, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3062597909128941241}
@@ -142,9 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   currentHealth: 0
-  audioManager: {fileID: 3200783725932327748}
+  manager: {fileID: 0}
+  audioSource: {fileID: 0}
   DeathSound: {fileID: 8300000, guid: 24e9ad83b1c5d9a4fb3c99838713c2c9, type: 3}
   IsEnemy: 1
+  CanBeDamaged: 0
   invulnerabilityTime: 0
   pointsPrefab: {fileID: 0}
   enemyValueInPoints: 0
@@ -155,7 +157,13 @@ MonoBehaviour:
   IsBoss: 0
   Form1: {fileID: 0}
   Form2: {fileID: 0}
-  halfthealt: 0
+  HitBoss: {fileID: 0}
+  DeathBoss: {fileID: 0}
+  TauntBoss: []
+  HealtPhase1: 0
+  HealtPhase2: 0
+  HealtPhase3: 0
+  HealtPhase4: 0
   moveSpeed: 2
   movePoints: []
   phase1: {fileID: 0}
