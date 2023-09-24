@@ -270,6 +270,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   DeathSound: {fileID: 8300000, guid: a8f61fce875f81a40bded52a29919b49, type: 3}
   IsEnemy: 1
+  CanBeDamaged: 0
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
@@ -337,8 +338,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8488183, y: 0.69407535, z: 3.20691}
-  m_Center: {x: 0.18307447, y: -0.0036020994, z: 0}
+  m_Size: {x: 2.9548645, y: 2.4827974, z: 3.20691}
+  m_Center: {x: 2.1917162, y: -0.10161412, z: 0}
 --- !u!114 &5026500793776788161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,7 +991,7 @@ MeshCollider:
   m_GameObject: {fileID: 4409310416285810996}
   m_Material: {fileID: 13400000, guid: d612a869bcc49a64e9906566ac7134ed, type: 2}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30

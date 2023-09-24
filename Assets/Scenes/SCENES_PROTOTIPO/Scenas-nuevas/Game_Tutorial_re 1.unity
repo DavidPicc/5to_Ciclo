@@ -8901,7 +8901,7 @@ PrefabInstance:
     - target: {fileID: 5143194027969355883, guid: 787a7c79744692047944edc7110990d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5143194027969355883, guid: 787a7c79744692047944edc7110990d5,
         type: 3}
@@ -11392,13 +11392,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391567366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 56.5404, y: 5.1400366, z: 16062.614}
+  m_LocalScale: {x: 514.00366, y: 514.00366, z: 514.00366}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 399729939}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &391567370
 MonoBehaviour:
@@ -11538,6 +11538,7 @@ RectTransform:
   - {fileID: 837328069}
   - {fileID: 665377661}
   - {fileID: 1440437011}
+  - {fileID: 391567369}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12551,7 +12552,7 @@ PrefabInstance:
     - target: {fileID: 428508068791282039, guid: 68dcaba765a049f4894aadd99698dbdb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 428508068791282039, guid: 68dcaba765a049f4894aadd99698dbdb,
         type: 3}
@@ -13054,6 +13055,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150865511}
     m_Modifications:
+    - target: {fileID: 745176014717834577, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1845851039850841490, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: range
@@ -13064,6 +13070,11 @@ PrefabInstance:
       propertyPath: abilityBar
       value: 
       objectReference: {fileID: 716831648}
+    - target: {fileID: 1864843281877058565, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2165871524759528965, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_Enabled
@@ -13138,6 +13149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420327710605882809, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5813331617710626669, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -13372,15 +13388,85 @@ PrefabInstance:
       propertyPath: checkDistance
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6495181677158592591, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6562598885265835713, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: healthFillBar
       value: 
       objectReference: {fileID: 716831648}
+    - target: {fileID: 6710216752889483009, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: equipped
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393016400729010717, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483420906162743093, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: dragFactorX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: dragFactorY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: accelerationX
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: accelerationY
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913551956967598247, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: equipped
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: levelShoot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082831, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082832, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -13390,7 +13476,7 @@ PrefabInstance:
     - target: {fileID: 8088536440039082832, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13
+      value: -34.2
       objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082833, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -13467,6 +13553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shootPoints.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832476662988902152, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9206331676554157252, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
@@ -15609,7 +15700,7 @@ RectTransform:
   m_Children:
   - {fileID: 1927073114}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17972,12 +18063,12 @@ PrefabInstance:
     - target: {fileID: 8691393238860293462, guid: f5f7eed0442c99f449ee7936a83e216b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8691393238860293462, guid: f5f7eed0442c99f449ee7936a83e216b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8691393238860293462, guid: f5f7eed0442c99f449ee7936a83e216b,
         type: 3}
@@ -26860,7 +26951,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859067562
 GameObject:
@@ -33481,7 +33572,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066232256
 GameObject:
@@ -34387,7 +34478,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1084738781
 GameObject:
@@ -60111,7 +60202,7 @@ Transform:
   - {fileID: 1802137909}
   - {fileID: 520361201}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2030915011
 GameObject:
@@ -61761,8 +61852,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.855
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.855
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.855
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 16.7
       objectReference: {fileID: 0}
     - target: {fileID: 2772031836535971931, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
@@ -61831,13 +61937,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208833675417366057, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208833675417366057, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208833675417366057, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
       propertyPath: shootTimer
-      value: 1.5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208833675417366057, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208833675417366057, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: distanceToShoot
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7301318070509212514, guid: 4776471ac90b9364b9f48aadbb29475c,
+        type: 3}
+      propertyPath: bossIn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7301318070509212514, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
       propertyPath: bossTimerIn
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9184286534516126222, guid: 4776471ac90b9364b9f48aadbb29475c,
         type: 3}
@@ -63350,7 +63481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   situations:
-  - situationPrefab: {fileID: 4520026764095519211, guid: 065d9cd384a84004fbbda82b6206251f,
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
       type: 3}
     dialogue:
     - "Dron401;R\xE1pido! Nos est\xE1n siguiendo!\n"
@@ -63375,7 +63506,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 42b498b27abe938408ed96096802d5a3,
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
       type: 3}
     dialogue:
     - Dron401;SI! SIII! Solo avanza!
@@ -63385,7 +63516,25 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 46fdb2086211bd74da1b82a61e22476e,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 065d9cd384a84004fbbda82b6206251f,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 42b498b27abe938408ed96096802d5a3,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
       type: 3}
     dialogue:
     - Robot311;Usa la tecla Z para DISPARAR!
@@ -63407,7 +63556,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: a3779801b3952c144825fd7620b0d990,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 46fdb2086211bd74da1b82a61e22476e,
       type: 3}
     dialogue: []
     isShop: 0
@@ -63416,10 +63565,38 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 0715b6eb0ceb6514aa9ed9533ddd4c46,
+  - situationPrefab: {fileID: 4520026764095519211, guid: a3779801b3952c144825fd7620b0d990,
       type: 3}
     dialogue:
-    - Dron 311; Probemos usando la tecla X para cubrirte de todos esos enemigos
+    - "Dron311;T\xFA enc\xE1rgate de atacar, nosotros te reparamos"
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0715b6eb0ceb6514aa9ed9533ddd4c46,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 62ad4fbdd0aaeb9419c776c472d840a6,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
+      type: 3}
+    dialogue:
+    - "Dron 311; Probemos usando la tecla X para cubrirte de todos esos enemigos\r"
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63438,7 +63615,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 62ad4fbdd0aaeb9419c776c472d840a6,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 4b44c3f4810dfd845943aaa7726fab22,
       type: 3}
     dialogue: []
     isShop: 0
@@ -63447,17 +63624,25 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 4b44c3f4810dfd845943aaa7726fab22,
+  - situationPrefab: {fileID: 4520026764095519211, guid: f3b67db3b301c094582c45e53c06ec92,
       type: 3}
-    dialogue:
-    - "Dron311;T\xFA enc\xE1rgate de atacar, nosotros te reparamos"
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 21b202c720b186447bf6f42657e41e1d,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 61a68f2d7ac789f48995ee3199a41456,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
       type: 3}
     dialogue:
     - Dron401;Destruye la parte central de la pared.
@@ -63467,42 +63652,85 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 0fc7539d65df40d44beaa7a1f26cb63b,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 89602d2898bbc30419d78a28a36458a8,
       type: 3}
-    dialogue:
-    - Astartea;Vaya, vaya, vaya. Si no es la basura de Elphis.
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 490937432}
-          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-          m_MethodName: VulnerableFriendsAndYou
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: f3b67db3b301c094582c45e53c06ec92,
-      type: 3}
-    dialogue:
-    - Astartea;Vaya, vaya, vaya. Si no es la basura de Elphis.
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 61a68f2d7ac789f48995ee3199a41456,
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
       type: 3}
     dialogue:
-    - Astartea;Vaya, vaya, vaya. Si no es la basura de Elphis.
+    - 'Astartea;Vaya, vaya, vaya. Si no es la basura de Elphis.
+
+'
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 490937432}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: ActivateBoss
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0fc7539d65df40d44beaa7a1f26cb63b,
+      type: 3}
+    dialogue:
+    - "Dron311;Le est\xE1n haciendo algo a nuestros escudos..."
+    - Dron 401;Se siente... raro...
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 21b202c720b186447bf6f42657e41e1d,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0a89b3c26a6d64b4ab035e511b2c1732,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
+      type: 3}
+    dialogue:
+    - "Astartea;Solo te har\xE9 un favor y terminar\xE9 con tu in\xFAtil... lamentable...
+      sin sentido... existencia...\r"
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63521,7 +63749,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  waveIndex: 0
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  waveIndex: 13
   currentWave: 0
   situationOffset: 49
   spawnPosition: {x: 0, y: 0, z: 0}
@@ -63714,7 +63969,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  waveIndex: 0
+  waveIndex: 16
   currentWave: 0
   situationOffset: 43.04
   spawnPosition: {x: 0, y: 0, z: 0}
@@ -70959,7 +71214,7 @@ PrefabInstance:
     - target: {fileID: 2484107834709247608, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.73
+      value: -42.1
       objectReference: {fileID: 0}
     - target: {fileID: 2484107834709247608, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
@@ -71029,6 +71284,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
+        type: 3}
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -71045,7 +71305,7 @@ PrefabInstance:
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
       propertyPath: talkingThings.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
@@ -71343,7 +71603,7 @@ PrefabInstance:
     - target: {fileID: 2484107834709247608, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.73
+      value: -42.1
       objectReference: {fileID: 0}
     - target: {fileID: 2484107834709247608, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
@@ -71413,6 +71673,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
+        type: 3}
       propertyPath: friendPos
       value: 1
       objectReference: {fileID: 0}
@@ -71434,7 +71699,7 @@ PrefabInstance:
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
       propertyPath: talkingThings.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8223334195048994123, guid: a8bd95fa5bab4884486219570768ffaf,
         type: 3}
