@@ -63483,11 +63483,18 @@ MonoBehaviour:
   situations:
   - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
       type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
+      type: 3}
     dialogue:
     - "Dron401;R\xE1pido! Nos est\xE1n siguiendo!\n"
-    - 'Dron311;Usa las flechas direccionales para MOVERTE.
-
-'
+    - Dron311;Usa las flechas direccionales para MOVERTE.
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63506,19 +63513,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 065d9cd384a84004fbbda82b6206251f,
       type: 3}
     dialogue:
     - Dron401;SI! SIII! Solo avanza!
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 065d9cd384a84004fbbda82b6206251f,
-      type: 3}
-    dialogue: []
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63558,7 +63556,8 @@ MonoBehaviour:
           m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 46fdb2086211bd74da1b82a61e22476e,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Dron311;T\xFA enc\xE1rgate de atacar, nosotros te reparamos"
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63567,8 +63566,7 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: a3779801b3952c144825fd7620b0d990,
       type: 3}
-    dialogue:
-    - "Dron311;T\xFA enc\xE1rgate de atacar, nosotros te reparamos"
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63617,7 +63615,8 @@ MonoBehaviour:
           m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 4b44c3f4810dfd845943aaa7726fab22,
       type: 3}
-    dialogue: []
+    dialogue:
+    - 
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63644,8 +63643,7 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: e1d571333cf217d439c1f38aa9330ba4,
       type: 3}
-    dialogue:
-    - Dron401;Destruye la parte central de la pared.
+    dialogue: []
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63654,7 +63652,8 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 89602d2898bbc30419d78a28a36458a8,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Dron401;Destruye la parte central de la pared.
     isShop: 0
     isCheckpoint: 0
     isBoss: 0
@@ -63776,7 +63775,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  waveIndex: 13
+  waveIndex: 0
   currentWave: 0
   situationOffset: 49
   spawnPosition: {x: 0, y: 0, z: 0}
