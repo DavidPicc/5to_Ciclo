@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.84776807, g: 0.48065323, b: 0.30102718, a: 1}
+  m_IndirectSpecularColor: {r: 0.84776735, g: 0.4806527, b: 0.30102658, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18747,6 +18747,11 @@ PrefabInstance:
       propertyPath: upgradeShieldMaxCharge
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6195372102864317386, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.285
+      objectReference: {fileID: 0}
     - target: {fileID: 6562598885265835713, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: canDie
@@ -18792,6 +18797,31 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1044194978}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: dragFactorX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: dragFactorY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: accelerationX
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631057846047541020, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: accelerationY
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: moveDrag
@@ -18800,6 +18830,11 @@ PrefabInstance:
     - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
         type: 3}
       propertyPath: moveType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8088536440039082830, guid: e9aa5d11abe99f24382d1683cf9d502a,
@@ -25270,7 +25305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c3d04942dffe94f9d9d3fe104b8609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 10
 --- !u!4 &1150865511
 Transform:
   m_ObjectHideFlags: 0
@@ -49248,7 +49283,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   situations:
-  - situationPrefab: {fileID: 4520026764095519211, guid: 55c5fa84eb9c6f7458831ca57c9641be,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 06fb45da7dbbda74b87ff081d266943a,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 77a8617c57af6794ba46ca5a9d9c4c37,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: ee1191631789086479ce8444f9180b05,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: cae1f203e2361b2428851a65b75624b9,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: f897b6a461e040b488f79e86fab0dc4f,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 800c386c47b0b7948bb329c34bb8999f,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: e586af0ff80e47c43aa14dec030f54ef,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: dfd2452ffa002984d95f3847004d75ab,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 1a624da4b585f254d963497c8553b135,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49269,7 +49376,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 58471865ad3357c41b4c7bcf3357b9a1,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 9ecbb408ad55a5f4bb70c27333e291bf,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49278,7 +49385,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: f8d9b627d61bd394e83b6aea8ad17c6e,
+  - situationPrefab: {fileID: 4520026764095519211, guid: d238c33bf9de3614088dc593d833b267,
       type: 3}
     dialogue: []
     isShop: 1
@@ -49286,20 +49393,8 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 292270b2b59343942b768ae926e96538,
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: b723e9a4ec34b7e489da04d396a35278,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49308,7 +49403,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 38c17a0f9ee02b2418fe348baac41f44,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 3f661ae326bc77c4eb369c9d9fe44548,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49317,7 +49412,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 6f77f7142f08fbc469c4082395330d09,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 29fda56fa1396644dafc799d963aea3d,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49326,7 +49421,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: cdda03863138cd346a74b3a11b749e30,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 193e9f2ebb4a890409cbb4c05a68c396,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49335,7 +49430,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 794f5d767e573574e92750f616a45411,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 068fe25ca214aa24fab36e06924586b6,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49344,7 +49439,16 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 6948b08f7b8d58d418d499c5c6e06b41,
+  - situationPrefab: {fileID: 4520026764095519211, guid: b0c9237b256e4d549bd491e386700cd0,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: c31b671ce0cdc964597f544f53ab3d5b,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49365,7 +49469,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: c2a6974db665ba7458c9a3fe477e6d37,
+  - situationPrefab: {fileID: 4520026764095519211, guid: fd9b69ce955d19d409b69bc53371deef,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49374,7 +49478,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: ff0885981bdc8844fb8869cb7732c5cc,
+  - situationPrefab: {fileID: 4520026764095519211, guid: a29877252e7642346a691e4640c84e52,
       type: 3}
     dialogue: []
     isShop: 1
@@ -49383,7 +49487,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 0f579bf10d16b9d40939b3f9a2e7e52f,
+  - situationPrefab: {fileID: 4520026764095519211, guid: d083441e9d2cefb4da401090aa693e38,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49392,7 +49496,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: f06ea1da66d312b4dbdfae5d0de345bf,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 702fb381d6356034abcb2837b6cad837,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49401,7 +49505,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: d51d2227da0865d409a6ba64df673bab,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 80061c38b19de0b4faf517d69b30f405,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49410,7 +49514,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 3548a87875f3e1d4e8905e2a80cdbb94,
+  - situationPrefab: {fileID: 4520026764095519211, guid: b1c1ee916afb01044a92e4050eabe8b2,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49419,7 +49523,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 6c6fffa72277be249963d837b7f61bc1,
+  - situationPrefab: {fileID: 4520026764095519211, guid: b595f7d15c792b44ab2768ee64662552,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49428,7 +49532,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 2730e138827b6454bbce1e53e0d5d9c9,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 21c758f9a783cc045a7bdfdba0214867,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49437,7 +49541,16 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 2687b52112a0c38498d6cf705d225213,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 5366a8832891fd54b80778a97531b32e,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isCheckpoint: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: fbcb3e03cf08fb747b69f7eec5ce330a,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49458,7 +49571,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 165b6aeacfe350e43949daabe2b1e0d9,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0dace4f9822a9b642bf886b76dfb0dd6,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49467,7 +49580,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: bfa3d404866f6184385235013d6a34d5,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 1effe92eee6746a468ab21d127cf99e5,
       type: 3}
     dialogue: []
     isShop: 1
@@ -49476,7 +49589,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 6e3ab10b34c312c4aa599bbfa8e99096,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 56647051d63bf7b409d0687cc2490f58,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49485,7 +49598,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: a629b21a27853f14faba4308988e0b0c,
+  - situationPrefab: {fileID: 4520026764095519211, guid: ccd150d35784122489f1515b82b57711,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49494,7 +49607,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: b213d8162628074468680c0586048c98,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0a8b4a94ea8f5cc48bfc9c5ba52f0262,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49503,7 +49616,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: ed9be1f59ac96f3489a75a8ac003a78d,
+  - situationPrefab: {fileID: 4520026764095519211, guid: bc0a0b2f32fe6814d8389dd92a6ef187,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49512,7 +49625,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 1e173aa343ccb0e43be390e63b915025,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 8b4efb89f74422346900980130d0b379,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49521,7 +49634,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: fbdcc5204e741e84e945c9275aaa7257,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 01e2f612162a43446a5f36e6f8b254f9,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49530,7 +49643,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: a3f9f283da5773a4e85059a757dc1150,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 9578b3ccfb96c1841867bd8cee897d89,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49539,7 +49652,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: e48db0d6f72561e45a9ab697d2f89514,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0ebfd4ba77fdb2f46b344500dfe2c0a9,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49560,7 +49673,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 57c6e776b580ee34e81aadec2a463105,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 1b9307a95e405ea4a8eb531b1a139ff6,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49569,7 +49682,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 4686c49b636e21c4f966e12f846dd241,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 047c3612f66da5a4686a1ffc62182588,
       type: 3}
     dialogue: []
     isShop: 1
@@ -49578,7 +49691,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 3f402663a29aba24abfe3e0421bba6e8,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 126a6ce3d5c38c94382c9877b94a6cf8,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49587,7 +49700,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: f454467e767532a489fb6ef222db0c14,
+  - situationPrefab: {fileID: 4520026764095519211, guid: cce60cc9b8846914f9d98acde11e0743,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49596,7 +49709,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 1da7713efbb56754fbcc0283d6cbedf6,
+  - situationPrefab: {fileID: 4520026764095519211, guid: da19e5aa6c136d14ebb948915fcef4fa,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49605,7 +49718,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: c3b90267462cfe44c8f5d038305a0198,
+  - situationPrefab: {fileID: 4520026764095519211, guid: b0ea02b9187f9b34dab2a3fc8ccec2ab,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49614,7 +49727,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 303b99cd7cb115d43a5f08c2ea05c816,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 58c978fb5b060da48a46b41e4fe954ba,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49623,7 +49736,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: e05f1fa8a639abc4bb7a33e55fe99bd8,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 3a739fe25e02d444b8352135c20bd704,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49632,16 +49745,7 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 34e212ad04d2e5f4e941d919360ec2bc,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: e68612aaaf75d37499b16a73b0c13813,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 17df1fd45abf41d408ad2f49d21bec17,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49662,7 +49766,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 398d9f5e158783a4395edcdc51597c6c,
+  - situationPrefab: {fileID: 4520026764095519211, guid: 3dada56f449ea50478f4b7c1fa064ce3,
       type: 3}
     dialogue: []
     isShop: 0
@@ -49671,252 +49775,9 @@ MonoBehaviour:
     methodEvent:
       m_PersistentCalls:
         m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 9073200a8ffecf54d9f4ed73d2ac4c3e,
-      type: 3}
-    dialogue: []
-    isShop: 1
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: c6f2b16daa492cc43bed775bd10c9181,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 028e0b439138f534da0faa70aa540ecf,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: a6f73a204c30c404e88294cc672351f4,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: c42b7aedc09953b43879957b857e9898,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 5893e13fa2180444e8894981c005ab4b,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 69502288a74a6314b8cb2d28897f2bbc,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 3c95c02370c4a554c99373ba85757925,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 44b0a40a64f70d14a9e922d9160b4980,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2025263474}
-          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
-          m_MethodName: UpdateCheckpoints
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 367a71f3059129644897e877c4761e49,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: c1f9429e0d98cd84b844d2a8d2bbc483,
-      type: 3}
-    dialogue: []
-    isShop: 1
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 92c9366e3db29ab4286d1aba697cf0bb,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 91d2075fb87553c4face21db795456a2,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 3328bdaccf25af944aa6a78fbef0cba0,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: e010c59e178776c4ba92b69cb235db03,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 7d0de2cac44488440a2bfe3498b1595f,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 7d12554a78ed04946bc95d408e3b8a11,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 016733902dfe7c844a20df6a1f64d8f1,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 5be33ba80133e5b4580f21275a8a2121,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 0991e59e0a2ddf14faaa65c5f920dd7c,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 08482bcec6f2ccf4dae8d93a043bcd76,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: d192a393ec73212478fa5856e52f33bf,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1809538334}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: FinishedLevel
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: d192a393ec73212478fa5856e52f33bf,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isCheckpoint: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1809538334}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: FinishedLevel
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  waveIndex: 78
+  waveIndex: 0
   currentWave: 0
-  situationOffset: 43.04
+  situationOffset: 79
   spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &2122793117
 PrefabInstance:
