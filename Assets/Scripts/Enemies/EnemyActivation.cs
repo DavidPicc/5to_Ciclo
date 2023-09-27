@@ -28,7 +28,7 @@ public class EnemyActivation : MonoBehaviour
 
         timer = 0;
 
-        if (Mathf.Abs(transform.position.y) - Mathf.Abs(FindObjectOfType<Player_Health>().transform.position.y) > 30f)
+        if (Mathf.Abs(transform.position.y) - Mathf.Abs(FindObjectOfType<Player_Health>().transform.position.y) > 50f)
         {
             Destroy(gameObject);
         }
@@ -39,7 +39,7 @@ public class EnemyActivation : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            if(Vector3.Distance(player.transform.position, transform.position) <= 25f)
+            if(Vector3.Distance(player.transform.position, transform.position) <= 50f)
             {
                 ActivateEnemy();
             }

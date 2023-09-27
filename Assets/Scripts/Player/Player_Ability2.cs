@@ -86,8 +86,9 @@ public class Player_Ability2 : ShopObject
 
     void SpawnBulletShield()
     {
-        float angleStep = 360 / (maxBullets - 0);
-        float angle = -180 / 2;
+        float angleStep = 360f / maxBullets; 
+        float angle = -180f / 2f; 
+
         for (int i = 0; i < maxBullets; i++)
         {
             float x = shieldDistance * Mathf.Cos(Mathf.Deg2Rad * angle);
@@ -97,6 +98,7 @@ public class Player_Ability2 : ShopObject
             GameObject bullet = Instantiate(bulletPrefab, spawnPosition, spawnRotation);
             bullet.transform.parent = pivot;
             bullets.Add(bullet);
+
             angle += angleStep;
         }
     }
