@@ -36,5 +36,12 @@ public class PlayerBullet_Script2 : MonoBehaviour
             }
 
         }
+        /*if (other.CompareTag("destructible"))
+        {
+            if (other.GetComponent<objet_destrur>() != null)
+            {
+                    other.GetComponent<objet_destrur>().TakeDamage(damage);
+            }
+        }*/
     }
 }

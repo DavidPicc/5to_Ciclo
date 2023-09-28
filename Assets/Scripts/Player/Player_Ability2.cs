@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class Player_Ability2 : ShopObject
 {
+    [Header("Shield Charge")]
     [SerializeField] float rechargeBar;
     [SerializeField] float maxRechargeBar;
     [SerializeField] Image abilityBar;
     [SerializeField] int maxBullets = 3;
+
+    [Header("References")]
+    public GameObject Shield;
     [SerializeField] Transform pivot;
     [SerializeField] float shieldDistance;
     [SerializeField] float rotationSpeed = 90f;
@@ -39,7 +43,8 @@ public class Player_Ability2 : ShopObject
         {
             SpawnBulletShield();
             PlayShieldSound();
-            activate = true;                       
+            activate = true;
+            Shield.SetActive(true);
         }
 
         if(activate)
@@ -52,6 +57,7 @@ public class Player_Ability2 : ShopObject
                 PushBullets();
                 StopShieldSound();
                 activate = false;
+                Shield.SetActive(false);
             }
         }
         else
