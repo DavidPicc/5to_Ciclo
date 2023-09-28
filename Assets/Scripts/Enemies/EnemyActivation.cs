@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyActivation : MonoBehaviour
 {
     GameObject player;
+    Transform _camera;
 
     public EnemyMovement movementScript;
     public EnemyShooting enemyShooting;
@@ -16,6 +17,7 @@ public class EnemyActivation : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        _camera = GameObject.FindObjectOfType<StageMovement>().transform;
 
         if (movementScript != null)
             movementScript.enabled = false;
@@ -28,7 +30,7 @@ public class EnemyActivation : MonoBehaviour
 
         timer = 0;
 
-        if (Mathf.Abs(transform.position.y) - Mathf.Abs(FindObjectOfType<Player_Health>().transform.position.y) > 50f)
+        if (Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y) > 30f)
         {
             Destroy(gameObject);
         }
@@ -36,14 +38,18 @@ public class EnemyActivation : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0)
+        //timer -= Time.deltaTime;
+        //if (timer <= 0)
+        //{
+        //    if(Vector3.Distance(player.transform.position, transform.position) <= 50f)
+        //    {
+        //        ActivateEnemy();
+        //    }
+        //    timer = checkTimer;
+        //}
+        if (Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) <= 50f)
         {
-            if(Vector3.Distance(player.transform.position, transform.position) <= 50f)
-            {
-                ActivateEnemy();
-            }
-            timer = checkTimer;
+            ActivateEnemy();
         }
     }
 

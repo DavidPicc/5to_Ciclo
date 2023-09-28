@@ -8,39 +8,59 @@ public class PlayerCrushed : MonoBehaviour
     bool done = false;
     public LayerMask crushedLayers;
 
+    public float timer = 0;
+
+    Player_Health pHealth;
+
+    private void Start()
+    {
+        pHealth = GameObject.FindObjectOfType<Player_Health>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(((1 << other.gameObject.layer) & crushedLayers) != 0)
         {
             objectInCollider = other.gameObject;
-            if(!done)
+            timer = 0;
+            //if (!done)
+            //{
+            //    if (!done)
+            //    {
+            //        pHealth.crushed += 1;
+            //        done = true;
+            //    }
+
+            //    if (pHealth.crushed >= 2)
+            //    {
+            //        pHealth.Death();
+            //    }
+            //}
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (((1 << other.gameObject.layer) & crushedLayers) != 0)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 0.2f)
             {
                 if (!done)
                 {
-                    FindObjectOfType<Player_Health>().crushed += 1;
-                    done = true;
-                }
+                    if (!done)
+                    {
+                        pHealth.crushed += 1;
+                        done = true;
+                    }
 
-                if (FindObjectOfType<Player_Health>().crushed >= 2)
-                {
-                    FindObjectOfType<Player_Health>().Death();
+                    if (pHealth.crushed >= 2)
+                    {
+                        pHealth.Death();
+                    }
                 }
             }
         }
-        //if(other.CompareTag("Obstacle") || (((1 << other.gameObject.layer) & crushedLayers) != 0))
-        //{
-        //    objectInCollider = other.gameObject;
-        //    if(!done)
-        //    {
-        //        FindObjectOfType<Player_Health>().crushed += 1;
-        //        done = true;
-        //    }
-
-        //    if(FindObjectOfType<Player_Health>().crushed >= 2)
-        //    {
-        //        FindObjectOfType<Player_Health>().Death();
-        //    }
-        //}
     }
 
     private void OnTriggerExit(Collider other)
@@ -58,9 +78,10 @@ public class PlayerCrushed : MonoBehaviour
         if (((1 << other.gameObject.layer) & crushedLayers) != 0)
         {
             objectInCollider = null;
+            timer = 0;
             if (done)
             {
-                FindObjectOfType<Player_Health>().crushed -= 1;
+                pHealth.crushed -= 1;
                 done = false;
             }
         }

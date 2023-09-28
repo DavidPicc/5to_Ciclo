@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class NextSituation : MonoBehaviour
 {
+    SituationManager situationManager;
+    private void Start()
+    {
+        situationManager = GameObject.FindObjectOfType<SituationManager>();
+    }
     void InvokeSituation()
     {
-        SituationManager.instance.SpawnSituation();
+
+        //SituationManager.instance.SpawnSituation();
         //SituationManager_RE.instance.SpawnSituation();
+        if (situationManager.gameObject.activeSelf)
+        {
+            situationManager.SpawnSituation();
+        }
         Destroy(gameObject);
     }
 
