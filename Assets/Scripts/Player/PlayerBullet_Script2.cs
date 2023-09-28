@@ -11,7 +11,7 @@ public class PlayerBullet_Script2 : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
@@ -19,10 +19,8 @@ public class PlayerBullet_Script2 : MonoBehaviour
             {
                 if (other.GetComponent<Enemy_Health>().canBeDamaged && !other.GetComponent<Enemy_Health>().invulnerable)
                 {
-
-                    //other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
                     other.GetComponent<Enemy_Health>().TakeDamage(damage);
-                }             
+                }
             }
         }
         if (other.CompareTag("EnemyBullet"))
@@ -34,14 +32,13 @@ public class PlayerBullet_Script2 : MonoBehaviour
                     other.GetComponent<Enemy8_Bullet>().TakeDamage(1);
                 }
             }
-
         }
-        /*if (other.CompareTag("destructible"))
+        if (other.CompareTag("destructible"))
         {
             if (other.GetComponent<objet_destrur>() != null)
             {
-                    other.GetComponent<objet_destrur>().TakeDamage(damage);
+                other.GetComponent<objet_destrur>().TakeDamage(damage);
             }
-        }*/
+        }
     }
 }
