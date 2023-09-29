@@ -10,7 +10,7 @@ public class objet_destrur : MonoBehaviour
     [SerializeField] public float currentHealth;
     [SerializeField] public AudioSource audioManager;
     [SerializeField] public AudioClip DeathSound;
-    public bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
+    public bool canBeDamaged => transform.position.x - _camera.position.x <= 40f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
 

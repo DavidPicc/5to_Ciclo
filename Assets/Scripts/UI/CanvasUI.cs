@@ -9,9 +9,9 @@ public class CanvasUI : MonoBehaviour
     public static CanvasUI instance;
     [SerializeField] public TextMeshProUGUI gearsText;
     [SerializeField] public TextMeshProUGUI coresText;
-    [SerializeField] public TextMeshProUGUI playerLevelText;
-    [SerializeField] public TextMeshProUGUI waveText;
-    [SerializeField] public Image playerAbilityBar;
+    //[SerializeField] public TextMeshProUGUI playerLevelText;
+    //[SerializeField] public TextMeshProUGUI waveText;
+    //[SerializeField] public Image playerAbilityBar;
     [SerializeField] public GameObject dialogueObject;
     [SerializeField] public Image dialoguePortrait;
     [SerializeField] public TextMeshProUGUI dialogueName;
