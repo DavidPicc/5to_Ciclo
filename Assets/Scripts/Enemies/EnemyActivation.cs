@@ -30,10 +30,10 @@ public class EnemyActivation : MonoBehaviour
 
         timer = 0;
 
-        if (Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y) > 30f && Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) > 55f)
-        {
-            Destroy(gameObject);
-        }
+        //if (Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y) > 30f && Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) > 55f)
+        //{
+        // Destroy(gameObject);
+        //}
     }
 
     void Update()
