@@ -9,7 +9,7 @@ public class NextSituation : MonoBehaviour
     private void Start()
     {
         situationManager = GameObject.FindObjectOfType<SituationManager>();
-        situationManagerRE = GameObject.FindObjectOfType<SituationManager_RE>();
+        //situationManagerRE = GameObject.FindObjectOfType<SituationManager_RE>();
     }
     void InvokeSituation()
     {
@@ -18,7 +18,7 @@ public class NextSituation : MonoBehaviour
         //SituationManager_RE.instance.SpawnSituation();
         if (situationManager.gameObject.activeSelf)
         {
-            situationManagerRE.ActivateSituation();
+            //situationManagerRE.ActivateSituation();
             situationManager.SpawnSituation();
         }
         Destroy(gameObject);
