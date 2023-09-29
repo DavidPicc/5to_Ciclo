@@ -5,7 +5,7 @@ using UnityEngine;
 public class SituationManager_RE : MonoBehaviour
 {
     public static SituationManager_RE instance;
-    public SituationScript[] situations;
+    public GameObject[] situations;
     Transform _camera;
     public int waveIndex = 0;
     public int currentWave = 0;
@@ -19,42 +19,19 @@ public class SituationManager_RE : MonoBehaviour
     }
     void Start()
     {
-        _camera = FindObjectOfType<StageMovement>().transform;
-        spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
-        waveIndex += 1;
-        currentWave = waveIndex - 1;
-        SpawnSituation();
+        //_camera = FindObjectOfType<StageMovement>().transform;
+        //spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
+        //waveIndex += 1;
+        //currentWave = waveIndex - 1;
+        ActivateSituation();
     }
-    public void SpawnSituation()
+    public void ActivateSituation()
     {
         if(waveIndex < situations.Length - 1)
         {
-            var sit = Instantiate(situations[waveIndex].situationPrefab, spawnPosition, Quaternion.identity);
-            spawnPosition += new Vector3(situationOffset, 0, 0);
+            situations[waveIndex].SetActive(true);
             waveIndex += 1;
         }
-        if(currentWave - 1 >= 0)
-        {
-            if (situations[currentWave - 1].dialogue.Length > 0)
-            {
-                DialogueScript.instance.SetDialogue(situations[currentWave - 1].dialogue, GetComponent<AudioSource>());
-            }
-            if (situations[currentWave - 1].methodEvent != null)
-            {
-                situations[currentWave - 1].methodEvent.Invoke();
-            }
-        }
         currentWave += 1;
-
-        // Para que los enemigos que se quedan quietos en la pantalla se muevan una vez toque su turno.
-        Enemy2_Movement[] enemies = GameObject.FindObjectsOfType<Enemy2_Movement>();
-        foreach(Enemy2_Movement enemy2 in enemies)
-        {
-            if(enemy2.locked)
-            {
-                enemy2.locked = false;
-                enemy2.timeToGo = true;
-            }
-        }
     }
 }
