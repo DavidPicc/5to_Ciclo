@@ -19,16 +19,16 @@ public class SituationManager : MonoBehaviour
     }
     void Start()
     {
-        //_camera = FindObjectOfType<StageMovement>().transform;
+        _camera = FindObjectOfType<StageMovement>().transform;
         // Si la SAVEDWAVED es cualquiera menos 0, te manda directo a la acción. Si es CERO, signfica que recién estás empezando el nivel.
-        //if(CheckPointScript.savedWave != 0)
-        //{
-        //    spawnPosition = _camera.position + new Vector3(firstOffset, 0, 0);
-        //}
-        //else
-        //{
-        //    spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
-        //}
+        if (CheckPointScript.savedWave != 0)
+        {
+            spawnPosition = _camera.position + new Vector3(firstOffset, 0, 0);
+        }
+        else
+        {
+            spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
+        }
         SpawnSituation();
         currentWave = waveIndex - 1;
 
@@ -38,11 +38,11 @@ public class SituationManager : MonoBehaviour
     {
         if (waveIndex <= situations.Length - 1)
         {
-            //var sit = Instantiate(situations[waveIndex].situationPrefab, spawnPosition, Quaternion.identity);
-            //spawnPosition += new Vector3(situationOffset, 0, 0);
+            var sit = Instantiate(situations[waveIndex].situationPrefab, spawnPosition, Quaternion.identity);
+            spawnPosition += new Vector3(situationOffset, 0, 0);
 
             if (situations[waveIndex].isShop) GameManager.instance.OpenShop();
-            
+
             waveIndex += 1;
         }
         if (currentWave - 1 >= 0)
