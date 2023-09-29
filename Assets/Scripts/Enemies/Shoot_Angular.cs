@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot_Angular : EnemyShooting
 {
     Transform _camera;
+    Transform _moveX;
 
     [Header("General")]
     public GameObject bulletPrefab;
@@ -27,8 +28,9 @@ public class Shoot_Angular : EnemyShooting
     public GameObject antiSphere;
     void Start()
     {
-        _camera = FindObjectOfType<StageMovement>().transform;
+        _camera = GameObject.FindGameObjectWithTag("Activator").transform;
         antiSphere.SetActive(false);
+        _moveX = FindObjectOfType<StageMovement>().transform;
     }
 
     void Update()
@@ -89,7 +91,7 @@ public class Shoot_Angular : EnemyShooting
         for (int i = 0; i < bulletNumber; i++)
         {
             Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
-            var bullet = Instantiate(bulletPrefab, pointShoot.position, pointShoot.rotation * offsetVector, _camera);
+            var bullet = Instantiate(bulletPrefab, pointShoot.position, pointShoot.rotation * offsetVector, _moveX);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, bulletDisappear);
             angle += bulletAng / (bulletNumber);

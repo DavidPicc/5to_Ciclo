@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot_Flame : EnemyShooting
 {
     Transform _camera;
+    Transform _moveX;
 
     [Header("General")]
     public GameObject bulletPrefab;
@@ -29,8 +30,9 @@ public class Shoot_Flame : EnemyShooting
     public GameObject antiSphere;
     void Start()
     {
-        _camera = FindObjectOfType<StageMovement>().transform;
+        _camera = GameObject.FindGameObjectWithTag("Activator").transform;
         antiSphere.SetActive(false);
+        _moveX = FindObjectOfType<StageMovement>().transform;
     }
 
     void Update()

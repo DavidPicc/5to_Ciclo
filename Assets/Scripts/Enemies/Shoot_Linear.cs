@@ -6,6 +6,7 @@ using UnityEngine;
 public class Shoot_Linear : EnemyShooting
 {
     Transform _camera;
+    Transform _moveX;
 
     [Header("General")]
     public GameObject bulletPrefab;
@@ -28,8 +29,9 @@ public class Shoot_Linear : EnemyShooting
     public GameObject antiSphere;
     void Start()
     {
-        _camera = FindObjectOfType<StageMovement>().transform;
+        _camera = GameObject.FindGameObjectWithTag("Activator").transform;
         antiSphere.SetActive(false);
+        _moveX = FindObjectOfType<StageMovement>().transform;
     }
 
     void Update()
@@ -90,7 +92,7 @@ public class Shoot_Linear : EnemyShooting
         for (int i = 0; i < bulletNumber; i++)
         {
             Vector3 offsetVector = new Vector3(0, offset, 0);
-            var bullet = Instantiate(bulletPrefab, pointShoot.position + offsetVector, Quaternion.identity, _camera);
+            var bullet = Instantiate(bulletPrefab, pointShoot.position + offsetVector, Quaternion.identity, _moveX);
             bullet.GetComponent<Rigidbody>().AddForce(-bullet.transform.right * bulletSpeed, ForceMode.Impulse);
             Destroy(bullet, bulletDisappear);
             offset += (bulletOffset / 10) / (bulletNumber - 1);
