@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 5517978649688884003}
   - component: {fileID: 2270881831400750509}
   - component: {fileID: 7548324477599776179}
+  - component: {fileID: 5799057363814013765}
   m_Layer: 8
   m_Name: Enemy5
   m_TagString: Enemy
@@ -212,7 +213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6357955088167139633}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e039861eae83dc4b8766e532e2c8ef1, type: 3}
   m_Name: 
@@ -402,6 +403,35 @@ MonoBehaviour:
   enemyShooting: {fileID: 0}
   enemyHealth: {fileID: 0}
   checkTimer: 2
+--- !u!114 &5799057363814013765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357955088167139633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc8741bbf93f6d4a8d63377ac3674e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 656531904101248445, guid: 7024ec01dce56bd4693002ffd30e0c1e,
+    type: 3}
+  damage: 1
+  bulletSpeed: 8
+  fireRate: 0.05
+  bulletNumber: 5
+  bulletDisappear: 1
+  bulletAng: 35
+  anticipation: 1
+  maxAngle: 0
+  shootPoints:
+  - {fileID: 4924584803395569830}
+  pointShoot: {fileID: 4924584803395569830}
+  audioManager: {fileID: 2270881831400750509}
+  ShootSound: {fileID: 8300000, guid: f2dfd5ed07da3f44d8292eb5aba56b67, type: 3}
+  distanceToShoot: 35
+  antiSphere: {fileID: 1730544752869789959}
 --- !u!1 &8065179853421830430
 GameObject:
   m_ObjectHideFlags: 0
