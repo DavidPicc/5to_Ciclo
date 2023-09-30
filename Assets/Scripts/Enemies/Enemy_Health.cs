@@ -15,7 +15,7 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] public AudioClip DeathSound;
 
     public bool IsEnemy = true;
-    public bool canBeDamaged => transform.position.x - _camera.position.x <= 24f && timer >= invulnerabilityTime;
+    public bool canBeDamaged => Mathf.Abs(transform.position.x - _camera.position.x) <= Camera.main.pixelWidth && timer >= invulnerabilityTime;
     public bool CanBeDamaged;
     [SerializeField] float invulnerabilityTime;
     float timer;

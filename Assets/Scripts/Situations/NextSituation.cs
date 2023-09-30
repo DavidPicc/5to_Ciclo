@@ -26,7 +26,7 @@ public class NextSituation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Activator"))
+        if(other.CompareTag("Player"))
         {
             Invoke("InvokeSituation", 0.2f);
         }

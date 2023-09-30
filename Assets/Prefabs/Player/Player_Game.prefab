@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 2135120168574868122}
   - component: {fileID: 2135120168574868123}
   - component: {fileID: 2135120168574868100}
+  - component: {fileID: 440806634926081957}
   - component: {fileID: 290429247538288342}
   - component: {fileID: 2799521698584913011}
   - component: {fileID: 2135120168574868101}
@@ -224,7 +225,7 @@ MonoBehaviour:
   moveDrag: 5
   stayDrag: 1
   moveVector: {x: 0, y: 0, z: 0}
---- !u!114 &290429247538288342
+--- !u!114 &440806634926081957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,6 +233,26 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135120168574868120}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f2bf2678aa5804fafb07ece4ca3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 2799521698584913011}
+  MovementSound: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
+  accelerationX: 90
+  maxSpeed: 60
+  speedY: 25
+  dragFactorX: 8
+  dragFactorY: 8
+  input: {x: 0, y: 0}
+--- !u!114 &290429247538288342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135120168574868120}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772389bdf64c08c408522f2cf7fce33b, type: 3}
   m_Name: 
