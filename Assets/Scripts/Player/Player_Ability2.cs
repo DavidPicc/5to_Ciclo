@@ -44,7 +44,7 @@ public class Player_Ability2 : ShopObject
             SpawnBulletShield();
             PlayShieldSound();
             activate = true;
-            Shield.SetActive(true);
+            if (Shield != null) Shield.SetActive(true);
         }
 
         if(activate)
@@ -57,7 +57,7 @@ public class Player_Ability2 : ShopObject
                 PushBullets();
                 StopShieldSound();
                 activate = false;
-                Shield.SetActive(false);
+                if (Shield != null) Shield.SetActive(false);
             }
         }
         else
