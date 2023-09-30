@@ -122,6 +122,14 @@ public class objet_destrur : MonoBehaviour
                     TakeDamage(4000);
                 }
             }
+
+            if (other.CompareTag("Shield02"))
+            {
+                if (canBeDamaged)
+                {
+                    TakeDamage(4000);
+                }
+            }
         }
     }
 }
