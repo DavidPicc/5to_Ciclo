@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.84776807, g: 0.48065323, b: 0.30102718, a: 1}
+  m_IndirectSpecularColor: {r: 0.8477686, g: 0.4806536, b: 0.3010276, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -50595,7 +50595,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2117927902}
   - component: {fileID: 2117927905}
-  - component: {fileID: 2117927906}
   - component: {fileID: 2117927907}
   m_Layer: 0
   m_Name: EnemyWaves
@@ -50636,7 +50635,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50645,16 +50643,38 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 1
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 338171354}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: OpenShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2025263474}
+          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
+          m_MethodName: UpdateCheckpoints
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: ee1191631789086479ce8444f9180b05,
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50663,7 +50683,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50672,7 +50691,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50681,7 +50699,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50690,7 +50707,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50699,7 +50715,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50708,7 +50723,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50729,7 +50743,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50738,16 +50751,26 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 1
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 338171354}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: OpenShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: b723e9a4ec34b7e489da04d396a35278,
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50756,7 +50779,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50765,7 +50787,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50774,7 +50795,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50783,7 +50803,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50792,7 +50811,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50801,7 +50819,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50822,7 +50839,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50831,16 +50847,26 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 1
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 338171354}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: OpenShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: d083441e9d2cefb4da401090aa693e38,
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50849,7 +50875,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50858,7 +50883,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50867,7 +50891,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50876,7 +50899,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50885,7 +50907,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50894,7 +50915,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50903,7 +50923,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50924,7 +50943,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50933,16 +50951,26 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 1
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 338171354}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: OpenShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 56647051d63bf7b409d0687cc2490f58,
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50951,7 +50979,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50960,7 +50987,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50969,7 +50995,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50978,7 +51003,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50987,7 +51011,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -50996,7 +51019,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51005,7 +51027,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51026,7 +51047,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51035,16 +51055,26 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 1
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 338171354}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: OpenShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 126a6ce3d5c38c94382c9877b94a6cf8,
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51053,7 +51083,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51062,7 +51091,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51071,7 +51099,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51080,7 +51107,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51089,7 +51115,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51098,7 +51123,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51119,7 +51143,6 @@ MonoBehaviour:
       type: 3}
     dialogue: []
     isShop: 0
-    isCheckpoint: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -51136,23 +51159,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  waveIndex: 0
-  currentWave: 0
-  situationOffset: 79
-  spawnPosition: {x: 0, y: 0, z: 0}
---- !u!114 &2117927906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117927901}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 099122e574c727e47aad659c33a639ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  situations:
+  - situationPrefab: {fileID: 4520026764095519211, guid: 06fb45da7dbbda74b87ff081d266943a,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  situationsObject:
   - {fileID: 458206419}
   - {fileID: 1758082162}
   - {fileID: 203320380}
@@ -51204,7 +51219,7 @@ MonoBehaviour:
   - {fileID: 450070303}
   waveIndex: 0
   currentWave: 0
-  situationOffset: 27
+  situationOffset: 79
   spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!82 &2117927907
 AudioSource:
