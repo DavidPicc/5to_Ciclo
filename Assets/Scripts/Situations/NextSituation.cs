@@ -6,6 +6,7 @@ public class NextSituation : MonoBehaviour
 {
     SituationManager situationManager;
     SituationManager_RE situationManagerRE;
+    bool used = false;
     private void Start()
     {
         situationManager = GameObject.FindObjectOfType<SituationManager>();
@@ -13,12 +14,8 @@ public class NextSituation : MonoBehaviour
     }
     void InvokeSituation()
     {
-
-        //SituationManager.instance.SpawnSituation();
-        //SituationManager_RE.instance.SpawnSituation();
         if (situationManager.gameObject.activeSelf)
         {
-            //situationManagerRE.ActivateSituation();
             situationManager.SpawnSituation();
         }
         Destroy(gameObject);
@@ -26,9 +23,11 @@ public class NextSituation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && !used)
         {
+            used = true;
             Invoke("InvokeSituation", 0.2f);
+            //InvokeSituation();
         }
     }
 }
