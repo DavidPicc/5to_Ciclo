@@ -181,8 +181,9 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player_Movement>().enabled = false;
         player.GetComponent<Player_Shoot>().enabled = false;
         player.GetComponent<Collider>().enabled = false;
-        FindObjectOfType<CheckPointScript>().ResetCheckpoints();
         nextLevelTransition.SetActive(true);
         Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
+        if (FindObjectOfType<CheckPointScript>() != null)
+            FindObjectOfType<CheckPointScript>().ResetCheckpoints();
     }
 }
