@@ -6,6 +6,7 @@ public class SituationManager : MonoBehaviour
 {
     public static SituationManager instance;
     public SituationScript[] situations;
+    public GameObject[] situationsObject;
     Transform _camera;
     public int waveIndex = 0;
     public int currentWave = 0;
@@ -21,41 +22,52 @@ public class SituationManager : MonoBehaviour
     {
         _camera = FindObjectOfType<StageMovement>().transform;
         // Si la SAVEDWAVED es cualquiera menos 0, te manda directo a la acción. Si es CERO, signfica que recién estás empezando el nivel.
-        if (CheckPointScript.savedWave != 0)
+        if(CheckPointScript.savedWave != 0)
         {
-            spawnPosition = _camera.position + new Vector3(firstOffset, 0, 0);
-        }
-        else
-        {
-            spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
+            waveIndex = CheckPointScript.savedWave;
+            if(waveIndex -2 >= 0)
+                SpawnSituationPast(waveIndex - 2);
+            if (waveIndex - 1 >= 0)
+                SpawnSituationPast(waveIndex - 1);
+            foreach(GameObject tag in GameObject.FindGameObjectsWithTag("NextSituation"))
+            {
+                Destroy(tag);
+            }
         }
         SpawnSituation();
-        currentWave = waveIndex - 1;
-
+        //currentWave = waveIndex - 1;
+        Debug.Log("Current wave: " + (waveIndex-1));
     }
 
+    public void ActivateSituation(int wave)
+    {
+        situationsObject[wave].SetActive(true);
+    }
+
+    void SpawnSituationPast(int index)
+    {
+        ActivateSituation(index);
+        //Destroy(GameObject.FindWithTag("NextSituation"));
+    }
     public void SpawnSituation()
     {
         if (waveIndex <= situations.Length - 1)
         {
-            var sit = Instantiate(situations[waveIndex].situationPrefab, spawnPosition, Quaternion.identity);
-            spawnPosition += new Vector3(situationOffset, 0, 0);
-
-            if (situations[waveIndex].isShop) GameManager.instance.OpenShop();
-
-            waveIndex += 1;
+            ActivateSituation(waveIndex);
         }
-        if (currentWave - 1 >= 0)
+        if(waveIndex- 1 >= 0)
         {
-            if (situations[currentWave - 1].dialogue.Length > 0)
+            if (situations[waveIndex - 1].dialogue.Length > 0)
             {
-                DialogueScript.instance.SetDialogue(situations[currentWave - 1].dialogue, GetComponent<AudioSource>());
+                DialogueScript.instance.SetDialogue(situations[waveIndex - 1].dialogue, GetComponent<AudioSource>());
             }
-            if (situations[currentWave - 1].methodEvent != null)
+            if (situations[waveIndex - 1].methodEvent != null)
             {
-                situations[currentWave - 1].methodEvent.Invoke();
+                situations[waveIndex - 1].methodEvent.Invoke();
             }
         }
+       
+        waveIndex += 1;
         currentWave += 1;
 
         // Para que los enemigos que se quedan quietos en la pantalla se muevan una vez toque su turno.

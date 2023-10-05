@@ -6,12 +6,12 @@ using UnityEngine;
 public class CheckPointScript : MonoBehaviour
 {
     public static CheckPointScript instance;
-    Transform stage;
     public static Vector3 savedPoint;
     public static int savedWave;
     public static int gearsSaved;
     public static int coresSaved;
-
+    public static float savedPointX, savedPointY;
+    public static float savedPlayerX, savedPlayerY;
     public bool tryingThings = false;
 
     private void Awake()
@@ -34,33 +34,26 @@ public class CheckPointScript : MonoBehaviour
 
         if (!tryingThings)
         {
-            savedWave = PlayerPrefs.GetInt("wave");
-            LoadCheckpoints();
+            //savedWave = PlayerPrefs.GetInt("wave");
         }
         else
         {
             savedWave = SituationManager.instance.waveIndex;
         }
-        
+        LoadCheckpoints();
 
         Debug.Log("WAVE: " + savedWave);
     }
 
     public void LoadCheckpoints()
     {
-        SituationManager.instance.waveIndex = savedWave;
+        //SituationManager.instance.waveIndex = savedWave;
+        FindObjectOfType<StageMovement>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPointX"), PlayerPrefs.GetFloat("savedPointY"), 0);
+        FindObjectOfType<Player_Health>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPlayerX"), PlayerPrefs.GetFloat("savedPlayerY"), 0);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            UpdateCheckpoints();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            //ResetCheckpoints();
-        }
         if(Input.GetKeyDown(KeyCode.B))
         {
             //Debug.Log("CHECKPOINT: " + savedPoint.x + ", " + savedPoint.y + ", " + savedPoint.z);
@@ -76,16 +69,26 @@ public class CheckPointScript : MonoBehaviour
     }
     public void UpdateCheckpoints()
     {
-        savedWave = SituationManager.instance.currentWave;
+        //savedWave = SituationManager.instance.currentWave;
+        savedWave = SituationManager.instance.waveIndex;
         gearsSaved = GameScore.instance.gearScore;
         coresSaved = GameScore.instance.coreScore;
+        savedPointX = FindObjectOfType<StageMovement>().transform.position.x;
+        savedPointY = FindObjectOfType<StageMovement>().transform.position.y;
+        savedPlayerX = FindObjectOfType<Player_Health>().transform.position.x;
+        savedPlayerY = FindObjectOfType<Player_Health>().transform.position.y;
 
         PlayerPrefs.SetInt("wave", savedWave);
         PlayerPrefs.SetInt("gears", gearsSaved);
         PlayerPrefs.SetInt("cores", coresSaved);
+        PlayerPrefs.SetFloat("savedPointX", savedPointX);
+        PlayerPrefs.SetFloat("savedPointY", savedPointY);
+        PlayerPrefs.SetFloat("savedPlayerX", savedPlayerX);
+        PlayerPrefs.SetFloat("savedPlayerY", savedPlayerY);
 
         FindObjectOfType<Player_Health>().GetFullHealth();
 
         Debug.Log("WAVE SAVED: " + savedWave);
+        Debug.Log("Player position: " + FindObjectOfType<Player_Health>().transform.position);
     }
 }

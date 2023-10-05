@@ -21,14 +21,14 @@ public class SectionNavigator : MonoBehaviour
 
     void Update()
     {
+        if (!control) return;
+
         ButtonNavigation();
         if(Input.GetKeyDown(KeyCode.Z)) SelectButton();
     }
 
     void ButtonNavigation()
     {
-        if (!control) return;
-
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
             SetHoverButton(hoverButton.GetButtonAtRight());

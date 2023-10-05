@@ -34,6 +34,12 @@ public class EnemyActivation : MonoBehaviour
         //{
         // Destroy(gameObject);
         //}
+
+
+        if (Vector3.Distance(transform.position, player.transform.position) <= 6f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

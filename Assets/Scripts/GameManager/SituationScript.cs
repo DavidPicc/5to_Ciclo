@@ -11,7 +11,6 @@ public class SituationScript
     [SerializeField, TextArea(3, 8)]
     public string[] dialogue;
     public bool isShop;
-    public bool isCheckpoint;
     public bool isBoss;
     public UnityEvent methodEvent;
 }

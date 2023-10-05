@@ -23,7 +23,7 @@ public class SituationManager_RE : MonoBehaviour
         //spawnPosition = _camera.position + new Vector3(situationOffset, 0, 0);
         //waveIndex += 1;
         //currentWave = waveIndex - 1;
-        ActivateSituation();
+        //ActivateSituation();
     }
     public void ActivateSituation()
     {

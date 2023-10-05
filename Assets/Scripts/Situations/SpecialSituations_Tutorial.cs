@@ -13,7 +13,6 @@ public class SpecialSituations_Tutorial : MonoBehaviour
         }
         Player_Health player_Health = GameObject.FindObjectOfType<Player_Health>();
         player_Health.canDie = true;
-        Debug.Log("VULENRABLES PUTAS");
     }
 
     public void TutorialBoss()
