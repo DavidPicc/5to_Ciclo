@@ -11,6 +11,7 @@ public class CheckPointScript : MonoBehaviour
     public static int gearsSaved;
     public static int coresSaved;
     public static float savedPointX, savedPointY;
+    public static float savedCameraX, savedCameraY;
     public static float savedPlayerX, savedPlayerY;
     public bool tryingThings = false;
 
@@ -49,6 +50,7 @@ public class CheckPointScript : MonoBehaviour
     {
         //SituationManager.instance.waveIndex = savedWave;
         FindObjectOfType<StageMovement>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPointX"), PlayerPrefs.GetFloat("savedPointY"), 0);
+        GameObject.FindGameObjectWithTag("MoveVertical").transform.position = new Vector3(PlayerPrefs.GetFloat("savedCameraX"), PlayerPrefs.GetFloat("savedCameraY"), 0);
         FindObjectOfType<Player_Health>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPlayerX"), PlayerPrefs.GetFloat("savedPlayerY"), 0);
     }
 
@@ -75,6 +77,8 @@ public class CheckPointScript : MonoBehaviour
         coresSaved = GameScore.instance.coreScore;
         savedPointX = FindObjectOfType<StageMovement>().transform.position.x;
         savedPointY = FindObjectOfType<StageMovement>().transform.position.y;
+        savedCameraX = GameObject.FindGameObjectWithTag("MoveVertical").transform.position.x;
+        savedCameraY = GameObject.FindGameObjectWithTag("MoveVertical").transform.position.y;
         savedPlayerX = FindObjectOfType<Player_Health>().transform.position.x;
         savedPlayerY = FindObjectOfType<Player_Health>().transform.position.y;
 
@@ -83,6 +87,8 @@ public class CheckPointScript : MonoBehaviour
         PlayerPrefs.SetInt("cores", coresSaved);
         PlayerPrefs.SetFloat("savedPointX", savedPointX);
         PlayerPrefs.SetFloat("savedPointY", savedPointY);
+        PlayerPrefs.SetFloat("savedCameraX", savedCameraX);
+        PlayerPrefs.SetFloat("savedCameraY", savedCameraY);
         PlayerPrefs.SetFloat("savedPlayerX", savedPlayerX);
         PlayerPrefs.SetFloat("savedPlayerY", savedPlayerY);
 
