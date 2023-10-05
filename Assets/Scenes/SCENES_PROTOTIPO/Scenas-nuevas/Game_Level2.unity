@@ -14822,8 +14822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1474b2d0743e2f448f02cef062ea94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gearScore: 0
-  coreScore: 0
+  gearScore: 10000
+  coreScore: 10000
   GearSound: {fileID: 8300000, guid: 97410160b3d3307489317711afb56bb3, type: 3}
   CoreSound: {fileID: 8300000, guid: 92a1fafccb05e4944a338a84221f1e91, type: 3}
   playerLevel: 0
@@ -50638,14 +50638,6 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 77a8617c57af6794ba46ca5a9d9c4c37,
-      type: 3}
-    dialogue: []
-    isShop: 1
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 338171354}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
@@ -50671,6 +50663,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - situationPrefab: {fileID: 4520026764095519211, guid: 77a8617c57af6794ba46ca5a9d9c4c37,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: ee1191631789086479ce8444f9180b05,
       type: 3}
     dialogue: []
@@ -50882,23 +50882,11 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: a29877252e7642346a691e4640c84e52,
       type: 3}
     dialogue: []
-    isShop: 1
+    isShop: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 338171354}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: OpenShop
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: d083441e9d2cefb4da401090aa693e38,
       type: 3}
     dialogue: []
@@ -51138,23 +51126,11 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 047c3612f66da5a4686a1ffc62182588,
       type: 3}
     dialogue: []
-    isShop: 1
+    isShop: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 338171354}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: OpenShop
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 126a6ce3d5c38c94382c9877b94a6cf8,
       type: 3}
     dialogue: []
