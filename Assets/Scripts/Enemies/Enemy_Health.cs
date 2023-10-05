@@ -159,7 +159,7 @@ public class Enemy_Health : MonoBehaviour
         }
         //audioManager.PlayOneShot(DeathSound);
         Destroy(gameObject, 0.2f);
-        if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 28f)
+        if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 40f)
             SpawnPoints();
         var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
         death.AddComponent<AudioSource>();

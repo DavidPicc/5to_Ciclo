@@ -48,7 +48,7 @@ public class Point_Script : MonoBehaviour
                 //rb.position = Vector3.MoveTowards(transform.position, player.position, 60 * Time.smoothDeltaTime);
                 var dir = (player.position - transform.position).normalized;
 
-                rb.velocity = dir * 18f;
+                rb.velocity = dir * 40f;
                 break;
         }
 
