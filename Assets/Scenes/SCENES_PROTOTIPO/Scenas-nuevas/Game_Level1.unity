@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23974,7 +23974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669901833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.3, y: -0.000000077899, z: 0}
+  m_LocalPosition: {x: 18.77, y: -0.000000077899, z: 0}
   m_LocalScale: {x: 1, y: 28.607971, z: 8.575}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74454,23 +74454,11 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: d839decd77ffbb54794ecdf0a3375376,
       type: 3}
     dialogue: []
-    isShop: 1
+    isShop: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 318316906}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: OpenShop
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: ec11d98e3031d3648aa4a16685ce0d76,
       type: 3}
     dialogue: []
@@ -74526,31 +74514,11 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 560001719}
-          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
-          m_MethodName: UpdateCheckpoints
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 75037c4bdde55e74db3fa4a35dff4d32,
       type: 3}
     dialogue: []
     isShop: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 4e2153931e9663a40a628d4641bdae1d,
-      type: 3}
-    dialogue: []
-    isShop: 1
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -74567,6 +74535,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 560001719}
+          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
+          m_MethodName: UpdateCheckpoints
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - situationPrefab: {fileID: 4520026764095519211, guid: 4e2153931e9663a40a628d4641bdae1d,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 69f27ed949cbb4c499580358b0c09230,
       type: 3}
     dialogue: []
@@ -74622,6 +74610,14 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 93ab69f74e0754c4f8a8c6c45e60d16f,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 560001719}
           m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
@@ -74635,22 +74631,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 93ab69f74e0754c4f8a8c6c45e60d16f,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 9eb1e42ebc70fda42a03521d877d2e29,
-      type: 3}
-    dialogue: []
-    isShop: 1
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls:
         - m_Target: {fileID: 318316906}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: OpenShop
@@ -74663,6 +74643,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - situationPrefab: {fileID: 4520026764095519211, guid: 9eb1e42ebc70fda42a03521d877d2e29,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: a93f2df8ca05eee4caf4d1c2c64fa502,
       type: 3}
     dialogue: []
@@ -74734,11 +74722,35 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 560001719}
+          m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
+          m_MethodName: UpdateCheckpoints
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 318316906}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: OpenShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 4520026764095519211, guid: 33914d43dc114444fa1a25c979c97c96,
       type: 3}
     dialogue: []
-    isShop: 1
+    isShop: 0
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
@@ -74806,6 +74818,14 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
+        m_Calls: []
+  - situationPrefab: {fileID: 4520026764095519211, guid: 6380f74df43da0e489827966afccdba3,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 560001719}
           m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
@@ -74819,22 +74839,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - situationPrefab: {fileID: 4520026764095519211, guid: 6380f74df43da0e489827966afccdba3,
-      type: 3}
-    dialogue: []
-    isShop: 0
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - situationPrefab: {fileID: 4520026764095519211, guid: 0998074dca1d4534e8e9dacfed42491f,
-      type: 3}
-    dialogue: []
-    isShop: 1
-    isBoss: 0
-    methodEvent:
-      m_PersistentCalls:
-        m_Calls:
         - m_Target: {fileID: 318316906}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: OpenShop
@@ -74847,6 +74851,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - situationPrefab: {fileID: 4520026764095519211, guid: 0998074dca1d4534e8e9dacfed42491f,
+      type: 3}
+    dialogue: []
+    isShop: 0
+    isBoss: 0
+    methodEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 2b5bdff728566154ab162242ddab0182,
       type: 3}
     dialogue: []
@@ -74922,18 +74934,6 @@ MonoBehaviour:
         - m_Target: {fileID: 560001719}
           m_TargetAssemblyTypeName: CheckPointScript, Assembly-CSharp
           m_MethodName: UpdateCheckpoints
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: FinishedLevel
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
