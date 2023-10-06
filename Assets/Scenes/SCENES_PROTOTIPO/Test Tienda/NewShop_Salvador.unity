@@ -448,11 +448,8 @@ MonoBehaviour:
   selected: 1
   locked: 0
   upgrading: 0
-  nextUpgrade: {fileID: 0}
-  previousUpgrade: {fileID: 0}
   gearsCost: 100
   coresCost: 1
-  order: 0
   branchNavigator: {fileID: 2066845141}
 --- !u!114 &432420852
 MonoBehaviour:
@@ -527,11 +524,8 @@ MonoBehaviour:
   selected: 0
   locked: 1
   upgrading: 0
-  nextUpgrade: {fileID: 547003540}
-  previousUpgrade: {fileID: 0}
   gearsCost: 100
   coresCost: 1
-  order: 0
   branchNavigator: {fileID: 2066845141}
 --- !u!114 &463360349
 MonoBehaviour:
@@ -691,11 +685,8 @@ MonoBehaviour:
   selected: 0
   locked: 1
   upgrading: 0
-  nextUpgrade: {fileID: 1714455722}
-  previousUpgrade: {fileID: 463360348}
   gearsCost: 100
   coresCost: 1
-  order: 1
   branchNavigator: {fileID: 2066845141}
 --- !u!114 &547003541
 MonoBehaviour:
@@ -1134,11 +1125,8 @@ MonoBehaviour:
   selected: 0
   locked: 1
   upgrading: 0
-  nextUpgrade: {fileID: 0}
-  previousUpgrade: {fileID: 1026591403}
   gearsCost: 100
   coresCost: 1
-  order: 1
   branchNavigator: {fileID: 2066845141}
 --- !u!114 &850469326
 MonoBehaviour:
@@ -1328,11 +1316,8 @@ MonoBehaviour:
   selected: 0
   locked: 1
   upgrading: 0
-  nextUpgrade: {fileID: 850469325}
-  previousUpgrade: {fileID: 0}
   gearsCost: 100
   coresCost: 1
-  order: 0
   branchNavigator: {fileID: 2066845141}
 --- !u!114 &1026591404
 MonoBehaviour:
@@ -1348,7 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeControl: {fileID: 1026591403}
   upgradeTransform: {fileID: 1026591407}
-  upgradeImage: {fileID: 850469326}
+  upgradeImage: {fileID: 1026591405}
   scaleMultiplier: 1.5
   alphaUnselected: 0.6
 --- !u!114 &1026591405
@@ -2085,11 +2070,8 @@ MonoBehaviour:
   selected: 0
   locked: 1
   upgrading: 0
-  nextUpgrade: {fileID: 0}
-  previousUpgrade: {fileID: 547003540}
   gearsCost: 100
   coresCost: 1
-  order: 2
   branchNavigator: {fileID: 2066845141}
 --- !u!114 &1714455723
 MonoBehaviour:
@@ -2358,9 +2340,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: 1
-  branchNumber: 2
   branchSelected: 0
-  startUpgrades:
-  - {fileID: 432420851}
-  - {fileID: 463360348}
-  - {fileID: 1026591403}
+  upgradeSelected: 0
+  upgradeSelectedController: {fileID: 0}
+  branches:
+  - branchName: Rama1
+    upgrades:
+    - {fileID: 463360348}
+    - {fileID: 547003540}
+    - {fileID: 1714455722}
+  - branchName: Rama2
+    upgrades:
+    - {fileID: 1026591403}
+    - {fileID: 850469325}
+  centralUpgrade: {fileID: 432420851}

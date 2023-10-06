@@ -7,10 +7,28 @@ public class BranchNavigator : MonoBehaviour
     [SerializeField] bool control;
     public bool Control { get { return control; } set { control = value; } }
 
-    public int branchNumber;
+    [Header("Navigation Debug")]
     [SerializeField] int branchSelected;
+    [SerializeField] int upgradeSelected;
+    [SerializeField] UpgradeController upgradeSelectedController;
 
-    public UpgradeController[] startUpgrades;   
+    [System.Serializable]
+    public struct Branch 
+    {
+        public string branchName;
+        public UpgradeController[] upgrades;
+    }
+
+    [Header("Branches")]
+    [SerializeField] public Branch[] branches;
+
+    public UpgradeController centralUpgrade;
+
+    private void Start()
+    {
+        upgradeSelectedController = centralUpgrade;
+        centralUpgrade.Selected = true;
+    }
 
     void Update()
     {
@@ -21,84 +39,83 @@ public class BranchNavigator : MonoBehaviour
 
     void BranchNavigation()
     {
-        if(branchSelected == 0)
+        if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if(upgradeSelectedController == centralUpgrade)
             {
-                int order = GetActiveUpgrade().GetOrder();
-                DeactivateBranch();
-                branchSelected = (int) Mathf.Floor(branchNumber/2);
-                ReactiveBranch(order);
+                if (!centralUpgrade.Locked)
+                {
+                    branchSelected = Mathf.FloorToInt(branches.Length / 2);
+                    upgradeSelected = 0;
+                    UpdateSelectedController();
+                }
+            } else if(upgradeSelected < branches[branchSelected].upgrades.Length - 1 && !upgradeSelectedController.Locked)
+            {
+                upgradeSelected++;
+                UpdateSelectedController();
             }
-        } else if(branchSelected < branchNumber)
+
+
+        } else if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if(Input.GetKeyDown(KeyCode.RightArrow) && branchSelected < branchNumber){
-                int order = GetActiveUpgrade().GetOrder();
-                DeactivateBranch();
+            if(upgradeSelected == 0)
+            {
+                ReturnToCentralNode();
+            }
+            else
+            {
+                upgradeSelected--;
+                UpdateSelectedController();
+            }
+        } else if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (upgradeSelectedController != centralUpgrade && branchSelected < branches.Length - 1)
+            {
                 branchSelected++;
-                ReactiveBranch(order);
-            } else if(Input.GetKeyDown(KeyCode.LeftArrow) && branchSelected > 1)
+                upgradeSelected = GetHighestUpgradeUnlokced(upgradeSelected);
+                UpdateSelectedController();
+            }
+        } else if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (upgradeSelectedController != centralUpgrade && branchSelected > 0)
             {
-                int order = GetActiveUpgrade().GetOrder();
-                DeactivateBranch();
                 branchSelected--;
-                ReactiveBranch(order);
+                upgradeSelected = GetHighestUpgradeUnlokced(upgradeSelected);
+                UpdateSelectedController();
             }
         }
     }
 
-    UpgradeController GetActiveUpgrade()
+    void ReturnToCentralNode()
     {
-        var _temp = startUpgrades[branchSelected];
+        upgradeSelectedController.Selected = false;
+        upgradeSelectedController.PreventiveUpgradeCancel();
 
-        do
+        centralUpgrade.Selected = true;
+
+        upgradeSelectedController = centralUpgrade;
+    }
+
+    void UpdateSelectedController()
+    {
+        upgradeSelectedController.Selected = false;
+        upgradeSelectedController.PreventiveUpgradeCancel();
+
+        branches[branchSelected].upgrades[upgradeSelected].Selected = true;
+
+        upgradeSelectedController = branches[branchSelected].upgrades[upgradeSelected];
+    }
+
+    int GetHighestUpgradeUnlokced(int max)
+    {
+        for(int i = 0; i <= max && i < branches[branchSelected].upgrades.Length; i++)
         {
-            if (_temp.Selected)
+            if (branches[branchSelected].upgrades[i].Locked || i == max || i == branches[branchSelected].upgrades.Length - 1)
             {
-                return _temp;
+                return i;
             }
-            else _temp = _temp.GetNextUpgrade();
-        } while (_temp != null);
-
-        return default(UpgradeController);
-    }
-
-    void DeactivateBranch()
-    {
-        var _temp = startUpgrades[branchSelected];
-
-        while (_temp != null)
-        {
-            _temp.Selected = false;
-
-            _temp = _temp.GetNextUpgrade();
-        }
-    }
-
-    void ReactiveBranch(int order)
-    {
-        var _temp = startUpgrades[branchSelected];
-
-        for(int i = 0; i < order; i++)
-        {
-            if(_temp != null)
-            {
-                if (_temp.Locked) break;
-            }
-
-            _temp = _temp.GetNextUpgrade();
         }
 
-        _temp.Selected = true;
-    }
-
-    public void ReturnToCentralUpgrade()
-    {
-        if (!control || branchSelected == 0) return;
-
-        int order = GetActiveUpgrade().GetOrder();
-        DeactivateBranch();
-        branchSelected = 0;
-        ReactiveBranch(order);
+        return 0;
     }
 }

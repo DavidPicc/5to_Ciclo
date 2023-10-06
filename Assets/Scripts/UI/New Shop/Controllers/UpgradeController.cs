@@ -12,15 +12,10 @@ public class UpgradeController : MonoBehaviour
 
     [SerializeField] bool upgrading;
 
-    [SerializeField] UpgradeController nextUpgrade;
-    [SerializeField] UpgradeController previousUpgrade;
-
     public int gearsCost;
     public int coresCost;
 
     IEnumerator purchaseRoutine;
-
-    [SerializeField] int order;
 
     [SerializeField] BranchNavigator branchNavigator;
 
@@ -48,8 +43,6 @@ public class UpgradeController : MonoBehaviour
 
             upgrading = false;
         }
-
-        if(selected) NavigateUpgrades();
     }
 
     IEnumerator StartPurchase()
@@ -59,75 +52,20 @@ public class UpgradeController : MonoBehaviour
             yield return new WaitForSecondsRealtime(1.5f);
 
             locked = false;
+            GameScoreNewShop.instance.Spend(gearsCost, coresCost);
         }
     }
 
-    public void NavigateUpgrades()
+    public void PreventiveUpgradeCancel()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (upgrading)
         {
-            if(nextUpgrade != null && !locked)
+            if (purchaseRoutine != null)
             {
-                selected = false;
-                nextUpgrade.Selected = true;
-
-                if (upgrading)
-                {
-                    if (purchaseRoutine != null)
-                    {
-                        StopCoroutine(purchaseRoutine);
-                    }
-
-                    upgrading = false;
-                }
-            }
-        } else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (previousUpgrade != null)
-            {
-                selected = false;
-                previousUpgrade.Selected = true;
-
-                if (upgrading)
-                {
-                    if (purchaseRoutine != null)
-                    {
-                        StopCoroutine(purchaseRoutine);
-                    }
-
-                    upgrading = false;
-                }
+                StopCoroutine(purchaseRoutine);
             }
 
-            if (previousUpgrade == null && order == 0)
-            {
-                if (upgrading)
-                {
-                    if (purchaseRoutine != null)
-                    {
-                        StopCoroutine(purchaseRoutine);
-                    }
-
-                    upgrading = false;
-                }
-
-                branchNavigator.ReturnToCentralUpgrade();
-            }
+            upgrading = false;
         }
-    }
-
-    public UpgradeController GetNextUpgrade()
-    {
-        return nextUpgrade;
-    }
-
-    public UpgradeController GetPreviousUpgrade()
-    {
-        return previousUpgrade;
-    }
-
-    public int GetOrder()
-    {
-        return order;
     }
 }
