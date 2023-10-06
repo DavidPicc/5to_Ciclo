@@ -15,6 +15,7 @@ public class SectionButtonControl : MonoBehaviour
     [SerializeField] SectionButtonControl buttonAtLeft;
     [SerializeField] SectionButtonControl buttonUpwards;
     [SerializeField] SectionButtonControl buttonDownwards;
+    public int branch;
 
     public SectionButtonControl GetButtonAtRight()
     {

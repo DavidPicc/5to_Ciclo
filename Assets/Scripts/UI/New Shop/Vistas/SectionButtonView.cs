@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SectionButtonView : MonoBehaviour
 {
     [SerializeField] SectionButtonControl buttonControl;
+    [SerializeField] SectionNavigator navigator;
 
     [Header("View")]
     public RectTransform buttonTransform;
@@ -28,7 +29,7 @@ public class SectionButtonView : MonoBehaviour
     
     void UpdateView()
     {
-        if(buttonControl.Hover)
+        if(buttonControl.Hover && navigator.Control)
         {
             buttonTransform.localScale = multipliedScale;
         }

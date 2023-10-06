@@ -7,6 +7,8 @@ public class BranchNavigator : MonoBehaviour
     [SerializeField] bool control;
     public bool Control { get { return control; } set { control = value; } }
 
+    [SerializeField] SectionNavigator sectionNavigator;
+
     [Header("Navigation Debug")]
     [SerializeField] int branchSelected;
     [SerializeField] int upgradeSelected;
@@ -83,6 +85,13 @@ public class BranchNavigator : MonoBehaviour
                 upgradeSelected = GetHighestUpgradeUnlokced(upgradeSelected);
                 UpdateSelectedController();
             }
+            else
+            {
+                ReturnToCentralNode();
+                control = false;
+                upgradeSelectedController.Selected = false;
+                sectionNavigator.Control = true;
+            }
         }
     }
 
@@ -117,5 +126,10 @@ public class BranchNavigator : MonoBehaviour
         }
 
         return 0;
+    }
+
+    public void GiveControl()
+    {
+        upgradeSelectedController.Selected = true;
     }
 }

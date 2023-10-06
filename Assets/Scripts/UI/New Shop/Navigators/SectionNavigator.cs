@@ -13,6 +13,9 @@ public class SectionNavigator : MonoBehaviour
     [Header("Start Button")]
     public SectionButtonControl startButton;
 
+    [Header("Branches")]
+    public BranchesNavigator branchesNavigator;
+
     void Start()
     {
         SetHoverButton(startButton);
@@ -31,7 +34,10 @@ public class SectionNavigator : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SetHoverButton(hoverButton.GetButtonAtRight());
+            if (hoverButton.GetButtonAtRight() == null)
+            {
+                GiveControlToBranches();
+            } else SetHoverButton(hoverButton.GetButtonAtRight());
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -71,6 +77,27 @@ public class SectionNavigator : MonoBehaviour
 
         hoverButton.Selected = true;
         selectedButton = hoverButton;
+
+        branchesNavigator.ActivateBranch(hoverButton.branch);
+    }
+
+    void GiveControlToBranches()
+    {
+        var branches = branchesNavigator.GetBranches();
+
+        for(int i = 0; i < branches.Length; i++)
+        {
+            if (branches[i].activeSelf)
+            {
+                BranchNavigator branchNav = branches[i].GetComponent<BranchNavigator>();
+                if(branchNav != null)
+                {
+                    control = false;
+                    branchNav.Control = true;
+                    branchNav.GiveControl();
+                }
+            }
+        }
     }
 
     public SectionButtonControl GetHoverButton() 
