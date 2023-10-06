@@ -202,8 +202,8 @@ MonoBehaviour:
   _camera: {fileID: 0}
   player: {fileID: 0}
   rb: {fileID: 0}
-  speed: 3.75
-  xLock: 30
+  speed: 0
+  xLock: 0
   locked: 0
   timeToGo: 0
 --- !u!114 &6358926905762887219
@@ -418,19 +418,19 @@ MonoBehaviour:
   bulletPrefab: {fileID: 656531904101248445, guid: 7024ec01dce56bd4693002ffd30e0c1e,
     type: 3}
   damage: 1
-  bulletSpeed: 8
+  bulletSpeed: 30
   fireRate: 0.05
-  bulletNumber: 3
-  bulletDisappear: 1
-  bulletAng: 35
+  bulletNumber: 5
+  bulletDisappear: 0.5
+  bulletAng: 70
   anticipation: 1
-  maxAngle: 60
+  maxAngle: 75
   shootPoints:
   - {fileID: 4924584803395569830}
   pointShoot: {fileID: 4924584803395569830}
   audioManager: {fileID: 2270881831400750509}
   ShootSound: {fileID: 8300000, guid: f2dfd5ed07da3f44d8292eb5aba56b67, type: 3}
-  distanceToShoot: 35
+  distanceToShoot: 70
   antiSphere: {fileID: 1730544752869789959}
 --- !u!1 &8065179853421830430
 GameObject:
