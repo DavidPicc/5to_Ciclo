@@ -5,20 +5,22 @@ using TMPro;
 
 public class Cores_Script : MonoBehaviour
 {
-    //[SerializeField] public AudioSource audioManager;
-    //[SerializeField] public AudioClip CoresSound;
+    [SerializeField] public AudioSource audioManager;
+    [SerializeField] public AudioClip CoresSound;
+    bool done = false;
 
-    //public void Start()
-    //{
-    //    audioManager = GetComponent<AudioSource>();
-    //}
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        audioManager.PlayOneShot(CoresSound);
-    //        GameScore.instance.AddCores(1);
-    //        Destroy(gameObject);
-    //    }
-    //}
+    public void Start()
+    {
+        audioManager = GetComponent<AudioSource>();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !done)
+        {
+            audioManager.PlayOneShot(CoresSound);
+            GameScore.instance.AddCores(1);
+            Destroy(gameObject);
+            done = true;
+        }
+    }
 }

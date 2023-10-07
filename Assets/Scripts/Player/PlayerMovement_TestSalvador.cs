@@ -75,18 +75,17 @@ public class PlayerMovement_TestSalvador : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Cores"))
+    //    {
+    //        if (other.GetComponent<AudioSource>() != null && other.GetComponent<Cores_Script>() != null)
+    //        {
+    //            //other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
+    //        }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Cores"))
-        {
-            if (other.GetComponent<AudioSource>() != null && other.GetComponent<Cores_Script>() != null)
-            {
-                //other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
-            }
-
-            GameScore.instance.AddCores(1);
-            Destroy(other.gameObject);
-        }
-    }
+    //        GameScore.instance.AddCores(1);
+    //        Destroy(other.gameObject);
+    //    }
+    //}
 }
