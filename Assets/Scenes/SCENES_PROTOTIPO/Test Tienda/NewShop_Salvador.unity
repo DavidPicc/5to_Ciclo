@@ -157,10 +157,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1905900473}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 1330996640}
+  buttonUpwards: {fileID: 1053315388}
+  buttonDownwards: {fileID: 1140254189}
+  nextUpgrades:
+  - {fileID: 1140254189}
 --- !u!114 &20002611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +236,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1905900474}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -270,10 +277,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1905900473}
+  buttonAtRight: {fileID: 1330996640}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 1808788961}
+  buttonDownwards: {fileID: 1714265446}
+  nextUpgrades: []
 --- !u!114 &36731171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,11 +395,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 357427085}
+  buttonAtRight: {fileID: 1686354815}
+  buttonAtLeft: {fileID: 512246246}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 1821282086}
+  nextUpgrades:
+  - {fileID: 512246246}
+  - {fileID: 1686354815}
 --- !u!114 &115806904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 61}
+  m_AnchoredPosition: {x: 0, y: 147.4}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &186704655
@@ -496,10 +517,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 1607885074}
+  buttonAtLeft: {fileID: 654220880}
+  buttonUpwards: {fileID: 440123691}
+  buttonDownwards: {fileID: 717891845}
+  nextUpgrades:
+  - {fileID: 440123691}
 --- !u!114 &186704657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 61}
+  m_AnchoredPosition: {x: 45.5, y: 68.8}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &294209723
@@ -609,10 +637,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 1813237173}
+  buttonAtLeft: {fileID: 1607707275}
+  buttonUpwards: {fileID: 698041388}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades: []
 --- !u!114 &294209725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: -47}
+  m_AnchoredPosition: {x: -8.900024, y: -124.5}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &303063881
@@ -702,7 +736,7 @@ GameObject:
   - component: {fileID: 303063882}
   - component: {fileID: 303063883}
   m_Layer: 5
-  m_Name: MejoraCentral
+  m_Name: Lanzallamas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,12 +754,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 1
+  selected: 0
   locked: 0
+  purchased: 1
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 1644704182}
+  buttonAtLeft: {fileID: 430213351}
+  buttonUpwards: {fileID: 717891845}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades:
+  - {fileID: 717891845}
+  - {fileID: 1644704182}
+  - {fileID: 186704656}
 --- !u!114 &303063883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,7 +841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.006, y: 0.01, z: -0.131}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.75, y: 117}
+  m_AnchoredPosition: {x: 4, y: -156.5}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &315367271
@@ -970,10 +1013,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 717891845}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 430213351}
+  nextUpgrades: []
 --- !u!114 &325646685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,7 +1095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: -47}
+  m_AnchoredPosition: {x: -166, y: 11.200005}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &357427084
@@ -1080,22 +1129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: 0
   sectionNavigator: {fileID: 1397039767}
-  branchSelected: 0
-  upgradeSelected: 0
   upgradeSelectedController: {fileID: 0}
-  branches:
-  - branchName: Energia
-    upgrades:
-    - {fileID: 759320733}
-    - {fileID: 1415792934}
-  - branchName: Cantidad de Objetivos
-    upgrades:
-    - {fileID: 115806903}
-    - {fileID: 512246246}
-  - branchName: "Absorci\xF3n"
-    upgrades:
-    - {fileID: 1686354815}
-    - {fileID: 909938003}
   centralUpgrade: {fileID: 1821282086}
 --- !u!224 &357427086
 RectTransform:
@@ -1275,11 +1309,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 717891845}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 325646684}
+  buttonDownwards: {fileID: 303063882}
+  nextUpgrades:
+  - {fileID: 325646684}
 --- !u!114 &430213352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,7 +1393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 61}
+  m_AnchoredPosition: {x: -94.2, y: -81.399994}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &432420848
@@ -1369,7 +1410,7 @@ GameObject:
   - component: {fileID: 432420851}
   - component: {fileID: 432420850}
   m_Layer: 5
-  m_Name: MejoraCentral
+  m_Name: Vindex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1392,7 +1433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.006, y: 0.01, z: -0.131}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.75, y: 117}
+  m_AnchoredPosition: {x: 2.75, y: -13.9}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432420850
@@ -1424,12 +1465,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 1
+  selected: 0
   locked: 0
+  purchased: 1
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 2066845141}
+  buttonAtRight: {fileID: 1311986474}
+  buttonAtLeft: {fileID: 463360348}
+  buttonUpwards: {fileID: 547003540}
+  buttonDownwards: {fileID: 1026591403}
+  nextUpgrades:
+  - {fileID: 463360348}
+  - {fileID: 547003540}
+  - {fileID: 1026591403}
+  - {fileID: 1311986474}
 --- !u!114 &432420852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,10 +1553,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 654220880}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 186704656}
+  nextUpgrades: []
 --- !u!114 &440123692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,7 +1635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: -46}
+  m_AnchoredPosition: {x: 98, y: 140}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &463360347
@@ -1614,11 +1671,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 2066845141}
+  buttonAtRight: {fileID: 547003540}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 1714455722}
+  buttonDownwards: {fileID: 432420851}
+  nextUpgrades: []
 --- !u!114 &463360349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,7 +1754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162, y: 61}
+  m_AnchoredPosition: {x: -53.9, y: 51.200027}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &512246245
@@ -1728,10 +1791,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 357427085}
+  buttonAtRight: {fileID: 1821282086}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 115806903}
+  buttonDownwards: {fileID: 759320733}
+  nextUpgrades: []
 --- !u!114 &512246247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,7 +1873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -46}
+  m_AnchoredPosition: {x: -103.8, y: 98.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &526018049
@@ -1840,11 +1909,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 1570703515}
+  buttonUpwards: {fileID: 1970518407}
+  buttonDownwards: {fileID: 1813237173}
+  nextUpgrades:
+  - {fileID: 1813237173}
 --- !u!114 &526018051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1917,7 +1993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: 61}
+  m_AnchoredPosition: {x: 86.6, y: 61}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &529042025
@@ -2001,11 +2077,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 2066845141}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 463360348}
+  buttonUpwards: {fileID: 1714455722}
+  buttonDownwards: {fileID: 432420851}
+  nextUpgrades:
+  - {fileID: 1714455722}
 --- !u!114 &547003541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,7 +2161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: 61}
+  m_AnchoredPosition: {x: 57.2, y: 52.60002}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &598988980
@@ -2113,6 +2196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55e103530ef949bee22f8014e8d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  hover: 0
+  purchased: 1
+  upgrading: 0
+  gearsCost: 0
+  coresCost: 0
   buttonAtRight: {fileID: 0}
   buttonAtLeft: {fileID: 821127392}
   buttonUpwards: {fileID: 1215626959}
@@ -2228,10 +2317,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 186704656}
+  buttonAtLeft: {fileID: 325646684}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 717891845}
+  nextUpgrades: []
 --- !u!114 &654220881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,7 +2399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162, y: -46}
+  m_AnchoredPosition: {x: -49.3, y: 140.20001}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &656127309
@@ -2409,10 +2504,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 1813237173}
+  buttonAtLeft: {fileID: 1607707275}
+  buttonUpwards: {fileID: 1570703515}
+  buttonDownwards: {fileID: 294209724}
+  nextUpgrades:
+  - {fileID: 294209724}
 --- !u!114 &698041389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2485,7 +2587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 61}
+  m_AnchoredPosition: {x: -8.9, y: -17.5}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &717891844
@@ -2521,11 +2623,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 1644704182}
+  buttonAtLeft: {fileID: 430213351}
+  buttonUpwards: {fileID: 186704656}
+  buttonDownwards: {fileID: 303063882}
+  nextUpgrades:
+  - {fileID: 654220880}
+  - {fileID: 186704656}
 --- !u!114 &717891846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2598,7 +2708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162, y: 61}
+  m_AnchoredPosition: {x: 2.1000004, y: -15.099991}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &759320732
@@ -2634,11 +2744,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 357427085}
+  buttonAtRight: {fileID: 1821282086}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 512246246}
+  buttonDownwards: {fileID: 1415792934}
+  nextUpgrades:
+  - {fileID: 1415792934}
 --- !u!114 &759320734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,7 +2828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105, y: 61}
+  m_AnchoredPosition: {x: -105, y: 8.5}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &821127391
@@ -2746,6 +2863,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55e103530ef949bee22f8014e8d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  hover: 0
+  purchased: 0
+  upgrading: 0
+  gearsCost: 100
+  coresCost: 2
   buttonAtRight: {fileID: 598988981}
   buttonAtLeft: {fileID: 0}
   buttonUpwards: {fileID: 1215626959}
@@ -2864,7 +2987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: -46}
+  m_AnchoredPosition: {x: 0, y: -166.19998}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850469324
@@ -2898,10 +3021,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 2066845141}
+  buttonAtRight: {fileID: 1311986474}
+  buttonAtLeft: {fileID: 1026591403}
+  buttonUpwards: {fileID: 1026591403}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades: []
 --- !u!114 &850469326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3089,10 +3218,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 357427085}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 759320733}
+  buttonUpwards: {fileID: 1686354815}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades: []
 --- !u!114 &909938004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3165,7 +3300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -46}
+  m_AnchoredPosition: {x: 107.20001, y: -29.200012}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &922810708
@@ -3202,10 +3337,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1190661030}
+  buttonAtRight: {fileID: 1283028154}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 1700667223}
+  buttonDownwards: {fileID: 1247472561}
+  nextUpgrades:
+  - {fileID: 1247472561}
 --- !u!114 &922810710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3278,7 +3420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: -47}
+  m_AnchoredPosition: {x: -147.3, y: 36.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &923043711
@@ -3314,11 +3456,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 1570703515}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 1970518407}
+  buttonDownwards: {fileID: 1607707275}
+  nextUpgrades:
+  - {fileID: 1607707275}
 --- !u!114 &923043713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3391,7 +3540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 61}
+  m_AnchoredPosition: {x: -105, y: 61}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1019169078
@@ -3405,7 +3554,7 @@ GameObject:
   - component: {fileID: 1019169080}
   - component: {fileID: 1019169079}
   m_Layer: 5
-  m_Name: Bosque
+  m_Name: Mejoras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3490,11 +3639,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 2066845141}
+  buttonAtRight: {fileID: 1311986474}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 432420851}
+  buttonDownwards: {fileID: 850469325}
+  nextUpgrades:
+  - {fileID: 850469325}
 --- !u!114 &1026591404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3567,7 +3723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 61}
+  m_AnchoredPosition: {x: -51.6, y: -85.199974}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1053315387
@@ -3603,11 +3759,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1905900473}
+  buttonAtRight: {fileID: 20002610}
+  buttonAtLeft: {fileID: 1808788961}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 1330996640}
+  nextUpgrades:
+  - {fileID: 1808788961}
+  - {fileID: 20002610}
 --- !u!114 &1053315389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3680,7 +3844,126 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 61}
+  m_AnchoredPosition: {x: 0, y: 105.5}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1140254188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1140254193}
+  - component: {fileID: 1140254192}
+  - component: {fileID: 1140254191}
+  - component: {fileID: 1140254189}
+  - component: {fileID: 1140254190}
+  m_Layer: 5
+  m_Name: "Da\xF1o2"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1140254189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140254188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+  locked: 1
+  purchased: 0
+  upgrading: 0
+  gearsCost: 100
+  coresCost: 1
+  branchNavigator: {fileID: 1905900473}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 1330996640}
+  buttonUpwards: {fileID: 20002610}
+  buttonDownwards: {fileID: 1714265446}
+  nextUpgrades: []
+--- !u!114 &1140254190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140254188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c827fe4130d21d04b94e2c0a8c4e8ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeControl: {fileID: 1140254189}
+  upgradeTransform: {fileID: 1140254193}
+  upgradeImage: {fileID: 1140254191}
+  scaleMultiplier: 1.5
+  alphaUnselected: 0.6
+--- !u!114 &1140254191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140254188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9607843, g: 0.45057094, b: 0.35686278, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1a329a93793550446b2cdc0a9774020e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1140254192
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140254188}
+  m_CullTransparentMesh: 1
+--- !u!224 &1140254193
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140254188}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1905900474}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 102, y: -53.6}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1190661029
@@ -3714,24 +3997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: 0
   sectionNavigator: {fileID: 1397039767}
-  branchSelected: 0
-  upgradeSelected: 0
   upgradeSelectedController: {fileID: 0}
-  branches:
-  - branchName: "Ca\xF1on doble"
-    upgrades:
-    - {fileID: 1749687318}
-    - {fileID: 1871798755}
-  - branchName: Tambor Rapido
-    upgrades:
-    - {fileID: 1600907523}
-  - branchName: Potenciador de Tiro
-    upgrades:
-    - {fileID: 1247472561}
-  - branchName: "Im\xE1n de Engranages"
-    upgrades:
-    - {fileID: 1283028154}
-    - {fileID: 922810709}
   centralUpgrade: {fileID: 1700667223}
 --- !u!224 &1190661031
 RectTransform:
@@ -3830,6 +4096,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55e103530ef949bee22f8014e8d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  hover: 0
+  purchased: 1
+  upgrading: 0
+  gearsCost: 0
+  coresCost: 0
   buttonAtRight: {fileID: 598988981}
   buttonAtLeft: {fileID: 821127392}
   buttonUpwards: {fileID: 0}
@@ -3905,6 +4177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55e103530ef949bee22f8014e8d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  hover: 0
+  purchased: 0
+  upgrading: 0
+  gearsCost: 100
+  coresCost: 2
   buttonAtRight: {fileID: 0}
   buttonAtLeft: {fileID: 821127392}
   buttonUpwards: {fileID: 598988981}
@@ -4020,10 +4298,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1190661030}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 1600907523}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades: []
 --- !u!114 &1247472562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4096,7 +4380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 61}
+  m_AnchoredPosition: {x: -0.9, y: -122.700005}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1283028153
@@ -4132,11 +4416,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1190661030}
+  buttonAtRight: {fileID: 1749687318}
+  buttonAtLeft: {fileID: 922810709}
+  buttonUpwards: {fileID: 1700667223}
+  buttonDownwards: {fileID: 1600907523}
+  nextUpgrades:
+  - {fileID: 1600907523}
+  - {fileID: 922810709}
 --- !u!114 &1283028155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4209,7 +4501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 61}
+  m_AnchoredPosition: {x: -56.5, y: 36.399994}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1311986473
@@ -4245,11 +4537,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 2066845141}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 1026591403}
+  buttonUpwards: {fileID: 432420851}
+  buttonDownwards: {fileID: 850469325}
+  nextUpgrades: []
 --- !u!114 &1311986475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4322,7 +4620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 61}
+  m_AnchoredPosition: {x: 57.4, y: -86.099976}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1330996639
@@ -4339,7 +4637,7 @@ GameObject:
   - component: {fileID: 1330996640}
   - component: {fileID: 1330996641}
   m_Layer: 5
-  m_Name: MejoraCentral
+  m_Name: EscudoSierras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4357,12 +4655,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 1
+  selected: 0
   locked: 0
+  purchased: 1
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1905900473}
+  buttonAtRight: {fileID: 20002610}
+  buttonAtLeft: {fileID: 1808788961}
+  buttonUpwards: {fileID: 1053315388}
+  buttonDownwards: {fileID: 1714265446}
+  nextUpgrades:
+  - {fileID: 1714265446}
+  - {fileID: 1053315388}
 --- !u!114 &1330996641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4435,7 +4741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.006, y: 0.01, z: -0.131}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.75, y: 117}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1397039765
@@ -4633,10 +4939,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 357427085}
+  buttonAtRight: {fileID: 909938003}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 759320733}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades: []
 --- !u!114 &1415792935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4709,7 +5021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105, y: -46}
+  m_AnchoredPosition: {x: -105, y: -98.5}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1491691266
@@ -4744,6 +5056,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55e103530ef949bee22f8014e8d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  hover: 0
+  purchased: 0
+  upgrading: 0
+  gearsCost: 100
+  coresCost: 2
   buttonAtRight: {fileID: 0}
   buttonAtLeft: {fileID: 1604091775}
   buttonUpwards: {fileID: 1216806960}
@@ -4858,11 +5176,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 526018050}
+  buttonAtLeft: {fileID: 923043712}
+  buttonUpwards: {fileID: 1970518407}
+  buttonDownwards: {fileID: 698041388}
+  nextUpgrades:
+  - {fileID: 698041388}
 --- !u!114 &1570703516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4935,7 +5260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162, y: 61}
+  m_AnchoredPosition: {x: -8.9, y: 77.4}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1600907522
@@ -4972,10 +5297,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1190661030}
+  buttonAtRight: {fileID: 1749687318}
+  buttonAtLeft: {fileID: 1283028154}
+  buttonUpwards: {fileID: 1283028154}
+  buttonDownwards: {fileID: 1247472561}
+  nextUpgrades: []
 --- !u!114 &1600907524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5048,7 +5379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: 61}
+  m_AnchoredPosition: {x: -3.4, y: -41}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1604091774
@@ -5083,6 +5414,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55e103530ef949bee22f8014e8d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  hover: 0
+  purchased: 0
+  upgrading: 0
+  gearsCost: 100
+  coresCost: 2
   buttonAtRight: {fileID: 1216806960}
   buttonAtLeft: {fileID: 0}
   buttonUpwards: {fileID: 821127392}
@@ -5198,10 +5535,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 698041388}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 923043712}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades: []
 --- !u!114 &1607707276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5274,7 +5617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: -46}
+  m_AnchoredPosition: {x: -105, y: -46}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1607885073
@@ -5311,10 +5654,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 186704656}
+  buttonUpwards: {fileID: 440123691}
+  buttonDownwards: {fileID: 1644704182}
+  nextUpgrades: []
 --- !u!114 &1607885075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5387,7 +5736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: -47}
+  m_AnchoredPosition: {x: 167, y: 18.600006}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1644704181
@@ -5423,11 +5772,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1856874031}
+  buttonAtRight: {fileID: 1607885074}
+  buttonAtLeft: {fileID: 717891845}
+  buttonUpwards: {fileID: 186704656}
+  buttonDownwards: {fileID: 303063882}
+  nextUpgrades:
+  - {fileID: 1607885074}
 --- !u!114 &1644704183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5500,7 +5856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: 61}
+  m_AnchoredPosition: {x: 93, y: -62.399994}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1686354814
@@ -5537,10 +5893,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 357427085}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 1821282086}
+  buttonUpwards: {fileID: 115806903}
+  buttonDownwards: {fileID: 909938003}
+  nextUpgrades:
+  - {fileID: 909938003}
 --- !u!114 &1686354816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5613,7 +5976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: 61}
+  m_AnchoredPosition: {x: 107.2, y: 77.8}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1700667222
@@ -5630,7 +5993,7 @@ GameObject:
   - component: {fileID: 1700667223}
   - component: {fileID: 1700667224}
   m_Layer: 5
-  m_Name: MejoraCentral
+  m_Name: Lanzagranadas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5648,12 +6011,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 1
+  selected: 0
   locked: 0
+  purchased: 1
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1190661030}
+  buttonAtRight: {fileID: 1749687318}
+  buttonAtLeft: {fileID: 1283028154}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 1749687318}
+  nextUpgrades:
+  - {fileID: 1749687318}
+  - {fileID: 1283028154}
 --- !u!114 &1700667224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5726,7 +6097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.006, y: 0.01, z: -0.131}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.75, y: 117}
+  m_AnchoredPosition: {x: -2.4, y: 109}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1714265445
@@ -5762,11 +6133,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1905900473}
+  buttonAtRight: {fileID: 1140254189}
+  buttonAtLeft: {fileID: 36731170}
+  buttonUpwards: {fileID: 1330996640}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades:
+  - {fileID: 36731170}
 --- !u!114 &1714265447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5839,7 +6217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105, y: 61}
+  m_AnchoredPosition: {x: 0, y: -116.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1714455719
@@ -5879,7 +6257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: -46}
+  m_AnchoredPosition: {x: 0, y: 133.00003}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714455721
@@ -5913,10 +6291,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 2066845141}
+  buttonAtRight: {fileID: 547003540}
+  buttonAtLeft: {fileID: 463360348}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 547003540}
+  nextUpgrades: []
 --- !u!114 &1714455723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6026,11 +6410,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  locked: 1
+  locked: 0
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1190661030}
+  buttonAtRight: {fileID: 1871798755}
+  buttonAtLeft: {fileID: 1283028154}
+  buttonUpwards: {fileID: 1700667223}
+  buttonDownwards: {fileID: 1600907523}
+  nextUpgrades:
+  - {fileID: 1871798755}
+  - {fileID: 1600907523}
 --- !u!114 &1749687319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6103,7 +6495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162, y: 61}
+  m_AnchoredPosition: {x: 44.6, y: 36.399994}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1770162736
@@ -6241,6 +6633,125 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -22.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1808788960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1808788965}
+  - component: {fileID: 1808788964}
+  - component: {fileID: 1808788963}
+  - component: {fileID: 1808788961}
+  - component: {fileID: 1808788962}
+  m_Layer: 5
+  m_Name: Numero2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1808788961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808788960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+  locked: 1
+  purchased: 0
+  upgrading: 0
+  gearsCost: 100
+  coresCost: 1
+  branchNavigator: {fileID: 1905900473}
+  buttonAtRight: {fileID: 1330996640}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 1053315388}
+  buttonDownwards: {fileID: 36731170}
+  nextUpgrades: []
+--- !u!114 &1808788962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808788960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c827fe4130d21d04b94e2c0a8c4e8ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeControl: {fileID: 1808788961}
+  upgradeTransform: {fileID: 1808788965}
+  upgradeImage: {fileID: 1808788963}
+  scaleMultiplier: 1.5
+  alphaUnselected: 0.6
+--- !u!114 &1808788963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808788960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.35857958, g: 0.4767612, b: 0.9622642, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1a329a93793550446b2cdc0a9774020e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1808788964
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808788960}
+  m_CullTransparentMesh: 1
+--- !u!224 &1808788965
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808788960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1905900474}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -104.9, y: 61}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1813237172
 GameObject:
   m_ObjectHideFlags: 0
@@ -6275,10 +6786,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 698041388}
+  buttonUpwards: {fileID: 526018050}
+  buttonDownwards: {fileID: 0}
+  nextUpgrades: []
 --- !u!114 &1813237174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6351,7 +6868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: -46}
+  m_AnchoredPosition: {x: 86.599976, y: -46}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1821282085
@@ -6368,7 +6885,7 @@ GameObject:
   - component: {fileID: 1821282086}
   - component: {fileID: 1821282087}
   m_Layer: 5
-  m_Name: MejoraCentral
+  m_Name: EscudoReflector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6386,12 +6903,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 1
+  selected: 0
   locked: 0
+  purchased: 1
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 357427085}
+  buttonAtRight: {fileID: 1686354815}
+  buttonAtLeft: {fileID: 512246246}
+  buttonUpwards: {fileID: 115806903}
+  buttonDownwards: {fileID: 759320733}
+  nextUpgrades:
+  - {fileID: 759320733}
+  - {fileID: 115806903}
 --- !u!114 &1821282087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6464,7 +6989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.006, y: 0.01, z: -0.131}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.75, y: 117}
+  m_AnchoredPosition: {x: 0, y: 60.8}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1856874030
@@ -6498,26 +7023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: 0
   sectionNavigator: {fileID: 1397039767}
-  branchSelected: 0
-  upgradeSelected: 0
   upgradeSelectedController: {fileID: 0}
-  branches:
-  - branchName: "Ca\xF1on doble"
-    upgrades:
-    - {fileID: 717891845}
-    - {fileID: 654220880}
-  - branchName: Tambor Rapido
-    upgrades:
-    - {fileID: 1644704182}
-    - {fileID: 1607885074}
-  - branchName: Potenciador de Tiro
-    upgrades:
-    - {fileID: 186704656}
-    - {fileID: 440123691}
-  - branchName: "Im\xE1n de Engranages"
-    upgrades:
-    - {fileID: 430213351}
-    - {fileID: 325646684}
   centralUpgrade: {fileID: 303063882}
 --- !u!224 &1856874032
 RectTransform:
@@ -6582,10 +7088,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   locked: 1
+  purchased: 0
   upgrading: 0
   gearsCost: 100
   coresCost: 1
   branchNavigator: {fileID: 1190661030}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 1749687318}
+  buttonUpwards: {fileID: 1700667223}
+  buttonDownwards: {fileID: 1247472561}
+  nextUpgrades:
+  - {fileID: 1247472561}
 --- !u!114 &1871798756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6658,7 +7171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162, y: -46}
+  m_AnchoredPosition: {x: 137.5, y: 36.699993}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1905900472
@@ -6692,20 +7205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: 0
   sectionNavigator: {fileID: 1397039767}
-  branchSelected: 0
-  upgradeSelected: 0
   upgradeSelectedController: {fileID: 0}
-  branches:
-  - branchName: Energia
-    upgrades:
-    - {fileID: 1714265446}
-    - {fileID: 36731170}
-  - branchName: Numero de Sierras
-    upgrades:
-    - {fileID: 1053315388}
-  - branchName: "Da\xF1o de Sierras"
-    upgrades:
-    - {fileID: 20002610}
   centralUpgrade: {fileID: 1330996640}
 --- !u!224 &1905900474
 RectTransform:
@@ -6723,7 +7223,9 @@ RectTransform:
   - {fileID: 1714265450}
   - {fileID: 36731174}
   - {fileID: 1053315392}
+  - {fileID: 1808788965}
   - {fileID: 20002614}
+  - {fileID: 1140254193}
   m_Father: {fileID: 1019169080}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6746,7 +7248,7 @@ GameObject:
   - component: {fileID: 1970518407}
   - component: {fileID: 1970518408}
   m_Layer: 5
-  m_Name: MejoraCentral
+  m_Name: Lanzaclavos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6764,12 +7266,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dfea86f2bab544e86fd0adb714c742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 1
+  selected: 0
   locked: 0
+  purchased: 1
   upgrading: 0
-  gearsCost: 100
-  coresCost: 1
+  gearsCost: 0
+  coresCost: 0
   branchNavigator: {fileID: 1976593864}
+  buttonAtRight: {fileID: 0}
+  buttonAtLeft: {fileID: 0}
+  buttonUpwards: {fileID: 0}
+  buttonDownwards: {fileID: 1570703515}
+  nextUpgrades:
+  - {fileID: 1570703515}
+  - {fileID: 526018050}
+  - {fileID: 923043712}
 --- !u!114 &1970518408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6842,7 +7353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.006, y: 0.01, z: -0.131}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.75, y: 117}
+  m_AnchoredPosition: {x: -8.9, y: 156.4}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1976593863
@@ -6876,25 +7387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: 0
   sectionNavigator: {fileID: 1397039767}
-  branchSelected: 0
-  upgradeSelected: 0
   upgradeSelectedController: {fileID: 0}
-  branches:
-  - branchName: "Ca\xF1on doble"
-    upgrades:
-    - {fileID: 1570703515}
-  - branchName: Tambor Rapido
-    upgrades:
-    - {fileID: 526018050}
-    - {fileID: 1813237173}
-  - branchName: Potenciador de Tiro
-    upgrades:
-    - {fileID: 923043712}
-    - {fileID: 1607707275}
-  - branchName: "Im\xE1n de Engranages"
-    upgrades:
-    - {fileID: 698041388}
-    - {fileID: 294209724}
   centralUpgrade: {fileID: 1970518407}
 --- !u!224 &1976593865
 RectTransform:
@@ -6965,7 +7458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -13.4}
   m_SizeDelta: {x: 289.5, y: 284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2066845141
@@ -6982,22 +7475,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: 0
   sectionNavigator: {fileID: 1397039767}
-  branchSelected: 0
-  upgradeSelected: 0
   upgradeSelectedController: {fileID: 0}
-  branches:
-  - branchName: Velocidad
-    upgrades:
-    - {fileID: 463360348}
-  - branchName: Vida
-    upgrades:
-    - {fileID: 547003540}
-    - {fileID: 1714455722}
-  - branchName: Invulnerabilidad
-    upgrades:
-    - {fileID: 1026591403}
-    - {fileID: 850469325}
-  - branchName: Nucleos
-    upgrades:
-    - {fileID: 1311986474}
   centralUpgrade: {fileID: 432420851}

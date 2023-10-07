@@ -27,11 +27,9 @@ public class BranchesNavigator : MonoBehaviour
             if(i == branch)
             {
                 treesObjects[i].SetActive(true);
-                trees[i].Control = true;
             } else
             {
                 treesObjects[i].SetActive(false);
-                trees[i].Control = false;
             }
         }
     }

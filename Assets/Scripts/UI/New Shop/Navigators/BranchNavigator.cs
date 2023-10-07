@@ -10,19 +10,7 @@ public class BranchNavigator : MonoBehaviour
     [SerializeField] SectionNavigator sectionNavigator;
 
     [Header("Navigation Debug")]
-    [SerializeField] int branchSelected;
-    [SerializeField] int upgradeSelected;
     [SerializeField] UpgradeController upgradeSelectedController;
-
-    [System.Serializable]
-    public struct Branch 
-    {
-        public string branchName;
-        public UpgradeController[] upgrades;
-    }
-
-    [Header("Branches")]
-    [SerializeField] public Branch[] branches;
 
     public UpgradeController centralUpgrade;
 
@@ -41,95 +29,51 @@ public class BranchNavigator : MonoBehaviour
 
     void BranchNavigation()
     {
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(upgradeSelectedController == centralUpgrade)
-            {
-                if (!centralUpgrade.Locked)
-                {
-                    branchSelected = Mathf.FloorToInt(branches.Length / 2);
-                    upgradeSelected = 0;
-                    UpdateSelectedController();
-                }
-            } else if(upgradeSelected < branches[branchSelected].upgrades.Length - 1 && !upgradeSelectedController.Locked)
-            {
-                upgradeSelected++;
-                UpdateSelectedController();
-            }
-
-
-        } else if(Input.GetKeyDown(KeyCode.UpArrow))
+            SetupgradeSelectedController(upgradeSelectedController.GetButtonAtRight());
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if(upgradeSelected == 0)
+            if (upgradeSelectedController.GetButtonAtLeft() == null)
             {
-                ReturnToCentralNode();
+                GiveControlToSection();
             }
-            else
-            {
-                upgradeSelected--;
-                UpdateSelectedController();
-            }
-        } else if(Input.GetKeyDown(KeyCode.RightArrow))
+            else SetupgradeSelectedController(upgradeSelectedController.GetButtonAtLeft());
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (upgradeSelectedController != centralUpgrade && branchSelected < branches.Length - 1)
-            {
-                branchSelected++;
-                upgradeSelected = GetHighestUpgradeUnlokced(upgradeSelected);
-                UpdateSelectedController();
-            }
-        } else if(Input.GetKeyDown(KeyCode.LeftArrow))
+            SetupgradeSelectedController(upgradeSelectedController.GetButtonUpwards());
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (upgradeSelectedController != centralUpgrade && branchSelected > 0)
-            {
-                branchSelected--;
-                upgradeSelected = GetHighestUpgradeUnlokced(upgradeSelected);
-                UpdateSelectedController();
-            }
-            else
-            {
-                ReturnToCentralNode();
-                control = false;
-                upgradeSelectedController.Selected = false;
-                sectionNavigator.Control = true;
-            }
+            SetupgradeSelectedController(upgradeSelectedController.GetButtonDownwards());
         }
     }
 
-    void ReturnToCentralNode()
+    void SetupgradeSelectedController(UpgradeController newUpgradeSelectedController)
     {
-        upgradeSelectedController.Selected = false;
-        upgradeSelectedController.PreventiveUpgradeCancel();
+        if (newUpgradeSelectedController == null || newUpgradeSelectedController.Locked) return;
 
-        centralUpgrade.Selected = true;
-
-        upgradeSelectedController = centralUpgrade;
-    }
-
-    void UpdateSelectedController()
-    {
-        upgradeSelectedController.Selected = false;
-        upgradeSelectedController.PreventiveUpgradeCancel();
-
-        branches[branchSelected].upgrades[upgradeSelected].Selected = true;
-
-        upgradeSelectedController = branches[branchSelected].upgrades[upgradeSelected];
-    }
-
-    int GetHighestUpgradeUnlokced(int max)
-    {
-        for(int i = 0; i <= max && i < branches[branchSelected].upgrades.Length; i++)
+        if (upgradeSelectedController != null)
         {
-            if (branches[branchSelected].upgrades[i].Locked || i == max || i == branches[branchSelected].upgrades.Length - 1)
-            {
-                return i;
-            }
+            upgradeSelectedController.Selected = false;
         }
 
-        return 0;
+        newUpgradeSelectedController.Selected = true;
+        upgradeSelectedController = newUpgradeSelectedController;
     }
 
     public void GiveControl()
     {
-        upgradeSelectedController.Selected = true;
+        centralUpgrade.Selected = true;
+    }
+
+    void GiveControlToSection()
+    {
+        control = false;
+        upgradeSelectedController.Selected = false;
+        upgradeSelectedController = centralUpgrade;
+        sectionNavigator.Control = true;
     }
 }
