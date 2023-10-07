@@ -16,7 +16,6 @@ public class PlayerMovement_TestSalvador2 : MonoBehaviour
     public float dragFactorY;
     public bool changingDirectionsX => (input.x < 0 && rb.velocity.x > 0) || (input.x > 0 && rb.velocity.x < 0);
     public bool changingDirectionsY => (input.y < 0 && rb.velocity.y > 0) || (input.y > 0 && rb.velocity.y < 0);
-
     [Header("Input")]
     [SerializeField] Vector2 input;
 
@@ -77,17 +76,14 @@ public class PlayerMovement_TestSalvador2 : MonoBehaviour
         input.y = Input.GetAxisRaw("Vertical");
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Cores"))
-        {
-            if (other.GetComponent<AudioSource>() != null && other.GetComponent<Cores_Script>() != null)
-            {
-                //other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
-            }
-
-            GameScore.instance.AddCores(1);
-            Destroy(other.gameObject);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Cores")&& !done)
+    //    {
+    //        audioManager.PlayOneShot(MovementSound);
+    //        GameScore.instance.AddCores(1);
+    //        Destroy(other.gameObject);
+    //        done = true;
+    //    }
+    //}
 }

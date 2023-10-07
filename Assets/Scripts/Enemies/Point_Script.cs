@@ -64,6 +64,5 @@ public class Point_Script : MonoBehaviour
             Destroy(gameObject);
             done = true;
         }
-
     }
 }
