@@ -19,7 +19,6 @@ public class SectionNavigator : MonoBehaviour
     void Start()
     {
         SetHoverButton(startButton);
-        SelectButton();
     }
 
     void Update()
@@ -27,7 +26,7 @@ public class SectionNavigator : MonoBehaviour
         if (!control) return;
 
         ButtonNavigation();
-        if(Input.GetKeyDown(KeyCode.Z)) SelectButton();
+        if(Input.GetKey(KeyCode.Z)) SelectButton();
     }
 
     void ButtonNavigation()
@@ -60,6 +59,7 @@ public class SectionNavigator : MonoBehaviour
         if(hoverButton != null)
         {
             hoverButton.Hover = false;
+            hoverButton.PreventiveUpgradeCancel();
         }
 
         newHoverButton.Hover = true;
@@ -68,7 +68,7 @@ public class SectionNavigator : MonoBehaviour
 
     void SelectButton()
     {
-        if(selectedButton == hoverButton) return;
+        if(selectedButton == hoverButton || !hoverButton.Purchased) return;
 
         if(selectedButton != null)
         {

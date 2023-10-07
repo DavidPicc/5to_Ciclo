@@ -1,14 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 
 public class SectionButtonControl : MonoBehaviour
 {
-    bool selected;
+    private const float PURCHASE_TIME = 1f;
+
+    [SerializeField] bool selected;
     public bool Selected { get { return selected; } set { selected = value; } }
 
-    bool hover;
+    [SerializeField] bool hover;
     public bool Hover { get { return hover; } set { hover = value; } }
+
+    [SerializeField] bool purchased;
+    public bool Purchased { get { return purchased; } set { purchased = value; } }
+
+    [SerializeField] bool upgrading;
+
+    IEnumerator purchaseRoutine;
+
+    [Header("Costs")]
+    public int gearsCost;
+    public int coresCost;
 
     [Header("Navigation")]
     [SerializeField] SectionButtonControl buttonAtRight;
@@ -16,6 +30,52 @@ public class SectionButtonControl : MonoBehaviour
     [SerializeField] SectionButtonControl buttonUpwards;
     [SerializeField] SectionButtonControl buttonDownwards;
     public int branch;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) && hover && !purchased)
+        {
+            purchaseRoutine = StartPurchase();
+            StartCoroutine(purchaseRoutine);
+
+            upgrading = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Z) && upgrading)
+        {
+            if (purchaseRoutine != null)
+            {
+                StopCoroutine(purchaseRoutine);
+            }
+
+            upgrading = false;
+        }
+    }
+
+    IEnumerator StartPurchase()
+    {
+        if (GameScoreNewShop.instance.gears > gearsCost && GameScoreNewShop.instance.cores > coresCost)
+        {
+            yield return new WaitForSecondsRealtime(PURCHASE_TIME);
+
+            purchased = true;
+            upgrading = false;
+            GameScoreNewShop.instance.Spend(gearsCost, coresCost);
+        }
+    }
+
+    public void PreventiveUpgradeCancel()
+    {
+        if (upgrading)
+        {
+            if (purchaseRoutine != null)
+            {
+                StopCoroutine(purchaseRoutine);
+            }
+
+            upgrading = false;
+        }
+    }
 
     public SectionButtonControl GetButtonAtRight()
     {

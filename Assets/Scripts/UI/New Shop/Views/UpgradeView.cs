@@ -37,7 +37,7 @@ public class UpgradeView : MonoBehaviour
             upgradeTransform.localScale = initialScale;
         }
 
-        if (!upgradeControl.Locked)
+        if (upgradeControl.Purchased)
         {
             upgradeImage.color = new Color(upgradeImage.color.r, upgradeImage.color.g, upgradeImage.color.b, 1f);
         }
