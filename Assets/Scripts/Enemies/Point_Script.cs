@@ -7,6 +7,7 @@ public class Point_Script : MonoBehaviour
 {
     [SerializeField] public AudioSource audioManager;
     [SerializeField] public AudioClip PointsSound;
+    bool done = false;
 
     public enum PointState
     {
@@ -56,11 +57,12 @@ public class Point_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && !done)
         {
             audioManager.PlayOneShot(PointsSound);
             GameScore.instance.AddGears(1);
             Destroy(gameObject);
+            done = true;
         }
 
     }
