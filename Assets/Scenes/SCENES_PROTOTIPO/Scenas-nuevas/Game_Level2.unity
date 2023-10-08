@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.8458456, g: 0.73874706, b: 0.5289049, a: 1}
+  m_IndirectSpecularColor: {r: 0.8458451, g: 0.7387458, b: 0.5289029, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3508,7 +3508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: be340a165cb9c8d4cb50f1deeb51d4ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ffb537081e95fc8459f47b2ae7b6b8f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6868,7 +6868,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 236465941, guid: dbf165cb58747cf4891fbc93b44da3a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da9e0cf16f3f7ab4eb3c9a0b7dd6cf72, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26441,6 +26441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  moveWithRB: 0
 --- !u!4 &1151525955
 Transform:
   m_ObjectHideFlags: 0
@@ -27961,7 +27962,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fce5d32b35fd6e74aa0b43a88e821350, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28214,7 +28215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a67b58d6cddcd4345b1e001340de5a76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ffb537081e95fc8459f47b2ae7b6b8f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36172,6 +36173,16 @@ PrefabInstance:
       propertyPath: barUI
       value: 
       objectReference: {fileID: 314250893}
+    - target: {fileID: 4119367718411457462, guid: acd27982bd6fd584985785f022dc1ffd,
+        type: 3}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119367718411457462, guid: acd27982bd6fd584985785f022dc1ffd,
+        type: 3}
+      propertyPath: searchTargetRange
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acd27982bd6fd584985785f022dc1ffd, type: 3}
 --- !u!1 &1527570276 stripped
@@ -36914,7 +36925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ffb537081e95fc8459f47b2ae7b6b8f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
