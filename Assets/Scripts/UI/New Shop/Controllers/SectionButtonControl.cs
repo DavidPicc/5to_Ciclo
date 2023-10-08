@@ -31,6 +31,12 @@ public class SectionButtonControl : MonoBehaviour
     [SerializeField] SectionButtonControl buttonDownwards;
     public int branch;
 
+    [Header("Tracker")]
+    public string feature;
+    public string upgrade;
+    public int level;
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z) && hover && !purchased)
@@ -58,10 +64,16 @@ public class SectionButtonControl : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(PURCHASE_TIME);
 
-            purchased = true;
             upgrading = false;
-            GameScoreNewShop.instance.Spend(gearsCost, coresCost);
+            Purchase();
+            if(UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
         }
+    }
+
+    public void Purchase()
+    {
+        purchased = true;
+        GameScoreNewShop.instance.Spend(gearsCost, coresCost);
     }
 
     public void PreventiveUpgradeCancel()

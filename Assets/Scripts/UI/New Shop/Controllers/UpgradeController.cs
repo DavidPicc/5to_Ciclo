@@ -37,6 +37,11 @@ public class UpgradeController : MonoBehaviour
     public Color lockedColorLine = Color.black;
     public Color unlockedColorLine = Color.green;
 
+    [Header("Tracker")]
+    public string feature;
+    public string upgrade;
+    public int level;
+
     private void Start()
     {
         linesToNextUpgrades = new UILineRenderer[nextUpgrades.Length];
@@ -78,15 +83,21 @@ public class UpgradeController : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(PURCHASE_TIME);
 
-            purchased = true;
             upgrading = false;
-            UnlockNextUpgrades();
-            GameScoreNewShop.instance.Spend(gearsCost, coresCost);
+            Purchase();
+            if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
+        }
+    }
 
-            for(int i = 0; i < linesToNextUpgrades.Length; i++)
-            {
-                linesToNextUpgrades[i].SetColor(unlockedColorLine);
-            }
+    public void Purchase()
+    {
+        purchased = true;
+        GameScoreNewShop.instance.Spend(gearsCost, coresCost);
+        UnlockNextUpgrades();
+
+        for (int i = 0; i < linesToNextUpgrades.Length; i++)
+        {
+            linesToNextUpgrades[i].SetColor(unlockedColorLine);
         }
     }
 
