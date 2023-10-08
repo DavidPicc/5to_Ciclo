@@ -32,6 +32,24 @@ public class UpgradeController : MonoBehaviour
 
     [Header("Next Upgrades")]
     [SerializeField] UpgradeController[] nextUpgrades;
+    public GameObject lineRendererPrefab;
+    [SerializeField] UILineRenderer[] linesToNextUpgrades;
+    public Color lockedColorLine = Color.black;
+    public Color unlockedColorLine = Color.green;
+
+    private void Start()
+    {
+        linesToNextUpgrades = new UILineRenderer[nextUpgrades.Length];
+
+        for(int i = 0; i < linesToNextUpgrades.Length; i++) 
+        {
+            var _obj = Instantiate(lineRendererPrefab, transform.parent);
+            linesToNextUpgrades[i] = _obj.GetComponent<UILineRenderer>();
+
+            linesToNextUpgrades[i].DrawLine(GetComponent<RectTransform>(), nextUpgrades[i].GetComponent<RectTransform>());
+            linesToNextUpgrades[i].SetColor(purchased ? unlockedColorLine : lockedColorLine);
+        }
+    }
 
     void Update()
     {
@@ -64,6 +82,11 @@ public class UpgradeController : MonoBehaviour
             upgrading = false;
             UnlockNextUpgrades();
             GameScoreNewShop.instance.Spend(gearsCost, coresCost);
+
+            for(int i = 0; i < linesToNextUpgrades.Length; i++)
+            {
+                linesToNextUpgrades[i].SetColor(unlockedColorLine);
+            }
         }
     }
 
@@ -109,5 +132,10 @@ public class UpgradeController : MonoBehaviour
     public UpgradeController GetButtonDownwards()
     {
         return buttonDownwards;
+    }
+
+    public UILineRenderer[] GetLinesToUpgrades()
+    {
+        return linesToNextUpgrades;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
@@ -14,6 +15,13 @@ public class UpgradeView : MonoBehaviour
     public float scaleMultiplier;
     Vector2 multipliedScale;
     public float alphaUnselected;
+
+    [Header("Floating Panel")]
+    public string nameText;
+    public string descriptionText;
+    public GameObject floatingPanelPrefab;
+    [SerializeField] GameObject floatingPanelObj;
+    [SerializeField] FloatingPanelShop floatingPanel;
 
     void Start()
     {
@@ -31,10 +39,33 @@ public class UpgradeView : MonoBehaviour
         if (upgradeControl.Selected)
         {
             upgradeTransform.localScale = multipliedScale;
+
+            if (floatingPanelPrefab != null)
+            {
+                if (floatingPanelObj == null)
+                {
+                    floatingPanelObj = Instantiate(floatingPanelPrefab, transform);
+                    floatingPanel = floatingPanelObj.GetComponent<FloatingPanelShop>();
+                }
+
+                if (!floatingPanelObj.activeSelf)
+                {
+                    floatingPanelObj.SetActive(true);
+                }
+
+                floatingPanel.SetName(nameText);
+                floatingPanel.SetDescription(descriptionText);
+                floatingPanel.SetPrice(upgradeControl.Purchased ? "SELECT" : "Price: " + upgradeControl.gearsCost + " gears " + upgradeControl.coresCost + " cores");
+            }
         }
         else
         {
             upgradeTransform.localScale = initialScale;
+
+            if (floatingPanelObj != null)
+            {
+                if (floatingPanelObj.activeSelf) floatingPanelObj.SetActive(false);
+            }
         }
 
         if (upgradeControl.Purchased)

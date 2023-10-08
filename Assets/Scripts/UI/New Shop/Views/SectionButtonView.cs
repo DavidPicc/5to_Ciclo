@@ -16,6 +16,13 @@ public class SectionButtonView : MonoBehaviour
     Vector2 multipliedScale;
     public float alphaUnselected;
 
+    [Header("Floating Panel")]
+    public string nameText;
+    public string descriptionText;
+    public GameObject floatingPanelPrefab;
+    [SerializeField] GameObject floatingPanelObj;
+    [SerializeField] FloatingPanelShop floatingPanel;
+
     void Start()
     {
         initialScale = buttonTransform.localScale;
@@ -32,10 +39,33 @@ public class SectionButtonView : MonoBehaviour
         if(buttonControl.Hover && navigator.Control)
         {
             buttonTransform.localScale = multipliedScale;
+
+            if(floatingPanelPrefab != null )
+            {
+                if (floatingPanelObj == null)
+                {
+                    floatingPanelObj = Instantiate(floatingPanelPrefab, transform);
+                    floatingPanel = floatingPanelObj.GetComponent<FloatingPanelShop>();
+                }
+
+                if (!floatingPanelObj.activeSelf)
+                {
+                    floatingPanelObj.SetActive(true);
+                }
+
+                floatingPanel.SetName(nameText);
+                floatingPanel.SetDescription(descriptionText);
+                floatingPanel.SetPrice(buttonControl.Purchased ? "SELECT" : "Price: " + buttonControl.gearsCost + " gears " + buttonControl.coresCost + " cores");
+            }
         }
         else
         {
             buttonTransform.localScale = initialScale;
+
+            if (floatingPanelObj != null)
+            {
+                if (floatingPanelObj.activeSelf) floatingPanelObj.SetActive(false);
+            }
         }
 
         if(buttonControl.Selected)
@@ -46,6 +76,8 @@ public class SectionButtonView : MonoBehaviour
         {
             buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, alphaUnselected);
         }
+
+
     }
 
     public SectionButtonControl GetButtonControl()
