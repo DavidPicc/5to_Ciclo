@@ -79,7 +79,7 @@ public class UpgradeController : MonoBehaviour
 
     IEnumerator StartPurchase()
     {
-        if (GameScoreNewShop.instance.gears > gearsCost && GameScoreNewShop.instance.cores > coresCost)
+        if (GameScoreNewShop.instance.gears >= gearsCost && GameScoreNewShop.instance.cores >= coresCost)
         {
             yield return new WaitForSecondsRealtime(PURCHASE_TIME);
 
