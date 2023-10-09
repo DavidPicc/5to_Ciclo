@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Ability_Fixed: ShopObject
+public class Player_Ability_Fixed: MonoBehaviour
 {
+    public bool equipped;
+
     [Header("References")]
     public GameObject shieldObj;
     public GameObject bulletPrefab;
@@ -36,14 +38,8 @@ public class Player_Ability_Fixed: ShopObject
     public float inBetweenTime;
     public float bulletSpeed;
 
-    [Header("Upgrade System")]
-    public int upgradeShieldMaxCharge;
-    public int upgradeMaxTargetNumber;
-
-    protected override void Start()
+    void Start()
     {
-        base.Start();
-
         //audioManager = GetComponent<AudioSource>();
         rechargeBar = maxRechargeBar;
         SetImageFill();
@@ -189,14 +185,9 @@ public class Player_Ability_Fixed: ShopObject
         }
     }
 
-    protected override void Shopping()
+    public void SetRechargeBar(float rechargeBar)
     {
-        base.Shopping();
-
-        if (level > 1)
-        {
-            maxCharge = upgradeShieldMaxCharge;
-            maxTargetNumber = upgradeMaxTargetNumber;
-        }
+        maxRechargeBar = rechargeBar;
+        this.rechargeBar = rechargeBar;
     }
 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Shoot2 : ShopObject
+public class Player_Shoot2 : MonoBehaviour
 {
+    public bool equipped;
+
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
@@ -16,19 +18,13 @@ public class Player_Shoot2 : ShopObject
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
-    int bulletCount;
+    public int bulletCount;
     public float inBetweenShotsTime;
 
-    [Header("Upgrade System")]
-    public float upgradedShootDamage;
-
-    protected override void Start()
+    void Start()
     {
-        base.Start();
-
         //audioManager = GetComponent<AudioSource>();
         timer = fireRate;
-        bulletCount = 1;
     }
 
 
@@ -88,14 +84,5 @@ public class Player_Shoot2 : ShopObject
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
         bullet.GetComponent<PlayerBullet2>().DelayExplosion(1.3f);
-    }
-
-    protected override void Shopping()
-    {
-        base.Shopping();
-
-        bulletCount = level;
-
-        if (level > 2) shootDamage = upgradedShootDamage;
     }
 }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Cinemachine.DocumentationSortingAttribute;
 
-public class Player_Shoot : ShopObject
+public class Player_Shoot : MonoBehaviour
 {
+    public bool equipped = false;
+
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
@@ -22,15 +24,8 @@ public class Player_Shoot : ShopObject
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
 
-    [Header("Upgrade System")]
-    public float upgradedShootDamage;
-    public int upgradeCannons;
-    public int upgradedCannon;
-
-    protected override void Start()
+    void Start()
     {
-        base.Start();
-
         //   if (vfxShoot != null)
         //   {
         //       var vfxShootp = Instantiate(vfxShoot, transform.position, Quaternion.identity);
@@ -93,14 +88,5 @@ public class Player_Shoot : ShopObject
             Destroy(bullet, 2f);
         }
         shotBullet = true;
-    }
-
-    protected override void Shopping()
-    {
-        base.Shopping();
-
-        if (level > 2) shootDamage = upgradedShootDamage;
-
-        if (level > 1) cannons = upgradeCannons;
     }
 }

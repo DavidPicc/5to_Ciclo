@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Shoot3 : ShopObject
+public class Player_Shoot3 : MonoBehaviour
 {
+    public bool equipped;
+
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
@@ -13,20 +15,15 @@ public class Player_Shoot3 : ShopObject
     [SerializeField] public float maxAngle;
     [SerializeField] public AudioSource audioManager;
     [SerializeField] public AudioClip ShootSound;
+    public float distance;
 
     float timer;
     bool canShoot => Input.GetKey(KeyCode.Z) && !shotBullet && !GameManager.instance.isPaused && equipped;
     bool shotBullet = false;
     bool playingShoot = false;
 
-    [Header("Upgrades System")]
-    public float upgradedShootDamage;
-    public float upgradedBulletSpeed;
-    public float upgradedFireRate;
-
-    protected override void Start()
+    void Start()
     {
-        base.Start();
         //audioManager = GetComponent<AudioSource>();
         timer = fireRate;
     }
@@ -103,19 +100,7 @@ public class Player_Shoot3 : ShopObject
         Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, shootPoints[0].rotation * offsetVector);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
-        Destroy(bullet, 0.7f);
+        Destroy(bullet, distance);
         shotBullet = true;
-    }
-
-    protected override void Shopping()
-    {
-        base.Shopping();
-
-        if (level > 1){
-            bulletSpeed = upgradedBulletSpeed;
-            fireRate = upgradedFireRate;
-        }
-
-        if (level > 2) shootDamage = upgradedShootDamage;
     }
 }

@@ -20,6 +20,10 @@ public class SectionButtonControl : MonoBehaviour
 
     IEnumerator purchaseRoutine;
 
+    [Header("Equipment")]
+    public bool isWeapon;
+    public bool isShield;
+
     [Header("Costs")]
     public int gearsCost;
     public int coresCost;

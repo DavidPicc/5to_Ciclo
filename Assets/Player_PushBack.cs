@@ -31,7 +31,6 @@ public class Player_PushBack : MonoBehaviour
                     Vector3 _repulsionForce = -direction.normalized * forceMagnitude;
 
                     rb.AddForce(_repulsionForce, ForceMode.Force);
-                    Debug.Log("funciona");
                 }
             }
         }

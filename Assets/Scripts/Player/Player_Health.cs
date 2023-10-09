@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
+    private const float REAL_MAX_HEALTH = 5f;
+
     [SerializeField] public float maxHealth;
     [SerializeField] public float currentHealth;
     [SerializeField] public float invulnerabilityTime;
@@ -32,6 +34,7 @@ public class Player_Health : MonoBehaviour
         //audioManager = GetComponent<AudioSource>();
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
+        UpdateHealthBar();
         ActualizarCaritas();
         //transform.position = CheckPointScript.savedPoint;
 
@@ -128,7 +131,7 @@ public class Player_Health : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        healthFillBar.fillAmount = currentHealth / maxHealth;
+        healthFillBar.fillAmount = currentHealth / REAL_MAX_HEALTH;
     }
     void ActualizarCaritas()
     {
@@ -136,7 +139,7 @@ public class Player_Health : MonoBehaviour
         caritaNormal.gameObject.SetActive(currentHealth == 2);
         caritaFeliz.gameObject.SetActive(currentHealth == 3);
         caritaCorona.gameObject.SetActive(currentHealth == 4);
-        caritaFachera.gameObject.SetActive(currentHealth == 5);
+        caritaFachera.gameObject.SetActive(currentHealth >= 5);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -147,5 +150,13 @@ public class Player_Health : MonoBehaviour
                 TakeDamage(1);
             }
         }
+    }
+
+    public void SetHealth(float health)
+    {
+        maxHealth = health;
+        currentHealth = health;
+        UpdateHealthBar();
+        ActualizarCaritas();
     }
 }

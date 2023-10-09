@@ -204,7 +204,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135120168574868120}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -409,9 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf41677f24c31345ab5c2e2784d91e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  type: StraightGun
-  equipped: 1
+  equipped: 0
   bulletSpeed: 75
   shootDamage: 1.7
   bulletPrefab: {fileID: 1300772526029512616, guid: 2086ef79ed5ce2e47aeba3e2aa918de3,
@@ -429,9 +427,6 @@ MonoBehaviour:
   ShootSound: {fileID: 8300000, guid: fa2cd1026243129429a7abe1571c4e0d, type: 3}
   cannons: 1
   cannon: 0
-  upgradedShootDamage: 2.5
-  upgradeCannons: 2
-  upgradedCannon: 3
 --- !u!114 &1845453539510508706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,9 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a05513c79f58a49ab941dfd556ea69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: AreaGun
-  equipped: 0
+  equipped: 1
   bulletSpeed: 20.5
   shootDamage: 6
   bulletPrefab: {fileID: 4371670380075575442, guid: 045d464f8a47d6f4ba77f2a28257de51,
@@ -457,8 +450,8 @@ MonoBehaviour:
   fireRate: 1.6
   audioManager: {fileID: 737265259831080703}
   ShootSound: {fileID: 8300000, guid: 153bb7050ba24fd419d992eb655c03b0, type: 3}
+  bulletCount: 1
   inBetweenShotsTime: 0.8
-  upgradedShootDamage: 6
 --- !u!114 &3530333817525116619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,8 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b28e01e5a568414887078aa6bb5b210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: Flamethrower
   equipped: 0
   bulletSpeed: 18.5
   shootDamage: 1.3
@@ -485,9 +476,7 @@ MonoBehaviour:
   maxAngle: 20
   audioManager: {fileID: 737265259831080703}
   ShootSound: {fileID: 8300000, guid: 4022aae561d6c96419b4bc7046829b4e, type: 3}
-  upgradedShootDamage: 1
-  upgradedBulletSpeed: 16
-  upgradedFireRate: 0.025
+  distance: 0.7
 --- !u!82 &737265259831080703
 AudioSource:
   m_ObjectHideFlags: 0
@@ -597,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbcd2d1eb8dc914496773667fe1f68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 3
   currentHealth: 0
   invulnerabilityTime: 1.5
   canDie: 1
@@ -623,8 +612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f3729c47600fb42b00c1dfee68d2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  type: ReflectorShield
   equipped: 0
   shieldObj: {fileID: 2135120169741268257}
   bulletPrefab: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
@@ -637,18 +624,16 @@ MonoBehaviour:
   ActivationSound: {fileID: 8300000, guid: 993e4f8009a3b504bb6dd4e2487c3e80, type: 3}
   skillKey: 120
   maxRechargeBar: 5
-  maxCharge: 4
+  maxCharge: 6
   AbsorbSound: {fileID: 8300000, guid: c2bfe51e927794343b4367d2e59c6b58, type: 3}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  searchTargetRange: 20
+  searchTargetRange: 100
   maxTargetNumber: 2
   targets: []
   inBetweenTime: 0.1
   bulletSpeed: 22
-  upgradeShieldMaxCharge: 8
-  upgradeMaxTargetNumber: 4
 --- !u!114 &1745831259628544596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,13 +646,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7d789f884989148902787505acbac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  type: BulletShield
   equipped: 1
   rechargeBar: 0
   maxRechargeBar: 2.5
   abilityBar: {fileID: 0}
   maxBullets: 8
+  damage: 5
   Shield: {fileID: 3559136209784848834}
   pivot: {fileID: 5274071926668359628}
   shieldDistance: 4
@@ -680,7 +664,6 @@ MonoBehaviour:
   maxtimer: 5
   bulletPrefab: {fileID: 1300772526029512616, guid: 79ce1e6cc3fbd5449a4261d403f1d652,
     type: 3}
-  upgradedMaxBullets: 10
 --- !u!82 &7473262686694638747
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1181,7 +1164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135120169736824570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.26, y: 0.62, z: 0}
+  m_LocalPosition: {x: 1.26, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1910,7 +1893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5888447726729587118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: 39.1, z: 0}
+  m_LocalPosition: {x: 1.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1975,7 +1958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7785222858071491579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.26, y: 0.62, z: 0}
+  m_LocalPosition: {x: 1.26, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

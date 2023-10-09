@@ -170,6 +170,13 @@ public class GameManager : MonoBehaviour
         if(shopCamera != null) shopCamera.SetActive(false);
         if(defaultCamera != null) defaultCamera.SetActive(true);
 
+        if(UpgradeTrackerNewShop.instance != null)
+        {
+            UpgradeTrackerNewShop.instance.UpdateUpgrades();
+            UpgradeTrackerNewShop.instance.SetEquipment();
+        }
+
+
         Time.timeScale = 1f;
         shopMenu.SetActive(false);
         //CheckPointScript.instance.UpdateCheckpoints();

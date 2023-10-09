@@ -174,8 +174,10 @@ public class Enemy_Health : MonoBehaviour
     void SpawnPoints()
     {
         spawnedPoints = true;
-       
-        for (int i = 0; i < enemyValueInPoints; i++)
+
+        int multiplier = UpgradeTrackerNewShop.instance != null ? UpgradeTrackerNewShop.instance.GetGearMultiplier() : 1;
+
+        for (int i = 0; i < enemyValueInPoints * multiplier; i++)
         {
             var point = Instantiate(pointsPrefab, transform.position, Quaternion.identity);
         }

@@ -10,6 +10,10 @@ public class SectionNavigator : MonoBehaviour
     SectionButtonControl hoverButton;
     SectionButtonControl selectedButton;
 
+    [Header("Equipment")]
+    public string selectedWeapon;
+    public string selectedShield;
+
     [Header("Start Button")]
     public SectionButtonControl startButton;
 
@@ -77,6 +81,17 @@ public class SectionNavigator : MonoBehaviour
 
         hoverButton.Selected = true;
         selectedButton = hoverButton;
+
+        if (selectedButton.isWeapon)
+        {
+            selectedWeapon = selectedButton.feature;
+            if(UpgradeTrackerNewShop.instance != null)  UpgradeTrackerNewShop.instance.selectedWeapon = selectedButton.feature;
+        }
+        else if(selectedButton.isShield)
+        {
+            selectedShield = selectedButton.feature;
+            if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.selectedShield = selectedButton.feature;
+        }
 
         branchesNavigator.ActivateBranch(hoverButton.branch);
     }

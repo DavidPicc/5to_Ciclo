@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Ability2 : ShopObject
+public class Player_Ability2 : MonoBehaviour
 {
+    public bool equipped;
+
     [Header("Shield Charge")]
     [SerializeField] float rechargeBar;
-    [SerializeField] float maxRechargeBar;
+    public float maxRechargeBar;
     [SerializeField] Image abilityBar;
-    [SerializeField] int maxBullets = 3;
+    public int maxBullets = 3;
+    public float damage;
 
     [Header("References")]
     public GameObject Shield;
@@ -26,13 +29,8 @@ public class Player_Ability2 : ShopObject
 
     public GameObject bulletPrefab;
 
-    [Header("Upgrade System")]
-    public int upgradedMaxBullets;
-
-    protected override void Start()
+    void Start()
     {
-        base.Start();
-
         //audioManager = GetComponent<AudioSource>();
         rechargeBar = maxRechargeBar;
     }
@@ -103,6 +101,7 @@ public class Player_Ability2 : ShopObject
             Quaternion spawnRotation = Quaternion.Euler(0, 0, angle + 90);
             GameObject bullet = Instantiate(bulletPrefab, spawnPosition, spawnRotation);
             bullet.transform.parent = pivot;
+            bullet.GetComponent<PlayerBullet_Script2>().damage = damage;
             bullets.Add(bullet);
 
             angle += angleStep;
@@ -121,13 +120,9 @@ public class Player_Ability2 : ShopObject
         }
     }
 
-    protected override void Shopping()
+    public void SetRechargeBar(float rechargeBar)
     {
-        base.Shopping();
-
-        if (level > 1)
-        {
-            maxBullets = upgradedMaxBullets;
-        }
+        maxRechargeBar = rechargeBar;
+        this.rechargeBar = rechargeBar;
     }
 }
