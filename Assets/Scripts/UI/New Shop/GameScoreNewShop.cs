@@ -5,6 +5,8 @@ using TMPro;
 
 public class GameScoreNewShop : MonoBehaviour
 {
+    public bool debug;
+
     public static GameScoreNewShop instance;
 
     public int gears, cores;
@@ -18,7 +20,7 @@ public class GameScoreNewShop : MonoBehaviour
 
     void Update()
     {
-        if(GameScore.instance != null)
+        if(GameScore.instance != null && !debug)
         {
             gears = GameScore.instance.gearScore;
             cores = GameScore.instance.coreScore;
@@ -32,7 +34,7 @@ public class GameScoreNewShop : MonoBehaviour
     {
         if (this.gears < gears || this.cores < cores) return;
 
-        if (GameScore.instance != null) 
+        if (GameScore.instance != null && !debug) 
         {
             GameScore.instance.RemoveGears(gears);
             GameScore.instance.RemoveCores(cores);

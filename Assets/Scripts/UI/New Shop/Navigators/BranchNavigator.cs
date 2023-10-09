@@ -38,7 +38,7 @@ public class BranchNavigator : MonoBehaviour
             if (upgradeSelectedController.GetButtonAtLeft() == null)
             {
                 GiveControlToSection();
-            }
+            } else if(upgradeSelectedController.GetButtonAtLeft().Locked) GiveControlToSection();
             else SetupgradeSelectedController(upgradeSelectedController.GetButtonAtLeft());
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))

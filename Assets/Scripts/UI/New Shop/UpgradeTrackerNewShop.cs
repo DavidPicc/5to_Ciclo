@@ -109,6 +109,9 @@ public class UpgradeTrackerNewShop : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        selectedWeaponUI = GameObject.FindGameObjectWithTag("EquipmentWeapon").GetComponent<TextMeshProUGUI>();
+        selectedShieldUI = GameObject.FindGameObjectWithTag("EquipmentShield").GetComponent<TextMeshProUGUI>();
+
         sectionControllers = FindObjectsOfType<SectionButtonControl>();
         upgradeControllers = FindObjectsOfType<UpgradeController>();
 

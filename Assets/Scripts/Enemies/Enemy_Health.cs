@@ -16,7 +16,6 @@ public class Enemy_Health : MonoBehaviour
 
     public bool IsEnemy = true;
     public bool canBeDamaged => Mathf.Abs(transform.position.x - _camera.position.x) <= Camera.main.pixelWidth && timer >= invulnerabilityTime;
-    public bool CanBeDamaged;
     [SerializeField] float invulnerabilityTime;
     float timer;
 
@@ -68,19 +67,18 @@ public class Enemy_Health : MonoBehaviour
 
     void Update()
     {
-        CanBeDamaged = canBeDamaged;
-
         if (timer <= 0)
         {
             timer = invulnerabilityTime;
         }
 
-        if(!canBeDamaged)
+        if(Camera.main != null)
         {
-            timer -= Time.deltaTime;
+            if (!canBeDamaged)
+            {
+                timer -= Time.deltaTime;
+            }
         }
-
- 
 
         else if (IsBoss == true && currentHealth <= HealtPhase4)
         {
