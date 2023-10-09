@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject deathMenu;
     [SerializeField] AudioClip DeathMusic;
     public GameObject shopMenu;
+    public GameObject defaultCamera;
+    public GameObject shopCamera;
     public GameObject nextLevelTransition;
     public bool isPaused = false;
     public bool canUseAbilities = true;
@@ -150,6 +152,9 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
+        if(defaultCamera != null) defaultCamera.SetActive(false);
+        if(shopCamera != null) shopCamera.SetActive(true);
+
         isPaused = true;
 
         Time.timeScale = 0f;
@@ -162,6 +167,9 @@ public class GameManager : MonoBehaviour
 
     public void CloseShop()
     {
+        if(shopCamera != null) shopCamera.SetActive(false);
+        if(defaultCamera != null) defaultCamera.SetActive(true);
+
         Time.timeScale = 1f;
         shopMenu.SetActive(false);
         //CheckPointScript.instance.UpdateCheckpoints();

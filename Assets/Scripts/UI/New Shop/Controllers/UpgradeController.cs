@@ -84,6 +84,7 @@ public class UpgradeController : MonoBehaviour
             yield return new WaitForSecondsRealtime(PURCHASE_TIME);
 
             upgrading = false;
+            GameScoreNewShop.instance.Spend(gearsCost, coresCost);
             Purchase();
             if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
         }
@@ -92,7 +93,6 @@ public class UpgradeController : MonoBehaviour
     public void Purchase()
     {
         purchased = true;
-        GameScoreNewShop.instance.Spend(gearsCost, coresCost);
         UnlockNextUpgrades();
 
         for (int i = 0; i < linesToNextUpgrades.Length; i++)

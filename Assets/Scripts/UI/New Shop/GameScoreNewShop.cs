@@ -24,8 +24,8 @@ public class GameScoreNewShop : MonoBehaviour
             cores = GameScore.instance.coreScore;
         }
 
-        gearsUI.text = gears.ToString();
-        coresUI.text = cores.ToString();
+        if(gearsUI != null) gearsUI.text = gears.ToString();
+        if(coresUI != null) coresUI.text = cores.ToString();
     }
 
     public void Spend(int gears, int cores)

@@ -66,14 +66,14 @@ public class SectionButtonControl : MonoBehaviour
 
             upgrading = false;
             Purchase();
-            if(UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
+            GameScoreNewShop.instance.Spend(gearsCost, coresCost);
+            if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
         }
     }
 
     public void Purchase()
     {
         purchased = true;
-        GameScoreNewShop.instance.Spend(gearsCost, coresCost);
     }
 
     public void PreventiveUpgradeCancel()

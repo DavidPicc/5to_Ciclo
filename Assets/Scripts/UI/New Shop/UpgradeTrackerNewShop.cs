@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UpgradeTrackerNewShop : MonoBehaviour
 {
@@ -33,7 +34,17 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         sectionControllers = FindObjectsOfType<SectionButtonControl>();
         upgradeControllers = FindObjectsOfType<UpgradeController>();
@@ -46,6 +57,8 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         {
             branches[i].gameObject.SetActive(false);
         }
+
+        GameObject.FindGameObjectWithTag("shopMenu").SetActive(false);
     }
 
     void SetUpgradesUI()
