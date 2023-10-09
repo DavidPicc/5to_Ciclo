@@ -109,15 +109,18 @@ public class UpgradeTrackerNewShop : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        selectedWeaponUI = GameObject.FindGameObjectWithTag("EquipmentWeapon").GetComponent<TextMeshProUGUI>();
-        selectedShieldUI = GameObject.FindGameObjectWithTag("EquipmentShield").GetComponent<TextMeshProUGUI>();
+        var selectedWeaponUIObj = GameObject.FindGameObjectWithTag("EquipmentWeapon");
+        var selectedShieldUIObj = GameObject.FindGameObjectWithTag("EquipmentShield");
+
+        if(selectedWeaponUIObj != null) selectedWeaponUI = selectedWeaponUIObj.GetComponent<TextMeshProUGUI>();
+        if(selectedShieldUIObj != null) selectedShieldUI = selectedShieldUIObj.GetComponent<TextMeshProUGUI>();
 
         sectionControllers = FindObjectsOfType<SectionButtonControl>();
         upgradeControllers = FindObjectsOfType<UpgradeController>();
 
         var player = GameObject.FindGameObjectWithTag("Player");
 
-        if(player != null)
+        if (player != null)
         {
             playerMovement = player.GetComponent<PlayerMovement_TestSalvador2>();
             playerHealth = player.GetComponent<Player_Health>();
@@ -155,6 +158,7 @@ public class UpgradeTrackerNewShop : MonoBehaviour
             baseMaxSpeed = playerMovement.maxSpeed;
             baseSpeedY = playerMovement.speedY;
         }
+        else return;
 
         UpdateUpgrades();
 
