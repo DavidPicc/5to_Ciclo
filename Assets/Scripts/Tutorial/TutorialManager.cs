@@ -14,10 +14,10 @@ public class TutorialManager : MonoBehaviour
     private bool estaRalentizado3 = false;
 
     private float velocidadNormal = 1.0f;
-    private float velocidadRalentizada = 0.1f;
+    private float velocidadRalentizada = 0f;
 
     public static TutorialManager instance;
-    //public GameObject bossDeathTutorialTransition;
+
     public GameObject boss;
 
     public GameObject moveKeys, shootKey, abilityKey;
@@ -35,10 +35,8 @@ public class TutorialManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //bossDeathTutorialTransition = GameObject.FindGameObjectWithTag("transitionLevel");
         boss = GameObject.FindGameObjectWithTag("bossTutorial");
 
-        //if(bossDeathTutorialTransition != null) bossDeathTutorialTransition.SetActive(false);
         if(boss) boss.SetActive(false);
     }
 
