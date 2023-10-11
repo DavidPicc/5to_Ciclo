@@ -42,6 +42,8 @@ public class UpgradeTrackerNewShop : MonoBehaviour
     [Header("Lanzaclavos Upgrades")]
     public int level1Cannon;
     public int level1Cannons;
+    public float lanzaclavosDanoPerLevel;
+    public float lanzaclavosFireRatePerLevel;
     float baseDamage;
     float baseFireRate;
     int baseCannon;
@@ -50,22 +52,29 @@ public class UpgradeTrackerNewShop : MonoBehaviour
     [Header("Lanzallamas Upgrades")]
     public float level1Alcance;
     public float level1Radio;
+    public float lanzallamasDanoPerLevel;
+    public float lanzallamasFireRatePerLevel;
     float baseDamageLanzallamas;
     float baseFireRateLanzallamas;
     float baseDistanceLanzallamas;
     float baseMaxAngleLanzallamas;
 
+    [Header("Lanzagranadas Upgrades")]
+    public float lanzagranadasDanoPerLevel;
+    public float lanzagranadasFireRatePerLevel;
     float baseDamageLanzagranadas;
     float baseFireRateLanzagranadas;
 
     [Header("Escudo de Sierras Upgrades")]
     public int sierrasPorLevel;
+    public float sierrasDanoPerLevel;
     float baseDamageSierras;
     int baseSierrasNum;
     float baseEnergiaSierras;
 
     [Header("Escudo Reflector Upgrades")]
     public int objetivosPorLevel;
+    public int reflectorChargePerLevel;
     int baseAbsorcion;
     int baseObjetivos;
     float baseEnergiaReflector;
@@ -83,6 +92,10 @@ public class UpgradeTrackerNewShop : MonoBehaviour
     float baseAcceleration;
     float baseMaxSpeed;
     float baseSpeedY;
+
+    [Header("Vindex Resources Upgrades")]
+    public float gearsPerLevel;
+    public float coresPerLevel;
 
     private void Awake()
     {
@@ -191,8 +204,8 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         playerLanzaclavos.cannon = levelCanonDobleLanzaclavos == 0 ? baseCannon : level1Cannon;
         playerLanzaclavos.cannons = levelCanonDobleLanzaclavos == 0 ? baseCannons : level1Cannons;
 
-        playerLanzaclavos.shootDamage = baseDamage * (levelDanoLanzaclavos + 1);
-        playerLanzaclavos.fireRate = baseFireRate / (levelCadenciaLanzaclavos + 1);
+        playerLanzaclavos.shootDamage = baseDamage + levelDanoLanzaclavos * lanzaclavosDanoPerLevel;
+        playerLanzaclavos.fireRate = baseFireRate / (levelCadenciaLanzaclavos * lanzaclavosFireRatePerLevel + 1);
 
         //Lanzallamas
         int levelAlcanceLanzallamas = Array.Find(upgrades, (e) => e.feature == "LANZALLAMAS" && e.upgrade == "ALCANCE").level;
@@ -203,16 +216,16 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         playerLanzallamas.distance = levelAlcanceLanzallamas == 0 ? baseDistanceLanzallamas : level1Alcance;
         playerLanzallamas.maxAngle = levelRadioLanzallamas == 0 ? baseMaxAngleLanzallamas : level1Radio;
 
-        playerLanzallamas.shootDamage = baseDamageLanzallamas * (levelDanoLanzallamas + 1);
-        playerLanzallamas.fireRate = baseFireRateLanzallamas / (levelCadenciaLanzallamas + 1);
+        playerLanzallamas.shootDamage = baseDamageLanzallamas + levelDanoLanzallamas * lanzallamasDanoPerLevel;
+        playerLanzallamas.fireRate = baseFireRateLanzallamas / (levelCadenciaLanzallamas * lanzallamasFireRatePerLevel + 1);
 
         //Lanzagranadas
         int levelCanonDobleLanzagranadas = Array.Find(upgrades, (e) => e.feature == "LANZAGRANADAS" && e.upgrade == "CANONDOBLE").level;
         int levelDanoLanzagranadas = Array.Find(upgrades, (e) => e.feature == "LANZAGRANADAS" && e.upgrade == "DANO").level;
         int levelCadenciaLanzagranadas = Array.Find(upgrades, (e) => e.feature == "LANZAGRANADAS" && e.upgrade == "CADENCIA").level;
 
-        playerLanzagranadas.shootDamage = baseDamageLanzagranadas * (levelDanoLanzagranadas + 1);
-        playerLanzagranadas.fireRate = baseFireRateLanzagranadas / (levelCadenciaLanzagranadas + 1);
+        playerLanzagranadas.shootDamage = baseDamageLanzagranadas + levelDanoLanzagranadas * lanzagranadasDanoPerLevel;
+        playerLanzagranadas.fireRate = baseFireRateLanzagranadas / (levelCadenciaLanzagranadas * lanzagranadasFireRatePerLevel + 1);
         playerLanzagranadas.bulletCount = levelCanonDobleLanzagranadas + 1;
 
         //Escudo de Sierras
@@ -220,7 +233,7 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         int levelEnergiaSierras = Array.Find(upgrades, (e) => e.feature == "ESCUDOSIERRAS" && e.upgrade == "ENERGIA").level;
         int levelCantidadSierras = Array.Find(upgrades, (e) => e.feature == "ESCUDOSIERRAS" && e.upgrade == "CANTIDAD").level;
 
-        playerEscudoSierras.damage = baseDamageSierras * (levelDanoSierras + 1);
+        playerEscudoSierras.damage = baseDamageSierras + levelDanoSierras * sierrasDanoPerLevel;
         playerEscudoSierras.SetRechargeBar(baseEnergiaSierras + TIME_PER_LEVEL_SHIELD * levelEnergiaSierras);
         playerEscudoSierras.maxBullets = baseSierrasNum + sierrasPorLevel * levelCantidadSierras;
 
@@ -229,7 +242,7 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         int levelObjetivosReflector = Array.Find(upgrades, (e) => e.feature == "ESCUDOREFLECTOR" && e.upgrade == "OBJETIVOS").level;
         int levelAbsorcionReflector = Array.Find(upgrades, (e) => e.feature == "ESCUDOREFLECTOR" && e.upgrade == "ABSORCION").level;
 
-        playerEscudoReflector.maxCharge = baseAbsorcion * (levelAbsorcionReflector + 1);
+        playerEscudoReflector.maxCharge = baseAbsorcion + reflectorChargePerLevel * levelAbsorcionReflector;
         playerEscudoReflector.maxTargetNumber = baseObjetivos + objetivosPorLevel * levelObjetivosReflector;
         playerEscudoReflector.SetRechargeBar(baseEnergiaReflector + TIME_PER_LEVEL_SHIELD * levelEnergiaReflector);
 
@@ -324,32 +337,32 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         switch (feature)
         {
             case "LANZACLAVOS":
-                return "Lanzaclavos";
+                return "Ametralladora Iónica";
             case "LANZAGRANADAS":
-                return "Lanzagranadas";
+                return "Cañón DRAGON V";
             case "LANZALLAMAS":
-                return "Lanzallamas";
+                return "Pulverizador Kelvin";
 
             case "ESCUDOSIERRAS":
-                return "Escudo de Sierras";
+                return "Sierras magnéticas";
             case "ESCUDOREFLECTOR":
-                return "Escudo Reflector";
+                return "Escudo de plasma";
 
             case "VINDEX":
-                return "Vindex";
+                return "Soporte Vital";
 
             default:
                 return "Feature Not Found";
         }
     }
 
-    public int GetGearMultiplier() 
+    public float GetGearMultiplier() 
     {
-        return Array.Find(upgrades, (e) => e.feature == selectedWeapon && e.upgrade == "IMAN").level + 1;
+        return  1 + Array.Find(upgrades, (e) => e.feature == selectedWeapon && e.upgrade == "IMAN").level * gearsPerLevel;
     }
 
-    public int GetCoreMultiplier()
+    public float GetCoreMultiplier()
     {
-        return Array.Find(upgrades, (e) => e.feature == "VINDEX" && e.upgrade == "NUCLEOS").level + 1;
+        return 1 + Array.Find(upgrades, (e) => e.feature == "VINDEX" && e.upgrade == "NUCLEOS").level * coresPerLevel;
     }
 }

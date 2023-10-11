@@ -19,9 +19,9 @@ public class Cores_Script : MonoBehaviour
         {
             audioManager.PlayOneShot(CoresSound);
 
-            int multiplier = UpgradeTrackerNewShop.instance != null ? UpgradeTrackerNewShop.instance.GetCoreMultiplier() : 1;
+            float multiplier = UpgradeTrackerNewShop.instance != null ? UpgradeTrackerNewShop.instance.GetCoreMultiplier() : 1;
 
-            GameScore.instance.AddCores(multiplier);
+            GameScore.instance.AddCores(Mathf.FloorToInt(multiplier));
             Destroy(gameObject);
             done = true;
         }
