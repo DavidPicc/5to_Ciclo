@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13231,7 +13231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7cd0d958804a742b02c1751da6d09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.06
+  delay: 0.05
   fullText: 
   currentText: 
   characterText: {fileID: 971638588}
@@ -86089,9 +86089,8 @@ MonoBehaviour:
   - situationPrefab: {fileID: 4520026764095519211, guid: 962cdaa20d43d024e9624f1e9a0a5000,
       type: 3}
     dialogue:
-    - 'Vindex; Necesito engranajes para mejorarme
-
-'
+    - "Kei;Ella mat\xF3 a mi padre... Tengo que detenerla... Destruirla\n"
+    - "Vindex;(Tranquil\xEDzate, conc\xE9ntrate. La ira ciega no nos va a ayudar)\n"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -86115,7 +86114,10 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 5d22640dfb5edff4a8bb931a46f8e16f,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Vindex;(\xBFMe iban a enviar aqu\xED si nunca m\xE1s encend\xEDa?)"
+    - Kei;Pues... es el basurero de drones. Es probable.
+    - Vindex;(Gracias al cielo que me reparaste)
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -86163,7 +86165,12 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 75037c4bdde55e74db3fa4a35dff4d32,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Kei;Oye, Vindex... \xBFQu\xE9 modificaci\xF3n te gustar\xEDa que te ponga?
+      Hay un mont\xF3n de chatarra aqu\xED que podemos usar."
+    - "Vindex;(\xA1Un dispensador de soda!)"
+    - Kei;Pero- Pero ni siquiera puedes-
+    - Vindex;(Soda.)
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -86219,7 +86226,10 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: deacc1a21f73e6e438c6731c3025b0fc,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Kei;\xA1Enemigos! \xA1Atento a la derecha, Vindex!"
+    - "Vindex;(\xBFA tu derecha o a mi derecha?)"
+    - "Kei;\xA1ES LA MISMA DERECHA!"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -86259,7 +86269,11 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 93ab69f74e0754c4f8a8c6c45e60d16f,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Vindex;(\xBFNo tienes miedo de que pasara cuando encontramos a Astartea?)"
+    - Kei;Claro que tengo miedo... Me aterra
+    - "Vindex;(\xBFC\xF3mo lidias con ello?)"
+    - "Kei;Solo... no pienso en ello\u2026"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -86363,7 +86377,11 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 190f93af4d6bab8448a107b698bfe44d,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Vindex;(Estoy cansado\u2026 Cinco minutitos m\xE1s por favor\u2026)"
+    - "Kei;\xA1Que no, tenemos que movernos!"
+    - Vindex;(Me duelen los pies)
+    - "Kei;\xA1Ni siquiera tienes pies!"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -86419,7 +86437,10 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: c6c88d816a12efe4282d6c9e5322da8d,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Kei;Tenemos que apresurarnos, Vindex... Cada segundo cuenta
+    - "Vindex;(\xBFNo podemos tomar al menos un descansito?)"
+    - "Kei;Quiz\xE1 m\xE1s adelante\u2026"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -86435,7 +86456,9 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 554ff7951f5bce64daeb17f6aae06632,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Kei;Necesitamos m\xE1s engranajes\u2026 Ya tengo una mejora en mente\u2026"
+    - "Vindex;(\xA1No puedo esperar a verla!)"
     isShop: 0
     isBoss: 0
     methodEvent:
