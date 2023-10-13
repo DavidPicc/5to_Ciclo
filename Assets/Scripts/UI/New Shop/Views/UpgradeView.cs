@@ -55,7 +55,7 @@ public class UpgradeView : MonoBehaviour
 
                 floatingPanel.SetName(nameText);
                 floatingPanel.SetDescription(descriptionText);
-                floatingPanel.SetPrice(upgradeControl.Purchased ? "SELECT" : "Price: " + upgradeControl.gearsCost + " gears " + upgradeControl.coresCost + " cores");
+                floatingPanel.SetPrice(upgradeControl.Purchased ? "" : "Price: " + upgradeControl.gearsCost + " gears " + upgradeControl.coresCost + " cores");
             }
         }
         else
