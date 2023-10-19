@@ -72,6 +72,9 @@ public class SectionButtonControl : MonoBehaviour
             Purchase();
             GameScoreNewShop.instance.Spend(gearsCost, coresCost);
             if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
+            SectionNavigator sectionNav = FindObjectOfType<SectionNavigator>();
+            sectionNav.SelectButton();
+            sectionNav.GiveControlToBranches();
         }
     }
 

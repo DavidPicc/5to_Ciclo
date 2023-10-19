@@ -9,12 +9,9 @@ public class SectionButtonView : MonoBehaviour
     [SerializeField] SectionNavigator navigator;
 
     [Header("View")]
-    public RectTransform buttonTransform;
     public Image buttonImage;
-    Vector2 initialScale;
-    public float scaleMultiplier;
-    Vector2 multipliedScale;
-    public float alphaUnselected;
+    public GameObject selectedSignPrefab;
+    GameObject selectedSign;
 
     [Header("Floating Panel")]
     public string nameText;
@@ -25,8 +22,9 @@ public class SectionButtonView : MonoBehaviour
 
     void Start()
     {
-        initialScale = buttonTransform.localScale;
-        multipliedScale = initialScale * scaleMultiplier;
+        selectedSign = Instantiate(selectedSignPrefab, transform);
+        selectedSign.GetComponent<Image>().color = buttonImage.color;
+        selectedSign.SetActive(false);
     }
 
     void Update()
@@ -38,14 +36,13 @@ public class SectionButtonView : MonoBehaviour
     {
         if(buttonControl.Hover && navigator.Control)
         {
-            buttonTransform.localScale = multipliedScale;
-
             if(floatingPanelPrefab != null )
             {
                 if (floatingPanelObj == null)
                 {
                     floatingPanelObj = Instantiate(floatingPanelPrefab, transform);
                     floatingPanel = floatingPanelObj.GetComponent<FloatingPanelShop>();
+                    floatingPanel.SetAlternativeMessage("SELECT");
                 }
 
                 if (!floatingPanelObj.activeSelf)
@@ -55,29 +52,18 @@ public class SectionButtonView : MonoBehaviour
 
                 floatingPanel.SetName(nameText);
                 floatingPanel.SetDescription(descriptionText);
-                floatingPanel.SetPrice(buttonControl.Purchased ? "SELECT" : "Price: " + buttonControl.gearsCost + " gears " + buttonControl.coresCost + " cores");
+                floatingPanel.SetPrice(buttonControl.gearsCost, buttonControl.coresCost, !buttonControl.Purchased);
             }
         }
         else
         {
-            buttonTransform.localScale = initialScale;
-
             if (floatingPanelObj != null)
             {
                 if (floatingPanelObj.activeSelf) floatingPanelObj.SetActive(false);
             }
         }
 
-        if(buttonControl.Selected)
-        {
-            buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 1f);
-        }
-        else
-        {
-            buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, alphaUnselected);
-        }
-
-
+        selectedSign.SetActive(buttonControl.Selected);
     }
 
     public SectionButtonControl GetButtonControl()

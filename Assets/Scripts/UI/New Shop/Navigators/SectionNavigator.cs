@@ -70,7 +70,7 @@ public class SectionNavigator : MonoBehaviour
         hoverButton = newHoverButton;
     }
 
-    void SelectButton()
+    public void SelectButton()
     {
         if(selectedButton == hoverButton || !hoverButton.Purchased) return;
 
@@ -96,7 +96,7 @@ public class SectionNavigator : MonoBehaviour
         branchesNavigator.ActivateBranch(hoverButton.branch);
     }
 
-    void GiveControlToBranches()
+    public void GiveControlToBranches()
     {
         var branches = branchesNavigator.GetBranches();
 

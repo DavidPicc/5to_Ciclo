@@ -11,7 +11,11 @@ public class FloatingPanelShop : MonoBehaviour
     [Header("Labels")]
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI descriptionText;
-    [SerializeField] TextMeshProUGUI priceText;
+    [SerializeField] TextMeshProUGUI priceGearText;
+    [SerializeField] TextMeshProUGUI priceCoreText;
+    public GameObject iconGear;
+    public GameObject iconCore;
+    public TextMeshProUGUI alternativeMessage;
 
     private void Update()
     {
@@ -59,8 +63,23 @@ public class FloatingPanelShop : MonoBehaviour
         descriptionText.text = description;
     }
 
-    public void SetPrice(string price)
+    public void SetPrice(int gears, int cores, bool show)
     {
-        priceText.text = price;
+        if(show)
+        {
+            priceGearText.text = gears.ToString();
+            priceCoreText.text = cores.ToString();
+        }
+
+        priceGearText.gameObject.SetActive(show);
+        priceCoreText.gameObject.SetActive(show);
+        iconGear.SetActive(show);
+        iconCore.SetActive(show);
+        alternativeMessage.gameObject.SetActive(!show);
+    }
+
+    public void SetAlternativeMessage(string alternativeMessage)
+    {
+        this.alternativeMessage.text = alternativeMessage;
     }
 }

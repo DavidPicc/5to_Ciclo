@@ -9,12 +9,9 @@ public class UpgradeView : MonoBehaviour
     [SerializeField] UpgradeController upgradeControl;
 
     [Header("View")]
-    public RectTransform upgradeTransform;
     public Image upgradeImage;
-    Vector2 initialScale;
-    public float scaleMultiplier;
-    Vector2 multipliedScale;
-    public float alphaUnselected;
+    public GameObject lockedSignPrefab;
+    GameObject lockedSign;
 
     [Header("Floating Panel")]
     public string nameText;
@@ -25,8 +22,9 @@ public class UpgradeView : MonoBehaviour
 
     void Start()
     {
-        initialScale = upgradeTransform.localScale;
-        multipliedScale = initialScale * scaleMultiplier;
+        lockedSign = Instantiate(lockedSignPrefab, transform);
+        lockedSign.GetComponent<Image>().color = upgradeImage.color;
+        lockedSign.SetActive(false);
     }
 
     void Update()
@@ -38,7 +36,6 @@ public class UpgradeView : MonoBehaviour
     {
         if (upgradeControl.Selected)
         {
-            upgradeTransform.localScale = multipliedScale;
 
             if (floatingPanelPrefab != null)
             {
@@ -46,6 +43,7 @@ public class UpgradeView : MonoBehaviour
                 {
                     floatingPanelObj = Instantiate(floatingPanelPrefab, transform);
                     floatingPanel = floatingPanelObj.GetComponent<FloatingPanelShop>();
+                    floatingPanel.SetAlternativeMessage("");
                 }
 
                 if (!floatingPanelObj.activeSelf)
@@ -55,27 +53,18 @@ public class UpgradeView : MonoBehaviour
 
                 floatingPanel.SetName(nameText);
                 floatingPanel.SetDescription(descriptionText);
-                floatingPanel.SetPrice(upgradeControl.Purchased ? "" : "Price: " + upgradeControl.gearsCost + " gears " + upgradeControl.coresCost + " cores");
+                floatingPanel.SetPrice(upgradeControl.gearsCost, upgradeControl.coresCost, !upgradeControl.Purchased);
             }
         }
         else
         {
-            upgradeTransform.localScale = initialScale;
-
             if (floatingPanelObj != null)
             {
                 if (floatingPanelObj.activeSelf) floatingPanelObj.SetActive(false);
             }
         }
 
-        if (upgradeControl.Purchased)
-        {
-            upgradeImage.color = new Color(upgradeImage.color.r, upgradeImage.color.g, upgradeImage.color.b, 1f);
-        }
-        else
-        {
-            upgradeImage.color = new Color(upgradeImage.color.r, upgradeImage.color.g, upgradeImage.color.b, alphaUnselected);
-        }
+        lockedSign.SetActive(!upgradeControl.Purchased);
     }
 
     public UpgradeController GetUpgradeControl()
