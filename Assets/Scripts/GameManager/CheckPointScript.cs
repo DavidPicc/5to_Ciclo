@@ -49,7 +49,7 @@ public class CheckPointScript : MonoBehaviour
     public void LoadCheckpoints()
     {
         //SituationManager.instance.waveIndex = savedWave;
-        FindObjectOfType<StageMovement>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPointX")-5, PlayerPrefs.GetFloat("savedPointY"), 0);
+        FindObjectOfType<StageMovement>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPointX"), PlayerPrefs.GetFloat("savedPointY"), 0);
         Debug.Log(PlayerPrefs.GetFloat("savedPointX"));
         Debug.Log(FindObjectOfType<StageMovement>().transform.position);
         GameObject.FindGameObjectWithTag("MoveVertical").transform.localPosition = new Vector3(PlayerPrefs.GetFloat("savedCameraX"), PlayerPrefs.GetFloat("savedCameraY"), 0);
