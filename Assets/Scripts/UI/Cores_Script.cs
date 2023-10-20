@@ -7,6 +7,7 @@ public class Cores_Script : MonoBehaviour
 {
     [SerializeField] public AudioSource audioManager;
     [SerializeField] public AudioClip CoresSound;
+    [SerializeField] MeshRenderer coreRenderer;
     bool done = false;
 
     public void Start()
@@ -22,7 +23,8 @@ public class Cores_Script : MonoBehaviour
             float multiplier = UpgradeTrackerNewShop.instance != null ? UpgradeTrackerNewShop.instance.GetCoreMultiplier() : 1;
 
             GameScore.instance.AddCores(Mathf.FloorToInt(multiplier));
-            Destroy(gameObject);
+            coreRenderer.enabled = false;
+            Destroy(gameObject,1f);
             done = true;
         }
     }

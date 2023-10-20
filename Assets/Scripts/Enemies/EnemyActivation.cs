@@ -11,9 +11,6 @@ public class EnemyActivation : MonoBehaviour
     public EnemyMovement movementScript;
     public EnemyShooting enemyShooting;
     public Enemy_Health enemyHealth;
-
-    public float checkTimer = 2f;
-    float timer;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -27,8 +24,6 @@ public class EnemyActivation : MonoBehaviour
 
        // if (enemyHealth != null)
        //     enemyHealth.enabled = false;
-
-        timer = 0;
 
         //if (Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y) > 30f && Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) > 55f)
         //{

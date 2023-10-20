@@ -17,7 +17,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float acceleration;
     [SerializeField] float speedLimit;
     float moveX, moveY;
-    [SerializeField] float moveDrag, stayDrag;
+    [SerializeField] float moveDragX, moveDragY, stayDrag;
     [HideInInspector] public Vector3 moveVector;
 
 
@@ -74,24 +74,18 @@ public class Player_Movement : MonoBehaviour
     {
         if(moveX != 0 || moveY != 0)
         {
-            rb.drag = moveDrag;
+            if(moveX != 0 && moveY == 0)
+            {
+                rb.drag = moveDragX;
+            }
+            else if (moveX == 0 && moveY != 0)
+            {
+                rb.drag = moveDragY;
+            }
         }
         else
         {
             rb.drag = stayDrag;
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Cores"))
-    //    {
-    //        if (other.GetComponent<AudioSource>() != null && other.GetComponent<Cores_Script>() != null)
-    //        {
-    //            //other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Cores_Script>().CoresSound);
-    //        }
-            
-    //        GameScore.instance.AddCores(1);
-    //        Destroy(other.gameObject);
-    //    }
-    //}
 }

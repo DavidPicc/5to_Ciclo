@@ -773,7 +773,6 @@ GameObject:
   - component: {fileID: 8088536440039082833}
   - component: {fileID: 8088536440039082830}
   - component: {fileID: 5518269870390203227}
-  - component: {fileID: 7631057846047541020}
   - component: {fileID: 5420327710605882809}
   - component: {fileID: 8088536440039082831}
   - component: {fileID: 8393978830263061864}
@@ -846,18 +845,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8088536440039082834}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3863536484f70a340a5aee3bf025640f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 5420327710605882809}
   MovementSound: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
-  moveType: 1
+  moveType: 0
   acceleration: 150
   speedLimit: 30
-  moveDrag: 5
-  stayDrag: 1
+  moveDragX: 3
+  moveDragY: 5
+  stayDrag: 10
   moveVector: {x: 0, y: 0, z: 0}
 --- !u!114 &5518269870390203227
 MonoBehaviour:
@@ -866,38 +866,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8088536440039082834}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75f2bf2678aa5804fafb07ece4ca3f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 5420327710605882809}
   MovementSound: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
-  accelerationX: 90
-  maxSpeed: 60
-  speedY: 60
-  dragFactorX: 8
-  dragFactorY: 8
-  input: {x: 0, y: 0}
---- !u!114 &7631057846047541020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088536440039082834}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772389bdf64c08c408522f2cf7fce33b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 5420327710605882809}
-  MovementSound: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
-  accelerationX: 90
-  accelerationY: 60
-  maxSpeed: 60
-  dragFactorX: 8
-  dragFactorY: 8
+  accelerationX: 70
+  maxSpeed: 50
+  speedY: 25
+  dragFactorX: 7
+  dragFactorY: 7
   input: {x: 0, y: 0}
 --- !u!82 &5420327710605882809
 AudioSource:
@@ -1008,8 +988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf41677f24c31345ab5c2e2784d91e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: StraightGun
   equipped: 1
   bulletSpeed: 35
   shootDamage: 3
@@ -1028,9 +1006,6 @@ MonoBehaviour:
   ShootSound: {fileID: 8300000, guid: fa2cd1026243129429a7abe1571c4e0d, type: 3}
   cannons: 1
   cannon: 0
-  upgradedShootDamage: 5
-  upgradeCannons: 2
-  upgradedCannon: 1
 --- !u!114 &8393978830263061864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,8 +1018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a05513c79f58a49ab941dfd556ea69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: AreaGun
   equipped: 0
   bulletSpeed: 24
   shootDamage: 8
@@ -1056,8 +1029,8 @@ MonoBehaviour:
   fireRate: 0.5
   audioManager: {fileID: 7483420906162743093}
   ShootSound: {fileID: 8300000, guid: 153bb7050ba24fd419d992eb655c03b0, type: 3}
+  bulletCount: 0
   inBetweenShotsTime: 0.3
-  upgradedShootDamage: 16
 --- !u!114 &6710216752889483009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,8 +1043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b28e01e5a568414887078aa6bb5b210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: Flamethrower
   equipped: 0
   bulletSpeed: 8
   shootDamage: 0.5
@@ -1084,9 +1055,7 @@ MonoBehaviour:
   maxAngle: 10
   audioManager: {fileID: 7483420906162743093}
   ShootSound: {fileID: 8300000, guid: 4022aae561d6c96419b4bc7046829b4e, type: 3}
-  upgradedShootDamage: 1
-  upgradedBulletSpeed: 16
-  upgradedFireRate: 0.025
+  distance: 0
 --- !u!82 &7483420906162743093
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1222,8 +1191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f3729c47600fb42b00c1dfee68d2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  type: ReflectorShield
   equipped: 0
   shieldObj: {fileID: 8088536441087026411}
   bulletPrefab: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
@@ -1246,8 +1213,6 @@ MonoBehaviour:
   targets: []
   inBetweenTime: 0.1
   bulletSpeed: 22
-  upgradeShieldMaxCharge: 8
-  upgradeMaxTargetNumber: 4
 --- !u!114 &8492462015629423518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,13 +1225,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7d789f884989148902787505acbac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: BulletShield
   equipped: 1
   rechargeBar: 0
   maxRechargeBar: 2.5
   abilityBar: {fileID: 0}
   maxBullets: 8
+  damage: 0
   Shield: {fileID: 6666927187436539912}
   pivot: {fileID: 2652757670764029446}
   shieldDistance: 4
@@ -1279,7 +1243,6 @@ MonoBehaviour:
   maxtimer: 2.5
   bulletPrefab: {fileID: 1300772526029512616, guid: 79ce1e6cc3fbd5449a4261d403f1d652,
     type: 3}
-  upgradedMaxBullets: 3
 --- !u!82 &745176014717834577
 AudioSource:
   m_ObjectHideFlags: 0

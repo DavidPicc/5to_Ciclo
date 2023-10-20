@@ -10,7 +10,7 @@ public class SituationManager : MonoBehaviour
     Transform _camera;
     public int waveIndex = 0;
     public int currentWave = 0;
-    float firstOffset = 5f;
+    //float firstOffset = 5f;
     public float situationOffset = 27f;
     public Vector3 spawnPosition;
 
