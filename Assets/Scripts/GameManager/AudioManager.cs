@@ -47,12 +47,6 @@ public class AudioManager : MonoBehaviour
     {
         musicSource = GetComponent<AudioSource>();
 
-        //if(isMainMenu)
-        //{
-        //    masterVolume = 0.5f;
-        //    musicVolume = 0.5f;
-        //    sfxVolume = 0.5f;
-        //}
         masterVolume = AudioValues._masterVolume;
         musicVolume = AudioValues._musicVolume;
         sfxVolume = AudioValues._sfxVolume;
@@ -103,10 +97,6 @@ public class AudioManager : MonoBehaviour
 
     public void UpdateMixerVolume()
     {
-        //masterVolume = masterVolumeSlider.value;
-        //musicVolume = musicVolumeSlider.value;
-        //sfxVolume = sfxVolumeSlider.value;
-
         masterGroup.audioMixer.SetFloat("GeneralVolume", Mathf.Log10(masterVolume) * 20);
         musicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
         sfxGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
@@ -135,19 +125,10 @@ public class AudioManager : MonoBehaviour
     public void ChangeSFXVolume(float value)
     {
         AudioValues._sfxVolume += value;
-        AudioValues._sfxVolume = Mathf.Clamp(AudioValues._sfxVolume, 0.0001f, 1f);
+        AudioValues._sfxVolume = Mathf.Clamp(AudioValues._sfxVolume, 0.0001f, 1.6f);
         sfxVolume = AudioValues._sfxVolume;
         sfxGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
 
         FindObjectOfType<UIPriority>().volumeSelected.GetComponent<VolumeButtonScript>().volumeText.text = (sfxVolume * 10f).ToString("F0");
     }
-
-    //public void ChangeSFXVolume(float value)
-    //{
-    //    sfxVolume += value;
-    //    sfxVolume = Mathf.Clamp(sfxVolume, 0.0001f, 1f);
-    //    sfxGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
-
-    //    FindObjectOfType<UIPriority>().volumeSelected.GetComponent<VolumeButtonScript>().volumeText.text = (sfxVolume * 10f).ToString("F0");
-    //}
 }

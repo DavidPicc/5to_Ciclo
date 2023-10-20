@@ -16,6 +16,8 @@ public class Player_Ability_Fixed: MonoBehaviour
     [SerializeField] public AudioClip ShieldLowSound;
 
     [Header("Activation")]
+    bool abilityChargedSoundPlayed = false;
+    [SerializeField] public AudioClip AbilityChargedSound;
     [SerializeField] public AudioSource audioManagerSecondary;
     [SerializeField] public AudioClip ActivationSound;
     public KeyCode skillKey;
@@ -48,7 +50,7 @@ public class Player_Ability_Fixed: MonoBehaviour
     void Update()
     {
         Shield();
-        if (equipped) SetImageFill();
+        //if (equipped) SetImageFill();
     }
 
     void Shield()
@@ -60,6 +62,7 @@ public class Player_Ability_Fixed: MonoBehaviour
             PlayShieldSound();
             active = true;
             shieldObj.SetActive(true);
+            abilityChargedSoundPlayed = false;
             //AudioManager.instance.PlaySFX(audioManager, ShieldSound, 0.5f);
         }
 
@@ -79,15 +82,25 @@ public class Player_Ability_Fixed: MonoBehaviour
         //Timer
         if (active)
         {
-            if(rechargeBar <= maxRechargeBar/3)
+            rechargeBar -= Time.deltaTime;
+            if (equipped) barUI.fillAmount = rechargeBar / maxRechargeBar;
+            if (rechargeBar <= maxRechargeBar/3)
             {
                 audioManager.clip = ShieldLowSound;
             }
             Debug.Log(rechargeBar);
             if (rechargeBar > 0) rechargeBar -= Time.deltaTime;
-        } else
+        }
+        else
         {
-            if (rechargeBar < maxRechargeBar) rechargeBar += Time.deltaTime;
+            rechargeBar += Time.deltaTime;
+            rechargeBar = Mathf.Clamp(rechargeBar, 0f, maxRechargeBar);
+            if (equipped) barUI.fillAmount = rechargeBar / maxRechargeBar;
+            if (rechargeBar >= maxRechargeBar && !abilityChargedSoundPlayed)
+            {
+                AudioManager.instance.PlaySFX(audioManager, AbilityChargedSound, 1.0f);
+                abilityChargedSoundPlayed = true;
+            }
         }
     }
 

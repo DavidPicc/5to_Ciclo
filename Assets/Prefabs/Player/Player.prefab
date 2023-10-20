@@ -853,8 +853,8 @@ MonoBehaviour:
   audioManager: {fileID: 5420327710605882809}
   MovementSound: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
   moveType: 0
-  acceleration: 150
-  speedLimit: 30
+  acceleration: 160
+  speedLimit: 40
   moveDragX: 3
   moveDragY: 5
   stayDrag: 10
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   fireRate: 0.05
   bulletsOffset: 1.5
   audioManager: {fileID: 7483420906162743093}
-  ShootSound: {fileID: 8300000, guid: fa2cd1026243129429a7abe1571c4e0d, type: 3}
+  ShootSound: {fileID: 8300000, guid: 1b7085e2081bdac42b13ec8c0995d360, type: 3}
   cannons: 1
   cannon: 0
 --- !u!114 &8393978830263061864
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   - {fileID: 1669496867638264088}
   fireRate: 0.5
   audioManager: {fileID: 7483420906162743093}
-  ShootSound: {fileID: 8300000, guid: 153bb7050ba24fd419d992eb655c03b0, type: 3}
+  ShootSound: {fileID: 8300000, guid: d2aabbb58bf946542b4339b1fa378d9c, type: 3}
   bulletCount: 0
   inBetweenShotsTime: 0.3
 --- !u!114 &6710216752889483009
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   fireRate: 0.05
   maxAngle: 10
   audioManager: {fileID: 7483420906162743093}
-  ShootSound: {fileID: 8300000, guid: 4022aae561d6c96419b4bc7046829b4e, type: 3}
+  ShootSound: {fileID: 8300000, guid: dabb26bc198895e40864dfe36180d98d, type: 3}
   distance: 0
 --- !u!82 &7483420906162743093
 AudioSource:
@@ -1170,8 +1170,8 @@ MonoBehaviour:
   invulnerabilityTime: 1.5
   canDie: 1
   audioManager: {fileID: 1864843281877058565}
-  DeathSound: {fileID: 8300000, guid: 993e4f8009a3b504bb6dd4e2487c3e80, type: 3}
-  HitSound: {fileID: 8300000, guid: b2178c41e75d5194cb8c0a32bae93f87, type: 3}
+  DeathSound: {fileID: 8300000, guid: b286ab063c79d3e45b9b4fd32c29f016, type: 3}
+  HitSound: {fileID: 8300000, guid: 4d85e58f50b33d749bdbdaa81cd3a13f, type: 3}
   healthFillBar: {fileID: 0}
   caritaTriste: {fileID: 0}
   caritaNormal: {fileID: 0}
@@ -1197,14 +1197,15 @@ MonoBehaviour:
     type: 3}
   barUI: {fileID: 0}
   audioManager: {fileID: 745176014717834577}
-  ShieldSound: {fileID: 8300000, guid: 59103b69634b885459360c9e715c6eb8, type: 3}
-  ShieldLowSound: {fileID: 8300000, guid: e38db43c466aa294cad280b54652108f, type: 3}
+  ShieldSound: {fileID: 8300000, guid: 032b4ce5d5704ff44ba64096510b9bc1, type: 3}
+  ShieldLowSound: {fileID: 8300000, guid: 4c5c40c7d40286746a212dc350c3b6ba, type: 3}
+  AbilityChargedSound: {fileID: 8300000, guid: 5b68b175e45b49d4abfa9ed95b8c0ec6, type: 3}
   audioManagerSecondary: {fileID: 6495181677158592591}
-  ActivationSound: {fileID: 8300000, guid: 993e4f8009a3b504bb6dd4e2487c3e80, type: 3}
+  ActivationSound: {fileID: 0}
   skillKey: 120
   maxRechargeBar: 5
   maxCharge: 4
-  AbsorbSound: {fileID: 8300000, guid: c2bfe51e927794343b4367d2e59c6b58, type: 3}
+  AbsorbSound: {fileID: 8300000, guid: fcd775a57b2ff3549a99820c337d0cbf, type: 3}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1236,7 +1237,8 @@ MonoBehaviour:
   shieldDistance: 4
   rotationSpeed: 90
   audioManager: {fileID: 745176014717834577}
-  ShieldSound: {fileID: 8300000, guid: a8f61fce875f81a40bded52a29919b49, type: 3}
+  AbilityChargedSound: {fileID: 8300000, guid: 5b68b175e45b49d4abfa9ed95b8c0ec6, type: 3}
+  ShieldSound: {fileID: 8300000, guid: 3954444509b25d24ca4e3a6570ad948c, type: 3}
   endShield: 0
   activate: 0
   timer: 0

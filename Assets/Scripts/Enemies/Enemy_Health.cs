@@ -12,6 +12,7 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] public float currentHealth;
     public AudioManager manager;
     [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip CrashSound;
     [SerializeField] public AudioClip DeathSound;
 
     public bool IsEnemy = true;
@@ -232,6 +233,7 @@ public class Enemy_Health : MonoBehaviour
                 if (canBeDamaged)
                 {
                     playerHealth.TakeDamage(1);
+                    AudioManager.instance.PlaySFX(audioSource, CrashSound, 1f);
                 }
             }
         }

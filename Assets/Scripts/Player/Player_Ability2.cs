@@ -20,6 +20,8 @@ public class Player_Ability2 : MonoBehaviour
     [SerializeField] float shieldDistance;
     [SerializeField] float rotationSpeed = 90f;
     [SerializeField] public AudioSource audioManager;
+    bool abilityChargedSoundPlayed = false;
+    [SerializeField] public AudioClip AbilityChargedSound;
     [SerializeField] public AudioClip ShieldSound;
     List<GameObject> bullets = new List<GameObject>();
     public bool endShield;
@@ -42,6 +44,7 @@ public class Player_Ability2 : MonoBehaviour
             SpawnBulletShield();
             PlayShieldSound();
             activate = true;
+            abilityChargedSoundPlayed = false;
             if (Shield != null) Shield.SetActive(true);
         }
 
@@ -63,6 +66,11 @@ public class Player_Ability2 : MonoBehaviour
             rechargeBar += Time.deltaTime;
             rechargeBar = Mathf.Clamp(rechargeBar, 0f, maxRechargeBar);
             if(equipped) abilityBar.fillAmount = rechargeBar / maxRechargeBar;
+            if (rechargeBar >= maxRechargeBar && !abilityChargedSoundPlayed)
+            {
+                AudioManager.instance.PlaySFX(audioManager, AbilityChargedSound, 1.0f);
+                abilityChargedSoundPlayed = true;
+            }
         }
         for (int i = 0; i < bullets.Count; i++)
         {

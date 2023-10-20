@@ -21,6 +21,7 @@ public class SituationManager : MonoBehaviour
     void Start()
     {
         _camera = FindObjectOfType<StageMovement>().transform;
+        GetComponent<AudioSource>().volume = 0.5f;
         // Si la SAVEDWAVED es cualquiera menos 0, te manda directo a la acción. Si es CERO, signfica que recién estás empezando el nivel.
         if(CheckPointScript.savedWave != 0)
         {
