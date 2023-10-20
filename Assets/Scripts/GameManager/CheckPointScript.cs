@@ -49,9 +49,11 @@ public class CheckPointScript : MonoBehaviour
     public void LoadCheckpoints()
     {
         //SituationManager.instance.waveIndex = savedWave;
-        FindObjectOfType<StageMovement>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPointX"), PlayerPrefs.GetFloat("savedPointY"), 0);
-        GameObject.FindGameObjectWithTag("MoveVertical").transform.position = new Vector3(PlayerPrefs.GetFloat("savedCameraX"), PlayerPrefs.GetFloat("savedCameraY"), 0);
-        FindObjectOfType<Player_Health>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPlayerX"), PlayerPrefs.GetFloat("savedPlayerY"), 0);
+        FindObjectOfType<StageMovement>().transform.position = new Vector3(PlayerPrefs.GetFloat("savedPointX")-5, PlayerPrefs.GetFloat("savedPointY"), 0);
+        Debug.Log(PlayerPrefs.GetFloat("savedPointX"));
+        Debug.Log(FindObjectOfType<StageMovement>().transform.position);
+        GameObject.FindGameObjectWithTag("MoveVertical").transform.localPosition = new Vector3(PlayerPrefs.GetFloat("savedCameraX"), PlayerPrefs.GetFloat("savedCameraY"), 0);
+        FindObjectOfType<Player_Health>().transform.localPosition = new Vector3(PlayerPrefs.GetFloat("savedPlayerX"), PlayerPrefs.GetFloat("savedPlayerY"), 0);
     }
 
     void Update()
@@ -77,10 +79,10 @@ public class CheckPointScript : MonoBehaviour
         coresSaved = GameScore.instance.coreScore;
         savedPointX = FindObjectOfType<StageMovement>().transform.position.x;
         savedPointY = FindObjectOfType<StageMovement>().transform.position.y;
-        savedCameraX = GameObject.FindGameObjectWithTag("MoveVertical").transform.position.x;
-        savedCameraY = GameObject.FindGameObjectWithTag("MoveVertical").transform.position.y;
-        savedPlayerX = FindObjectOfType<Player_Health>().transform.position.x;
-        savedPlayerY = FindObjectOfType<Player_Health>().transform.position.y;
+        savedCameraX = GameObject.FindGameObjectWithTag("MoveVertical").transform.localPosition.x;
+        savedCameraY = GameObject.FindGameObjectWithTag("MoveVertical").transform.localPosition.y;
+        savedPlayerX = FindObjectOfType<Player_Health>().transform.localPosition.x;
+        savedPlayerY = FindObjectOfType<Player_Health>().transform.localPosition.y;
 
         PlayerPrefs.SetInt("wave", savedWave);
         PlayerPrefs.SetInt("gears", gearsSaved);

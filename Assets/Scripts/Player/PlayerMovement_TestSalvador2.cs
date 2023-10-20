@@ -16,6 +16,7 @@ public class PlayerMovement_TestSalvador2 : MonoBehaviour
     public float dragFactorY;
     public bool changingDirectionsX => (input.x < 0 && rb.velocity.x > 0) || (input.x > 0 && rb.velocity.x < 0);
     public bool changingDirectionsY => (input.y < 0 && rb.velocity.y > 0) || (input.y > 0 && rb.velocity.y < 0);
+
     [Header("Input")]
     [SerializeField] Vector2 input;
 
