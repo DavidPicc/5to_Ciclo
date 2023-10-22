@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.8458456, g: 0.73874706, b: 0.5289049, a: 1}
+  m_IndirectSpecularColor: {r: 0.8458445, g: 0.73874426, b: 0.5289022, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8981,13 +8981,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7cd0d958804a742b02c1751da6d09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.06
+  delay: 0.04
   fullText: 
   currentText: 
   characterText: {fileID: 1857679794}
   dialogueText: {fileID: 569231591}
   finishedTyping: 0
-  timeBetweenText: 2
+  timeBetweenText: 1.8
   dialogues: []
   textSound: {fileID: 8300000, guid: d617e42196a90e84f8394616fc87645e, type: 3}
 --- !u!4 &338171357
@@ -58847,7 +58847,13 @@ MonoBehaviour:
   situations:
   - situationPrefab: {fileID: 4520026764095519211, guid: 06fb45da7dbbda74b87ff081d266943a,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Kei;Wow... recuerdo cuando Astartea me tra\xEDa aqu\xED para pasear\u2026"
+    - "Vindex;(\xBFExtra\xF1as esos momentos?)"
+    - "Kei;Es dif\xEDcil decirlo... En parte s\xED... Pero ahora me doy cuenta de
+      sus mentiras.\t"
+    - Vindex;(Que duro debe ser...)
+    - "Kei;Dimelo a mi\u2026"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -58911,7 +58917,9 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 800c386c47b0b7948bb329c34bb8999f,
       type: 3}
-    dialogue: []
+    dialogue:
+    - Vindex;(Me pregunto que nos esperara de vuelta en la ciudad...)
+    - "Kei;Seguro enemigos mucho m\xE1s fuertes, as\xED que no te distraigas."
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -59023,7 +59031,9 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: b0c9237b256e4d549bd491e386700cd0,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Kei;\xA1Buen disparo Vindex!"
+    - "Vindex;(\xA1Gracias! \xA1Buena esquivada!)"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -59039,7 +59049,10 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: fd9b69ce955d19d409b69bc53371deef,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Kei;Phew. Apenas escapamos de ellos. \xBFPor qu\xE9 dec\xEDan que somos criminales?"
+    - "Vindex;(No lo se... \xBFQuiz\xE1 tu ni\xF1era esta de malas?)\t"
+    - Kei;Ha. Ha.
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -59191,7 +59204,11 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: ccd150d35784122489f1515b82b57711,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Vindex;(\xBFCrees que tenemos alguna chance?)"
+    - "Kei;Claro que s\xED... Ni siquiera pienses en perder."
+    - Vindex;(Pero Astartea ha llegado tan lejos ya...)
+    - "Kei;\xA1Que ni lo pienses!"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -59335,7 +59352,14 @@ MonoBehaviour:
         m_Calls: []
   - situationPrefab: {fileID: 4520026764095519211, guid: 17df1fd45abf41d408ad2f49d21bec17,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Vindex;(Kei\u2026 Estoy cansado\u2026 Tengo miedo\u2026 Creo\u2026 creo que
+      ya no quiero\u2026)\r\n"
+    - "Kei;Vamos, Vindex\u2026 \xBFHemos llegado tan lejos s\xF3lo para rendirnos?"
+    - "Vindex;(Supongo\u2026 supongo que no\u2026)"
+    - "Kei;Yo tambi\xE9n tengo miedo\u2026 pero no podemos concentrarnos en eso\u2026
+      Este es nuestro deber."
+    - "Vindex;(Tienes raz\xF3n\u2026)"
     isShop: 0
     isBoss: 0
     methodEvent:
