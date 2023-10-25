@@ -42,6 +42,12 @@ public class Explosive_Object : MonoBehaviour
             exploded = true;
             explosion.SetActive(true);
         }
+        if (other.CompareTag("Explosion"))
+        {
+            //Instantiate(vfxexplosion, transform.position, transform.rotation);
+            exploded = true;
+            explosion.SetActive(true);
+        }
     }
     private void OnDrawGizmos()
     {
