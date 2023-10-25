@@ -32,6 +32,8 @@ public class Enemy_Health : MonoBehaviour
 
     [Header("Boss")]
     public bool IsBoss = false;
+    float timerdeath;
+    [SerializeField] float deathT;
     public GameObject Form1;
     public GameObject Form2;
 
@@ -63,6 +65,7 @@ public class Enemy_Health : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         timer = invulnerabilityTime;
+        timerdeath = deathT;
         currentHealth = maxHealth;
     }
 
@@ -81,16 +84,25 @@ public class Enemy_Health : MonoBehaviour
             }
         }
 
-        else if (IsBoss == true && currentHealth <= HealtPhase4)
+        else if (IsBoss == true && currentHealth <= HealtPhase1)
+        {
+            PlayRandomAudioClip();
+            phase1.enabled = true;
+            phase2.enabled = false;
+            phase3.enabled = false;
+            phase4.enabled = false;
+            Form1.SetActive(true);
+            Form2.SetActive(false);
+            // AudioManager.instance.ChangeMusic(Phase1);
+        }
+
+        else if (IsBoss == true && currentHealth <= HealtPhase2)
         {
             PlayRandomAudioClip();
             phase1.enabled = false;
-            phase2.enabled = false;
+            phase2.enabled = true;
             phase3.enabled = false;
-            phase4.enabled = true;
-            MoveToNextPoint();
-            Form1.SetActive(false);
-            Form2.SetActive(true);
+            phase4.enabled = false;
         }
 
         else if (IsBoss == true && currentHealth <= HealtPhase3)
@@ -103,28 +115,19 @@ public class Enemy_Health : MonoBehaviour
             MoveToNextPoint();
             Form1.SetActive(false);
             Form2.SetActive(true);
-          //  AudioManager.instance.ChangeMusic(Phase2);
+            //  AudioManager.instance.ChangeMusic(Phase2);
         }
 
-        else if (IsBoss == true && currentHealth <= HealtPhase2)
+        else if (IsBoss == true && currentHealth <= HealtPhase4)
         {
             PlayRandomAudioClip();
             phase1.enabled = false;
-            phase2.enabled = true;
-            phase3.enabled = false;
-            phase4.enabled = false;
-        }
-
-        else if (IsBoss == true && currentHealth <= HealtPhase1)
-        {
-            PlayRandomAudioClip();
-            phase1.enabled = true;
             phase2.enabled = false;
             phase3.enabled = false;
-            phase4.enabled = false;
-            Form1.SetActive(true);
-            Form2.SetActive(false);
-           // AudioManager.instance.ChangeMusic(Phase1);
+            phase4.enabled = true;
+            MoveToNextPoint();
+            Form1.SetActive(false);
+            Form2.SetActive(true);
         }
     }
 
@@ -154,7 +157,11 @@ public class Enemy_Health : MonoBehaviour
         if (IsBoss == true)
         {
             AudioManager.instance.PlaySFX(audioSource, DeathSound, 1f);
-            SceneManager.LoadScene(FinishGame);
+            timerdeath -= Time.deltaTime;
+            if (timerdeath <= 0)
+            {
+                SceneManager.LoadScene(FinishGame);
+            }         
         }
         //audioManager.PlayOneShot(DeathSound);
         Destroy(gameObject, 0.2f);
