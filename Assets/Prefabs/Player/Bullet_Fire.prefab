@@ -31,8 +31,8 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7295871994076857063}
   - {fileID: 1047138983487967157}
+  - {fileID: 7295871994076857063}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,13 +104,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925132106182276262}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7456350539005260493}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &3289450726762059701
 MeshFilter:
@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -710910164944623929, guid: 4e761c1ee7b186949bc68db382ad6e8c, type: 3}
+  - {fileID: 2100000, guid: 48bc4e2157fdb0e4a8955e2c9e37b353, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,6 +174,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5417329715634124185, guid: fd05aca6a93cd0f49a8d731f24773e2d,
+        type: 3}
+      propertyPath: m_ResetSeedOnPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417329715634124185, guid: fd05aca6a93cd0f49a8d731f24773e2d,
+        type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5417329715634124187, guid: fd05aca6a93cd0f49a8d731f24773e2d,
         type: 3}
       propertyPath: m_Name
@@ -187,7 +197,7 @@ PrefabInstance:
     - target: {fileID: 5417329715634124190, guid: fd05aca6a93cd0f49a8d731f24773e2d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5417329715634124190, guid: fd05aca6a93cd0f49a8d731f24773e2d,
         type: 3}

@@ -41,9 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3233051803075331898}
   - component: {fileID: 3233051803075331892}
-  - component: {fileID: 3233051803075331893}
   - component: {fileID: 3233051803075331895}
-  - component: {fileID: 1018283161020399362}
   m_Layer: 0
   m_Name: Enemy_8
   m_TagString: Enemy
@@ -83,26 +81,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  manager: {fileID: 0}
+  audioSource: {fileID: 0}
+  CrashSound: {fileID: 0}
+  DeathSound: {fileID: 0}
+  IsEnemy: 1
   invulnerabilityTime: 0
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
     type: 3}
   enemyValueInPoints: 10
---- !u!114 &3233051803075331893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3233051803075331899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402aee59228709e46a67bbda1f67c29c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 2314694825097208867}
-  point1: {fileID: 3233051802188340048}
-  point2: {fileID: 3233051803482345339}
-  Velocidad: 2
+  playerHealth: {fileID: 0}
+  obstacle: 0
+  invulnerable: 0
+  vfxexplosion: {fileID: 0}
+  IsBoss: 0
+  deathT: 0
+  Form1: {fileID: 0}
+  Form2: {fileID: 0}
+  HitBoss: {fileID: 0}
+  DeathBoss: {fileID: 0}
+  TauntBoss: []
+  HealtPhase1: 0
+  HealtPhase2: 0
+  HealtPhase3: 0
+  HealtPhase4: 0
+  moveSpeed: 2
+  movePoints: []
+  phase1: {fileID: 0}
+  phase2: {fileID: 0}
+  phase3: {fileID: 0}
+  phase4: {fileID: 0}
+  FinishGame: 
 --- !u!54 &3233051803075331895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -119,21 +128,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &1018283161020399362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3233051803075331899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b8a7f37019a094cb751159803ce440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeatack: 3
-  bullet: {fileID: 2383194172604871235, guid: e24db3ca0f04d644bb78a83184f67b93, type: 3}
-  spawnpoint: {fileID: 7366489911597041063}
 --- !u!1 &3233051803482345336
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +255,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 9ac9362bdf1c2c24191cb1acf1c7daf1,
         type: 3}
