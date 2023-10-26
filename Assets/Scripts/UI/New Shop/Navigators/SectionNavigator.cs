@@ -94,9 +94,10 @@ public class SectionNavigator : MonoBehaviour
         }
 
         branchesNavigator.ActivateBranch(hoverButton.branch);
+        GiveControlToBranches();
     }
 
-    public void GiveControlToBranches()
+    private void GiveControlToBranches()
     {
         var branches = branchesNavigator.GetBranches();
 

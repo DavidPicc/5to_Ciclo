@@ -74,7 +74,6 @@ public class SectionButtonControl : MonoBehaviour
             if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
             SectionNavigator sectionNav = FindObjectOfType<SectionNavigator>();
             sectionNav.SelectButton();
-            sectionNav.GiveControlToBranches();
         }
     }
 

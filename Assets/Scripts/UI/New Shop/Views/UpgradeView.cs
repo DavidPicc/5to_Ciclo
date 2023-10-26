@@ -6,12 +6,20 @@ using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
 {
+    private const float OPACITY_PURCHASED = .6f;
+    private const float OPACITY_NOT_PURCHASED = .2f;
+
     [SerializeField] UpgradeController upgradeControl;
 
     [Header("View")]
     public Image upgradeImage;
     public GameObject lockedSignPrefab;
+    public GameObject selectSignPrefab;
+    public GameObject framePrefab;
     GameObject lockedSign;
+    GameObject selectSign;
+    GameObject frame;
+    Image frameImage;
 
     [Header("Floating Panel")]
     public string nameText;
@@ -25,6 +33,14 @@ public class UpgradeView : MonoBehaviour
         lockedSign = Instantiate(lockedSignPrefab, transform);
         lockedSign.GetComponent<Image>().color = upgradeImage.color;
         lockedSign.SetActive(false);
+
+        selectSign = Instantiate(selectSignPrefab, transform);
+        selectSign.GetComponent<Image>().color = upgradeImage.color;
+        selectSign.SetActive(false);
+
+        frame = Instantiate(framePrefab, transform);
+        frameImage = frame.GetComponent<Image>();
+        frameImage.color = upgradeImage.color;
     }
 
     void Update()
@@ -36,6 +52,7 @@ public class UpgradeView : MonoBehaviour
     {
         if (upgradeControl.Selected)
         {
+            selectSign.SetActive(true);
 
             if (floatingPanelPrefab != null)
             {
@@ -58,6 +75,8 @@ public class UpgradeView : MonoBehaviour
         }
         else
         {
+            selectSign.SetActive(false);
+
             if (floatingPanelObj != null)
             {
                 if (floatingPanelObj.activeSelf) floatingPanelObj.SetActive(false);
@@ -65,6 +84,7 @@ public class UpgradeView : MonoBehaviour
         }
 
         lockedSign.SetActive(!upgradeControl.Purchased);
+        frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, upgradeControl.Purchased ? OPACITY_NOT_PURCHASED : OPACITY_PURCHASED);
     }
 
     public UpgradeController GetUpgradeControl()
