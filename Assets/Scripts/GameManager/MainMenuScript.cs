@@ -15,4 +15,9 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ClearAllPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
