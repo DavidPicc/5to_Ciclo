@@ -8,6 +8,7 @@ public class Player_Ability_Fixed: MonoBehaviour
     public bool equipped;
 
     [Header("References")]
+    public GameObject EscudoReflectorUI;
     public GameObject shieldObj;
     public GameObject bulletPrefab;
     public Image barUI;
@@ -101,6 +102,15 @@ public class Player_Ability_Fixed: MonoBehaviour
                 AudioManager.instance.PlaySFX(audioManager, AbilityChargedSound, 1.0f);
                 abilityChargedSoundPlayed = true;
             }
+        }
+
+        if (equipped == true)
+        {
+            EscudoReflectorUI.SetActive(true);
+        }
+        if (equipped == false)
+        {
+            EscudoReflectorUI.SetActive(false);
         }
     }
 

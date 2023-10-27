@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player_Shoot3 : MonoBehaviour
 {
     public bool equipped;
+    public GameObject LanzallamasUI;
+
 
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -57,11 +59,13 @@ public class Player_Shoot3 : MonoBehaviour
         if (equipped == true)
         {
             Gun.SetActive(true);
+            LanzallamasUI.SetActive(true);
             audioManager.clip = ShootSound;
             audioManager.loop = true;
         }
         if (equipped == false)
         {
+            LanzallamasUI.SetActive(false);
             Gun.SetActive(false);
             audioManager.loop = false;
         }

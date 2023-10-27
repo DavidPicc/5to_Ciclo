@@ -16,6 +16,7 @@ public class Player_Ability2 : MonoBehaviour
 
     [Header("References")]
     public GameObject Shield;
+    public GameObject EscudoSierrasUI;
     [SerializeField] Transform pivot;
     [SerializeField] float shieldDistance;
     [SerializeField] float rotationSpeed = 90f;
@@ -79,6 +80,15 @@ public class Player_Ability2 : MonoBehaviour
                 bullets[i].transform.RotateAround(pivot.position, Vector3.forward, rotationSpeed * Time.deltaTime);
                 Destroy(bullets[i], rechargeBar);
             }
+        }
+
+        if (equipped == true)
+        {
+            EscudoSierrasUI.SetActive(true);
+        }
+        if (equipped == false)
+        {
+            EscudoSierrasUI.SetActive(false);
         }
     }
 

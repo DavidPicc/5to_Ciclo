@@ -7,6 +7,9 @@ public class Player_Shoot : MonoBehaviour
 {
     public bool equipped = false;
 
+    public GameObject LanzaClavosUI;
+
+
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
@@ -46,10 +49,12 @@ public class Player_Shoot : MonoBehaviour
 
         if (equipped == true)
         {
+            LanzaClavosUI.SetActive(true);
             Gun.SetActive(true);
         }
         if (equipped == false)
         {
+            LanzaClavosUI.SetActive(false);
             Gun.SetActive(false);
         }
     }

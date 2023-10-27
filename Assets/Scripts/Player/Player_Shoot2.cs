@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player_Shoot2 : MonoBehaviour
 {
     public bool equipped;
+    public GameObject LanzagranadasUI;
+
 
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -39,10 +41,12 @@ public class Player_Shoot2 : MonoBehaviour
 
         if (equipped == true)
         {
+            LanzagranadasUI.SetActive(true);
             Gun.SetActive(true);
         }
         if (equipped == false)
         {
+            LanzagranadasUI.SetActive(false);
             Gun.SetActive(false);
         }
     }
