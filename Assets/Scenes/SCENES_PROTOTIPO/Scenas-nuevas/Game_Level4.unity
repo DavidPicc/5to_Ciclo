@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.0063772383, g: 0.001243409, b: 0.010560882, a: 1}
+  m_IndirectSpecularColor: {r: 0.0063772057, g: 0.0012434045, b: 0.010560839, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11633,7 +11633,7 @@ Transform:
   - {fileID: 717985678}
   - {fileID: 8403287711248774986}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713152089 stripped
 GameObject:
@@ -16550,7 +16550,7 @@ Transform:
   m_Children:
   - {fileID: 865829669}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918891076 stripped
 GameObject:
@@ -18241,7 +18241,7 @@ Transform:
   - {fileID: 1846362009}
   - {fileID: 655286351}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029255801
 GameObject:
@@ -19545,7 +19545,7 @@ RectTransform:
   - {fileID: 1991939677}
   - {fileID: 1399477111}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -25808,7 +25808,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430789173
 GameObject:
@@ -28057,6 +28057,21 @@ PrefabInstance:
       propertyPath: abilityBar
       value: 
       objectReference: {fileID: 1270293142}
+    - target: {fileID: 1745831259628544596, guid: acd27982bd6fd584985785f022dc1ffd,
+        type: 3}
+      propertyPath: EscudoSierrasUI
+      value: 
+      objectReference: {fileID: 1923902160}
+    - target: {fileID: 1845453539510508706, guid: acd27982bd6fd584985785f022dc1ffd,
+        type: 3}
+      propertyPath: LanzagranadasUI
+      value: 
+      objectReference: {fileID: 1923902163}
+    - target: {fileID: 2135120168574868101, guid: acd27982bd6fd584985785f022dc1ffd,
+        type: 3}
+      propertyPath: LanzaClavosUI
+      value: 
+      objectReference: {fileID: 1923902164}
     - target: {fileID: 2135120168574868120, guid: acd27982bd6fd584985785f022dc1ffd,
         type: 3}
       propertyPath: m_Name
@@ -28117,6 +28132,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3530333817525116619, guid: acd27982bd6fd584985785f022dc1ffd,
+        type: 3}
+      propertyPath: LanzallamasUI
+      value: 
+      objectReference: {fileID: 1923902162}
     - target: {fileID: 3959281554846209803, guid: acd27982bd6fd584985785f022dc1ffd,
         type: 3}
       propertyPath: caritaFeliz
@@ -28152,6 +28172,11 @@ PrefabInstance:
       propertyPath: barUI
       value: 
       objectReference: {fileID: 1270293142}
+    - target: {fileID: 4119367718411457462, guid: acd27982bd6fd584985785f022dc1ffd,
+        type: 3}
+      propertyPath: EscudoReflectorUI
+      value: 
+      objectReference: {fileID: 1923902161}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acd27982bd6fd584985785f022dc1ffd, type: 3}
 --- !u!1 &1527431524
@@ -29809,7 +29834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d30d0a8d351f419bb59bd39bdce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   gears: 10000
   cores: 100
   gearsUI: {fileID: 0}
@@ -30510,7 +30535,7 @@ PrefabInstance:
     - target: {fileID: 5143194027969355883, guid: 787a7c79744692047944edc7110990d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5143194027969355883, guid: 787a7c79744692047944edc7110990d5,
         type: 3}
@@ -34531,6 +34556,36 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1923902158}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923902160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1133153174378954274, guid: 05496e9c90973fc4e8997f2cbd0842d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1923902158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923902161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1133153174375240696, guid: 05496e9c90973fc4e8997f2cbd0842d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1923902158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923902162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1133153173109937062, guid: 05496e9c90973fc4e8997f2cbd0842d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1923902158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923902163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1133153173309229361, guid: 05496e9c90973fc4e8997f2cbd0842d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1923902158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923902164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1133153173947399320, guid: 05496e9c90973fc4e8997f2cbd0842d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1923902158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1935787202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37621,7 +37676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117927901}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63f505f7c92f9b5499e7f29ee1a55567, type: 3}
   m_Name: 
