@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SectionButtonView : MonoBehaviour
 {
+    RectTransform rect;
     [SerializeField] SectionButtonControl buttonControl;
     [SerializeField] SectionNavigator navigator;
 
@@ -12,6 +13,9 @@ public class SectionButtonView : MonoBehaviour
     public Image buttonImage;
     public GameObject selectedSignPrefab;
     GameObject selectedSign;
+    public float scaleMultiplier;
+    Vector3 initialScale;
+    Vector3 multipliedScale;
 
     [Header("Floating Panel")]
     public string nameText;
@@ -22,9 +26,14 @@ public class SectionButtonView : MonoBehaviour
 
     void Start()
     {
+        rect = GetComponent<RectTransform>();
+
         selectedSign = Instantiate(selectedSignPrefab, transform);
         selectedSign.GetComponent<Image>().color = buttonImage.color;
         selectedSign.SetActive(false);
+
+        initialScale = rect.localScale;
+        multipliedScale = rect.localScale * scaleMultiplier;
     }
 
     void Update()
@@ -36,6 +45,8 @@ public class SectionButtonView : MonoBehaviour
     {
         if(buttonControl.Hover && navigator.Control)
         {
+            rect.localScale = multipliedScale;
+
             if(floatingPanelPrefab != null )
             {
                 if (floatingPanelObj == null)
@@ -57,6 +68,8 @@ public class SectionButtonView : MonoBehaviour
         }
         else
         {
+            rect.localScale = initialScale;
+
             if (floatingPanelObj != null)
             {
                 if (floatingPanelObj.activeSelf) floatingPanelObj.SetActive(false);

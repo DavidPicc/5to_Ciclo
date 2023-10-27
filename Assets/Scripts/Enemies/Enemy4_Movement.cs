@@ -11,6 +11,8 @@ public class Enemy4_Movement : EnemyMovement
 
     [Header("Movement")]
     public float speed;
+    bool passedPlayer = false;
+    Vector2 lastMovement;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -24,7 +26,23 @@ public class Enemy4_Movement : EnemyMovement
 
     void MoveToPlayer()
     {
+        Debug.Log(transform.position.x - player.transform.position.x);
         Vector3 direction = (player.transform.position - transform.position).normalized;
-        rb.velocity = direction * speed;
+        if(passedPlayer)
+        {
+            rb.velocity = lastMovement * speed/1.5f;
+        }
+        else
+        {
+            if (transform.position.x - player.transform.position.x >= 2f)
+            {
+                rb.velocity = direction * speed;
+            }
+            else
+            {
+                passedPlayer = true;
+                lastMovement = direction;
+            }
+        }
     }
 }

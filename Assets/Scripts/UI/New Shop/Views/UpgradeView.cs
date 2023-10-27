@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
 {
-    private const float OPACITY_PURCHASED = .6f;
-    private const float OPACITY_NOT_PURCHASED = .2f;
+    private const float OPACITY_PURCHASED = .2f;
+    private const float OPACITY_NOT_PURCHASED = .6f;
 
+    RectTransform rect;
     [SerializeField] UpgradeController upgradeControl;
 
     [Header("View")]
@@ -20,6 +21,9 @@ public class UpgradeView : MonoBehaviour
     GameObject selectSign;
     GameObject frame;
     Image frameImage;
+    public float scaleMultiplier;
+    Vector3 initialScale;
+    Vector3 multipliedScale;
 
     [Header("Floating Panel")]
     public string nameText;
@@ -30,6 +34,8 @@ public class UpgradeView : MonoBehaviour
 
     void Start()
     {
+        rect = GetComponent<RectTransform>();
+
         lockedSign = Instantiate(lockedSignPrefab, transform);
         lockedSign.GetComponent<Image>().color = upgradeImage.color;
         lockedSign.SetActive(false);
@@ -41,6 +47,9 @@ public class UpgradeView : MonoBehaviour
         frame = Instantiate(framePrefab, transform);
         frameImage = frame.GetComponent<Image>();
         frameImage.color = upgradeImage.color;
+
+        initialScale = rect.localScale;
+        multipliedScale = rect.localScale * scaleMultiplier;
     }
 
     void Update()
@@ -72,6 +81,8 @@ public class UpgradeView : MonoBehaviour
                 floatingPanel.SetDescription(descriptionText);
                 floatingPanel.SetPrice(upgradeControl.gearsCost, upgradeControl.coresCost, !upgradeControl.Purchased);
             }
+
+            rect.localScale = multipliedScale;
         }
         else
         {
@@ -81,10 +92,12 @@ public class UpgradeView : MonoBehaviour
             {
                 if (floatingPanelObj.activeSelf) floatingPanelObj.SetActive(false);
             }
+
+            rect.localScale = initialScale;
         }
 
-        lockedSign.SetActive(!upgradeControl.Purchased);
-        frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, upgradeControl.Purchased ? OPACITY_NOT_PURCHASED : OPACITY_PURCHASED);
+        lockedSign.SetActive(upgradeControl.Locked);
+        frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, !upgradeControl.Purchased ? OPACITY_NOT_PURCHASED : OPACITY_PURCHASED);
     }
 
     public UpgradeController GetUpgradeControl()
