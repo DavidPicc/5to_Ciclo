@@ -82,53 +82,56 @@ public class Enemy_Health : MonoBehaviour
             {
                 timer -= Time.deltaTime;
             }
-        }
 
-        else if (IsBoss == true && currentHealth <= HealtPhase1)
-        {
-            PlayRandomAudioClip();
-            phase1.enabled = true;
-            phase2.enabled = false;
-            phase3.enabled = false;
-            phase4.enabled = false;
-            Form1.SetActive(true);
-            Form2.SetActive(false);
-            // AudioManager.instance.ChangeMusic(Phase1);
-        }
+            else if (IsBoss == true && currentHealth <= HealtPhase4)
+            {
+                PlayRandomAudioClip();
+                phase1.enabled = false;
+                phase2.enabled = false;
+                phase3.enabled = false;
+                phase4.enabled = true;
+                MoveToNextPoint();
+                Form1.SetActive(false);
+                Form2.SetActive(true);
+            }
 
-        else if (IsBoss == true && currentHealth <= HealtPhase2)
-        {
-            PlayRandomAudioClip();
-            phase1.enabled = false;
-            phase2.enabled = true;
-            phase3.enabled = false;
-            phase4.enabled = false;
-        }
+            else if (IsBoss == true && currentHealth <= HealtPhase3)
+            {
+                PlayRandomAudioClip();
+                phase1.enabled = false;
+                phase2.enabled = false;
+                phase3.enabled = true;
+                phase4.enabled = false;
+                MoveToNextPoint();
+                Form1.SetActive(false);
+                Form2.SetActive(true);
+                //  AudioManager.instance.ChangeMusic(Phase2);
+            }
 
-        else if (IsBoss == true && currentHealth <= HealtPhase3)
-        {
-            PlayRandomAudioClip();
-            phase1.enabled = false;
-            phase2.enabled = false;
-            phase3.enabled = true;
-            phase4.enabled = false;
-            MoveToNextPoint();
-            Form1.SetActive(false);
-            Form2.SetActive(true);
-            //  AudioManager.instance.ChangeMusic(Phase2);
-        }
+            else if (IsBoss == true && currentHealth <= HealtPhase2)
+            {
+                PlayRandomAudioClip();
+                phase1.enabled = false;
+                phase2.enabled = true;
+                phase3.enabled = false;
+                phase4.enabled = false;
+            }
 
-        else if (IsBoss == true && currentHealth <= HealtPhase4)
-        {
-            PlayRandomAudioClip();
-            phase1.enabled = false;
-            phase2.enabled = false;
-            phase3.enabled = false;
-            phase4.enabled = true;
-            MoveToNextPoint();
-            Form1.SetActive(false);
-            Form2.SetActive(true);
+            else if (IsBoss == true && currentHealth <= HealtPhase1)
+            {
+                PlayRandomAudioClip();
+                phase1.enabled = true;
+                phase2.enabled = false;
+                phase3.enabled = false;
+                phase4.enabled = false;
+                Form1.SetActive(true);
+                Form2.SetActive(false);
+                // AudioManager.instance.ChangeMusic(Phase1);
+            }
         }
+  
+
+      
     }
 
     public void TakeDamage(float damage)
