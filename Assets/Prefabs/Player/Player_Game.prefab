@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  LanzaClavosUI: {fileID: 0}
   bulletSpeed: 75
   shootDamage: 1.7
   bulletPrefab: {fileID: 1300772526029512616, guid: 2086ef79ed5ce2e47aeba3e2aa918de3,
@@ -420,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 1
+  LanzagranadasUI: {fileID: 0}
   bulletSpeed: 55
   shootDamage: 10
   bulletPrefab: {fileID: 4371670380075575442, guid: 045d464f8a47d6f4ba77f2a28257de51,
@@ -445,18 +447,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  LanzallamasUI: {fileID: 0}
   bulletSpeed: 18.5
-  shootDamage: 1.3
+  shootDamage: 0.9
   bulletPrefab: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
     type: 3}
   Gun: {fileID: 978313496099825734}
   shootPoints:
   - {fileID: 2253497398445196059}
   fireRate: 0.05
-  maxAngle: 20
+  maxAngle: 15
   audioManager: {fileID: 737265259831080703}
   ShootSound: {fileID: 8300000, guid: dabb26bc198895e40864dfe36180d98d, type: 3}
-  distance: 0.7
+  distance: 1.2
 --- !u!82 &737265259831080703
 AudioSource:
   m_ObjectHideFlags: 0
@@ -593,6 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  EscudoReflectorUI: {fileID: 0}
   shieldObj: {fileID: 2135120169741268257}
   bulletPrefab: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
     type: 3}
@@ -634,6 +638,7 @@ MonoBehaviour:
   maxBullets: 4
   damage: 1.3
   Shield: {fileID: 3559136209784848834}
+  EscudoSierrasUI: {fileID: 0}
   pivot: {fileID: 5274071926668359628}
   shieldDistance: 4
   rotationSpeed: 90
