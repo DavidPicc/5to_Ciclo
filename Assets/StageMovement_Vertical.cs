@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StageMovement_Vertical : MonoBehaviour
 {
-    [HideInInspector] public bool freeCamera = false;
-    [HideInInspector] public bool startMovement = false;
+    public bool freeCamera = false;
+    public bool startMovement = false;
     Transform player;
     Vector3 targetPosition;
     void Start()
@@ -45,9 +45,12 @@ public class StageMovement_Vertical : MonoBehaviour
         targetPosition = transform.position;// Start with Larry's current position
         targetPosition.y = Mathf.Lerp(targetPosition.y, ClosestDivisibleBy45(), 1 * Time.deltaTime);
         transform.position = targetPosition; // Update Larry's position
-        if (Vector3.Distance(transform.localPosition, targetPosition) <= 1f)
+        Vector3 target = new Vector3(transform.position.x, ClosestDivisibleBy45(), transform.position.z);
+        if (Vector3.Distance(transform.position, target) <= 0.3f)
         {
-            GameObject.FindWithTag("MoveVertical").transform.localPosition = targetPosition;
+            transform.position = target;
+            startMovement = false;
+            Debug.Log("akldfnasd");
         }
     }
 
