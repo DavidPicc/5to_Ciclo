@@ -261,6 +261,7 @@ MonoBehaviour:
   vfxexplosion: {fileID: 2832440755471769679, guid: e8ce4cdee96253c4dbbe6ad2de567772,
     type: 3}
   IsBoss: 0
+  deathT: 0
   Form1: {fileID: 0}
   Form2: {fileID: 0}
   HitBoss: {fileID: 0}
@@ -414,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc8741bbf93f6d4a8d63377ac3674e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 656531904101248445, guid: 7024ec01dce56bd4693002ffd30e0c1e,
+  bulletPrefab: {fileID: 1300772526029512616, guid: 1183bfbbaf5bd9c479131e715b4e859c,
     type: 3}
   damage: 1
   bulletSpeed: 30
@@ -556,6 +557,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5fa5fb04fc57b1745908f90865c6d258,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a3f56fe4eb266374e983d7a3129072d5, type: 2}
     - target: {fileID: 919132149155446097, guid: 5fa5fb04fc57b1745908f90865c6d258,
         type: 3}
       propertyPath: m_Name
