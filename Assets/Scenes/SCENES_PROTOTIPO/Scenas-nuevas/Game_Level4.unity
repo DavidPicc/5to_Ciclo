@@ -5793,7 +5793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9949,7 +9949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16551,6 +16551,55 @@ Transform:
   - {fileID: 865829669}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &915443139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915443141}
+  - component: {fileID: 915443140}
+  m_Layer: 0
+  m_Name: GameScoreShop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &915443140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915443139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9d30d0a8d351f419bb59bd39bdce16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  gears: 10000
+  cores: 100
+  gearsUI: {fileID: 0}
+  coresUI: {fileID: 0}
+--- !u!4 &915443141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915443139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 550.5, y: 259.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918891076 stripped
 GameObject:
@@ -25655,7 +25704,7 @@ Transform:
   - {fileID: 1239324893}
   - {fileID: 1029339532}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427493716
 GameObject:
@@ -29805,55 +29854,6 @@ RectTransform:
   m_AnchoredPosition: {x: -155, y: -93.5}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1652991398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1652991400}
-  - component: {fileID: 1652991399}
-  m_Layer: 0
-  m_Name: GameScoreShop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1652991399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652991398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e9d30d0a8d351f419bb59bd39bdce16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  gears: 10000
-  cores: 100
-  gearsUI: {fileID: 0}
-  coresUI: {fileID: 0}
---- !u!4 &1652991400
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652991398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 550.5, y: 259.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1657075489
 GameObject:
   m_ObjectHideFlags: 0
@@ -31067,7 +31067,7 @@ PrefabInstance:
     - target: {fileID: 8691393238860293462, guid: 06fb45da7dbbda74b87ff081d266943a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8691393238860293462, guid: 06fb45da7dbbda74b87ff081d266943a,
         type: 3}
@@ -31999,172 +31999,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759118401}
   m_CullTransparentMesh: 1
---- !u!1 &1761275830
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1761275832}
-  - component: {fileID: 1761275831}
-  m_Layer: 0
-  m_Name: UpgradeTrackerNewShop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1761275831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761275830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17dc91e1d71ee940aa2fe9eddefb279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sectionControllers: []
-  upgradeControllers: []
-  upgrades:
-  - feature: VINDEX
-    upgrade: BASE
-    level: 1
-  - feature: VINDEX
-    upgrade: VELOCIDAD
-    level: 0
-  - feature: VINDEX
-    upgrade: VIDA
-    level: 0
-  - feature: VINDEX
-    upgrade: INVULNERABILIDAD
-    level: 0
-  - feature: VINDEX
-    upgrade: NUCLEOS
-    level: 0
-  - feature: LANZACLAVOS
-    upgrade: BASE
-    level: 1
-  - feature: LANZACLAVOS
-    upgrade: CANONDOBLE
-    level: 0
-  - feature: LANZACLAVOS
-    upgrade: CADENCIA
-    level: 0
-  - feature: LANZACLAVOS
-    upgrade: DANO
-    level: 0
-  - feature: LANZACLAVOS
-    upgrade: IMAN
-    level: 0
-  - feature: LANZAGRANADAS
-    upgrade: BASE
-    level: 0
-  - feature: LANZAGRANADAS
-    upgrade: CANONDOBLE
-    level: 0
-  - feature: LANZAGRANADAS
-    upgrade: CADENCIA
-    level: 0
-  - feature: LANZAGRANADAS
-    upgrade: DANO
-    level: 0
-  - feature: LANZAGRANADAS
-    upgrade: IMAN
-    level: 0
-  - feature: LANZALLAMAS
-    upgrade: BASE
-    level: 0
-  - feature: LANZALLAMAS
-    upgrade: ALCANCE
-    level: 0
-  - feature: LANZALLAMAS
-    upgrade: RADIO
-    level: 0
-  - feature: LANZALLAMAS
-    upgrade: CADENCIA
-    level: 0
-  - feature: LANZALLAMAS
-    upgrade: DANO
-    level: 0
-  - feature: LANZALLAMAS
-    upgrade: IMAN
-    level: 0
-  - feature: ESCUDOSIERRAS
-    upgrade: BASE
-    level: 1
-  - feature: ESCUDOSIERRAS
-    upgrade: ENERGIA
-    level: 0
-  - feature: ESCUDOSIERRAS
-    upgrade: CANTIDAD
-    level: 0
-  - feature: ESCUDOSIERRAS
-    upgrade: DANO
-    level: 0
-  - feature: ESCUDOREFLECTOR
-    upgrade: BASE
-    level: 0
-  - feature: ESCUDOREFLECTOR
-    upgrade: ENERGIA
-    level: 0
-  - feature: ESCUDOREFLECTOR
-    upgrade: OBJETIVOS
-    level: 0
-  - feature: ESCUDOREFLECTOR
-    upgrade: ABSORCION
-    level: 0
-  selectedWeapon: LANZACLAVOS
-  selectedShield: ESCUDOSIERRAS
-  selectedWeaponUI: {fileID: 0}
-  selectedShieldUI: {fileID: 0}
-  playerMovement: {fileID: 0}
-  playerHealth: {fileID: 0}
-  playerLanzaclavos: {fileID: 0}
-  playerLanzagranadas: {fileID: 0}
-  playerLanzallamas: {fileID: 0}
-  playerEscudoReflector: {fileID: 0}
-  playerEscudoSierras: {fileID: 0}
-  level1Cannon: 1
-  level1Cannons: 3
-  lanzaclavosDanoPerLevel: 0
-  lanzaclavosFireRatePerLevel: 0
-  level1Alcance: 1.2
-  level1Radio: 30
-  lanzallamasDanoPerLevel: 0
-  lanzallamasFireRatePerLevel: 0
-  lanzagranadasDanoPerLevel: 0
-  lanzagranadasFireRatePerLevel: 0
-  sierrasPorLevel: 2
-  sierrasDanoPerLevel: 0
-  objetivosPorLevel: 2
-  reflectorChargePerLevel: 0
-  invulnerabilityPerLevel: 0.5
-  healthPerLevel: 1
-  levelAcceleration: 110
-  levelMaxSpeed: 80
-  levelSpeedY: 35
-  gearsPerLevel: 0
-  coresPerLevel: 0
---- !u!4 &1761275832
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761275830}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 807.55, y: 311.90002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775758182
 GameObject:
   m_ObjectHideFlags: 0
@@ -34126,6 +33960,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885530268}
   m_CullTransparentMesh: 1
+--- !u!1 &1892828800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1892828802}
+  - component: {fileID: 1892828801}
+  m_Layer: 0
+  m_Name: UpgradeTrackerNewShop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1892828801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892828800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17dc91e1d71ee940aa2fe9eddefb279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sectionControllers: []
+  upgradeControllers: []
+  upgrades:
+  - feature: VINDEX
+    upgrade: BASE
+    level: 1
+  - feature: VINDEX
+    upgrade: VELOCIDAD
+    level: 0
+  - feature: VINDEX
+    upgrade: VIDA
+    level: 0
+  - feature: VINDEX
+    upgrade: INVULNERABILIDAD
+    level: 0
+  - feature: VINDEX
+    upgrade: NUCLEOS
+    level: 0
+  - feature: LANZACLAVOS
+    upgrade: BASE
+    level: 1
+  - feature: LANZACLAVOS
+    upgrade: CANONDOBLE
+    level: 0
+  - feature: LANZACLAVOS
+    upgrade: CADENCIA
+    level: 0
+  - feature: LANZACLAVOS
+    upgrade: DANO
+    level: 0
+  - feature: LANZACLAVOS
+    upgrade: IMAN
+    level: 0
+  - feature: LANZAGRANADAS
+    upgrade: BASE
+    level: 0
+  - feature: LANZAGRANADAS
+    upgrade: CANONDOBLE
+    level: 0
+  - feature: LANZAGRANADAS
+    upgrade: CADENCIA
+    level: 0
+  - feature: LANZAGRANADAS
+    upgrade: DANO
+    level: 0
+  - feature: LANZAGRANADAS
+    upgrade: IMAN
+    level: 0
+  - feature: LANZALLAMAS
+    upgrade: BASE
+    level: 0
+  - feature: LANZALLAMAS
+    upgrade: ALCANCE
+    level: 0
+  - feature: LANZALLAMAS
+    upgrade: RADIO
+    level: 0
+  - feature: LANZALLAMAS
+    upgrade: CADENCIA
+    level: 0
+  - feature: LANZALLAMAS
+    upgrade: DANO
+    level: 0
+  - feature: LANZALLAMAS
+    upgrade: IMAN
+    level: 0
+  - feature: ESCUDOSIERRAS
+    upgrade: BASE
+    level: 1
+  - feature: ESCUDOSIERRAS
+    upgrade: ENERGIA
+    level: 0
+  - feature: ESCUDOSIERRAS
+    upgrade: CANTIDAD
+    level: 0
+  - feature: ESCUDOSIERRAS
+    upgrade: DANO
+    level: 0
+  - feature: ESCUDOREFLECTOR
+    upgrade: BASE
+    level: 0
+  - feature: ESCUDOREFLECTOR
+    upgrade: ENERGIA
+    level: 0
+  - feature: ESCUDOREFLECTOR
+    upgrade: OBJETIVOS
+    level: 0
+  - feature: ESCUDOREFLECTOR
+    upgrade: ABSORCION
+    level: 0
+  selectedWeapon: LANZACLAVOS
+  selectedShield: ESCUDOSIERRAS
+  selectedWeaponUI: {fileID: 0}
+  selectedShieldUI: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerHealth: {fileID: 0}
+  playerLanzaclavos: {fileID: 0}
+  playerLanzagranadas: {fileID: 0}
+  playerLanzallamas: {fileID: 0}
+  playerEscudoReflector: {fileID: 0}
+  playerEscudoSierras: {fileID: 0}
+  level1Cannon: 1
+  level1Cannons: 3
+  lanzaclavosDanoPerLevel: 1
+  lanzaclavosFireRatePerLevel: 0.25
+  level1Alcance: 2
+  level1Radio: 25
+  lanzallamasDanoPerLevel: 1
+  lanzallamasFireRatePerLevel: 1
+  lanzagranadasDanoPerLevel: 5
+  lanzagranadasFireRatePerLevel: 0.3
+  sierrasPorLevel: 2
+  sierrasDanoPerLevel: 1
+  objetivosPorLevel: 2
+  reflectorChargePerLevel: 1
+  invulnerabilityPerLevel: 0.5
+  healthPerLevel: 1
+  levelAcceleration: 110
+  levelMaxSpeed: 80
+  levelSpeedY: 35
+  gearsPerLevel: 1
+  coresPerLevel: 1
+--- !u!4 &1892828802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892828800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 807.55, y: 311.90002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1896338211
 GameObject:
   m_ObjectHideFlags: 0
