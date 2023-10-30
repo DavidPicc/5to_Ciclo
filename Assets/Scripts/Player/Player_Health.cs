@@ -26,6 +26,16 @@ public class Player_Health : MonoBehaviour
     public Image caritaCorona;
     public Image caritaFachera;
 
+    [Header("Mejoras")]
+    public GameObject Mejora1H;
+    public GameObject Mejora2aH;
+    public GameObject Mejora2bH;
+    public GameObject MejoraI1;
+    public GameObject MejoraI2a;
+    public GameObject MejoraI2b;
+    public GameObject MejoraI3a;
+    public GameObject MejoraI3b;
+
     [Header("Crushed")]
     public int crushed = 0;
 
@@ -65,6 +75,32 @@ public class Player_Health : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             TakeDamage(1);
+        }
+
+        if(maxHealth == 4)
+        {
+            Mejora1H.SetActive(true);
+        }
+
+        if (maxHealth == 5)
+        {
+            Mejora2aH.SetActive(true);
+            Mejora2bH.SetActive(true);
+        }
+
+        if (invulnerabilityTime == 2)
+        {
+            MejoraI1.SetActive(false);
+            MejoraI2a.SetActive(true);
+            MejoraI2b.SetActive(true);
+        }
+
+        if (invulnerabilityTime == 2.5)
+        {
+            MejoraI2a.SetActive(false);
+            MejoraI2b.SetActive(false);
+            MejoraI3a.SetActive(true);
+            MejoraI3b.SetActive(true);
         }
     }
 
