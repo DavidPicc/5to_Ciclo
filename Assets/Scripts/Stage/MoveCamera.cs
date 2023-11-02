@@ -19,7 +19,7 @@ public class MoveCamera : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if(!moveVertical.startMovement)
+            if(!moveVertical.freeCamera)
             {
                 player.parent = moveHorizontal;
                 moveVertical.freeCamera = true;
