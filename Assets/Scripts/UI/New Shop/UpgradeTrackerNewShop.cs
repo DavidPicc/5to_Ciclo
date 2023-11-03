@@ -297,25 +297,25 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         sectionNav.selectedShield = selectedShield;
 
         playerLanzaclavos.equipped = false;
-        LanzaClavosUI.SetActive(false);
+       // LanzaClavosUI.SetActive(false);
         playerLanzagranadas.equipped = false;
-       LanzagranadasUI.SetActive(false);
+     //  LanzagranadasUI.SetActive(false);
         playerLanzallamas.equipped = false;
-        LanzallamasUI.SetActive(false);
+     //   LanzallamasUI.SetActive(false);
 
         switch (selectedWeapon)
         {
             case "LANZACLAVOS":
                 playerLanzaclavos.equipped = true;
-              LanzaClavosUI.SetActive(true);
+         //     LanzaClavosUI.SetActive(true);
                 break;
             case "LANZAGRANADAS":
                 playerLanzagranadas.equipped = true;
-               LanzagranadasUI.SetActive(true);
+          //     LanzagranadasUI.SetActive(true);
                 break;
             case "LANZALLAMAS":
                 playerLanzallamas.equipped = true;
-               LanzallamasUI.SetActive(true);
+           //    LanzallamasUI.SetActive(true);
                 break;
         }
 
