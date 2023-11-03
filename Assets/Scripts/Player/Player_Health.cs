@@ -31,10 +31,8 @@ public class Player_Health : MonoBehaviour
     public GameObject Mejora2aH;
     public GameObject Mejora2bH;
     public GameObject MejoraI1;
-    public GameObject MejoraI2a;
-    public GameObject MejoraI2b;
-    public GameObject MejoraI3a;
-    public GameObject MejoraI3b;
+    public GameObject MejoraI2;
+    public GameObject MejoraI3;
 
     [Header("Crushed")]
     public int crushed = 0;
@@ -91,16 +89,13 @@ public class Player_Health : MonoBehaviour
         if (invulnerabilityTime == 2)
         {
             MejoraI1.SetActive(false);
-            MejoraI2a.SetActive(true);
-            MejoraI2b.SetActive(true);
+            MejoraI2.SetActive(true);
         }
 
         if (invulnerabilityTime == 2.5)
         {
-            MejoraI2a.SetActive(false);
-            MejoraI2b.SetActive(false);
-            MejoraI3a.SetActive(true);
-            MejoraI3b.SetActive(true);
+            MejoraI2.SetActive(false);
+            MejoraI3.SetActive(true);
         }
     }
 
