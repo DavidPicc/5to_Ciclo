@@ -8,7 +8,6 @@ public class Player_Ability_Fixed: MonoBehaviour
     public bool equipped;
 
     [Header("References")]
-    public GameObject EscudoReflectorUI;
     public GameObject shieldObj;
     public GameObject bulletPrefab;
     public GameObject Cabina;
@@ -108,12 +107,10 @@ public class Player_Ability_Fixed: MonoBehaviour
         if (equipped == true)
         {
             Cabina.SetActive(true);
-            EscudoReflectorUI.SetActive(true);
         }
         if (equipped == false)
         {
             Cabina.SetActive(false);
-            EscudoReflectorUI.SetActive(false);
         }
     }
 

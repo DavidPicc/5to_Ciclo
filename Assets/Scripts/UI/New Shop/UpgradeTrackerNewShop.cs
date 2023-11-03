@@ -30,6 +30,13 @@ public class UpgradeTrackerNewShop : MonoBehaviour
     public TextMeshProUGUI selectedWeaponUI;
     public TextMeshProUGUI selectedShieldUI;
 
+    [Header("Equipment UI")]
+    public GameObject LanzaClavosUI;
+    public GameObject LanzagranadasUI;
+    public GameObject LanzallamasUI;
+    public GameObject EscudoSierrasUI;
+    public GameObject EscudoReflectorUI;
+
     [Header("Upgrade Components")]
     public PlayerMovement_TestSalvador2 playerMovement;
     public Player_Health playerHealth;
@@ -290,32 +297,42 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         sectionNav.selectedShield = selectedShield;
 
         playerLanzaclavos.equipped = false;
+        LanzaClavosUI.SetActive(false);
         playerLanzagranadas.equipped = false;
+       LanzagranadasUI.SetActive(false);
         playerLanzallamas.equipped = false;
+        LanzallamasUI.SetActive(false);
 
-        switch(selectedWeapon)
+        switch (selectedWeapon)
         {
             case "LANZACLAVOS":
                 playerLanzaclavos.equipped = true;
+              LanzaClavosUI.SetActive(true);
                 break;
             case "LANZAGRANADAS":
                 playerLanzagranadas.equipped = true;
+               LanzagranadasUI.SetActive(true);
                 break;
             case "LANZALLAMAS":
                 playerLanzallamas.equipped = true;
+               LanzallamasUI.SetActive(true);
                 break;
         }
 
         playerEscudoSierras.equipped = false;
+       // EscudoSierrasUI.SetActive(false);
         playerEscudoReflector.equipped = false;
+       // EscudoReflectorUI.SetActive(false);
 
-        switch(selectedShield)
+        switch (selectedShield)
         {
             case "ESCUDOSIERRAS":
                 playerEscudoSierras.equipped = true;
+              //  EscudoSierrasUI.SetActive(true);
                 break;
             case "ESCUDOREFLECTOR":
                 playerEscudoReflector.equipped = true;
+             //   EscudoReflectorUI.SetActive(true);
                 break;
         }
     }
