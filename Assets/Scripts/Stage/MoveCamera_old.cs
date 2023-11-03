@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveCamera_old : MonoBehaviour
 {
     bool startMoving = false;
-    Vector3 finalPosition;
+    [SerializeField] Vector3 finalPosition;
     [SerializeField] float moveSpeed;
     Vector3 initialPosition;
     [SerializeField] float verticalInput;
