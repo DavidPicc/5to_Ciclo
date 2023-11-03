@@ -55,6 +55,8 @@ public class CheckPointScript : MonoBehaviour
         Debug.Log(FindObjectOfType<StageMovement>().transform.position);
         GameObject.FindGameObjectWithTag("MoveVertical").transform.localPosition = new Vector3(PlayerPrefs.GetFloat("savedCameraX"), PlayerPrefs.GetFloat("savedCameraY"), 0);
         FindObjectOfType<Player_Health>().transform.localPosition = new Vector3(PlayerPrefs.GetFloat("savedPlayerX"), PlayerPrefs.GetFloat("savedPlayerY"), 0);
+
+        FindObjectOfType<StageMovement_Vertical>().GetCurrentPosition();
     }
 
     void Update()

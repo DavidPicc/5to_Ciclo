@@ -12,7 +12,7 @@ public class StageMovement_Vertical : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        currentCameraPosition = transform.localPosition;
+        GetCurrentPosition();
     }
 
     void Update()
@@ -59,5 +59,10 @@ public class StageMovement_Vertical : MonoBehaviour
     private float ClosestDivisibleBy45()
     {
         return Mathf.Round(player.position.y / 45.0f) * 45.0f;
+    }
+
+    public void GetCurrentPosition()
+    {
+        currentCameraPosition = transform.localPosition;
     }
 }
