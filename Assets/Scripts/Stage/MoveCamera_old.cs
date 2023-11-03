@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class MoveCamera_old : MonoBehaviour
 {
-    [SerializeField] bool startMoving = false;
-    [SerializeField] Vector3 finalPosition;
+    bool startMoving = false;
+    Vector3 finalPosition;
     [SerializeField] float moveSpeed;
-
-    [SerializeField] bool addToPosition = false;
     Vector3 initialPosition;
     [SerializeField] float verticalInput;
 
-    Transform moveVertical;
+    StageMovement_Vertical moveVertical;
 
     void Start()
     {
-        moveVertical = GameObject.FindWithTag("MoveVertical").transform;
+        moveVertical = FindObjectOfType<StageMovement_Vertical>();
     }
 
     void Update()
@@ -24,13 +22,11 @@ public class MoveCamera_old : MonoBehaviour
         if (startMoving)
         {
             float step = Time.deltaTime * moveSpeed;
+            moveVertical.transform.localPosition = Vector3.MoveTowards(moveVertical.transform.localPosition, finalPosition, step);
 
-            //GameObject.FindWithTag("MoveVertical").transform.localPosition = Vector3.Lerp(GameObject.FindWithTag("MoveVertical").transform.localPosition, finalPosition, fractionOfJourney);
-            moveVertical.localPosition = Vector3.MoveTowards(moveVertical.localPosition, finalPosition, step);
-
-            if (Vector3.Distance(moveVertical.localPosition, finalPosition) <= 1.2f)
+            if (Vector3.Distance(moveVertical.transform.localPosition, finalPosition) <= 0.5f)
             {
-                moveVertical.localPosition = finalPosition;
+                moveVertical.transform.localPosition = finalPosition;
                 startMoving = false;
                 Destroy(gameObject);
             }
@@ -42,13 +38,16 @@ public class MoveCamera_old : MonoBehaviour
     {
         if (other.CompareTag("Player") && !startMoving)
         {
-            startMoving = true;
-            if (addToPosition)
+            if(moveVertical.freeCamera || moveVertical.startMovement)
             {
-                initialPosition = moveVertical.localPosition;
-                finalPosition = initialPosition + new Vector3(0, verticalInput, 0);
+                moveVertical.player.parent = moveVertical.transform;
+                moveVertical.freeCamera = false;
+                moveVertical.startMovement = false;
             }
-
+            startMoving = true;
+            initialPosition = moveVertical.currentCameraPosition;
+            finalPosition = initialPosition + new Vector3(0, verticalInput, 0);
+            moveVertical.currentCameraPosition = finalPosition;
         }
     }
 }

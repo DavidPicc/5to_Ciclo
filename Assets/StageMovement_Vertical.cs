@@ -6,11 +6,13 @@ public class StageMovement_Vertical : MonoBehaviour
 {
     public bool freeCamera = false;
     public bool startMovement = false;
-    Transform player;
+    [HideInInspector] public Transform player;
     Vector3 targetPosition;
+    public Vector3 currentCameraPosition;
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        currentCameraPosition = transform.localPosition;
     }
 
     void Update()
@@ -35,22 +37,22 @@ public class StageMovement_Vertical : MonoBehaviour
 
     void MoveFreely()
     {
-        targetPosition = transform.position;// Start with Larry's current position
+        targetPosition = transform.position;
         targetPosition.y = Mathf.Lerp(targetPosition.y, player.position.y, 2 * Time.deltaTime);
-        transform.position = targetPosition; // Update Larry's position
+        transform.position = targetPosition;
     }
 
     void SnapCamera()
     {
-        targetPosition = transform.position;// Start with Larry's current position
+        targetPosition = transform.position;
         targetPosition.y = Mathf.Lerp(targetPosition.y, ClosestDivisibleBy45(), 1 * Time.deltaTime);
-        transform.position = targetPosition; // Update Larry's position
+        transform.position = targetPosition;
         Vector3 target = new Vector3(transform.position.x, ClosestDivisibleBy45(), transform.position.z);
         if (Vector3.Distance(transform.position, target) <= 0.3f)
         {
             transform.position = target;
+            currentCameraPosition = transform.localPosition;
             startMovement = false;
-            Debug.Log("akldfnasd");
         }
     }
 

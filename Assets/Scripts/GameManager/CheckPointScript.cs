@@ -36,12 +36,13 @@ public class CheckPointScript : MonoBehaviour
         if (!tryingThings)
         {
             //savedWave = PlayerPrefs.GetInt("wave");
+            LoadCheckpoints();
         }
         else
         {
             savedWave = SituationManager.instance.waveIndex;
         }
-        LoadCheckpoints();
+        
 
         Debug.Log("WAVE: " + savedWave);
     }
