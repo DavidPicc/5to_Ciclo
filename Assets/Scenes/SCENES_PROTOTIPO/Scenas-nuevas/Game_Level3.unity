@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.006377207, g: 0.0012434049, b: 0.010560841, a: 1}
+  m_IndirectSpecularColor: {r: 0.006377206, g: 0.0012434047, b: 0.010560842, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5715,7 +5715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7cd0d958804a742b02c1751da6d09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.06
+  delay: 0.03
   fullText: 
   currentText: 
   characterText: {fileID: 0}
@@ -28327,7 +28327,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70.00001
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -28352,8 +28352,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427493716}
-  m_LocalRotation: {x: 0.20313768, y: -0.22469264, z: 0.047954295, w: 0.9518134}
-  m_LocalPosition: {x: -52.38, y: 7, z: -34}
+  m_LocalRotation: {x: 0.2031377, y: -0.22469266, z: 0.047954302, w: 0.9518134}
+  m_LocalPosition: {x: 1309.82, y: 4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40721,7 +40721,13 @@ MonoBehaviour:
   situations:
   - situationPrefab: {fileID: 4520026764095519211, guid: abcd83325ed80d94896016807234835c,
       type: 3}
-    dialogue: []
+    dialogue:
+    - "Astartea (Altavoces);\xA1Solo quiero lo mejor para t\xED, Kei! \xBFPor qu\xE9
+      no puedes verlo? \xBFPor qu\xE9 no puedes entenderme? Yo soy tu madre."
+    - "Astartea (Altavoces);Soy qui\xE9n te ha cuidado desde peque\xF1o. \xBFCrees
+      que merezco ser tratada de esta manera? \xBFAcaso no te apena? \xBFNo te carcome
+      el sentimiento por dentro? "
+    - "Astartea (Altavoces);Regresa a m\xED, Kei. Por las buenas... O por las malas."
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -40768,9 +40774,28 @@ MonoBehaviour:
     isBoss: 0
     methodEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - situationPrefab: {fileID: 3000705608109611990}
-    dialogue: []
+    dialogue:
+    - "Vindex;(\xBFEst\xE1s seguro que lograremos esto?) "
+    - "Kei;M\xE1s que seguro. \xBFTienes miedo?"
+    - "Vindex;(No... Pero creo que ser\xEDa buena idea considerar escondernos en
+      un b\xFAnker.)"
+    - "Vindex;(No... Pero creo que ser\xEDa buena idea considerar escondernos en
+      un b\xFAnker.)"
+    - "Kei;Quiz\xE1s tengas raz\xF3n.\r"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -40784,7 +40809,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - situationPrefab: {fileID: 1994092958566440864}
-    dialogue: []
+    dialogue:
+    - "Kei;\xBFEscuchaste lo de anoche? Tuve una pesadilla con ese discurso. \t"
+    - "Vindex;(\xBFTe sientes angustiado, Kei?Lo m\xE1s recomendable para hacer despu\xE9s
+      de una pesadilla es...) \t"
+    - "Kei;\xA1No te pregunt\xE9 eso! Estoy bien, de veras\u2026"
+    - "Vindex;(Si t\xFA lo dices\u2026)"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -40871,7 +40901,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - situationPrefab: {fileID: 8396805684283746706}
-    dialogue: []
+    dialogue:
+    - "Kei;No podemos pasar mucho tiempo aqu\xED\u2026 Nos van a ver\u2026 Y si lo
+      hacen\u2026"
+    - "Vindex;(Llamar\xE1n a la polic\xEDa y nos van a llover los drones\u2026)\r\n"
+    - Kei;Mhm. Andando, Vindex
+    - Vindex;(No hace falta que me lo digas)
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -40902,7 +40937,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - situationPrefab: {fileID: 1806550773366405438}
-    dialogue: []
+    dialogue:
+    - 
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -40937,7 +40973,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - situationPrefab: {fileID: 5651278488771846876}
-    dialogue: []
+    dialogue:
+    - "Vindex;(\xA1Fuimos difamados, Kei! \xBFDe verdad crees que pasar por todo
+      esto vale la pena?)"
+    - "Kei;Estoy empezando a creer que no. Estoy cansado\u2026"
+    - "Vindex;(Quiz\xE1s necesitamos descansar.) "
+    - "Kei;O empezar a buscar un b\xFAnker."
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -41045,7 +41086,14 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - situationPrefab: {fileID: 6140649494674285963}
-    dialogue: []
+    dialogue:
+    - "Vindex;(Cada vez nos acercamos m\xE1s al coliseo\u2026 \xBFEst\xE1s preparado,
+      Kei? Ella te cuid\xF3 durante toda tu vida\u2026 Entiendo si es que-)\r\n"
+    - "Kei;\xBFSi es que qu\xE9? \xBFSi le tengo pena? \xBFL\xE1stima? No\u2026 ella
+      mat\xF3 a mi madre\u2026"
+    - "Kei;Intent\xF3 matar a mi padre\u2026 No le tengo ninguna l\xE1stima\u2026
+      Vamos a acabar con ella, as\xED sea lo \xFAltimo que hagamos"
+    - "Vindex;(Respira\u2026 rel\xE1jate\u2026 Est\xE1s perdiendo el control\u2026)\r\n"
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -41125,7 +41173,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - situationPrefab: {fileID: 6868359285784400536}
-    dialogue: []
+    dialogue:
+    - "Vindex;(Todo el mundo nos odia\u2026 Quiz\xE1\u2026 Quiz\xE1 no debimos hacer
+      esto\u2026)"
+    - "Kei;\xA1Astartea los est\xE1 manipulando! \xA1No te desanimes, Vindex! Cuando
+      todo esto termine, seremos h\xE9roes."
+    - "Vindex;(\xBFLo prometes?)"
+    - Kei;Lo prometo.
     isShop: 0
     isBoss: 0
     methodEvent:
@@ -41433,7 +41487,7 @@ PrefabInstance:
     - target: {fileID: 4520026764095519211, guid: abcd83325ed80d94896016807234835c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8691393238860293462, guid: abcd83325ed80d94896016807234835c,
         type: 3}
