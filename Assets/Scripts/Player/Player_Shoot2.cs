@@ -84,6 +84,6 @@ public class Player_Shoot2 : MonoBehaviour
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<PlayerBullet2>().explosionDamage = shootDamage;
-        bullet.GetComponent<PlayerBullet2>().DelayExplosion(1.3f);
+        bullet.GetComponent<PlayerBullet2>().DelayExplosion(1.5f);
     }
 }

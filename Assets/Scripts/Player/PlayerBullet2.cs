@@ -13,7 +13,6 @@ public class PlayerBullet2 : MonoBehaviour
     {
         explosionRadVisual.SetActive(false);
     }
-
     public void Explosion()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -26,10 +25,13 @@ public class PlayerBullet2 : MonoBehaviour
             {
                 collider.GetComponentInParent<Enemy_Health>().TakeDamage(explosionDamage);
             }
+            if (collider.GetComponentInParent<objet_destrur>() != null)
+            {
+                collider.GetComponentInParent<objet_destrur>().TakeDamage(explosionDamage);
+            }
         }
         Destroy(gameObject, 0.1f);
     }
-
     public void DelayExplosion(float time)
     {
         Invoke("Explosion", time);
@@ -37,7 +39,7 @@ public class PlayerBullet2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle") || other.CompareTag("EnemyBullet"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle") || other.CompareTag("EnemyBullet") || other.CompareTag("destructible"))
         {
             Explosion();
         }
