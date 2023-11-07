@@ -58,10 +58,13 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            musicSource.Stop();
-        }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    musicSource.Stop();
+        //}
+
+        Debug.Log("MUSIC VOLUME: " + musicVolume);
+        Debug.Log("SFX VOLUME: " + sfxVolume);
     }
 
     public void PlaySFX(AudioSource source, AudioClip clip, float volume)
@@ -101,12 +104,15 @@ public class AudioManager : MonoBehaviour
         musicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
         sfxGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
 
-        float normalizedValue = (masterVolume - 0.0001f) / (1f - 0.0001f);
-        masterVolumeSlider.value = normalizedValue;
-        normalizedValue = (musicVolume - 0.0001f) / (1f - 0.0001f);
-        musicVolumeSlider.value = normalizedValue;
-        normalizedValue = (sfxVolume - 0.0001f) / (1.6f - 0.0001f);
-        sfxVolumeSlider.value = normalizedValue;
+        if(masterVolumeSlider != null && musicVolumeSlider != null && sfxVolumeSlider != null)
+        {
+            float normalizedValue = (masterVolume - 0.0001f) / (1f - 0.0001f);
+            masterVolumeSlider.value = normalizedValue;
+            normalizedValue = (musicVolume - 0.0001f) / (1f - 0.0001f);
+            musicVolumeSlider.value = normalizedValue;
+            normalizedValue = (sfxVolume - 0.0001f) / (1.6f - 0.0001f);
+            sfxVolumeSlider.value = normalizedValue;
+        }
     }
 
     public void ChangeMasterVolume(float value)
