@@ -51,10 +51,10 @@ public class DialogueScript : MonoBehaviour
     }
 
     bool isRunning = false;
-    public IEnumerator StartDialogue(AudioSource audioSource)
+    public IEnumerator StartDialogue2(AudioSource audioSource)
     {
         isRunning = true;
-        for(int i = 0; i < dialogues.Count; i++)
+        for (int i = 0; i < dialogues.Count; i++)
         {
             finishedTyping = false;
             dialogueText.text = "";
@@ -64,6 +64,11 @@ public class DialogueScript : MonoBehaviour
             characterText.text = speaker;
             foreach (char c in fullText)
             {
+                if (GameManager.instance.isPaused) // If the game is paused, wait for it to be UNPAUSED before continuing.
+                {
+                    yield return new WaitUntil(() => !GameManager.instance.isPaused);
+                }
+
                 dialogueText.text += c;
 
                 float pitch = Random.Range(0.5f, 1.5f);
@@ -103,15 +108,66 @@ public class DialogueScript : MonoBehaviour
         {
             dialogues.Add(dialogue[i]);
         }
-        if(!isRunning)
-            StartCoroutine(StartDialogue(audioSource));
+        if (!isRunning) //StartDialogue(audioSource);
+            StartCoroutine(StartDialogue2(audioSource));
     }
 
     public void SetDialogue(string dialogue, AudioSource audioSource)
     {
         CanvasUI.instance.dialogueObject.SetActive(true);
         dialogues.Add(dialogue);
-        if (!isRunning)
-            StartCoroutine(StartDialogue(audioSource));
+        if (!isRunning) //StartDialogue(audioSource);
+            StartCoroutine(StartDialogue2(audioSource));
+    }
+
+    private void StartDialogue(AudioSource audioSource)
+    {
+        isRunning = true;
+        NextDialogue(audioSource);
+    }
+
+    private void NextDialogue(AudioSource audioSource)
+    {
+        if (index < dialogues.Count)
+        {
+            finishedTyping = false;
+            string[] dialogueParts = dialogues[index].Split(';');
+            characterText.text = dialogueParts[0];
+            StartCoroutine(TypeText(dialogueParts[1], audioSource));
+            index++;
+        }
+        else
+        {
+            isRunning = false;
+            // Handle the end of the dialogue.
+        }
+    }
+
+    private IEnumerator TypeText(string text, AudioSource audioSource)
+    {
+        dialogueText.text = "";
+        foreach (char c in text)
+        {
+            dialogueText.text += c;
+            float pitch = Random.Range(0.5f, 1.5f);
+            audioSource.pitch = pitch;
+            audioSource.PlayOneShot(textSound);
+
+            if(Time.timeScale > 0)
+            {
+                yield return new WaitForSeconds(delay);
+                if (dialogueText.text.Length >= text.Length)
+                {
+                    FinishTyping();
+                }
+            }
+            
+            
+        }
+    }
+
+    private void FinishTyping()
+    {
+        finishedTyping = true;
     }
 }
