@@ -35,7 +35,7 @@ public class AudioValues : MonoBehaviour
         {
             _masterVolume = 0.5f;
             _musicVolume = 0.5f;
-            _sfxVolume = 0.5f;
+            _sfxVolume = 0.8f;
         }
     }
 }
