@@ -64,7 +64,7 @@ public class DialogueScript : MonoBehaviour
             characterText.text = speaker;
             foreach (char c in fullText)
             {
-                if (GameManager.instance.isPaused) // If the game is paused, wait for it to be UNPAUSED before continuing.
+                if (GameManager.instance.isPaused && !GameManager.instance.shopMenu.activeSelf) // If the game is paused, wait for it to be UNPAUSED before continuing.
                 {
                     yield return new WaitUntil(() => !GameManager.instance.isPaused);
                 }
