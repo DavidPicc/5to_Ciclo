@@ -2,10 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class Player_Movement : MonoBehaviour
 {
     Rigidbody rb;
+    public Material playerLightMaterial;
+    [HideInInspector] public bool changedLightMaterial = false;
+
     [SerializeField] public AudioSource audioManager;
     [SerializeField] AudioClip MovementSound;
     public enum MovementType
@@ -14,8 +19,8 @@ public class Player_Movement : MonoBehaviour
         noDrag
     }
     public MovementType moveType;
-    [SerializeField] float acceleration;
-    [SerializeField] float speedLimit;
+    [SerializeField] public float acceleration;
+    [SerializeField] public float speedLimit;
     float moveX, moveY;
     [SerializeField] float moveDragX, moveDragY, stayDrag;
     [HideInInspector] public Vector3 moveVector;
@@ -87,5 +92,16 @@ public class Player_Movement : MonoBehaviour
         {
             rb.drag = stayDrag;
         }
+    }
+
+    public void ChangeEmissionColor(Color color)
+    {
+        playerLightMaterial.SetColor("_EmissionColor", color * 12); // ("Color", color deseado * INTENSIDAD)
+        Debug.Log("CAMBIAR COLOR");
+        //if(!changedLightMaterial)
+        //{
+
+        //    changedLightMaterial = true;
+        //}
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player_Shoot3 : MonoBehaviour
 {
     public bool equipped;
-
+    [SerializeField] public Color lightMaterialEmissionColor;
+    bool changedEmissionColor = false;
 
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -60,11 +61,18 @@ public class Player_Shoot3 : MonoBehaviour
             Gun.SetActive(true);
             audioManager.clip = ShootSound;
             audioManager.loop = true;
+            if(!changedEmissionColor)
+            {
+                GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
+                changedEmissionColor = true;
+            }
+
         }
         if (equipped == false)
         {
             Gun.SetActive(false);
             audioManager.loop = false;
+            if (changedEmissionColor) changedEmissionColor = false;
         }
     }
 

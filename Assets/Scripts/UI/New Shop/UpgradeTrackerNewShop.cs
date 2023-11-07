@@ -38,7 +38,8 @@ public class UpgradeTrackerNewShop : MonoBehaviour
     public GameObject EscudoReflectorUI;
 
     [Header("Upgrade Components")]
-    public PlayerMovement_TestSalvador2 playerMovement;
+    //public PlayerMovement_TestSalvador2 playerMovement;
+    public Player_Movement playerMovement;
     public Player_Health playerHealth;
     public Player_Shoot playerLanzaclavos;
     public Player_Shoot2 playerLanzagranadas;
@@ -142,7 +143,8 @@ public class UpgradeTrackerNewShop : MonoBehaviour
 
         if (player != null)
         {
-            playerMovement = player.GetComponent<PlayerMovement_TestSalvador2>();
+            //playerMovement = player.GetComponent<PlayerMovement_TestSalvador2>();
+            playerMovement = player.GetComponent<Player_Movement>();
             playerHealth = player.GetComponent<Player_Health>();
             playerLanzaclavos = player.GetComponent<Player_Shoot>();
             playerLanzagranadas = player.GetComponent<Player_Shoot2>();
@@ -174,9 +176,14 @@ public class UpgradeTrackerNewShop : MonoBehaviour
             baseHealth = playerHealth.maxHealth;
             baseInvulnerability = playerHealth.invulnerabilityTime;
 
-            baseAcceleration = playerMovement.accelerationX;
-            baseMaxSpeed = playerMovement.maxSpeed;
-            baseSpeedY = playerMovement.speedY;
+            // MOVIMIENTO DE SALVADOR.
+            //baseAcceleration = playerMovement.accelerationX;
+            //baseMaxSpeed = playerMovement.maxSpeed;
+            //baseSpeedY = playerMovement.speedY;
+
+            // MOVIMIENTO DE DAVID.
+            baseAcceleration = playerMovement.acceleration;
+            baseMaxSpeed = playerMovement.speedLimit;
         }
         else return;
 
@@ -263,9 +270,14 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         //Vindex Movement
         int levelSpeed = Array.Find(upgrades, (e) => e.feature == "VINDEX" && e.upgrade == "VELOCIDAD").level;
 
-        playerMovement.accelerationX = levelSpeed == 0 ? baseAcceleration : levelAcceleration;
-        playerMovement.maxSpeed = levelSpeed == 0 ? baseMaxSpeed : levelMaxSpeed;
-        playerMovement.speedY = levelSpeed == 0 ? baseSpeedY : levelSpeedY;
+        // MOVIMIENTO DE SALVADOR.
+        //playerMovement.accelerationX = levelSpeed == 0 ? baseAcceleration : levelAcceleration;
+        //playerMovement.maxSpeed = levelSpeed == 0 ? baseMaxSpeed : levelMaxSpeed;
+        //playerMovement.speedY = levelSpeed == 0 ? baseSpeedY : levelSpeedY;
+
+        // MOVIMIENTO DE DAVID.
+        playerMovement.acceleration = levelSpeed == 0 ? baseAcceleration : levelAcceleration;
+        playerMovement.speedLimit = levelSpeed == 0 ? baseMaxSpeed : levelMaxSpeed;
     }
 
     void SetUpgradesUI()
@@ -295,6 +307,8 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         SectionNavigator sectionNav = FindObjectOfType<SectionNavigator>();
         sectionNav.selectedWeapon = selectedWeapon;
         sectionNav.selectedShield = selectedShield;
+        //selectedWeapon = sectionNav.selectedWeapon;
+        //selectedShield = sectionNav.selectedShield;
 
         playerLanzaclavos.equipped = false;
        // LanzaClavosUI.SetActive(false);
@@ -306,16 +320,19 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         switch (selectedWeapon)
         {
             case "LANZACLAVOS":
+                playerMovement.ChangeEmissionColor(playerLanzaclavos.lightMaterialEmissionColor);
                 playerLanzaclavos.equipped = true;
-         //     LanzaClavosUI.SetActive(true);
+                //     LanzaClavosUI.SetActive(true);
                 break;
             case "LANZAGRANADAS":
+                playerMovement.ChangeEmissionColor(playerLanzagranadas.lightMaterialEmissionColor);
                 playerLanzagranadas.equipped = true;
-          //     LanzagranadasUI.SetActive(true);
+                //     LanzagranadasUI.SetActive(true);
                 break;
             case "LANZALLAMAS":
+                playerMovement.ChangeEmissionColor(playerLanzallamas.lightMaterialEmissionColor);
                 playerLanzallamas.equipped = true;
-           //    LanzallamasUI.SetActive(true);
+                //    LanzallamasUI.SetActive(true);
                 break;
         }
 
@@ -335,6 +352,8 @@ public class UpgradeTrackerNewShop : MonoBehaviour
              //   EscudoReflectorUI.SetActive(true);
                 break;
         }
+
+        Debug.Log("SET EQUIPMENT");
     }
 
     public void LevelUp(string feature, string upgrade, int level)

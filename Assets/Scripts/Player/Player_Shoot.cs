@@ -6,7 +6,8 @@ using static Cinemachine.DocumentationSortingAttribute;
 public class Player_Shoot : MonoBehaviour
 {
     public bool equipped = false;
-
+    [SerializeField] public Color lightMaterialEmissionColor;
+    bool changedEmissionColor = false;
 
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -48,10 +49,18 @@ public class Player_Shoot : MonoBehaviour
         if (equipped == true)
         {
             Gun.SetActive(true);
+            if (!changedEmissionColor)
+            {
+                GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
+                changedEmissionColor = true;
+            }
+
         }
         if (equipped == false)
         {
             Gun.SetActive(false);
+            enabled = false;
+            if (changedEmissionColor) changedEmissionColor = false;
         }
     }
 
