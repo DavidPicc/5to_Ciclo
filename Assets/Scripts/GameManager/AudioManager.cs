@@ -27,20 +27,6 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
-        //// If there is not already an instance of SoundManager, set it to this.
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //}
-        ////If an instance already exists, destroy whatever this object is to enforce the singleton.
-        //else if (instance != this)
-        //{
-        //    Destroy(gameObject);
-        //}
-
-        ////Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-        //DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -54,17 +40,6 @@ public class AudioManager : MonoBehaviour
         if(screenMusic != null)   
             ChangeMusic(screenMusic);
         UpdateMixerVolume();
-    }
-
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.J))
-        //{
-        //    musicSource.Stop();
-        //}
-
-        Debug.Log("MUSIC VOLUME: " + musicVolume);
-        Debug.Log("SFX VOLUME: " + sfxVolume);
     }
 
     public void PlaySFX(AudioSource source, AudioClip clip, float volume)
@@ -123,8 +98,6 @@ public class AudioManager : MonoBehaviour
         float normalizedValue = (masterVolume - 0.0001f) / (1f - 0.0001f);
         masterVolumeSlider.value = normalizedValue;
         masterGroup.audioMixer.SetFloat("GeneralVolume", Mathf.Log10(masterVolume) * 20);
-
-        //FindObjectOfType<UIPriority>().volumeSelected.GetComponent<VolumeButtonScript>().volumeText.text = (masterVolume * 10f).ToString("F0");
     }
 
     public void ChangeMusicVolume(float value)
@@ -135,8 +108,6 @@ public class AudioManager : MonoBehaviour
         float normalizedValue = (musicVolume - 0.0001f) / (1f - 0.0001f);
         musicVolumeSlider.value = normalizedValue;
         musicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
-
-        //FindObjectOfType<UIPriority>().volumeSelected.GetComponent<VolumeButtonScript>().volumeText.text = (musicVolume * 10f).ToString("F0");
     }
 
     public void ChangeSFXVolume(float value)
@@ -148,7 +119,5 @@ public class AudioManager : MonoBehaviour
         float normalizedValue = (sfxVolume - 0.0001f) / (1.6f - 0.0001f);
         sfxVolumeSlider.value = normalizedValue;
         sfxGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
-
-        //FindObjectOfType<UIPriority>().volumeSelected.GetComponent<VolumeButtonScript>().volumeText.text = (sfxVolume * 10f).ToString("F0");
     }
 }
