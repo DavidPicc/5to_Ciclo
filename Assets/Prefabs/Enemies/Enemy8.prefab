@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4525412024875919517}
   - component: {fileID: 8565232482527796345}
-  - component: {fileID: -4189062751187495589}
+  - component: {fileID: 650652259109223863}
   - component: {fileID: 4544256865857069909}
   - component: {fileID: -6158682819534291632}
   - component: {fileID: 7122556782559456915}
@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 4775852444701093714}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3557273608347222736}
@@ -165,7 +165,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &-4189062751187495589
+--- !u!114 &650652259109223863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,16 +174,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4775852444701093714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e273c08de79bfd249b14966af6d98bcd, type: 3}
+  m_Script: {fileID: 11500000, guid: 525e76b9930f9204abf1c5ca9fdf2b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomPoint: {fileID: 571389862404535161}
-  maxDistance: 3
-  cameraBorderLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  moveSpeed: 3.75
-  timeToMove: 2
+  speed: 3.5
 --- !u!114 &4544256865857069909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,19 +190,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c463e07fe61b3a442bb6ed8143b43abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4371670380075575442, guid: 6e7a15f286f64dd4fb6bf1ab5d4135ab,
+  bulletPrefab: {fileID: 656531904101248445, guid: 54f2f2977e1b18a4594590f65f49a454,
     type: 3}
-  damage: 0
-  bulletSpeed: 2.5
-  fireRate: 5
+  damage: 1
+  bulletSpeed: 28
+  fireRate: 2.5
   bulletNumber: 1
-  bulletDisappear: 10
+  bulletDisappear: 15
   bulletOffset: 0
   anticipation: 0.25
   pointShoot: {fileID: 9068361706830314513}
   audioManager: {fileID: -479037119299453077}
   ShootSound: {fileID: 8300000, guid: 10d7aca44a2746b4e91c3de1c2349d27, type: 3}
-  distanceToShoot: 9
+  distanceToShoot: 45
   antiSphere: {fileID: 5284846142390465221}
 --- !u!114 &-6158682819534291632
 MonoBehaviour:
@@ -282,7 +276,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -378,9 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d705f632b65b048837515175770ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementScript: {fileID: 0}
+  movementScript: {fileID: 650652259109223863}
   enemyShooting: {fileID: 4544256865857069909}
-  enemyHealth: {fileID: 0}
+  enemyHealth: {fileID: -6158682819534291632}
 --- !u!1 &5284846142390465221
 GameObject:
   m_ObjectHideFlags: 0
