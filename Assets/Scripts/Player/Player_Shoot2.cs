@@ -7,6 +7,7 @@ public class Player_Shoot2 : MonoBehaviour
     public bool equipped;
     [SerializeField] public Color lightMaterialEmissionColor;
     bool changedEmissionColor = false;
+    public GameObject LanzagranadasUI;
 
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -42,6 +43,7 @@ public class Player_Shoot2 : MonoBehaviour
         if (equipped == true)
         {
             Gun.SetActive(true);
+            LanzagranadasUI.SetActive(true);
             if (!changedEmissionColor)
             {
                 GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
@@ -51,6 +53,7 @@ public class Player_Shoot2 : MonoBehaviour
         if (equipped == false)
         {
             Gun.SetActive(false);
+            LanzagranadasUI.SetActive(false);
             if (changedEmissionColor) changedEmissionColor = false;
         }
     }

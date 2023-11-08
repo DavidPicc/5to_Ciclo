@@ -17,6 +17,7 @@ public class Player_Ability2 : MonoBehaviour
     [Header("References")]
     public GameObject Shield;
     public GameObject Cabina;
+    public GameObject EscudoSierrasUI;
     [SerializeField] Transform pivot;
     [SerializeField] float shieldDistance;
     [SerializeField] float rotationSpeed = 90f;
@@ -85,10 +86,12 @@ public class Player_Ability2 : MonoBehaviour
         if (equipped == true)
         {
             Cabina.SetActive(true);
+            EscudoSierrasUI.SetActive(true);
         }
         if (equipped == false)
         {
             Cabina.SetActive(false);
+            EscudoSierrasUI.SetActive(false);
         }
     }
 

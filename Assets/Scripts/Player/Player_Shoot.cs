@@ -8,6 +8,7 @@ public class Player_Shoot : MonoBehaviour
     public bool equipped = false;
     [SerializeField] public Color lightMaterialEmissionColor;
     bool changedEmissionColor = false;
+    public GameObject LanzaClavosUI;
 
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -49,6 +50,7 @@ public class Player_Shoot : MonoBehaviour
         if (equipped == true)
         {
             Gun.SetActive(true);
+            LanzaClavosUI.SetActive(true);
             if (!changedEmissionColor)
             {
                 GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
@@ -59,6 +61,7 @@ public class Player_Shoot : MonoBehaviour
         if (equipped == false)
         {
             Gun.SetActive(false);
+            LanzaClavosUI.SetActive(false);
             enabled = false;
             if (changedEmissionColor) changedEmissionColor = false;
         }

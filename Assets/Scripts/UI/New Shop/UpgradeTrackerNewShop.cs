@@ -30,12 +30,12 @@ public class UpgradeTrackerNewShop : MonoBehaviour
     public TextMeshProUGUI selectedWeaponUI;
     public TextMeshProUGUI selectedShieldUI;
 
-    [Header("Equipment UI")]
-    public GameObject LanzaClavosUI;
-    public GameObject LanzagranadasUI;
-    public GameObject LanzallamasUI;
-    public GameObject EscudoSierrasUI;
-    public GameObject EscudoReflectorUI;
+   // [Header("Equipment UI")]
+   // public GameObject LanzaClavosUI;
+   // public GameObject LanzagranadasUI;
+   // public GameObject LanzallamasUI;
+   // public GameObject EscudoSierrasUI;
+   // public GameObject EscudoReflectorUI;
 
     [Header("Upgrade Components")]
     //public PlayerMovement_TestSalvador2 playerMovement;

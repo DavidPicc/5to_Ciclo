@@ -7,6 +7,7 @@ public class Player_Shoot3 : MonoBehaviour
     public bool equipped;
     [SerializeField] public Color lightMaterialEmissionColor;
     bool changedEmissionColor = false;
+    public GameObject LanzallamasUI;
 
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
@@ -59,6 +60,7 @@ public class Player_Shoot3 : MonoBehaviour
         if (equipped == true)
         {
             Gun.SetActive(true);
+            LanzallamasUI.SetActive(true);
             audioManager.clip = ShootSound;
             audioManager.loop = true;
             if(!changedEmissionColor)
@@ -71,6 +73,7 @@ public class Player_Shoot3 : MonoBehaviour
         if (equipped == false)
         {
             Gun.SetActive(false);
+            LanzallamasUI.SetActive(false);
             audioManager.loop = false;
             if (changedEmissionColor) changedEmissionColor = false;
         }
