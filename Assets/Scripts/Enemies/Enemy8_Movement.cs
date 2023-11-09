@@ -12,6 +12,11 @@ public class Enemy8_Movement : MonoBehaviour
     public float timeToMove;
     float timer;
 
+    public Animator animIdle;
+    bool enemyIdle = true;
+    public Animator animAttack;
+    bool enemyAttack = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,6 +33,7 @@ public class Enemy8_Movement : MonoBehaviour
         //    StartCoroutine(MoveEnemy());
         //    timer = timeToMove;
         //}
+        animIdle.SetBool("Idle", enemyIdle);
     }
 
     private IEnumerator MoveEnemy()
@@ -84,4 +90,13 @@ public class Enemy8_Movement : MonoBehaviour
     //    rb.position = Vector3.MoveTowards(transform.position, goToPoint.position, moveSpeed * Time.deltaTime);
 
     //}
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            enemyAttack = true;
+            enemyIdle = false;
+            animAttack.SetBool("Attack", enemyAttack);
+        }
+    }
 }

@@ -30,8 +30,12 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] public bool invulnerable = false;
     [SerializeField] GameObject vfxexplosion;
 
+    [Header("Animation")]
+    
     public Animator animTakeDamage;
-    bool enemyTakeDamage = false;
+    public Animator animDeath;
+    bool enemyTakeDamage;
+    bool enemyDeath = false;
 
     [Header("Boss")]
     public bool IsBoss = false;
@@ -55,6 +59,19 @@ public class Enemy_Health : MonoBehaviour
     public Phase2 phase2;
     public Phase3 phase3;
     public Phase4 phase4;
+
+    [Header("Boss Animations")]
+
+    public Animator animPhase1;
+    public Animator animPhase2;
+    public Animator animPhase3;
+    public Animator animPhase4;
+
+    bool bossPhase1 = false;
+    bool bossPhase2 = false;
+    bool bossPhase3 = false;
+    bool bossPhase4 = false;
+
     /*
     [SerializeField] public AudioSource BossMusic;
     [SerializeField] public AudioClip Phase1;
@@ -96,6 +113,12 @@ public class Enemy_Health : MonoBehaviour
                 MoveToNextPoint();
                 Form1.SetActive(false);
                 Form2.SetActive(true);
+
+                bossPhase4 = true;
+                bossPhase3 = false;
+                bossPhase2 = false;
+                bossPhase1 = false;
+                animPhase4.SetBool("Phase4", bossPhase4);
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase3)
@@ -109,6 +132,12 @@ public class Enemy_Health : MonoBehaviour
                 Form1.SetActive(false);
                 Form2.SetActive(true);
                 //  AudioManager.instance.ChangeMusic(Phase2);
+
+                bossPhase4 = false;
+                bossPhase3 = true;
+                bossPhase2 = false;
+                bossPhase1 = false;
+                animPhase3.SetBool("Phase3", bossPhase3);
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase2)
@@ -118,6 +147,12 @@ public class Enemy_Health : MonoBehaviour
                 phase2.enabled = true;
                 phase3.enabled = false;
                 phase4.enabled = false;
+
+                bossPhase4 = false;
+                bossPhase3 = false;
+                bossPhase2 = true;
+                bossPhase1 = false;
+                animPhase2.SetBool("Phase2", bossPhase2);
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase1)
@@ -129,6 +164,12 @@ public class Enemy_Health : MonoBehaviour
                 phase4.enabled = false;
                 Form1.SetActive(true);
                 Form2.SetActive(false);
+
+                bossPhase4 = false;
+                bossPhase3 = false;
+                bossPhase2 = false;
+                bossPhase1 = true;
+                animPhase1.SetBool("Phase1", bossPhase1);
                 // AudioManager.instance.ChangeMusic(Phase1);
             }
         }
@@ -142,12 +183,14 @@ public class Enemy_Health : MonoBehaviour
         if(currentHealth > damage)
         {
             currentHealth -= damage;
-            enemyTakeDamage = true;
-            animTakeDamage.SetBool("TakeDamage", enemyTakeDamage);
+            
             if (IsBoss == true)
             {
                 AudioManager.instance.PlaySFX(audioSource, HitBoss, 1f);
             }
+            
+            enemyTakeDamage = true;
+            //animTakeDamage.SetBool("TakeDamage", enemyTakeDamage);
         }
         else
         {
@@ -180,6 +223,11 @@ public class Enemy_Health : MonoBehaviour
         death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
         death.GetComponent<AudioSource>().volume = 1.0f;
         death.GetComponent<AudioSource>().PlayOneShot(DeathSound);
+
+        enemyTakeDamage = false;
+        enemyDeath = true;
+        animDeath.SetBool("Death", enemyDeath);
+
         Destroy(death, 3f);
 
         Destroy(this);
