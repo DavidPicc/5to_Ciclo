@@ -13,6 +13,11 @@ public class Enemy4_Movement : EnemyMovement
     public float speed;
     bool passedPlayer = false;
     Vector2 lastMovement;
+
+    public Animator animIdle;
+    bool enemyIdle = true;
+    public Animator animAttack;
+    bool enemyAttack = false;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -22,6 +27,8 @@ public class Enemy4_Movement : EnemyMovement
     void Update()
     {
         MoveToPlayer();
+
+        animIdle.SetBool("Idle", enemyIdle);
     }
 
     void MoveToPlayer()
@@ -43,6 +50,16 @@ public class Enemy4_Movement : EnemyMovement
                 passedPlayer = true;
                 lastMovement = direction;
             }
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            enemyAttack = true;
+            enemyIdle = false;
+            animAttack.SetBool("Attack", enemyAttack);
         }
     }
 }

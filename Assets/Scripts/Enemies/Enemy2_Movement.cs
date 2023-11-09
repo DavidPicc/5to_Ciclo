@@ -16,6 +16,9 @@ public class Enemy2_Movement : EnemyMovement
     public bool locked = false;
     public bool timeToGo = false;
 
+    public Animator animIdle;
+    bool enemyIdle = true;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -27,6 +30,8 @@ public class Enemy2_Movement : EnemyMovement
     void Update()
     {
         MoveAndStop();
+
+        animIdle.SetBool("Idle", enemyIdle);
     }
 
     void MoveAndStop()

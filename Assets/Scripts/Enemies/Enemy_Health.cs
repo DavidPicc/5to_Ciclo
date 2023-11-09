@@ -30,6 +30,9 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] public bool invulnerable = false;
     [SerializeField] GameObject vfxexplosion;
 
+    public Animator animTakeDamage;
+    bool enemyTakeDamage = false;
+
     [Header("Boss")]
     public bool IsBoss = false;
     float timerdeath;
@@ -139,7 +142,9 @@ public class Enemy_Health : MonoBehaviour
         if(currentHealth > damage)
         {
             currentHealth -= damage;
-            if(IsBoss == true)
+            enemyTakeDamage = true;
+            animTakeDamage.SetBool("TakeDamage", enemyTakeDamage);
+            if (IsBoss == true)
             {
                 AudioManager.instance.PlaySFX(audioSource, HitBoss, 1f);
             }
