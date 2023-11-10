@@ -25,6 +25,7 @@ public class Player_Health : MonoBehaviour
     public Image caritaFeliz;
     public Image caritaCorona;
     public Image caritaFachera;
+    public GameObject VfxlowLife;
 
     [Header("Mejoras")]
     public GameObject Mejora1H;
@@ -167,6 +168,7 @@ public class Player_Health : MonoBehaviour
     void ActualizarCaritas()
     {
         caritaTriste.gameObject.SetActive(currentHealth == 1);
+        VfxlowLife.gameObject.SetActive(currentHealth == 1);
         caritaNormal.gameObject.SetActive(currentHealth == 2);
         caritaFeliz.gameObject.SetActive(currentHealth == 3);
         caritaCorona.gameObject.SetActive(currentHealth == 4);
