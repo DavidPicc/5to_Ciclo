@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    Transform player;
     public GameObject pauseMenu;
     public GameObject deathMenu;
     [SerializeField] AudioClip DeathMusic;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        player = FindObjectOfType<Player_Health>().transform;
         AudioManager.instance.ChangeMusic(levelMusic);
         ResumeGame();
         deathMenu.SetActive(false);
@@ -152,7 +154,10 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
-        if(defaultCamera != null) defaultCamera.SetActive(false);
+        player.localPosition = new Vector3(-2, 0, 0);
+        FindObjectOfType<StageMovement>().transform.position -= Vector3.right * 7f;
+
+        if (defaultCamera != null) defaultCamera.SetActive(false);
         if(shopCamera != null) shopCamera.SetActive(true);
 
         isPaused = true;
@@ -163,6 +168,11 @@ public class GameManager : MonoBehaviour
 
         canUseAbilities = false;
         canPause = false;
+
+        CheckPointScript.savedPlayerX = player.localPosition.x;
+        CheckPointScript.savedPlayerY = player.localPosition.y;
+        PlayerPrefs.SetFloat("savedPlayerX", CheckPointScript.savedPlayerX);
+        PlayerPrefs.SetFloat("savedPlayerY", CheckPointScript.savedPlayerY);
     }
 
     public void CloseShop()
