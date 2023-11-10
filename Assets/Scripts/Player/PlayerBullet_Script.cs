@@ -14,7 +14,7 @@ public class PlayerBullet_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Obstacle"))
+        if(other.CompareTag("Obstacle")|| other.CompareTag("destructible"))
         {
             Destroy(gameObject);
         }
