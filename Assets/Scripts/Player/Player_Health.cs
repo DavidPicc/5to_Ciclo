@@ -20,11 +20,11 @@ public class Player_Health : MonoBehaviour
     [SerializeField] Image healthFillBar;
 
     [Header("Caritas")]
-    public Image caritaTriste;
-    public Image caritaNormal;
-    public Image caritaFeliz;
-    public Image caritaCorona;
-    public Image caritaFachera;
+    public Image faceSad;
+    public Image faceBase;
+    public Image faceHappy;
+    public Image faceGod;
+    public Image facePrime;
     public GameObject VfxlowLife;
 
     [Header("Mejoras")]
@@ -44,7 +44,7 @@ public class Player_Health : MonoBehaviour
         timer = invulnerabilityTime;
         currentHealth = maxHealth;
         UpdateHealthBar();
-        ActualizarCaritas();
+        UpdateFacePlayer();
         //transform.position = CheckPointScript.savedPoint;
 
 
@@ -122,7 +122,7 @@ public class Player_Health : MonoBehaviour
                     FindAnyObjectByType<FriendScript>().HealPlayer();
                 }
             }
-            ActualizarCaritas();
+            UpdateFacePlayer();
             Debug.Log("Player has been damaged!!!!");
             canBeDamaged = false;
         }
@@ -132,7 +132,7 @@ public class Player_Health : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthBar();
-        ActualizarCaritas();
+        UpdateFacePlayer();
         Debug.Log("Player has been fully healed!");
     }
     public void Death()
@@ -165,14 +165,14 @@ public class Player_Health : MonoBehaviour
     {
         healthFillBar.fillAmount = currentHealth / REAL_MAX_HEALTH;
     }
-    void ActualizarCaritas()
+    void UpdateFacePlayer()
     {
-        caritaTriste.gameObject.SetActive(currentHealth == 1);
+        faceSad.gameObject.SetActive(currentHealth == 1);
         VfxlowLife.gameObject.SetActive(currentHealth == 1);
-        caritaNormal.gameObject.SetActive(currentHealth == 2);
-        caritaFeliz.gameObject.SetActive(currentHealth == 3);
-        caritaCorona.gameObject.SetActive(currentHealth == 4);
-        caritaFachera.gameObject.SetActive(currentHealth >= 5);
+        faceBase.gameObject.SetActive(currentHealth == 2);
+        faceHappy.gameObject.SetActive(currentHealth == 3);
+        faceGod.gameObject.SetActive(currentHealth == 4);
+        facePrime.gameObject.SetActive(currentHealth >= 5);
     }
     private void OnTriggerEnter(Collider other)
     {
