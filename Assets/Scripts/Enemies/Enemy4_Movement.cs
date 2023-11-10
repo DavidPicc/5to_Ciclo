@@ -28,7 +28,7 @@ public class Enemy4_Movement : EnemyMovement
     {
         MoveToPlayer();
 
-        animIdle.SetBool("Idle", enemyIdle);
+        //animIdle.SetBool("Idle", enemyIdle);
     }
 
     void MoveToPlayer()
