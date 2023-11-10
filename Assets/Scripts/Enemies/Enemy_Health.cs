@@ -226,7 +226,7 @@ public class Enemy_Health : MonoBehaviour
 
         enemyTakeDamage = false;
         enemyDeath = true;
-        animDeath.SetBool("Death", enemyDeath);
+       //animDeath.SetBool("Death", enemyDeath);
 
         Destroy(death, 3f);
 
