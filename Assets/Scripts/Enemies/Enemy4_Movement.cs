@@ -59,7 +59,7 @@ public class Enemy4_Movement : EnemyMovement
         {
             enemyAttack = true;
             enemyIdle = false;
-            animAttack.SetBool("Attack", enemyAttack);
+            //animAttack.SetBool("Attack", enemyAttack);
         }
     }
 }

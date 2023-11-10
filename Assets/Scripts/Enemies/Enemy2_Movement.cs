@@ -31,7 +31,7 @@ public class Enemy2_Movement : EnemyMovement
     {
         MoveAndStop();
 
-        animIdle.SetBool("Idle", enemyIdle);
+       // animIdle.SetBool("Idle", enemyIdle);
     }
 
     void MoveAndStop()

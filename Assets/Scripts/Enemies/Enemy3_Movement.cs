@@ -20,6 +20,6 @@ public class Enemy3_Movement : EnemyMovement
         //GetComponent<Enemy3_Shoot>().shootPoint.Rotate(0,0, rotationSpeed * Time.deltaTime);
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
-        animIdle.SetBool("Idle", enemyIdle);
+        //animIdle.SetBool("Idle", enemyIdle);
     }
 }

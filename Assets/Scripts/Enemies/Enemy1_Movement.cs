@@ -19,6 +19,6 @@ public class Enemy1_Movement : EnemyMovement
     void Update()
     {
         rb.velocity = transform.right * speed;
-        anim.SetBool("Attack", enemigoEnIdle);
+        //anim.SetBool("Attack", enemigoEnIdle);
     }
 }
