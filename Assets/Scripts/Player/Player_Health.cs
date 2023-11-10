@@ -190,6 +190,6 @@ public class Player_Health : MonoBehaviour
         maxHealth = health;
         currentHealth = health;
         UpdateHealthBar();
-        ActualizarCaritas();
+        UpdateFacePlayer();
     }
 }
