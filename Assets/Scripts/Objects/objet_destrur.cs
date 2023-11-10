@@ -90,15 +90,14 @@ public class objet_destrur : MonoBehaviour
     {
         if (!invulnerable)
         {
-            if (other.CompareTag("PlayerBullet"))
-            {
-                if (canBeDamaged)
-                {
-                    TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
-                }
-                Destroy(other.gameObject);
-
-            }
+            //if (other.CompareTag("PlayerBullet"))
+            //{
+            //    if (canBeDamaged)
+            //    {
+            //        TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
+            //    }
+            //    Destroy(other.gameObject);
+            //}
 
             if (CompareTag("Obstacle") || other.CompareTag("weigh"))
             {

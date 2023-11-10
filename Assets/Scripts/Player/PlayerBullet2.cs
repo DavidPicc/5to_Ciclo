@@ -7,17 +7,17 @@ public class PlayerBullet2 : MonoBehaviour
     public float explosionRadius = 3f; // The radius of the explosion
     public float explosionDelay = 0.5f; // The delay before the bullet explodes
     public float explosionDamage = 10f;
-    public GameObject explosionRadVisual;
+    public GameObject explosionVFX;
 
     void Start()
     {
-        explosionRadVisual.SetActive(false);
+        explosionVFX.SetActive(false);
     }
     public void Explosion()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         Debug.DrawRay(transform.position, Vector3.up, Color.red, explosionRadius);
-        explosionRadVisual.SetActive(true);
+        ShowExplosion();
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {
@@ -27,7 +27,8 @@ public class PlayerBullet2 : MonoBehaviour
             }
             if (collider.GetComponentInParent<objet_destrur>() != null)
             {
-                collider.GetComponentInParent<objet_destrur>().TakeDamage(explosionDamage);
+                collider.GetComponentInParent<objet_destrur>().TakeDamage(explosionDamage*20);
+                Debug.Log("Explosion range: " + collider.gameObject.name);
             }
         }
         Destroy(gameObject, 0.1f);
@@ -35,6 +36,13 @@ public class PlayerBullet2 : MonoBehaviour
     public void DelayExplosion(float time)
     {
         Invoke("Explosion", time);
+    }
+
+    void ShowExplosion()
+    {
+        explosionVFX.transform.parent = null;
+        explosionVFX.SetActive(true);
+        Destroy(explosionVFX, 3f);
     }
 
     private void OnTriggerEnter(Collider other)
