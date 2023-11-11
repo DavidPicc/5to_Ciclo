@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class chain_life : MonoBehaviour
 {
-    Transform player;
     Transform _camera;
     [SerializeField] float maxHealth;
     [SerializeField] public float currentHealth;
-    bool canBeDamaged => transform.position.x - _camera.position.x <= 12f && timer >= invulnerabilityTime;
+    bool canBeDamaged => transform.position.x - _camera.position.x <= 45f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
-    private Player_Health playerHealth;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         _camera = FindObjectOfType<StageMovement>().transform;
 
         timer = invulnerabilityTime;
@@ -59,7 +56,7 @@ public class chain_life : MonoBehaviour
         {
             if (canBeDamaged)
             {
-                TakeDamage(player.GetComponent<Player_Shoot>().shootDamage);
+                TakeDamage(10);
                 Destroy(other.gameObject);
 
            }

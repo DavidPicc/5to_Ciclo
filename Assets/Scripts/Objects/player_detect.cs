@@ -8,7 +8,6 @@ public class player_detect : MonoBehaviour
     public bool chainF;
     public float timer;
     public float maxTimer = 3f;
-    //public GameObject chain2;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -19,7 +18,6 @@ public class player_detect : MonoBehaviour
             StartCoroutine(falling());
             chain.SetActive(false);
             chainF = true;
-            //Destroy(GetComponent<Collider>());
             if (chainF && timer >= maxTimer)
             {
                 Destroy(gameObject);
@@ -31,7 +29,6 @@ public class player_detect : MonoBehaviour
     {
         while (true)
         {
-            //chain2.GetComponent<Rigidbody>().AddForce(new Vector3(-100, 0, 0));
             yield return null;
         }
     }
