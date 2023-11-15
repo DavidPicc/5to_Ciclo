@@ -11,6 +11,8 @@ public class Phase3 : MonoBehaviour
     public GameObject[] attackPrefabs;
     public List<AudioClip> attackSFX;
     public AudioSource audioManager;
+    public Animator Boss;
+    bool Attack = false;
 
     void Start()
     {
@@ -33,10 +35,15 @@ public class Phase3 : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= maxTimer)
         {
+            Boss.SetBool("Attack", true);
             int randomIndex = Random.Range(0, attackObjects.Count);
             GameObject obj = Instantiate(attackObjects[randomIndex]);
             obj.transform.position = randomPos;
             timer = 0;
+        }
+        else
+        {
+            Boss.SetBool("Attack", false);
         }
     }
     void PlayRandomAudioClip()

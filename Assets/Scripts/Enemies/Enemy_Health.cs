@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Enemy_Health : MonoBehaviour
 {
@@ -39,7 +40,8 @@ public class Enemy_Health : MonoBehaviour
 
     [Header("Boss")]
     public bool IsBoss = false;
-    float timerdeath;
+    public Slider HealthBarr;
+    public float timerdeath;
     [SerializeField] float deathT;
     public GameObject Form1;
     public GameObject Form2;
@@ -59,18 +61,6 @@ public class Enemy_Health : MonoBehaviour
     public Phase2 phase2;
     public Phase3 phase3;
     public Phase4 phase4;
-
-    //[Header("Boss Animations")]
-
-    //public Animator animPhase1;
-    //public Animator animPhase2;
-    //public Animator animPhase3;
-    //public Animator animPhase4;
-
-    //bool bossPhase1 = false;
-    //bool bossPhase2 = false;
-    //bool bossPhase3 = false;
-    //bool bossPhase4 = false;
 
     /*
     [SerializeField] public AudioSource BossMusic;
@@ -110,15 +100,10 @@ public class Enemy_Health : MonoBehaviour
                 phase2.enabled = false;
                 phase3.enabled = false;
                 phase4.enabled = true;
-                MoveToNextPoint();
+             //   MoveToNextPoint();
                 Form1.SetActive(false);
                 Form2.SetActive(true);
 
-                //bossPhase4 = true;
-                //bossPhase3 = false;
-                //bossPhase2 = false;
-                //bossPhase1 = false;
-                //animPhase4.SetBool("Phase4", bossPhase4);
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase3)
@@ -128,16 +113,10 @@ public class Enemy_Health : MonoBehaviour
                 phase2.enabled = false;
                 phase3.enabled = true;
                 phase4.enabled = false;
-                MoveToNextPoint();
+               // MoveToNextPoint();
                 Form1.SetActive(false);
                 Form2.SetActive(true);
                 //  AudioManager.instance.ChangeMusic(Phase2);
-
-                //bossPhase4 = false;
-                //bossPhase3 = true;
-                //bossPhase2 = false;
-                //bossPhase1 = false;
-                //animPhase3.SetBool("Phase3", bossPhase3);
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase2)
@@ -148,11 +127,7 @@ public class Enemy_Health : MonoBehaviour
                 phase3.enabled = false;
                 phase4.enabled = false;
 
-                //bossPhase4 = false;
-                //bossPhase3 = false;
-                //bossPhase2 = true;
-                //bossPhase1 = false;
-                //animPhase2.SetBool("Phase2", bossPhase2);
+
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase1)
@@ -165,16 +140,14 @@ public class Enemy_Health : MonoBehaviour
                 Form1.SetActive(true);
                 Form2.SetActive(false);
 
-                //bossPhase4 = false;
-                //bossPhase3 = false;
-                //bossPhase2 = false;
-                //bossPhase1 = true;
-                //animPhase1.SetBool("Phase1", bossPhase1);
-                // AudioManager.instance.ChangeMusic(Phase1);
             }
         }
-  
 
+        if (IsBoss)
+        {
+            HealthBarr.maxValue = maxHealth;
+            HealthBarr.value = currentHealth;
+        }
       
     }
 
@@ -209,12 +182,14 @@ public class Enemy_Health : MonoBehaviour
         {
             AudioManager.instance.PlaySFX(audioSource, DeathSound, 1f);
             timerdeath -= Time.deltaTime;
-            if (timerdeath <= 0)
-            {
-                SceneManager.LoadScene(FinishGame);
-            }         
+            SceneManager.LoadScene(FinishGame);
+            /* if (timerdeath <= 0)
+             {
+
+             }  */
         }
         //audioManager.PlayOneShot(DeathSound);
+
         Destroy(gameObject, 0.2f);
         if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 40f)
             SpawnPoints();
