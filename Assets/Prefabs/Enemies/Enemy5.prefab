@@ -262,6 +262,8 @@ MonoBehaviour:
   vfxexplosion: {fileID: 2832440755471769679, guid: e8ce4cdee96253c4dbbe6ad2de567772,
     type: 3}
   IsBoss: 0
+  HealthBarr: {fileID: 0}
+  timerdeath: 0
   deathT: 0
   Form1: {fileID: 0}
   Form2: {fileID: 0}
@@ -314,7 +316,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 17
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -421,7 +423,7 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 30
   fireRate: 0.05
-  bulletNumber: 5
+  bulletNumber: 3
   bulletDisappear: 0.5
   bulletAng: 70
   anticipation: 1
