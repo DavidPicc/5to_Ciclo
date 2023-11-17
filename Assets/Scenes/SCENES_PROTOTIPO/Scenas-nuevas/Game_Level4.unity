@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.006377206, g: 0.0012434047, b: 0.010560842, a: 1}
+  m_IndirectSpecularColor: {r: 0.0063772383, g: 0.001243409, b: 0.010560885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4445,6 +4445,7 @@ MonoBehaviour:
   nextLevelName: Story 6
   levelMusic: {fileID: 8300000, guid: 59103b69634b885459360c9e715c6eb8, type: 3}
   deathButton: {fileID: 922944338}
+  Waves: {fileID: 0}
 --- !u!82 &338171355
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8544,7 +8545,7 @@ PrefabInstance:
     - target: {fileID: 2511707812919914436, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.7
+      value: 19.4
       objectReference: {fileID: 0}
     - target: {fileID: 2511707812919914436, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
@@ -8564,17 +8565,17 @@ PrefabInstance:
     - target: {fileID: 2511707812919914436, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2511707812919914436, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2511707812919914436, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2511707812919914436, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
@@ -8924,7 +8925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.2495117, y: 0}
+  m_AnchoredPosition: {x: -3.7999878, y: 0}
   m_SizeDelta: {x: 19.699, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574354120
@@ -35659,6 +35660,18 @@ MonoBehaviour:
         - m_Target: {fileID: 338171354}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: OpenShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 338171354}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: StopWaves
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
