@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.0063772383, g: 0.001243409, b: 0.010560885, a: 1}
+  m_IndirectSpecularColor: {r: 0.006377206, g: 0.0012434047, b: 0.010560842, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2008,20 +2008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed489241a48061a49b09b13e6ae19509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 122
-  gearsScoreShop: {fileID: 1334992464}
-  coresScoreShop: {fileID: 1048563014}
-  titleItemShop: {fileID: 605273480}
-  equippedGun: {fileID: 639968532}
-  equippedSkill: {fileID: 329519091}
-  gunUpgrades:
-  - {fileID: 185399860}
-  - {fileID: 697016523}
-  - {fileID: 1029255803}
-  skillUpgrades:
-  - {fileID: 1923412747}
-  - {fileID: 1579427658}
-  upgradeTime: 1.5
 --- !u!1 &184172332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,22 +2197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d095dc0a3cf6dfc4bb430eac97a77e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFrame: {fileID: 804706671}
-  equippedText: {fileID: 929459253}
-  equipped: 1
-  maxLevelText: {fileID: 256701848}
-  upgradingAnim: {fileID: 225130987}
-  costGearText: {fileID: 1522240343}
-  costCoreText: {fileID: 1126109178}
-  labelText: {fileID: 842225073}
-  type: StraightGun
-  level: 1
-  maxLevel: 3
-  costGear: 500
-  costCore: 0
-  upgradeGearScaling: 500
-  upgradeCoreScaling: 1
-  title: Straigh Shot Gun
 --- !u!1 &199254274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8401,6 +8371,10 @@ PrefabInstance:
       propertyPath: area
       value: 
       objectReference: {fileID: 1439709921}
+    - target: {fileID: 110467853266932, guid: edbf5cf5015589d448a0048e94829ad9, type: 3}
+      propertyPath: maxTimer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1352639249962652145, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: deathT
@@ -8452,6 +8426,11 @@ PrefabInstance:
       propertyPath: area
       value: 
       objectReference: {fileID: 1439709921}
+    - target: {fileID: 2020437664253018673, guid: edbf5cf5015589d448a0048e94829ad9,
+        type: 3}
+      propertyPath: maxTimer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2210738867489477955, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: m_Enabled
@@ -8582,6 +8561,11 @@ PrefabInstance:
       propertyPath: area
       value: 
       objectReference: {fileID: 1221435535}
+    - target: {fileID: 6384951837619861943, guid: edbf5cf5015589d448a0048e94829ad9,
+        type: 3}
+      propertyPath: maxTimer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6685313464806304264, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: Boss
@@ -8592,6 +8576,11 @@ PrefabInstance:
       propertyPath: area2
       value: 
       objectReference: {fileID: 1221435535}
+    - target: {fileID: 6685313464806304264, guid: edbf5cf5015589d448a0048e94829ad9,
+        type: 3}
+      propertyPath: maxTimer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7721580809089730259, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -11204,22 +11193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d095dc0a3cf6dfc4bb430eac97a77e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFrame: {fileID: 503832237}
-  equippedText: {fileID: 945234512}
-  equipped: 0
-  maxLevelText: {fileID: 569044116}
-  upgradingAnim: {fileID: 533002960}
-  costGearText: {fileID: 1815828577}
-  costCoreText: {fileID: 1290343899}
-  labelText: {fileID: 440637186}
-  type: AreaGun
-  level: 0
-  maxLevel: 3
-  costGear: 1400
-  costCore: 0
-  upgradeGearScaling: 100
-  upgradeCoreScaling: 1
-  title: AreaGun
 --- !u!1 &701495543
 GameObject:
   m_ObjectHideFlags: 0
@@ -17146,22 +17119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d095dc0a3cf6dfc4bb430eac97a77e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFrame: {fileID: 701667031}
-  equippedText: {fileID: 2082236522}
-  equipped: 0
-  maxLevelText: {fileID: 695597814}
-  upgradingAnim: {fileID: 1058326025}
-  costGearText: {fileID: 1395276962}
-  costCoreText: {fileID: 1861450633}
-  labelText: {fileID: 1435422331}
-  type: Flamethrower
-  level: 0
-  maxLevel: 3
-  costGear: 750
-  costCore: 0
-  upgradeGearScaling: 450
-  upgradeCoreScaling: 1
-  title: Flamethrower
 --- !u!1 &1033266303
 GameObject:
   m_ObjectHideFlags: 0
@@ -26644,17 +26601,17 @@ PrefabInstance:
         type: 3}
       propertyPath: faceGod
       value: 
-      objectReference: {fileID: 898292390}
+      objectReference: {fileID: 566337088}
     - target: {fileID: 3959281554846209803, guid: acd27982bd6fd584985785f022dc1ffd,
         type: 3}
       propertyPath: faceSad
       value: 
-      objectReference: {fileID: 2112677391}
+      objectReference: {fileID: 793550488}
     - target: {fileID: 3959281554846209803, guid: acd27982bd6fd584985785f022dc1ffd,
         type: 3}
       propertyPath: faceBase
       value: 
-      objectReference: {fileID: 566337088}
+      objectReference: {fileID: 898292390}
     - target: {fileID: 3959281554846209803, guid: acd27982bd6fd584985785f022dc1ffd,
         type: 3}
       propertyPath: faceHappy
@@ -26664,7 +26621,7 @@ PrefabInstance:
         type: 3}
       propertyPath: facePrime
       value: 
-      objectReference: {fileID: 793550488}
+      objectReference: {fileID: 2112677391}
     - target: {fileID: 3959281554846209803, guid: acd27982bd6fd584985785f022dc1ffd,
         type: 3}
       propertyPath: m_Enabled
@@ -27504,22 +27461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d095dc0a3cf6dfc4bb430eac97a77e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFrame: {fileID: 795394891}
-  equippedText: {fileID: 458961120}
-  equipped: 0
-  maxLevelText: {fileID: 1918208198}
-  upgradingAnim: {fileID: 1624382350}
-  costGearText: {fileID: 1946769464}
-  costCoreText: {fileID: 487764550}
-  labelText: {fileID: 717553099}
-  type: BulletShield
-  level: 0
-  maxLevel: 2
-  costGear: 500
-  costCore: 0
-  upgradeGearScaling: 700
-  upgradeCoreScaling: 2
-  title: Bullet Shield
 --- !u!1 &1583324340
 GameObject:
   m_ObjectHideFlags: 0
@@ -32320,22 +32261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d095dc0a3cf6dfc4bb430eac97a77e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFrame: {fileID: 1401136112}
-  equippedText: {fileID: 465384770}
-  equipped: 1
-  maxLevelText: {fileID: 1807965645}
-  upgradingAnim: {fileID: 789964375}
-  costGearText: {fileID: 714009668}
-  costCoreText: {fileID: 1683775260}
-  labelText: {fileID: 1532162541}
-  type: ReflectorShield
-  level: 1
-  maxLevel: 2
-  costGear: 1200
-  costCore: 1
-  upgradeGearScaling: 300
-  upgradeCoreScaling: 2
-  title: Reflector Shield
 --- !u!1 &1934860643
 GameObject:
   m_ObjectHideFlags: 0
