@@ -6,7 +6,7 @@ public class PlayerBullet2 : MonoBehaviour
 {
     public float explosionRadius = 3f; // The radius of the explosion
     public float explosionDelay = 0.5f; // The delay before the bullet explodes
-    public float explosionDamage = 10f;
+    public float explosionDamage = 10;
     public GameObject explosionVFX;
 
     void Start()
@@ -42,12 +42,13 @@ public class PlayerBullet2 : MonoBehaviour
     {
         explosionVFX.transform.parent = null;
         explosionVFX.SetActive(true);
+        explosionVFX.GetComponent<AudioSource>().Play();
         Destroy(explosionVFX, 3f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle") || other.CompareTag("EnemyBullet") || other.CompareTag("destructible"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle") || other.CompareTag("destructible"))
         {
             Explosion();
         }
