@@ -157,6 +157,11 @@ public class Enemy_Health : MonoBehaviour
         {
             currentHealth -= damage;
             
+            if(GetComponent<GlowHit>() != null)
+            {
+                GetComponent<GlowHit>().StartGlow();
+            }
+
             if (IsBoss == true)
             {
                 AudioManager.instance.PlaySFX(audioSource, HitBoss, 1f);

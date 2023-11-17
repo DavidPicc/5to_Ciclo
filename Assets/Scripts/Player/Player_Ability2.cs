@@ -122,11 +122,11 @@ public class Player_Ability2 : MonoBehaviour
             Quaternion spawnRotation = Quaternion.Euler(0, 0, angle + 90);
             GameObject bullet = Instantiate(bulletPrefab, spawnPosition, spawnRotation);
             bullet.transform.parent = pivot;
-            bullet.GetComponent<PlayerBullet_Script2>().damage = damage;
             bullets.Add(bullet);
 
             angle += angleStep;
         }
+        Shield.GetComponent<PlayerBullet_Script2>().damage = damage;
     }
 
     void PushBullets()

@@ -6615,6 +6615,7 @@ GameObject:
   - component: {fileID: 2638048836883770684}
   - component: {fileID: 2210738867489477955}
   - component: {fileID: 1352639249962652145}
+  - component: {fileID: 1970847950337886512}
   - component: {fileID: 2020437664253018673}
   - component: {fileID: 110467853266932}
   - component: {fileID: 6685313464806304264}
@@ -6747,6 +6748,8 @@ MonoBehaviour:
   invulnerable: 0
   vfxexplosion: {fileID: 0}
   IsBoss: 1
+  HealthBarr: {fileID: 0}
+  timerdeath: 0
   deathT: 5
   Form1: {fileID: 3306706432123366240}
   Form2: {fileID: 8971899953680456081}
@@ -6767,6 +6770,18 @@ MonoBehaviour:
   phase3: {fileID: 6685313464806304264}
   phase4: {fileID: 6384951837619861943}
   FinishGame: Story 5
+--- !u!114 &1970847950337886512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554064694500717524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa5ac9a766ae174298bc503a80493b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2020437664253018673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6793,6 +6808,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2fdea65907ed03248bec3dc82ce27a85, type: 3}
   - {fileID: 8300000, guid: bdea0b0a704155f419aa293668c99673, type: 3}
   audioManager: {fileID: 1228762130883822192}
+  Boss: {fileID: 0}
+  Attack: 0
 --- !u!114 &110467853266932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6818,6 +6835,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2fdea65907ed03248bec3dc82ce27a85, type: 3}
   - {fileID: 8300000, guid: bdea0b0a704155f419aa293668c99673, type: 3}
   audioManager: {fileID: 1228762130883822192}
+  Boss: {fileID: 0}
 --- !u!114 &6685313464806304264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6849,6 +6867,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2fdea65907ed03248bec3dc82ce27a85, type: 3}
   - {fileID: 8300000, guid: bdea0b0a704155f419aa293668c99673, type: 3}
   audioManager: {fileID: 1228762130883822192}
+  Boss: {fileID: 0}
 --- !u!114 &6384951837619861943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6875,6 +6894,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2fdea65907ed03248bec3dc82ce27a85, type: 3}
   - {fileID: 8300000, guid: bdea0b0a704155f419aa293668c99673, type: 3}
   audioManager: {fileID: 1228762130883822192}
+  Boss: {fileID: 0}
 --- !u!136 &2807133546778754536
 CapsuleCollider:
   m_ObjectHideFlags: 0

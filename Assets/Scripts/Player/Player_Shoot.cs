@@ -62,7 +62,6 @@ public class Player_Shoot : MonoBehaviour
         {
             Gun.SetActive(false);
             LanzaClavosUI.SetActive(false);
-            enabled = false;
             if (changedEmissionColor) changedEmissionColor = false;
         }
     }

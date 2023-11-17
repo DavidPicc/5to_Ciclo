@@ -924,7 +924,7 @@ AudioSource:
   m_GameObject: {fileID: 8088536440039082834}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
+  OutputAudioMixerGroup: {fileID: -2241899121875207481, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ce7e7a8314a2a9c4da20f9a1cd6521d6, type: 3}
   m_PlayOnAwake: 1
@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipped: 1
   lightMaterialEmissionColor: {r: 0.4431373, g: 0.17254902, b: 0.909804, a: 0}
+  LanzaClavosUI: {fileID: 0}
   bulletSpeed: 35
   shootDamage: 3
   bulletPrefab: {fileID: 1300772526029512616, guid: 2086ef79ed5ce2e47aeba3e2aa918de3,
@@ -1057,6 +1058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipped: 0
   lightMaterialEmissionColor: {r: 0.9960785, g: 0.85098046, b: 0.4039216, a: 0}
+  LanzagranadasUI: {fileID: 0}
   bulletSpeed: 24
   shootDamage: 8
   bulletPrefab: {fileID: 4371670380075575442, guid: 045d464f8a47d6f4ba77f2a28257de51,
@@ -1083,6 +1085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipped: 0
   lightMaterialEmissionColor: {r: 0.92549026, g: 0.3921569, b: 0.3529412, a: 0}
+  LanzallamasUI: {fileID: 0}
   bulletSpeed: 8
   shootDamage: 0.5
   bulletPrefab: {fileID: 1300772526029512616, guid: 8b37799fca1088c4e9d238b15a6474ea,
@@ -1104,7 +1107,7 @@ AudioSource:
   m_GameObject: {fileID: 8088536440039082834}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
+  OutputAudioMixerGroup: {fileID: -2241899121875207481, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -1212,11 +1215,12 @@ MonoBehaviour:
   DeathSound: {fileID: 8300000, guid: b286ab063c79d3e45b9b4fd32c29f016, type: 3}
   HitSound: {fileID: 8300000, guid: 4d85e58f50b33d749bdbdaa81cd3a13f, type: 3}
   healthFillBar: {fileID: 0}
-  caritaTriste: {fileID: 0}
-  caritaNormal: {fileID: 0}
-  caritaFeliz: {fileID: 0}
-  caritaCorona: {fileID: 0}
-  caritaFachera: {fileID: 0}
+  faceSad: {fileID: 0}
+  faceBase: {fileID: 0}
+  faceHappy: {fileID: 0}
+  faceGod: {fileID: 0}
+  facePrime: {fileID: 0}
+  VfxlowLife: {fileID: 0}
   Mejora1H: {fileID: 0}
   Mejora2aH: {fileID: 0}
   Mejora2bH: {fileID: 0}
@@ -1237,6 +1241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  EscudoReflectorUI: {fileID: 0}
   shieldObj: {fileID: 8088536441087026411}
   bulletPrefab: {fileID: 1300772526029512616, guid: 7c56aa5da550bba4ea7926dd051406ba,
     type: 3}
@@ -1280,6 +1285,7 @@ MonoBehaviour:
   damage: 0
   Shield: {fileID: 6666927187436539912}
   Cabina: {fileID: 0}
+  EscudoSierrasUI: {fileID: 0}
   pivot: {fileID: 2652757670764029446}
   shieldDistance: 4
   rotationSpeed: 90
@@ -1301,7 +1307,7 @@ AudioSource:
   m_GameObject: {fileID: 8088536440039082834}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
+  OutputAudioMixerGroup: {fileID: -2241899121875207481, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -1522,7 +1528,7 @@ AudioSource:
   m_GameObject: {fileID: 8088536440039082834}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
+  OutputAudioMixerGroup: {fileID: -2241899121875207481, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -1619,7 +1625,7 @@ AudioSource:
   m_GameObject: {fileID: 8088536440039082834}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1470194175185478664, guid: 4dbd09bda24eacc418fc885d57434676,
+  OutputAudioMixerGroup: {fileID: -2241899121875207481, guid: 4dbd09bda24eacc418fc885d57434676,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

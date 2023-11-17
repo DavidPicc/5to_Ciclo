@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(true);
         Debug.Log("PAUSA");
         AudioManager.masterVolume /= 2;
+        AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", -80f);
+        AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", 0f);
         //oldSFXVolume = AudioManager.sfxVolume;
         //AudioManager.sfxVolume = 0;
         //AudioManager.instance.UpdateMixerVolume();
@@ -115,6 +117,8 @@ public class GameManager : MonoBehaviour
         isPaused = false;
 
         AudioManager.masterVolume *= 2;
+        AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", 0f);
+        AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", -80f);
         //AudioManager.sfxVolume = oldSFXVolume;
         //AudioManager.instance.UpdateMixerVolume();
         //FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
@@ -154,6 +158,9 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
+        AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", -80f);
+        AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", 0f);
+
         player.localPosition = new Vector3(-2, 0, 0);
         FindObjectOfType<StageMovement>().transform.position -= Vector3.right * 7f;
 
@@ -177,7 +184,10 @@ public class GameManager : MonoBehaviour
 
     public void CloseShop()
     {
-        if(shopCamera != null) shopCamera.SetActive(false);
+        AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", 0f);
+        AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", -80f);
+
+        if (shopCamera != null) shopCamera.SetActive(false);
         if(defaultCamera != null) defaultCamera.SetActive(true);
 
         if(UpgradeTrackerNewShop.instance != null)
