@@ -14,7 +14,7 @@ public class TutorialManager : MonoBehaviour
     private bool estaRalentizado3 = false;
 
     private float velocidadNormal = 1.0f;
-    private float velocidadRalentizada = 0.1f;
+    private float velocidadRalentizada = 0f;
 
     public static TutorialManager instance;
 
