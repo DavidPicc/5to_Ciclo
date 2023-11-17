@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup sfxGroup;
     public Slider sfxVolumeSlider;
     public static float sfxVolume;
+    public AudioMixerGroup inGameSFX;
+    public AudioMixerGroup menuSFX;
 
     public bool isMainMenu = false;
     public AudioClip screenMusic;
