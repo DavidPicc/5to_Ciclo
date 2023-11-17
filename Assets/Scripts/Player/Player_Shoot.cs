@@ -13,7 +13,7 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject Gun;
+    [SerializeField] public GameObject Gun;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] float bulletsOffset;
@@ -47,23 +47,22 @@ public class Player_Shoot : MonoBehaviour
             Shoot_Normal();
         }
 
-        if (equipped == true)
-        {
-            Gun.SetActive(true);
-            LanzaClavosUI.SetActive(true);
-            if (!changedEmissionColor)
-            {
-                GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
-                changedEmissionColor = true;
-            }
-
-        }
-        if (equipped == false)
-        {
-            Gun.SetActive(false);
-            LanzaClavosUI.SetActive(false);
-            if (changedEmissionColor) changedEmissionColor = false;
-        }
+        //if (equipped == true)
+        //{
+        //    Gun.SetActive(true);
+        //    LanzaClavosUI.SetActive(true);
+        //    if (!changedEmissionColor)
+        //    {
+        //        GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
+        //        changedEmissionColor = true;
+        //    }
+        //}
+        //if (equipped == false)
+        //{
+        //    Gun.SetActive(false);
+        //    LanzaClavosUI.SetActive(false);
+        //    if (changedEmissionColor) changedEmissionColor = false;
+        //}
     }
 
     void CheckIfShot()

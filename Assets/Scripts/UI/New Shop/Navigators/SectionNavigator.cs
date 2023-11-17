@@ -7,8 +7,8 @@ public class SectionNavigator : MonoBehaviour
     [SerializeField] bool control;
     public bool Control { get { return control; } set { control = value; } }
 
-    SectionButtonControl hoverButton;
-    SectionButtonControl selectedButton;
+    public SectionButtonControl hoverButton;
+    public SectionButtonControl selectedButton;
 
     [Header("Equipment")]
     public string selectedWeapon;
@@ -31,6 +31,10 @@ public class SectionNavigator : MonoBehaviour
 
         ButtonNavigation();
         if(Input.GetKey(KeyCode.Z)) SelectButton();
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.instance.ResumeGame();
+        }
     }
 
     void ButtonNavigation()
@@ -56,7 +60,7 @@ public class SectionNavigator : MonoBehaviour
         }
     }
 
-    void SetHoverButton(SectionButtonControl newHoverButton)
+    public void SetHoverButton(SectionButtonControl newHoverButton)
     {
         if (newHoverButton == null) return;
 
@@ -93,8 +97,10 @@ public class SectionNavigator : MonoBehaviour
             if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.selectedShield = selectedButton.feature;
         }
 
-        branchesNavigator.ActivateBranch(hoverButton.branch);
+        branchesNavigator.ActivateBranch(selectedButton.branch);
         GiveControlToBranches();
+
+        StartCoroutine(UpgradeTrackerNewShop.instance.SetEquipment());
     }
 
     private void GiveControlToBranches()
@@ -114,6 +120,8 @@ public class SectionNavigator : MonoBehaviour
                 }
             }
         }
+
+        selectedButton = null;
     }
 
     public SectionButtonControl GetHoverButton() 

@@ -193,7 +193,7 @@ public class GameManager : MonoBehaviour
         if(UpgradeTrackerNewShop.instance != null)
         {
             UpgradeTrackerNewShop.instance.UpdateUpgrades();
-            UpgradeTrackerNewShop.instance.SetEquipment();
+            StartCoroutine(UpgradeTrackerNewShop.instance.SetEquipment());
         }
 
 

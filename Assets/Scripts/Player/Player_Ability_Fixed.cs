@@ -105,16 +105,16 @@ public class Player_Ability_Fixed: MonoBehaviour
             }
         }
 
-        if (equipped == true)
-        {
-            Cabina.SetActive(true);
-            EscudoReflectorUI.SetActive(true);
-        }
-        if (equipped == false)
-        {
-            Cabina.SetActive(false);
-            EscudoReflectorUI.SetActive(false);
-        }
+        //if (equipped == true)
+        //{
+        //    Cabina.SetActive(true);
+        //    EscudoReflectorUI.SetActive(true);
+        //}
+        //if (equipped == false)
+        //{
+        //    Cabina.SetActive(false);
+        //    EscudoReflectorUI.SetActive(false);
+        //}
     }
 
     void PlayShieldSound()

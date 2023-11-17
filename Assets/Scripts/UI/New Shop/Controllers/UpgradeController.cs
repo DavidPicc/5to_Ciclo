@@ -121,6 +121,7 @@ public class UpgradeController : MonoBehaviour
             if (nextUpgrades[i] != null)
             {
                 nextUpgrades[i].Locked = false;
+                nextUpgrades[i].GetComponent<UpgradeView>().ChangeIconColor(nextUpgrades[i].GetComponent<UpgradeView>().normalColor);
             }
         }
     }

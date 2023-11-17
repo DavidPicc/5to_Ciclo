@@ -26,7 +26,7 @@ public class UIPriority : MonoBehaviour
             {
                 if (GameManager.instance.shopMenu.activeSelf)
                 {
-                    GameManager.instance.ResumeGame();
+                    //GameManager.instance.ResumeGame();
                 }
                 else
                 {

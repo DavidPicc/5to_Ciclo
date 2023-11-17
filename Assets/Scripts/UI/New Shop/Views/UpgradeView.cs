@@ -10,6 +10,7 @@ public class UpgradeView : MonoBehaviour
     private const float OPACITY_NOT_PURCHASED = .6f;
 
     RectTransform rect;
+    [SerializeField] SectionButtonControl sectionButtonControl;
     [SerializeField] UpgradeController upgradeControl;
 
     [Header("View")]
@@ -24,6 +25,9 @@ public class UpgradeView : MonoBehaviour
     public float scaleMultiplier;
     Vector3 initialScale;
     Vector3 multipliedScale;
+    public Color normalColor;
+    public Color lockedColor = Color.grey;
+
 
     [Header("Floating Panel")]
     public string nameText;
@@ -34,19 +38,32 @@ public class UpgradeView : MonoBehaviour
 
     void Start()
     {
+        sectionButtonControl = FindObjectOfType<SectionNavigator>().hoverButton;
+
+        normalColor = GetComponent<Image>().color;
+        Debug.Log(name + "    " + normalColor);
         rect = GetComponent<RectTransform>();
 
         lockedSign = Instantiate(lockedSignPrefab, transform);
-        lockedSign.GetComponent<Image>().color = upgradeImage.color;
+        //lockedSign.GetComponent<Image>().color = upgradeImage.color;
         lockedSign.SetActive(false);
 
         selectSign = Instantiate(selectSignPrefab, transform);
-        selectSign.GetComponent<Image>().color = upgradeImage.color;
+        //selectSign.GetComponent<Image>().color = upgradeImage.color;
         selectSign.SetActive(false);
 
         frame = Instantiate(framePrefab, transform);
         frameImage = frame.GetComponent<Image>();
-        frameImage.color = upgradeImage.color;
+        //frameImage.color = upgradeImage.color;
+
+        if (upgradeControl.Locked)
+        {
+            ChangeIconColor(lockedColor);
+        }
+        else
+        {
+            ChangeIconColor(normalColor);
+        }
 
         initialScale = rect.localScale;
         multipliedScale = rect.localScale * scaleMultiplier;
@@ -97,11 +114,25 @@ public class UpgradeView : MonoBehaviour
         }
 
         lockedSign.SetActive(upgradeControl.Locked);
-        frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, !upgradeControl.Purchased ? OPACITY_NOT_PURCHASED : OPACITY_PURCHASED);
+        frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, !upgradeControl.Purchased ? OPACITY_PURCHASED : OPACITY_NOT_PURCHASED);
+        upgradeImage.color = new Color(upgradeImage.color.r, upgradeImage.color.g, upgradeImage.color.b, !upgradeControl.Locked ? OPACITY_NOT_PURCHASED : OPACITY_PURCHASED);
+        selectSign.GetComponent<Image>().color = new Color(sectionButtonControl.GetComponent<Image>().color.r, sectionButtonControl.GetComponent<Image>().color.g,
+            sectionButtonControl.GetComponent<Image>().color.b, sectionButtonControl.GetComponent<Image>().color.a);
     }
 
     public UpgradeController GetUpgradeControl()
     {
         return upgradeControl;
+    }
+
+    public void ChangeIconColor(Color color)
+    {
+        upgradeImage.color = color;
+
+        if(lockedSign != null) lockedSign.GetComponent<Image>().color = color;
+
+        if (selectSign != null) selectSign.GetComponent<Image>().color = color;
+
+        if (frameImage != null) frameImage.color = color;
     }
 }

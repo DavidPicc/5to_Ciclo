@@ -12,7 +12,7 @@ public class Player_Shoot3 : MonoBehaviour
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject Gun;
+    [SerializeField] public GameObject Gun;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] public float maxAngle;
@@ -57,26 +57,26 @@ public class Player_Shoot3 : MonoBehaviour
             }
         }
 
-        if (equipped == true)
-        {
-            Gun.SetActive(true);
-            LanzallamasUI.SetActive(true);
-            audioManager.clip = ShootSound;
-            audioManager.loop = true;
-            if(!changedEmissionColor)
-            {
-                GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
-                changedEmissionColor = true;
-            }
+        //if (equipped == true)
+        //{
+        //    Gun.SetActive(true);
+        //    LanzallamasUI.SetActive(true);
+        //    audioManager.clip = ShootSound;
+        //    audioManager.loop = true;
+        //    if(!changedEmissionColor)
+        //    {
+        //        GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
+        //        changedEmissionColor = true;
+        //    }
 
-        }
-        if (equipped == false)
-        {
-            Gun.SetActive(false);
-            LanzallamasUI.SetActive(false);
-            audioManager.loop = false;
-            if (changedEmissionColor) changedEmissionColor = false;
-        }
+        //}
+        //if (equipped == false)
+        //{
+        //    Gun.SetActive(false);
+        //    LanzallamasUI.SetActive(false);
+        //    audioManager.loop = false;
+        //    if (changedEmissionColor) changedEmissionColor = false;
+        //}
     }
 
     void CheckIfShot()

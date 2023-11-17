@@ -190,7 +190,7 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         UpdateUpgrades();
 
         SetUpgradesUI();
-        SetEquipment();
+        StartCoroutine(SetEquipment());
 
         var branches = FindObjectsOfType<BranchNavigator>();
 
@@ -302,7 +302,7 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         }
     }
 
-    public void SetEquipment()
+    public IEnumerator SetEquipment()
     {
         SectionNavigator sectionNav = FindObjectOfType<SectionNavigator>();
         sectionNav.selectedWeapon = selectedWeapon;
@@ -315,24 +315,55 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         playerLanzagranadas.equipped = false;
      //  LanzagranadasUI.SetActive(false);
         playerLanzallamas.equipped = false;
-     //   LanzallamasUI.SetActive(false);
-
+        //   LanzallamasUI.SetActive(false);
         switch (selectedWeapon)
         {
             case "LANZACLAVOS":
                 playerMovement.ChangeEmissionColor(playerLanzaclavos.lightMaterialEmissionColor);
                 playerLanzaclavos.equipped = true;
-                //     LanzaClavosUI.SetActive(true);
+                playerLanzaclavos.LanzaClavosUI.SetActive(true);
+                playerLanzaclavos.Gun.SetActive(true);
+                playerLanzaclavos.LanzaClavosUI.SetActive(true);
+
+                playerLanzagranadas.equipped = false;
+                playerLanzagranadas.Gun.SetActive(false);
+                playerLanzagranadas.LanzagranadasUI.SetActive(false);
+
+                playerLanzallamas.equipped = false;
+                playerLanzallamas.Gun.SetActive(false);
+                playerLanzallamas.LanzallamasUI.SetActive(false);
+                playerLanzallamas.audioManager.loop = false;
                 break;
             case "LANZAGRANADAS":
                 playerMovement.ChangeEmissionColor(playerLanzagranadas.lightMaterialEmissionColor);
                 playerLanzagranadas.equipped = true;
-                //     LanzagranadasUI.SetActive(true);
+                playerLanzagranadas.LanzagranadasUI.SetActive(true);
+                playerLanzagranadas.Gun.SetActive(true);
+
+                playerLanzaclavos.equipped = false;
+                playerLanzaclavos.Gun.SetActive(false);
+                playerLanzaclavos.LanzaClavosUI.SetActive(false);
+
+                playerLanzallamas.equipped = false;
+                playerLanzallamas.Gun.SetActive(false);
+                playerLanzallamas.LanzallamasUI.SetActive(false);
+                playerLanzallamas.audioManager.loop = false;
                 break;
             case "LANZALLAMAS":
                 playerMovement.ChangeEmissionColor(playerLanzallamas.lightMaterialEmissionColor);
                 playerLanzallamas.equipped = true;
-                //    LanzallamasUI.SetActive(true);
+                playerLanzallamas.LanzallamasUI.SetActive(true);
+                playerLanzallamas.Gun.SetActive(true);
+                playerLanzallamas.audioManager.clip = playerLanzallamas.ShootSound;
+                playerLanzallamas.audioManager.loop = true;
+
+                playerLanzaclavos.equipped = false;
+                playerLanzaclavos.Gun.SetActive(false);
+                playerLanzaclavos.LanzaClavosUI.SetActive(false);
+
+                playerLanzagranadas.equipped = false;
+                playerLanzagranadas.Gun.SetActive(false);
+                playerLanzagranadas.LanzagranadasUI.SetActive(false);
                 break;
         }
 
@@ -344,15 +375,26 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         switch (selectedShield)
         {
             case "ESCUDOSIERRAS":
+                playerEscudoSierras.Cabina.SetActive(true);
                 playerEscudoSierras.equipped = true;
-              //  EscudoSierrasUI.SetActive(true);
+                playerEscudoSierras.EscudoSierrasUI.SetActive(true);
+
+                playerEscudoReflector.Cabina.SetActive(false);
+                playerEscudoReflector.equipped = false;
+                playerEscudoReflector.EscudoReflectorUI.SetActive(false);
                 break;
             case "ESCUDOREFLECTOR":
+                playerEscudoReflector.Cabina.SetActive(true);
                 playerEscudoReflector.equipped = true;
-             //   EscudoReflectorUI.SetActive(true);
+                playerEscudoReflector.EscudoReflectorUI.SetActive(true);
+
+                playerEscudoSierras.Cabina.SetActive(false);
+                playerEscudoSierras.equipped = false;
+                playerEscudoSierras.EscudoSierrasUI.SetActive(false);
                 break;
         }
 
+        yield return new WaitForSecondsRealtime(0.05f);
         Debug.Log("SET EQUIPMENT");
     }
 

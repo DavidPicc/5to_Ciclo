@@ -16,6 +16,7 @@ public class SectionButtonView : MonoBehaviour
     public float scaleMultiplier;
     Vector3 initialScale;
     Vector3 multipliedScale;
+    public Color normalColor;
 
     [Header("Floating Panel")]
     public string nameText;
@@ -27,6 +28,7 @@ public class SectionButtonView : MonoBehaviour
     void Start()
     {
         rect = GetComponent<RectTransform>();
+        normalColor = buttonImage.color;
 
         selectedSign = Instantiate(selectedSignPrefab, transform);
         selectedSign.GetComponent<Image>().color = buttonImage.color;

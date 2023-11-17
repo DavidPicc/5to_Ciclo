@@ -12,7 +12,7 @@ public class Player_Shoot2 : MonoBehaviour
     [SerializeField] float bulletSpeed;
     [SerializeField] public float shootDamage;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject Gun;
+    [SerializeField] public GameObject Gun;
     [SerializeField] public Transform[] shootPoints;
     [SerializeField] public float fireRate;
     [SerializeField] public AudioSource audioManager;
@@ -40,22 +40,22 @@ public class Player_Shoot2 : MonoBehaviour
             StartCoroutine(BurstShot());
         }
 
-        if (equipped == true)
-        {
-            Gun.SetActive(true);
-            LanzagranadasUI.SetActive(true);
-            if (!changedEmissionColor)
-            {
-                GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
-                changedEmissionColor = true;
-            }
-        }
-        if (equipped == false)
-        {
-            Gun.SetActive(false);
-            LanzagranadasUI.SetActive(false);
-            if (changedEmissionColor) changedEmissionColor = false;
-        }
+        //if (equipped == true)
+        //{
+        //    Gun.SetActive(true);
+        //    LanzagranadasUI.SetActive(true);
+        //    if (!changedEmissionColor)
+        //    {
+        //        GetComponent<Player_Movement>().ChangeEmissionColor(lightMaterialEmissionColor);
+        //        changedEmissionColor = true;
+        //    }
+        //}
+        //if (equipped == false)
+        //{
+        //    Gun.SetActive(false);
+        //    LanzagranadasUI.SetActive(false);
+        //    if (changedEmissionColor) changedEmissionColor = false;
+        //}
     }
 
     void CheckIfShot()

@@ -13,6 +13,7 @@ public class BranchNavigator : MonoBehaviour
     [SerializeField] UpgradeController upgradeSelectedController;
 
     public UpgradeController centralUpgrade;
+    public SectionButtonControl sectionButtonControl;
 
     private void Start()
     {
@@ -25,33 +26,39 @@ public class BranchNavigator : MonoBehaviour
         if (!control) return;
 
         BranchNavigation();
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Escape)) GiveControlToSection();
     }
 
     void BranchNavigation()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SetupgradeSelectedController(upgradeSelectedController.GetButtonAtRight());
+            SetUpgradeSelectedController(upgradeSelectedController.GetButtonAtRight());
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (upgradeSelectedController.GetButtonAtLeft() == null)
+            //if (upgradeSelectedController.GetButtonAtLeft() == null)
+            //{
+            //    GiveControlToSection();
+            //} else if(upgradeSelectedController.GetButtonAtLeft().Locked) GiveControlToSection();
+            //else SetUpgradeSelectedController(upgradeSelectedController.GetButtonAtLeft());
+
+            if(upgradeSelectedController.GetButtonAtLeft() != null && !upgradeSelectedController.GetButtonAtLeft().Locked)
             {
-                GiveControlToSection();
-            } else if(upgradeSelectedController.GetButtonAtLeft().Locked) GiveControlToSection();
-            else SetupgradeSelectedController(upgradeSelectedController.GetButtonAtLeft());
+                SetUpgradeSelectedController(upgradeSelectedController.GetButtonAtLeft());
+            }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SetupgradeSelectedController(upgradeSelectedController.GetButtonUpwards());
+            SetUpgradeSelectedController(upgradeSelectedController.GetButtonUpwards());
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            SetupgradeSelectedController(upgradeSelectedController.GetButtonDownwards());
+            SetUpgradeSelectedController(upgradeSelectedController.GetButtonDownwards());
         }
     }
 
-    void SetupgradeSelectedController(UpgradeController newUpgradeSelectedController)
+    void SetUpgradeSelectedController(UpgradeController newUpgradeSelectedController)
     {
         if (newUpgradeSelectedController == null || newUpgradeSelectedController.Locked) return;
 
@@ -75,5 +82,6 @@ public class BranchNavigator : MonoBehaviour
         upgradeSelectedController.Selected = false;
         upgradeSelectedController = centralUpgrade;
         sectionNavigator.Control = true;
+        gameObject.SetActive(false);
     }
 }
