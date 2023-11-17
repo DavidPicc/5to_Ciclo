@@ -26,10 +26,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioClip levelMusic;
     [SerializeField] Button deathButton;
+    public SituationManager Waves;
 
     void Awake()
     {
         instance = this;
+        Waves = FindAnyObjectByType<SituationManager>();
     }
 
     private void OnEnable()
@@ -220,5 +222,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
         if (FindObjectOfType<CheckPointScript>() != null)
             FindObjectOfType<CheckPointScript>().ResetCheckpoints();
+    }
+
+    public void StopWaves()
+    {
+        Waves.enabled = false;
     }
 }
