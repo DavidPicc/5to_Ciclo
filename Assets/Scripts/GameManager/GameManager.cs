@@ -212,7 +212,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishedLevel()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = FindObjectOfType<Player_Health>().gameObject;
         FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
         player.GetComponent<Player_Health>().enabled = false;
         player.GetComponent<Player_Movement>().enabled = false;
