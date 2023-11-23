@@ -58,8 +58,14 @@ public class Enemy_Health : MonoBehaviour
     private int currentMovePointIndex = 0;
 
     [Header("Boss Text")]
-    public string[] dialogue;
-
+    public bool setDialogue1;
+    public string[] Phase1dialogue;
+    public bool setDialogue2;
+    public string[] Phase2dialogue;
+    public bool setDialogue3;
+    public string[] Phase3dialogue;
+    public bool setDialogue4;
+    public string[] Phase4dialogue;
 
     public Phase1 phase1;
     public Phase2 phase2;
@@ -107,7 +113,11 @@ public class Enemy_Health : MonoBehaviour
              //   MoveToNextPoint();
                 Form1.SetActive(false);
                 Form2.SetActive(true);
-
+                if (!setDialogue4)
+                {
+                    DialogueScript.instance.SetDialogue(Phase4dialogue, audioSource);
+                    setDialogue4 = true;
+                }
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase3)
@@ -121,6 +131,11 @@ public class Enemy_Health : MonoBehaviour
                 Form1.SetActive(false);
                 Form2.SetActive(true);
                 //  AudioManager.instance.ChangeMusic(Phase2);
+                if (!setDialogue3)
+                {
+                    DialogueScript.instance.SetDialogue(Phase3dialogue, audioSource);
+                    setDialogue3 = true;
+                }
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase2)
@@ -130,7 +145,11 @@ public class Enemy_Health : MonoBehaviour
                 phase2.enabled = true;
                 phase3.enabled = false;
                 phase4.enabled = false;
-
+                if (!setDialogue2)
+                {
+                    DialogueScript.instance.SetDialogue(Phase2dialogue, audioSource);
+                    setDialogue2 = true;
+                }
 
             }
 
@@ -143,7 +162,12 @@ public class Enemy_Health : MonoBehaviour
                 phase4.enabled = false;
                 Form1.SetActive(true);
                 Form2.SetActive(false);
-                DialogueScript.instance.SetDialogue(dialogue, audioSource);
+
+                if (!setDialogue1)
+                {
+                    DialogueScript.instance.SetDialogue(Phase1dialogue, audioSource);
+                    setDialogue1 = true;
+                }
             }
         }
 
