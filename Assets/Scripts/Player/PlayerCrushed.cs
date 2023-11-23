@@ -17,25 +17,20 @@ public class PlayerCrushed : MonoBehaviour
         pHealth = GameObject.FindObjectOfType<Player_Health>();
     }
 
+    private void Update()
+    {
+        if(objectInCollider == null && done)
+        {
+            ExitCollider();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(((1 << other.gameObject.layer) & crushedLayers) != 0)
         {
             objectInCollider = other.gameObject;
             timer = 0;
-            //if (!done)
-            //{
-            //    if (!done)
-            //    {
-            //        pHealth.crushed += 1;
-            //        done = true;
-            //    }
-
-            //    if (pHealth.crushed >= 2)
-            //    {
-            //        pHealth.Death();
-            //    }
-            //}
         }
     }
 
@@ -43,21 +38,19 @@ public class PlayerCrushed : MonoBehaviour
     {
         if (((1 << other.gameObject.layer) & crushedLayers) != 0)
         {
-            timer += Time.deltaTime;
-            if (timer >= 0.2f)
+            if (!done)
             {
-                if (!done)
+                timer += Time.deltaTime;
+                if (timer >= 0.2f)
                 {
-                    if (!done)
-                    {
-                        pHealth.crushed += 1;
-                        done = true;
-                    }
+                    pHealth.crushed += 1;
 
                     if (pHealth.crushed >= 2)
                     {
                         pHealth.Death();
                     }
+
+                    done = true;
                 }
             }
         }
@@ -65,25 +58,17 @@ public class PlayerCrushed : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //if (other.CompareTag("Obstacle") || other.gameObject.layer == 7 || other.gameObject.layer == 10)
-        //{
-        //    objectInCollider = null;
-        //    if(done)
-        //    {
-        //        FindObjectOfType<Player_Health>().crushed -= 1;
-        //        done = false;
-        //    }
-        //}
+        ExitCollider();
+    }
 
-        if (((1 << other.gameObject.layer) & crushedLayers) != 0)
+    void ExitCollider()
+    {
+        objectInCollider = null;
+        timer = 0;
+        if (done)
         {
-            objectInCollider = null;
-            timer = 0;
-            if (done)
-            {
-                pHealth.crushed -= 1;
-                done = false;
-            }
+            pHealth.crushed -= 1;
+            done = false;
         }
     }
 }

@@ -22,8 +22,8 @@ public class EnemyActivation : MonoBehaviour
         if (enemyShooting != null)
             enemyShooting.enabled = false;
 
-       // if (enemyHealth != null)
-       //     enemyHealth.enabled = false;
+        if (enemyHealth != null)
+            enemyHealth.enabled = false;
 
         //if (Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y) > 30f && Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) > 55f)
         //{
@@ -62,9 +62,14 @@ public class EnemyActivation : MonoBehaviour
         if (enemyShooting != null)
             enemyShooting.enabled = true;
 
-        //if (enemyHealth != null)
-        //    enemyHealth.enabled = true;
+        if (enemyHealth != null)
+            enemyHealth.enabled = true;
 
-        Destroy(this);
+        //Destroy(this);
+    }
+
+    public bool NearPlayer()
+    {
+        return (Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y) <= 30f && Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) <= 50f);
     }
 }

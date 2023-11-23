@@ -196,20 +196,20 @@ public class Enemy_Health : MonoBehaviour
         //audioManager.PlayOneShot(DeathSound);
 
         Destroy(gameObject, 0.2f);
-        if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 40f)
-            SpawnPoints();
-        var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
-        death.AddComponent<AudioSource>();
-        death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
-        death.GetComponent<AudioSource>().volume = 1.0f;
-        death.GetComponent<AudioSource>().PlayOneShot(DeathSound);
+        
+        if (GetComponent<EnemyActivation>().NearPlayer())
+        {
+            if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 40f) SpawnPoints();
+            var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
+            death.AddComponent<AudioSource>();
+            death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
+            death.GetComponent<AudioSource>().volume = 1.0f;
+            death.GetComponent<AudioSource>().PlayOneShot(DeathSound);
+            Destroy(death, 3f);
+        } 
 
         enemyTakeDamage = false;
         enemyDeath = true;
-       //animDeath.SetBool("Death", enemyDeath);
-
-        Destroy(death, 3f);
-
         Destroy(this);
     }
 

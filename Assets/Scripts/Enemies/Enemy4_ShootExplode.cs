@@ -65,8 +65,8 @@ public class Enemy4_ShootExplode : MonoBehaviour
         if (explodeTimer <= 0)
         {
             antiSphere.SetActive(false);
-            ShootAngular();
-            Destroy(gameObject);
+            //ShootAngular();
+            if(GetComponent<Enemy_Health>() != null) GetComponent<Enemy_Health>().Death();
         }
         //if (canShoot)
         //{

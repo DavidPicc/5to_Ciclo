@@ -23,7 +23,7 @@ public class NextSituation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Activator") && !used)
+        if((other.CompareTag("Activator") || other.CompareTag("Player")) && !used)
         {
             used = true;
             Invoke("InvokeSituation", 0.2f);

@@ -59,15 +59,19 @@ public class objet_destrur : MonoBehaviour
 
     public void Death()
     {
-        Debug.Log("MURIO " + name);
+        Collider[] colliders = GetComponents<Collider>();
+        foreach(Collider collider in colliders)
+        {
+            collider.enabled = false;
+            Debug.Log(collider + " MURIOOOOO");
+        }
         if (GetComponent<Enemy4_ShootExplode>() != null)
         {
             GetComponent<Enemy4_ShootExplode>().ShootAngular();
         }
 
         Destroy(gameObject, 0.2f);
-        if (!spawnedPoints)
-            SpawnPoints();
+        if (!spawnedPoints) SpawnPoints();
         var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
         death.AddComponent<AudioSource>();
         death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
