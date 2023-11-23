@@ -83,11 +83,16 @@ public class SectionButtonControl : MonoBehaviour
             SectionNavigator sectionNav = FindObjectOfType<SectionNavigator>();
             sectionNav.SelectButton();
         }
+        else
+        {
+            FindObjectOfType<ShopSFX>().DeclineSFX();
+        }
     }
 
     public void Purchase()
     {
         purchased = true;
+        FindObjectOfType<ShopSFX>().BuySFX();
     }
 
     public void PreventiveUpgradeCancel()

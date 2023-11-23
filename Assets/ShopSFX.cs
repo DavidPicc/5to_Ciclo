@@ -7,7 +7,7 @@ public class ShopSFX : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip buySFX, declineSFX, equipSFX, navSFX, backSFX;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }

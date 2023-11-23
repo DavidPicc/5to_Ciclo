@@ -43,7 +43,7 @@ public class BranchNavigator : MonoBehaviour
             //} else if(upgradeSelectedController.GetButtonAtLeft().Locked) GiveControlToSection();
             //else SetUpgradeSelectedController(upgradeSelectedController.GetButtonAtLeft());
 
-            if(upgradeSelectedController.GetButtonAtLeft() != null && !upgradeSelectedController.GetButtonAtLeft().Locked)
+            if (upgradeSelectedController.GetButtonAtLeft() != null && !upgradeSelectedController.GetButtonAtLeft().Locked)
             {
                 SetUpgradeSelectedController(upgradeSelectedController.GetButtonAtLeft());
             }
@@ -67,6 +67,7 @@ public class BranchNavigator : MonoBehaviour
             upgradeSelectedController.Selected = false;
         }
 
+        FindObjectOfType<ShopSFX>().NavSFX();
         newUpgradeSelectedController.Selected = true;
         upgradeSelectedController = newUpgradeSelectedController;
     }
@@ -83,5 +84,6 @@ public class BranchNavigator : MonoBehaviour
         upgradeSelectedController = centralUpgrade;
         sectionNavigator.Control = true;
         gameObject.SetActive(false);
+        FindObjectOfType<ShopSFX>().BackSFX();
     }
 }

@@ -97,13 +97,17 @@ public class UpgradeController : MonoBehaviour
             Purchase();
             if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.LevelUp(feature, upgrade, level);
         }
+        else
+        {
+            FindObjectOfType<ShopSFX>().DeclineSFX();
+        }
     }
 
     public void Purchase()
     {
         purchased = true;
         UnlockNextUpgrades();
-
+        FindObjectOfType<ShopSFX>().BuySFX();
         for (int i = 0; i < linesToNextUpgrades.Length; i++)
         {
             linesToNextUpgrades[i].SetColor(unlockedColorLine);

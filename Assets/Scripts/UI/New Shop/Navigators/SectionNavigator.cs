@@ -62,6 +62,8 @@ public class SectionNavigator : MonoBehaviour
 
     public void SetHoverButton(SectionButtonControl newHoverButton)
     {
+        FindObjectOfType<ShopSFX>().NavSFX();
+
         if (newHoverButton == null) return;
 
         if(hoverButton != null)
@@ -88,11 +90,13 @@ public class SectionNavigator : MonoBehaviour
 
         if (selectedButton.isWeapon)
         {
+            FindObjectOfType<ShopSFX>().EquipSFX();
             selectedWeapon = selectedButton.feature;
             if(UpgradeTrackerNewShop.instance != null)  UpgradeTrackerNewShop.instance.selectedWeapon = selectedButton.feature;
         }
         else if(selectedButton.isShield)
         {
+            FindObjectOfType<ShopSFX>().EquipSFX();
             selectedShield = selectedButton.feature;
             if (UpgradeTrackerNewShop.instance != null) UpgradeTrackerNewShop.instance.selectedShield = selectedButton.feature;
         }
