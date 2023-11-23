@@ -17,6 +17,7 @@ public class SectionButtonControl : MonoBehaviour
     public bool Purchased { get { return purchased; } set { purchased = value; } }
 
     [SerializeField] bool upgrading;
+    [SerializeField] bool isPurchasing;
 
     IEnumerator purchaseRoutine;
 
@@ -51,6 +52,11 @@ public class SectionButtonControl : MonoBehaviour
             upgrading = true;
         }
 
+        if (isPurchasing)
+        {
+            GetComponent<SectionButtonView>().frameImage.fillAmount += Time.unscaledDeltaTime / PURCHASE_TIME;
+        }
+
         if (Input.GetKeyUp(KeyCode.Z) && upgrading)
         {
             if (purchaseRoutine != null)
@@ -59,6 +65,7 @@ public class SectionButtonControl : MonoBehaviour
             }
 
             upgrading = false;
+            isPurchasing = false;
         }
     }
 
@@ -66,6 +73,7 @@ public class SectionButtonControl : MonoBehaviour
     {
         if (GameScoreNewShop.instance.gears >= gearsCost && GameScoreNewShop.instance.cores >= coresCost)
         {
+            isPurchasing = true;
             yield return new WaitForSecondsRealtime(PURCHASE_TIME);
 
             upgrading = false;

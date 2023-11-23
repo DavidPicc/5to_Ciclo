@@ -16,6 +16,7 @@ public class UpgradeController : MonoBehaviour
     public bool Purchased { get { return purchased; } set { purchased = value; } }
 
     [SerializeField] bool upgrading;
+    [SerializeField] bool isPurchasing;
 
     public int gearsCost;
     public int coresCost;
@@ -66,14 +67,21 @@ public class UpgradeController : MonoBehaviour
             upgrading = true;
         }
 
+        if(isPurchasing)
+        {
+            GetComponent<UpgradeView>().frameImage.fillAmount += Time.unscaledDeltaTime / PURCHASE_TIME;
+        }
+
         if(Input.GetKeyUp(KeyCode.Z) && upgrading)
         {
             if (purchaseRoutine != null)
             {
-                StopCoroutine(purchaseRoutine);   
+                StopCoroutine(purchaseRoutine);
+                GetComponent<UpgradeView>().frameImage.fillAmount = 0;
             }
 
             upgrading = false;
+            isPurchasing = false;
         }
     }
 
@@ -81,6 +89,7 @@ public class UpgradeController : MonoBehaviour
     {
         if (GameScoreNewShop.instance.gears >= gearsCost && GameScoreNewShop.instance.cores >= coresCost)
         {
+            isPurchasing = true;
             yield return new WaitForSecondsRealtime(PURCHASE_TIME);
 
             upgrading = false;

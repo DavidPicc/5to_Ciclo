@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
 {
-    private const float OPACITY_PURCHASED = .2f;
-    private const float OPACITY_NOT_PURCHASED = .6f;
+    private const float OPACITY_PURCHASED = .1f;
+    private const float OPACITY_NOT_PURCHASED = .4f;
 
     RectTransform rect;
     [SerializeField] SectionButtonControl sectionButtonControl;
@@ -21,7 +21,7 @@ public class UpgradeView : MonoBehaviour
     GameObject lockedSign;
     GameObject selectSign;
     GameObject frame;
-    Image frameImage;
+    public Image frameImage;
     public float scaleMultiplier;
     Vector3 initialScale;
     Vector3 multipliedScale;
@@ -63,6 +63,15 @@ public class UpgradeView : MonoBehaviour
         else
         {
             ChangeIconColor(normalColor);
+        }
+
+        if(upgradeControl.Purchased)
+        {
+            frameImage.fillAmount = 1f;
+        }
+        else
+        {
+            frameImage.fillAmount = 0f;
         }
 
         initialScale = rect.localScale;
