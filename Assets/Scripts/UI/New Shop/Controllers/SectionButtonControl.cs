@@ -92,7 +92,7 @@ public class SectionButtonControl : MonoBehaviour
     public void Purchase()
     {
         purchased = true;
-        FindObjectOfType<ShopSFX>().BuySFX();
+        //FindObjectOfType<ShopSFX>().BuySFX();
     }
 
     public void PreventiveUpgradeCancel()
