@@ -57,6 +57,10 @@ public class Enemy_Health : MonoBehaviour
     public Transform[] movePoints;
     private int currentMovePointIndex = 0;
 
+    [Header("Boss Text")]
+    public string PhaseDialogue;
+
+
     public Phase1 phase1;
     public Phase2 phase2;
     public Phase3 phase3;
@@ -139,7 +143,7 @@ public class Enemy_Health : MonoBehaviour
                 phase4.enabled = false;
                 Form1.SetActive(true);
                 Form2.SetActive(false);
-
+                DialogueScript.instance.SetDialogue(PhaseDialogue, audioSource);
             }
         }
 
