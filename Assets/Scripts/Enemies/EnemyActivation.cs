@@ -14,7 +14,7 @@ public class EnemyActivation : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        _camera = GameObject.FindObjectOfType<StageMovement>().transform;
+        _camera = GameObject.FindObjectOfType<StageMovement_Vertical>().transform;
 
         if (movementScript != null)
             movementScript.enabled = false;
