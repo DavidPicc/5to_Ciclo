@@ -91,6 +91,11 @@ public class Enemy_Health : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            currentHealth -= maxHealth / 2;
+        }
+
         if (timer <= 0)
         {
             timer = invulnerabilityTime;
@@ -215,7 +220,9 @@ public class Enemy_Health : MonoBehaviour
         {
             AudioManager.instance.PlaySFX(audioSource, DeathSound, 1f);
             timerdeath -= Time.deltaTime;
-            SceneManager.LoadScene(FinishGame);
+            if(FindObjectOfType<FinishGame>()!= null) FindObjectOfType<FinishGame>().PlayTransition();
+            //StartCoroutine(GameManager.instance.LoadSceneDelay(FinishGame, 2f));
+            //SceneManager.LoadScene(FinishGame);
             /* if (timerdeath <= 0)
              {
 
@@ -225,7 +232,7 @@ public class Enemy_Health : MonoBehaviour
 
         Destroy(gameObject, 0.2f);
 
-        if (GetComponent<EnemyActivation>().NearPlayer())
+        if (GetComponent<EnemyActivation>() != null && GetComponent<EnemyActivation>().NearPlayer())
         {
             if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 40f) SpawnPoints();
             var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);

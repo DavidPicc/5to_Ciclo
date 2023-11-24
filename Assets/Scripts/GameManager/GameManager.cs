@@ -228,4 +228,10 @@ public class GameManager : MonoBehaviour
     {
         Waves.enabled = false;
     }
+
+    public IEnumerator LoadSceneDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        SceneManager.LoadScene(sceneName);
+    }
 }
