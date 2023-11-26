@@ -447,7 +447,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   player: {fileID: 0}
   rb: {fileID: 0}
-  speed: 7
+  speed: 9
   animIdle: {fileID: 7601950743730749964}
   animAttack: {fileID: 7601950743730749964}
 --- !u!114 &6641001454793931294
@@ -465,7 +465,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 656531904101248445, guid: 6b9646d791964cb4aa890ae27586d6b2,
     type: 3}
   damage: 1
-  bulletSpeed: 5
+  bulletSpeed: 10
   bulletNumber: 5
   bulletDisappear: 10
   bulletAng: 360
@@ -485,12 +485,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690f4300f0fd525478adb2f9a03e996f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 6
   currentHealth: 1
   manager: {fileID: 0}
   audioSource: {fileID: 0}
   CrashSound: {fileID: 8300000, guid: ccc0e5e5298f4ed47bba8faa7a93116f, type: 3}
-  DeathSound: {fileID: 8300000, guid: f7eff592ad99e5a4299853ecc17653e2, type: 3}
+  DeathSound: {fileID: 8300000, guid: 07c24ac73131d0e41a37871174f465bc, type: 3}
   IsEnemy: 1
   invulnerabilityTime: 0.05
   pointsPrefab: {fileID: 234343255855426183, guid: b01f554f9f45b7e43a1538271637fc0c,
@@ -516,6 +516,14 @@ MonoBehaviour:
   HealtPhase4: 0
   moveSpeed: 2
   movePoints: []
+  setDialogue1: 0
+  Phase1dialogue: []
+  setDialogue2: 0
+  Phase2dialogue: []
+  setDialogue3: 0
+  Phase3dialogue: []
+  setDialogue4: 0
+  Phase4dialogue: []
   phase1: {fileID: 0}
   phase2: {fileID: 0}
   phase3: {fileID: 0}
@@ -576,13 +584,13 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 50
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 17

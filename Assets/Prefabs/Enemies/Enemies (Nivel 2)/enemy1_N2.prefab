@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690f4300f0fd525478adb2f9a03e996f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 7
   currentHealth: 0
   manager: {fileID: 0}
   audioSource: {fileID: 0}
@@ -400,6 +400,14 @@ MonoBehaviour:
   HealtPhase4: 0
   moveSpeed: 2
   movePoints: []
+  setDialogue1: 0
+  Phase1dialogue: []
+  setDialogue2: 0
+  Phase2dialogue: []
+  setDialogue3: 0
+  Phase3dialogue: []
+  setDialogue4: 0
+  Phase4dialogue: []
   phase1: {fileID: 0}
   phase2: {fileID: 0}
   phase3: {fileID: 0}
@@ -453,7 +461,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 17
