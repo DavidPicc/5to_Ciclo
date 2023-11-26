@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ButtonController : MonoBehaviour
 {
     public List<Image> targetImages;
+    public List<TextMeshProUGUI> targetText;
     public Button NextButton;
     public Button BackButton;
     public Button SkipButton;
@@ -21,6 +23,7 @@ public class ButtonController : MonoBehaviour
         BackButton.onClick.AddListener(EnablePreviousImages);
         SkipButton.onClick.AddListener(ChangeScene);
         BackButton.interactable = !targetImages[0].enabled;
+        BackButton.interactable = !targetText[0].enabled;
     }
 
     private void Update()
@@ -28,10 +31,12 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             DisableNextImage();
+          
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             EnablePreviousImages();
+
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
@@ -45,6 +50,7 @@ public class ButtonController : MonoBehaviour
         {
             targetImages[currentIndex].enabled = false;
             disabledIndices.Push(currentIndex);
+            DisableNextText();
 
             if (currentIndex == 0)
             {
@@ -68,10 +74,32 @@ public class ButtonController : MonoBehaviour
             targetImages[previousIndex].enabled = true;
             currentIndex = previousIndex;
 
+            EnablePreviousText();
+
             if (currentIndex == 0)
             {
                 BackButton.interactable = false;
             }
+        }
+    }
+
+    private void DisableNextText()
+    {
+        if (currentIndex < targetText.Count)
+        {
+            targetText[currentIndex].enabled = false;
+            disabledIndices.Push(currentIndex);
+
+        }
+    }
+
+    private void EnablePreviousText()
+    {
+        if (disabledIndices.Count > 0)
+        {
+            int previousIndex = disabledIndices.Pop();
+            targetText[previousIndex].enabled = true;
+            currentIndex = previousIndex;
         }
     }
 
