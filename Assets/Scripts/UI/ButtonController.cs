@@ -22,8 +22,8 @@ public class ButtonController : MonoBehaviour
         NextButton.onClick.AddListener(DisableNextImage);
         BackButton.onClick.AddListener(EnablePreviousImages);
         SkipButton.onClick.AddListener(ChangeScene);
-        BackButton.interactable = !targetImages[0].enabled;
-        BackButton.interactable = !targetText[0].enabled;
+        BackButton.interactable = !targetImages[0].gameObject.activeSelf;
+        BackButton.interactable = !targetText[0].gameObject.activeSelf;
     }
 
     private void Update()
@@ -48,7 +48,7 @@ public class ButtonController : MonoBehaviour
     {
         if (currentIndex < targetImages.Count)
         {
-            targetImages[currentIndex].enabled = false;
+            targetImages[currentIndex].gameObject.SetActive(false);
             disabledIndices.Push(currentIndex);
             DisableNextText();
 
@@ -71,7 +71,7 @@ public class ButtonController : MonoBehaviour
         if (disabledIndices.Count > 0)
         {
             int previousIndex = disabledIndices.Pop();
-            targetImages[previousIndex].enabled = true;
+            targetImages[previousIndex].gameObject.SetActive(true);
             currentIndex = previousIndex;
 
             EnablePreviousText();
@@ -87,9 +87,8 @@ public class ButtonController : MonoBehaviour
     {
         if (currentIndex < targetText.Count)
         {
-            targetText[currentIndex].enabled = false;
+            targetText[currentIndex].gameObject.SetActive(false);
             disabledIndices.Push(currentIndex);
-
         }
     }
 
@@ -98,10 +97,11 @@ public class ButtonController : MonoBehaviour
         if (disabledIndices.Count > 0)
         {
             int previousIndex = disabledIndices.Pop();
-            targetText[previousIndex].enabled = true;
+            targetText[previousIndex].gameObject.SetActive(true);
             currentIndex = previousIndex;
         }
     }
+
 
     private void ChangeScene()
     {
