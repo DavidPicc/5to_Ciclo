@@ -98,7 +98,7 @@ public class SectionButtonView : MonoBehaviour
             }
         }
 
-        frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, !buttonControl.Purchased ? 0.1f : 0.4f);
+        frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, !buttonControl.Purchased ? 0.7f : 0.4f);
 
         //selectedSign.SetActive(buttonControl.Selected);
     }

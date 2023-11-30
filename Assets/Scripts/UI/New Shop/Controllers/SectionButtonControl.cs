@@ -62,6 +62,7 @@ public class SectionButtonControl : MonoBehaviour
             if (purchaseRoutine != null)
             {
                 StopCoroutine(purchaseRoutine);
+                GetComponent<SectionButtonView>().frameImage.fillAmount = 0;
             }
 
             upgrading = false;

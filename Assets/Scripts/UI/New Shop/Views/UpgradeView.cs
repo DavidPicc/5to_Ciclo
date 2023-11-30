@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
 {
-    private const float OPACITY_PURCHASED = .1f;
+    private const float OPACITY_PURCHASED = .7f;
     private const float OPACITY_NOT_PURCHASED = .4f;
 
     RectTransform rect;

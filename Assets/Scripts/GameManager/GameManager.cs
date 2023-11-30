@@ -170,8 +170,8 @@ public class GameManager : MonoBehaviour
 
     public void OpenShopAfterTransition()
     {
-        player.localPosition = new Vector3(-2, 0, 0);
-        FindObjectOfType<StageMovement>().transform.position -= Vector3.right * 7f;
+        //player.localPosition = new Vector3(-2, 0, 0);
+        //FindObjectOfType<StageMovement>().transform.position -= Vector3.right * 7f;
 
         if (defaultCamera != null) defaultCamera.SetActive(false);
         if (shopCamera != null) shopCamera.SetActive(true);
@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", -80f);
 
         if (shopCamera != null) shopCamera.SetActive(false);
-        if(defaultCamera != null) defaultCamera.SetActive(true);
+        if (defaultCamera != null) defaultCamera.SetActive(true);
 
         if(UpgradeTrackerNewShop.instance != null)
         {
@@ -234,5 +234,10 @@ public class GameManager : MonoBehaviour
     public void StopWaves()
     {
         Waves.enabled = false;
+    }
+
+    public void ClearAllPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
