@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button deathButton;
     public SituationManager Waves;
 
+    public bool close = false;
+
     void Awake()
     {
         instance = this;
@@ -217,6 +219,8 @@ public class GameManager : MonoBehaviour
 
         Invoke("UseAbilitesAfterTime", 1f);
         Invoke("CanPauseAfterTime", 1f);
+
+        close = true;
     }
 
     public void FinishedLevel()

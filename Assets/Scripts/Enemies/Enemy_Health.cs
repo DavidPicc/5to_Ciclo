@@ -72,6 +72,8 @@ public class Enemy_Health : MonoBehaviour
     public Phase3 phase3;
     public Phase4 phase4;
 
+
+    public GameManager game;
     /*
     [SerializeField] public AudioSource BossMusic;
     [SerializeField] public AudioClip Phase1;
@@ -168,7 +170,7 @@ public class Enemy_Health : MonoBehaviour
                 Form1.SetActive(true);
                 Form2.SetActive(false);
 
-                if (!setDialogue1)
+                if (!setDialogue1 && game.close)
                 {
                     DialogueScript.instance.SetDialogue(Phase1dialogue, audioSource);
                     setDialogue1 = true;
