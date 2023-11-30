@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject defaultCamera;
     public GameObject shopCamera;
     public GameObject nextLevelTransition;
+    public GameObject shopTransition;
     public bool isPaused = false;
     public bool canUseAbilities = true;
     bool canPause = true;
@@ -160,14 +161,20 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
+        shopTransition.SetActive(true);
+        shopTransition.GetComponent<Animator>().SetTrigger("OpenShop");
+
         AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", -80f);
         AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", 0f);
+    }
 
+    public void OpenShopAfterTransition()
+    {
         player.localPosition = new Vector3(-2, 0, 0);
         FindObjectOfType<StageMovement>().transform.position -= Vector3.right * 7f;
 
         if (defaultCamera != null) defaultCamera.SetActive(false);
-        if(shopCamera != null) shopCamera.SetActive(true);
+        if (shopCamera != null) shopCamera.SetActive(true);
 
         isPaused = true;
 
@@ -227,11 +234,5 @@ public class GameManager : MonoBehaviour
     public void StopWaves()
     {
         Waves.enabled = false;
-    }
-
-    public IEnumerator LoadSceneDelay(string sceneName, float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay);
-        SceneManager.LoadScene(sceneName);
     }
 }
