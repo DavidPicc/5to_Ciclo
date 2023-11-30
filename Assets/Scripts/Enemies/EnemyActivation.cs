@@ -6,15 +6,29 @@ using UnityEngine;
 public class EnemyActivation : MonoBehaviour
 {
     GameObject player;
-    Transform _camera;
+    [SerializeField] Transform _camera;
 
     public EnemyMovement movementScript;
     public EnemyShooting enemyShooting;
     public Enemy_Health enemyHealth;
+
+    bool activated = false;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        _camera = GameObject.FindObjectOfType<StageMovement_Vertical>().transform;
+        if(FindObjectOfType<StageMovement_Vertical>() != null)
+        {
+            _camera = FindObjectOfType<StageMovement_Vertical>().transform;
+        }
+        else
+        {
+            _camera = FindObjectOfType<StageMovement>().transform;
+        }
+
+        if(GetComponent<Enemy_Health>() != null)
+        {
+            enemyHealth = GetComponent<Enemy_Health>();
+        }
 
         if (movementScript != null)
             movementScript.enabled = false;
@@ -31,7 +45,7 @@ public class EnemyActivation : MonoBehaviour
         //}
 
 
-        if (Vector3.Distance(transform.position, player.transform.position) <= 6f)
+        if (Vector3.Distance(transform.position, player.transform.position) <= 8f)
         {
             Destroy(gameObject);
         }
@@ -48,17 +62,9 @@ public class EnemyActivation : MonoBehaviour
         //    }
         //    timer = checkTimer;
         //}
-        if (NearPlayer())
+        if (!activated && NearPlayer())
         {
             ActivateEnemy();
-        }
-        else
-        {
-            if(enemyHealth.enabled)
-            {
-                Destroy(gameObject);
-            }
-            
         }
     }
 
@@ -73,6 +79,7 @@ public class EnemyActivation : MonoBehaviour
         if (enemyHealth != null)
             enemyHealth.enabled = true;
 
+        activated = true;
         //Destroy(this);
     }
 
