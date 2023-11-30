@@ -234,6 +234,7 @@ public class Enemy_Health : MonoBehaviour
 
         if (GetComponent<EnemyActivation>() != null && GetComponent<EnemyActivation>().NearPlayer())
         {
+            Debug.Log("ENEMIGO QUE ESTÁ TOCANDO LOS COJONES QUE FLIPAS: " + name);
             if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 40f) SpawnPoints();
             var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
             death.AddComponent<AudioSource>();

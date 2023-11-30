@@ -166,6 +166,18 @@ public class GameManager : MonoBehaviour
 
         AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", -80f);
         AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", 0f);
+
+
+        Time.timeScale = 0f;
+        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
+
+        canUseAbilities = false;
+        canPause = false;
+
+        CheckPointScript.savedPlayerX = player.localPosition.x;
+        CheckPointScript.savedPlayerY = player.localPosition.y;
+        PlayerPrefs.SetFloat("savedPlayerX", CheckPointScript.savedPlayerX);
+        PlayerPrefs.SetFloat("savedPlayerY", CheckPointScript.savedPlayerY);
     }
 
     public void OpenShopAfterTransition()
@@ -177,18 +189,7 @@ public class GameManager : MonoBehaviour
         if (shopCamera != null) shopCamera.SetActive(true);
 
         isPaused = true;
-
-        Time.timeScale = 0f;
-        FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 0.5f;
         shopMenu.SetActive(true);
-
-        canUseAbilities = false;
-        canPause = false;
-
-        CheckPointScript.savedPlayerX = player.localPosition.x;
-        CheckPointScript.savedPlayerY = player.localPosition.y;
-        PlayerPrefs.SetFloat("savedPlayerX", CheckPointScript.savedPlayerX);
-        PlayerPrefs.SetFloat("savedPlayerY", CheckPointScript.savedPlayerY);
     }
 
     public void CloseShop()
@@ -208,6 +209,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1f;
         shopMenu.SetActive(false);
+        shopTransition.SetActive(false);
         //CheckPointScript.instance.UpdateCheckpoints();
         FindObjectOfType<AudioManager>().gameObject.GetComponent<AudioSource>().volume = 1f;
 
