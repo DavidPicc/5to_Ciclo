@@ -48,9 +48,17 @@ public class EnemyActivation : MonoBehaviour
         //    }
         //    timer = checkTimer;
         //}
-        if (Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) <= 50f)
+        if (NearPlayer())
         {
             ActivateEnemy();
+        }
+        else
+        {
+            if(enemyHealth.enabled)
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 
@@ -70,6 +78,14 @@ public class EnemyActivation : MonoBehaviour
 
     public bool NearPlayer()
     {
-        return (Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y) <= 30f && Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x) <= 50f);
+        return (Mathf.Abs(transform.position.y - _camera.transform.position.y) <= 30f && Mathf.Abs(transform.position.x - _camera.transform.position.x) <= 45f);
+    }
+
+    public void ShowDistance()
+    {
+        float yDistance = Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y);
+        float xDistance = Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x);
+        Debug.Log(name + ": Distancia en X es " + xDistance.ToString());
+        Debug.Log(name + ": Distancia en Y es " + yDistance.ToString());
     }
 }
