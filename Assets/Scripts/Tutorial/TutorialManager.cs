@@ -23,6 +23,8 @@ public class TutorialManager : MonoBehaviour
     public GameObject moveKeys, shootKey, abilityKey;
     public float timerKeys;
 
+    public bool canMove, canShoot, canAbility = false;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -43,6 +45,13 @@ public class TutorialManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        FindObjectOfType<Player_Movement>().enabled = false;
+        FindObjectOfType<Player_Shoot>().enabled = false;
+        FindObjectOfType<Player_Ability2>().enabled = false;
     }
 
     private void Update()
@@ -84,6 +93,9 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowMove()
     {
+        canMove = true;
+        FindObjectOfType<Player_Movement>().enabled = true;
+        FindObjectOfType<Player_Movement>().gameObject.GetComponent<Animator>().enabled = false;
         moveKeys.SetActive(true);
         estaRalentizado1 = true;
         Time.timeScale = velocidadRalentizada; 
@@ -91,6 +103,8 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowShoot()
     {
+        canShoot = true;
+        FindObjectOfType<Player_Shoot>().enabled = true;
         shootKey.SetActive(true);
         estaRalentizado2 = true;
         Time.timeScale = velocidadRalentizada;
@@ -98,6 +112,8 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowAbility()
     {
+        canAbility = true;
+        FindObjectOfType<Player_Ability2>().enabled = true;
         abilityKey.SetActive(true);
         estaRalentizado3 = true;
         Time.timeScale = velocidadRalentizada;
