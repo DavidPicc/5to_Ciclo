@@ -26,8 +26,8 @@ public class NextSituation : MonoBehaviour
         if((other.CompareTag("Activator") || other.CompareTag("Player")) && !used)
         {
             used = true;
-            Invoke("InvokeSituation", 0.2f);
-            //InvokeSituation();
+            //Invoke("InvokeSituation", 0.2f);
+            InvokeSituation();
         }
     }
 }

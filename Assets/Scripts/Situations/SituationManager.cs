@@ -56,7 +56,7 @@ public class SituationManager : MonoBehaviour
         {
             ActivateSituation(waveIndex);
         }
-        if(waveIndex- 1 >= 0)
+        if(waveIndex - 1 >= 0)
         {
             if (situations[waveIndex - 1].dialogue.Length > 0)
             {

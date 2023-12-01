@@ -28,8 +28,8 @@ public class PlayerBullet_Script : MonoBehaviour
                     //other.GetComponent<Enemy_Health>().TakeDamage(FindObjectOfType<Player_Shoot>().shootDamage);
                     other.GetComponent<Enemy_Health>().TakeDamage(damage);
                 }
-                Destroy(gameObject, dissapearAfterColliding);
             }
+            Destroy(gameObject);
         }
         if (other.CompareTag("EnemyBullet"))
         {

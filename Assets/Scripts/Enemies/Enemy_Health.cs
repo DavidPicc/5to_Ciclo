@@ -236,7 +236,7 @@ public class Enemy_Health : MonoBehaviour
 
         if (GetComponent<EnemyActivation>() != null && GetComponent<EnemyActivation>().NearPlayer())
         {
-            if (!spawnedPoints && Vector3.Distance(player.transform.position, transform.position) <= 40f) SpawnPoints();
+            if (!spawnedPoints) SpawnPoints();
             var death = Instantiate(vfxexplosion, transform.position, Quaternion.identity);
             death.AddComponent<AudioSource>();
             death.GetComponent<AudioSource>().outputAudioMixerGroup = FindObjectOfType<AudioManager>().sfxGroup;
@@ -252,15 +252,13 @@ public class Enemy_Health : MonoBehaviour
 
     void SpawnPoints()
     {
-        spawnedPoints = true;
-
         float multiplier = UpgradeTrackerNewShop.instance != null ? UpgradeTrackerNewShop.instance.GetGearMultiplier() : 1f;
 
         for (int i = 0; i < Mathf.FloorToInt(enemyValueInPoints * multiplier); i++)
         {
-            var point = Instantiate(pointsPrefab, transform.position, Quaternion.identity);
+            Instantiate(pointsPrefab, transform.position, Quaternion.identity);
         }
-       
+        spawnedPoints = true;
     }
 
     private void MoveToNextPoint()
