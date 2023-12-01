@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     Transform player;
+    [SerializeField] int levelNumber;
     public GameObject pauseMenu;
     public GameObject deathMenu;
     [SerializeField] AudioClip DeathMusic;
@@ -232,6 +233,7 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player_Shoot>().enabled = false;
         player.GetComponent<Collider>().enabled = false;
         nextLevelTransition.SetActive(true);
+        if (FindObjectOfType<LevelUnlock>() != null) LevelUnlock.Instance.UpdateUnlockedLevels(levelNumber);
         Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
         if (FindObjectOfType<CheckPointScript>() != null)
             FindObjectOfType<CheckPointScript>().ResetCheckpoints();
@@ -245,5 +247,6 @@ public class GameManager : MonoBehaviour
     public void ClearAllPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
+        if(FindObjectOfType<LevelUnlock>() != null) PlayerPrefs.SetInt("LevelsUnlocked", LevelUnlock.Instance.levels);
     }
 }

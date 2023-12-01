@@ -45,7 +45,18 @@ public class GameScore : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if(FindObjectOfType<LevelUnlock>() != null) StartCoroutine(InvokeIfUnlockedLevel());
         //AddLevel();
+    }
+
+    IEnumerator InvokeIfUnlockedLevel()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        if (LevelUnlock.Instance.loadedUnlockedLevel)
+        {
+            AddGears(10000);
+            AddCores(5);
+        }
     }
 
     void Update()

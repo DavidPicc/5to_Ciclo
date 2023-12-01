@@ -187,10 +187,12 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         }
         else return;
 
-        UpdateUpgrades();
-
-        SetUpgradesUI();
-        StartCoroutine(SetEquipment());
+        if(FindObjectOfType<TutorialManager>() == null)
+        {
+            UpdateUpgrades();
+            SetUpgradesUI();
+            StartCoroutine(SetEquipment());
+        }
 
         var branches = FindObjectsOfType<BranchNavigator>();
 
@@ -199,7 +201,7 @@ public class UpgradeTrackerNewShop : MonoBehaviour
             branches[i].gameObject.SetActive(false);
         }
 
-        GameObject.FindGameObjectWithTag("shopMenu").SetActive(false);
+        if(GameObject.FindGameObjectWithTag("shopMenu") != null) GameObject.FindGameObjectWithTag("shopMenu").SetActive(false);
     }
 
     private void Update()

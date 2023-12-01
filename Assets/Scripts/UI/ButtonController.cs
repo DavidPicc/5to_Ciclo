@@ -102,9 +102,15 @@ public class ButtonController : MonoBehaviour
         }
     }
 
-
     private void ChangeScene()
     {
+        ClearPlayerPrefs();
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        if (FindObjectOfType<LevelUnlock>() != null) PlayerPrefs.SetInt("LevelsUnlocked", LevelUnlock.Instance.levels);
     }
 }
