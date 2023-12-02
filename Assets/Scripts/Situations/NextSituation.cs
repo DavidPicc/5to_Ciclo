@@ -14,7 +14,7 @@ public class NextSituation : MonoBehaviour
     }
     void InvokeSituation()
     {
-        if (situationManager.gameObject.activeSelf)
+        if (situationManager != null && situationManager.gameObject.activeSelf)
         {
             situationManager.SpawnSituation();
         }
