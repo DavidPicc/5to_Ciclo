@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
     {
         //player.localPosition = new Vector3(-2, 0, 0);
         //FindObjectOfType<StageMovement>().transform.position -= Vector3.right * 7f;
+        player.localPosition = Vector3.zero;
 
         if (defaultCamera != null) defaultCamera.SetActive(false);
         if (shopCamera != null) shopCamera.SetActive(true);
