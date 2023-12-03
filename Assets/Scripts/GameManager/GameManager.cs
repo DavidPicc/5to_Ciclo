@@ -234,10 +234,9 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player_Shoot>().enabled = false;
         player.GetComponent<Collider>().enabled = false;
         nextLevelTransition.SetActive(true);
-        if (FindObjectOfType<LevelUnlock>() != null) LevelUnlock.Instance.UpdateUnlockedLevels(levelNumber);
+        if (FindObjectOfType<LevelUnlock>() != null && !FindObjectOfType<LevelUnlock>().loadedUnlockedLevel) LevelUnlock.Instance.UpdateUnlockedLevels(levelNumber);
         Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
-        if (FindObjectOfType<CheckPointScript>() != null)
-            FindObjectOfType<CheckPointScript>().ResetCheckpoints();
+        if (FindObjectOfType<CheckPointScript>() != null) FindObjectOfType<CheckPointScript>().ResetCheckpoints();
     }
 
     public void StopWaves()

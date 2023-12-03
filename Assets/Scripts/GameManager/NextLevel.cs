@@ -8,10 +8,21 @@ public class NextLevel : MonoBehaviour
     public void LoadNextLevel(string levelName)
     {
         levelName = GameManager.instance.nextLevelName;
-        if(FindObjectOfType<CheckPointScript>() != null )
+        if(FindObjectOfType<CheckPointScript>() != null)
         {
             CheckPointScript.instance.ResetCheckpoints();
         }
-        SceneManager.LoadScene(levelName);
+        if(FindObjectOfType<LevelUnlock>() != null)
+        {
+            if (FindObjectOfType<LevelUnlock>().loadedUnlockedLevel)
+            {
+                SceneManager.LoadScene("Test_menu");
+            }
+            else
+            {
+                SceneManager.LoadScene(levelName);
+            }
+        }
+        
     }
 }

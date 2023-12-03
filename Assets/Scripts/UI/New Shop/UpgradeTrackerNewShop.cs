@@ -96,10 +96,10 @@ public class UpgradeTrackerNewShop : MonoBehaviour
     [Header("Vindex Movement Upgrades")]
     public float levelAcceleration;
     public float levelMaxSpeed;
-    public float levelSpeedY;
+    //public float levelSpeedY;
     float baseAcceleration;
     float baseMaxSpeed;
-    float baseSpeedY;
+    //float baseSpeedY;
 
     [Header("Vindex Resources Upgrades")]
     public float gearsPerLevel;
