@@ -91,11 +91,15 @@ public class TutorialManager : MonoBehaviour
         Debug.Log("VULNERABLE");
     }
 
-    public void ShowMove()
+    public void EndEntranceAnim()
     {
         canMove = true;
         FindObjectOfType<Player_Movement>().enabled = true;
         FindObjectOfType<Player_Movement>().gameObject.GetComponent<Animator>().enabled = false;
+    }
+
+    public void ShowMove()
+    {
         moveKeys.SetActive(true);
         estaRalentizado1 = true;
         Time.timeScale = velocidadRalentizada; 
