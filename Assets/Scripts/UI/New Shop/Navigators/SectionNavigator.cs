@@ -63,7 +63,11 @@ public class SectionNavigator : MonoBehaviour
     public void SetHoverButton(SectionButtonControl newHoverButton)
     {
         FindObjectOfType<ShopSFX>().NavSFX();
-
+        if (FindObjectOfType<ShopVideos>() != null)
+        {
+            FindObjectOfType<ShopVideos>().StopVideo();
+            if(newHoverButton.GetComponent<SectionButtonView>().videoClip != null) FindObjectOfType<ShopVideos>().PlayVideo(newHoverButton.GetComponent<SectionButtonView>().videoClip);
+        }
         if (newHoverButton == null) return;
 
         if(hoverButton != null)
@@ -104,6 +108,10 @@ public class SectionNavigator : MonoBehaviour
         branchesNavigator.ActivateBranch(selectedButton.branch);
         GiveControlToBranches();
 
+        if (FindObjectOfType<ShopVideos>() != null)
+        {
+            FindObjectOfType<ShopVideos>().StopVideo();
+        }
         StartCoroutine(UpgradeTrackerNewShop.instance.SetEquipment());
     }
 

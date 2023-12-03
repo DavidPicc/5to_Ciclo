@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class SectionButtonView : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SectionButtonView : MonoBehaviour
 
     [Header("View")]
     public Image buttonImage;
+    public VideoClip videoClip;
     public GameObject selectedSignPrefab;
     GameObject selectedSign;
     public float scaleMultiplier;
