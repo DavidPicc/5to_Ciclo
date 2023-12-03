@@ -45,6 +45,8 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] float deathT;
     public GameObject Form1;
     public GameObject Form2;
+    public GameObject Arena1;
+    public GameObject Arena2;
 
     [SerializeField] public AudioClip HitBoss;
     [SerializeField] public AudioClip DeathBoss;
@@ -129,14 +131,19 @@ public class Enemy_Health : MonoBehaviour
 
             else if (IsBoss == true && currentHealth <= HealtPhase3)
             {
+                if (FindObjectOfType<FinishGame>() != null) FindObjectOfType<FinishGame>().PlayPhaseTransition();
+
                 PlayRandomAudioClip();
                 phase1.enabled = false;
                 phase2.enabled = false;
                 phase3.enabled = true;
                 phase4.enabled = false;
-               // MoveToNextPoint();
+
+                // MoveToNextPoint();
                 Form1.SetActive(false);
                 Form2.SetActive(true);
+                Arena1.SetActive(false);
+                Arena2.SetActive(true);
                 //  AudioManager.instance.ChangeMusic(Phase2);
                 if (!setDialogue3)
                 {
@@ -169,6 +176,8 @@ public class Enemy_Health : MonoBehaviour
                 phase4.enabled = false;
                 Form1.SetActive(true);
                 Form2.SetActive(false);
+                Arena1.SetActive(true);
+                Arena2.SetActive(false);
 
                 if (!setDialogue1 && game.close)
                 {
