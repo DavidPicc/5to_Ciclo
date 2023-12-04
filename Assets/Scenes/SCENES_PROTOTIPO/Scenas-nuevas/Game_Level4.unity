@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.0063772383, g: 0.001243409, b: 0.010560885, a: 1}
+  m_IndirectSpecularColor: {r: 0.006377206, g: 0.0012434047, b: 0.010560842, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10086,8 +10086,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2807133546778754536, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
+      propertyPath: m_Radius
+      value: 1.7864026
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807133546778754536, guid: edbf5cf5015589d448a0048e94829ad9,
+        type: 3}
       propertyPath: m_Center.x
-      value: -0.37222016
+      value: -0.1783725
       objectReference: {fileID: 0}
     - target: {fileID: 2807133546778754536, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
@@ -16639,6 +16644,38 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1208610842}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &745468430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1554064694500717524, guid: edbf5cf5015589d448a0048e94829ad9,
+    type: 3}
+  m_PrefabInstance: {fileID: 565502475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &745468432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745468430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.952086, y: 4.002638, z: 2.5994382}
+  m_Center: {x: 0.18189788, y: 2.5136604, z: -0.12448406}
+--- !u!65 &745468433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745468430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.017787, y: 6.070098, z: 3.862115}
+  m_Center: {x: -0.6961665, y: -2.5350494, z: 0.060237408}
 --- !u!1 &755608154
 GameObject:
   m_ObjectHideFlags: 0
