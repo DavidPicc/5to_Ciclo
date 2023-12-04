@@ -71,10 +71,10 @@ public class Player_Health : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            TakeDamage(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.N))
+        //{
+        //    TakeDamage(1);
+        //}
 
         if(maxHealth == 4)
         {

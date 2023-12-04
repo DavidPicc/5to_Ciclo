@@ -76,15 +76,15 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            FinishedLevel();
-        }
+        //if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    FinishedLevel();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SceneManager.LoadScene("Test_menu");
-        }
+        //if (Input.GetKeyDown(KeyCode.M))
+        //{
+        //    SceneManager.LoadScene("Test_menu");
+        //}
     }
 
     public void UseAbilitesAfterTime()
