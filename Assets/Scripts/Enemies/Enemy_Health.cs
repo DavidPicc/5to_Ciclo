@@ -97,10 +97,10 @@ public class Enemy_Health : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            currentHealth -= maxHealth / 2;
-        }
+        //if(Input.GetKeyDown(KeyCode.J))
+        //{
+        //    currentHealth -= maxHealth / 2;
+        //}
 
         if (timer <= 0)
         {
