@@ -20,20 +20,20 @@ public class GameScoreNewShop : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            debug = true;
-            gears = 10000000;
-            cores = 10000000;
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    debug = true;
+        //    gears = 10000000;
+        //    cores = 10000000;
 
-        }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.P) && debug)
-        {
-            debug = false;
-            gears = 0;
-            cores = 0;
-        }
+        //if (Input.GetKeyDown(KeyCode.P) && debug)
+        //{
+        //    debug = false;
+        //    gears = 0;
+        //    cores = 0;
+        //}
 
         if (GameScore.instance != null && !debug)
         {
