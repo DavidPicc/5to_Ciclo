@@ -43,6 +43,8 @@ public class Enemy_Health : MonoBehaviour
     public Slider HealthBarr;
     public float timerdeath;
     [SerializeField] float deathT;
+    public Animator Boss;
+    public Animator Boss2;
     public GameObject Form1;
     public GameObject Form2;
     public GameObject Arena1;
@@ -126,6 +128,11 @@ public class Enemy_Health : MonoBehaviour
                 {
                     DialogueScript.instance.SetDialogue(Phase4dialogue, audioSource);
                     setDialogue4 = true;
+                    Boss2.SetBool("Phase", true);
+                }
+                else
+                {
+                    Boss2.SetBool("Phase", false);
                 }
             }
 
@@ -149,6 +156,11 @@ public class Enemy_Health : MonoBehaviour
                 {
                     DialogueScript.instance.SetDialogue(Phase3dialogue, audioSource);
                     setDialogue3 = true;
+                    Boss2.SetBool("Phase", true);
+                }
+                else
+                {
+                    Boss2.SetBool("Phase", false);
                 }
             }
 
@@ -161,10 +173,15 @@ public class Enemy_Health : MonoBehaviour
                 phase4.enabled = false;
                 if (!setDialogue2)
                 {
+                    Boss.SetBool("Phase", true);
                     DialogueScript.instance.SetDialogue(Phase2dialogue, audioSource);
                     setDialogue2 = true;
+                   
                 }
-
+                else
+                {
+                    Boss.SetBool("Phase", false);
+                }
             }
 
             else if (IsBoss == true && currentHealth <= HealtPhase1)
