@@ -59,8 +59,8 @@ public class CheckPointScript : MonoBehaviour
     public void ResetCheckpoints()
     {
         savedWave = 0;
-
-        PlayerPrefs.DeleteAll();
+        GameManager.instance.ClearAllPlayerPrefs();
+        //PlayerPrefs.DeleteAll();
     }
     public void UpdateCheckpoints()
     {
