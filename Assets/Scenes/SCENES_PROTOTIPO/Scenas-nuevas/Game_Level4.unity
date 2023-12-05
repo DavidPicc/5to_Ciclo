@@ -4592,6 +4592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endTransition: {fileID: 1387003017}
+  manager: {fileID: 338171354}
   phaseTransition: {fileID: 1091930963}
 --- !u!1 &382948438
 GameObject:
@@ -8753,6 +8754,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4520026764095519211, guid: 8c7931c86a92ce64db6b4c6912d36399,
         type: 3}
+    - target: {fileID: 7918341420205550, guid: edbf5cf5015589d448a0048e94829ad9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8013890664104112, guid: edbf5cf5015589d448a0048e94829ad9, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -9335,7 +9340,7 @@ PrefabInstance:
     - target: {fileID: 1352639249962652145, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: maxHealth
-      value: 4000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1352639249962652145, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
@@ -11336,8 +11341,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6172564171051158393, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172564171051158393, guid: edbf5cf5015589d448a0048e94829ad9,
+        type: 3}
       propertyPath: m_LocalPosition.y
       value: -20.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172564171051158393, guid: edbf5cf5015589d448a0048e94829ad9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.300001
       objectReference: {fileID: 0}
     - target: {fileID: 6174552758576995315, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
@@ -11634,7 +11649,7 @@ PrefabInstance:
     - target: {fileID: 6685313464806304264, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}
       propertyPath: timer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6685313464806304264, guid: edbf5cf5015589d448a0048e94829ad9,
         type: 3}

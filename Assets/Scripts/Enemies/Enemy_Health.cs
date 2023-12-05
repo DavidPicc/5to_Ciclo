@@ -249,16 +249,17 @@ public class Enemy_Health : MonoBehaviour
             AudioManager.instance.PlaySFX(audioSource, DeathSound, 1f);
             timerdeath -= Time.deltaTime;
             if(FindObjectOfType<FinishGame>()!= null) FindObjectOfType<FinishGame>().PlayTransition();
-            //StartCoroutine(GameManager.instance.LoadSceneDelay(FinishGame, 2f));
-            //SceneManager.LoadScene(FinishGame);
-            /* if (timerdeath <= 0)
-             {
-
-             }  */
+            Animator[] animators = GetComponentsInChildren<Animator>();
+            foreach (Animator anim in animators)
+            {
+                anim.SetTrigger("Death");
+            }
         }
-        //audioManager.PlayOneShot(DeathSound);
+        else
+        {
+            Destroy(gameObject, 0.2f);
+        }
 
-        Destroy(gameObject, 0.2f);
 
         if (GetComponent<EnemyActivation>() != null && GetComponent<EnemyActivation>().NearPlayer())
         {
