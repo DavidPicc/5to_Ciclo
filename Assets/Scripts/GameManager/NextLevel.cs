@@ -23,6 +23,10 @@ public class NextLevel : MonoBehaviour
                 SceneManager.LoadScene(levelName);
             }
         }
+        else
+        {
+            SceneManager.LoadScene(levelName);
+        }
         
     }
 }
