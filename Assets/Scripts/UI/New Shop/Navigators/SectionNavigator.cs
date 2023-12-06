@@ -44,19 +44,19 @@ public class SectionNavigator : MonoBehaviour
             if (hoverButton.GetButtonAtRight() == null)
             {
                 GiveControlToBranches();
-            } else SetHoverButton(hoverButton.GetButtonAtRight());
+            } else if (hoverButton.GetButtonAtRight() != null) SetHoverButton(hoverButton.GetButtonAtRight());
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            SetHoverButton(hoverButton.GetButtonAtLeft());
+            if (hoverButton.GetButtonAtLeft() != null) SetHoverButton(hoverButton.GetButtonAtLeft());
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SetHoverButton(hoverButton.GetButtonUpwards());
+            if(hoverButton.GetButtonUpwards() != null) SetHoverButton(hoverButton.GetButtonUpwards());
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            SetHoverButton(hoverButton.GetButtonDownwards());
+            if (hoverButton.GetButtonDownwards() != null) SetHoverButton(hoverButton.GetButtonDownwards());
         }
     }
 
