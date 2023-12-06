@@ -60,14 +60,15 @@ public class BranchNavigator : MonoBehaviour
 
     void SetUpgradeSelectedController(UpgradeController newUpgradeSelectedController)
     {
+        FindObjectOfType<ShopSFX>().NavSFX();
         if (newUpgradeSelectedController == null || newUpgradeSelectedController.Locked) return;
 
         if (upgradeSelectedController != null)
         {
             upgradeSelectedController.Selected = false;
+            upgradeSelectedController.PreventiveUpgradeCancel();
         }
 
-        FindObjectOfType<ShopSFX>().NavSFX();
         newUpgradeSelectedController.Selected = true;
         upgradeSelectedController = newUpgradeSelectedController;
     }

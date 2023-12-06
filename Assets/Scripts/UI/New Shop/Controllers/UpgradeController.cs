@@ -74,14 +74,7 @@ public class UpgradeController : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Z) && upgrading)
         {
-            if (purchaseRoutine != null)
-            {
-                StopCoroutine(purchaseRoutine);
-                GetComponent<UpgradeView>().frameImage.fillAmount = 0;
-            }
-
-            upgrading = false;
-            isPurchasing = false;
+            StopPurchase();
         }
     }
 
@@ -103,6 +96,18 @@ public class UpgradeController : MonoBehaviour
         }
     }
 
+    public void StopPurchase()
+    {
+        if (purchaseRoutine != null)
+        {
+            StopCoroutine(purchaseRoutine);
+            GetComponent<UpgradeView>().frameImage.fillAmount = 0;
+        }
+
+        upgrading = false;
+        isPurchasing = false;
+    }
+
     public void Purchase()
     {
         purchased = true;
@@ -121,9 +126,11 @@ public class UpgradeController : MonoBehaviour
             if (purchaseRoutine != null)
             {
                 StopCoroutine(purchaseRoutine);
+                GetComponent<UpgradeView>().frameImage.fillAmount = 0;
             }
 
             upgrading = false;
+            isPurchasing = false;
         }
     }
 

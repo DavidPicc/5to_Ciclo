@@ -63,6 +63,7 @@ public class SectionNavigator : MonoBehaviour
     public void SetHoverButton(SectionButtonControl newHoverButton)
     {
         FindObjectOfType<ShopSFX>().NavSFX();
+
         if (FindObjectOfType<ShopVideos>() != null)
         {
             FindObjectOfType<ShopVideos>().StopVideo();

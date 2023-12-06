@@ -57,16 +57,9 @@ public class SectionButtonControl : MonoBehaviour
             GetComponent<SectionButtonView>().frameImage.fillAmount += Time.unscaledDeltaTime / PURCHASE_TIME;
         }
 
-        if (Input.GetKeyUp(KeyCode.Z) && upgrading)
+        if (upgrading && Input.GetKeyUp(KeyCode.Z))
         {
-            if (purchaseRoutine != null)
-            {
-                StopCoroutine(purchaseRoutine);
-                GetComponent<SectionButtonView>().frameImage.fillAmount = 0;
-            }
-
-            upgrading = false;
-            isPurchasing = false;
+            StopPurchase();
         }
     }
 
@@ -90,6 +83,18 @@ public class SectionButtonControl : MonoBehaviour
         }
     }
 
+    public void StopPurchase()
+    {
+        if (purchaseRoutine != null)
+        {
+            StopCoroutine(purchaseRoutine);
+            GetComponent<SectionButtonView>().frameImage.fillAmount = 0;
+        }
+
+        upgrading = false;
+        isPurchasing = false;
+    }
+
     public void Purchase()
     {
         purchased = true;
@@ -103,9 +108,11 @@ public class SectionButtonControl : MonoBehaviour
             if (purchaseRoutine != null)
             {
                 StopCoroutine(purchaseRoutine);
+                GetComponent<SectionButtonView>().frameImage.fillAmount = 0;
             }
 
             upgrading = false;
+            isPurchasing = false;
         }
     }
 
