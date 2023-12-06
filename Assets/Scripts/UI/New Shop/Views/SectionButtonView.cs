@@ -76,7 +76,7 @@ public class SectionButtonView : MonoBehaviour
                 {
                     floatingPanelObj = Instantiate(floatingPanelPrefab, transform);
                     floatingPanel = floatingPanelObj.GetComponent<FloatingPanelShop>();
-                    floatingPanel.SetAlternativeMessage("SELECT");
+                    floatingPanel.SetAlternativeMessage("Z para entrar");
                 }
 
                 if (!floatingPanelObj.activeSelf)

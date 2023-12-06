@@ -23,7 +23,7 @@ public class HUD_Transparent : MonoBehaviour
                 foreach (Image image in HUDImages)
                 {
                     Color currentColor = image.color;
-                    currentColor.a = 0.4f;
+                    currentColor.a = 0.2f;
                     image.color = currentColor;
                 }
             }
@@ -32,7 +32,7 @@ public class HUD_Transparent : MonoBehaviour
                 foreach (TextMeshProUGUI text in texts)
                 {
                     Color currentColor = text.color;
-                    currentColor.a = 0.4f;
+                    currentColor.a = 0.2f;
                     text.color = currentColor;
                 }
             }
