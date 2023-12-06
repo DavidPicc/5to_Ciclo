@@ -73,7 +73,7 @@ public class TutorialManager : MonoBehaviour
     }
     public void ActivateBoss()
     {
-        Debug.Log("BOOOOOSSSSS!");
+        //Debug.Log("BOOOOOSSSSS!");
         boss.SetActive(true);
     }
 
@@ -88,7 +88,7 @@ public class TutorialManager : MonoBehaviour
         }
         Player_Health player_Health = GameObject.FindObjectOfType<Player_Health>();
         player_Health.canDie = true;
-        Debug.Log("VULNERABLE");
+        //Debug.Log("VULNERABLE");
     }
 
     public void EndEntranceAnim()

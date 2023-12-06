@@ -90,7 +90,7 @@ public class Player_Ability_Fixed: MonoBehaviour
             {
                 audioManager.clip = ShieldLowSound;
             }
-            Debug.Log(rechargeBar);
+            //Debug.Log(rechargeBar);
             if (rechargeBar > 0) rechargeBar -= Time.deltaTime;
         }
         else

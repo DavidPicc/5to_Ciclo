@@ -97,7 +97,7 @@ public class Player_Movement : MonoBehaviour
     public void ChangeEmissionColor(Color color)
     {
         playerLightMaterial.SetColor("_EmissionColor", color * 12); // ("Color", color deseado * INTENSIDAD)
-        Debug.Log("CAMBIAR COLOR");
+        //Debug.Log("CAMBIAR COLOR");
         //if(!changedLightMaterial)
         //{
 

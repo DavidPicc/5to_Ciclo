@@ -397,7 +397,7 @@ public class UpgradeTrackerNewShop : MonoBehaviour
         }
 
         yield return new WaitForSecondsRealtime(0.05f);
-        Debug.Log("SET EQUIPMENT");
+        //Debug.Log("SET EQUIPMENT");
     }
 
     public void LevelUp(string feature, string upgrade, int level)

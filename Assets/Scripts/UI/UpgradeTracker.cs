@@ -27,10 +27,10 @@ public class UpgradeTracker : MonoBehaviour
         {
             foreach(KeyValuePair<string, int> pair in levels)
             {
-                Debug.Log(pair.Key + " : " + pair.Value);
+                //Debug.Log(pair.Key + " : " + pair.Value);
             }
 
-            Debug.Log("Equipped Gun: " + equippedGun + ", Equipped Skill: " + equippedSkill);
+            //Debug.Log("Equipped Gun: " + equippedGun + ", Equipped Skill: " + equippedSkill);
         }
     }
 }   

@@ -26,7 +26,7 @@ public class ActivarRigidbodyAlEntrarEnTrigger : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("El objeto asignado no tiene un componente Rigidbody.");
+                //Debug.LogWarning("El objeto asignado no tiene un componente Rigidbody.");
             }
         }
     }

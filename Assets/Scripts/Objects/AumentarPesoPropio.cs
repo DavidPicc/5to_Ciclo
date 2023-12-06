@@ -13,7 +13,7 @@ public class AumentarPesoPropio : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
-            Debug.LogError("El objeto al que se aplica este script no tiene un Rigidbody.");
+            //Debug.LogError("El objeto al que se aplica este script no tiene un Rigidbody.");
         }
     }
 

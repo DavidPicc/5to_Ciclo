@@ -63,7 +63,7 @@ public class objet_destrur : MonoBehaviour
         foreach(Collider collider in colliders)
         {
             collider.enabled = false;
-            Debug.Log(collider + " MURIOOOOO");
+            //Debug.Log(collider + " MURIOOOOO");
         }
         if (GetComponent<Enemy4_ShootExplode>() != null)
         {

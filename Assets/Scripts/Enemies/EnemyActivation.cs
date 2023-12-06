@@ -92,7 +92,7 @@ public class EnemyActivation : MonoBehaviour
     {
         float yDistance = Mathf.Abs(transform.position.y) - Mathf.Abs(_camera.transform.position.y);
         float xDistance = Mathf.Abs(transform.position.x) - Mathf.Abs(_camera.transform.position.x);
-        Debug.Log(name + ": Distancia en X es " + xDistance.ToString());
-        Debug.Log(name + ": Distancia en Y es " + yDistance.ToString());
+        //Debug.Log(name + ": Distancia en X es " + xDistance.ToString());
+        //Debug.Log(name + ": Distancia en Y es " + yDistance.ToString());
     }
 }

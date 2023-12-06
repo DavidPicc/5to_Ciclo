@@ -44,7 +44,7 @@ public class BossT_Shoot : MonoBehaviour
     {
         if(startShooting)
         {
-            Debug.Log("DISPARAAA");
+            //Debug.Log("DISPARAAA");
             CheckIfShot();
         }
     }

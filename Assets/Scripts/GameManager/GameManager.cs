@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
-        Debug.Log("PAUSA");
+        //Debug.Log("PAUSA");
         AudioManager.masterVolume /= 2;
         AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", -80f);
         AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", 0f);
@@ -235,7 +235,7 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Collider>().enabled = false;
         nextLevelTransition.SetActive(true);
         if (FindObjectOfType<LevelUnlock>() != null) LevelUnlock.Instance.UpdateUnlockedLevels(levelNumber);
-        Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
+        //Debug.Log("SIGUIENTE NIVEL DESBLOQUEADO");
         if (FindObjectOfType<CheckPointScript>() != null) FindObjectOfType<CheckPointScript>().ResetCheckpoints();
     }
 

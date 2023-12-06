@@ -239,7 +239,7 @@ public class Enemy_Health : MonoBehaviour
 
     public void Death()
     {
-        Debug.Log("MURIO " + name);
+        //Debug.Log("MURIO " + name);
         if (GetComponent<Enemy4_ShootExplode>() != null)
         {
             GetComponent<Enemy4_ShootExplode>().ShootAngular();

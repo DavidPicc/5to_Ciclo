@@ -13,7 +13,7 @@ public class player_detect : MonoBehaviour
     {
         if(collider.gameObject.tag=="Player")
         {
-            Debug.Log("Aca");
+            //Debug.Log("Aca");
             timer += Time.deltaTime;
             StartCoroutine(falling());
             chain.SetActive(false);

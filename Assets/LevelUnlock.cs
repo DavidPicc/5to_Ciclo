@@ -27,8 +27,8 @@ public class LevelUnlock : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Y))
         {
-            Debug.Log("Need money? " + loadedUnlockedLevel);
-            Debug.Log("Levels: " + levels);
+            //Debug.Log("Need money? " + loadedUnlockedLevel);
+            //Debug.Log("Levels: " + levels);
         }
     }
 
@@ -57,6 +57,6 @@ public class LevelUnlock : MonoBehaviour
     {
         if(levels <= integer) levels = integer;
         PlayerPrefs.SetInt("LevelsUnlocked", levels);
-        Debug.Log("GUARDADOS TUS NIVELES, CRACK. Nivel: " + levels);
+        //Debug.Log("GUARDADOS TUS NIVELES, CRACK. Nivel: " + levels);
     }
 }

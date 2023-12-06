@@ -33,7 +33,7 @@ public class Enemy4_Movement : EnemyMovement
 
     void MoveToPlayer()
     {
-        Debug.Log(transform.position.x - player.transform.position.x);
+        //Debug.Log(transform.position.x - player.transform.position.x);
         Vector3 direction = (player.transform.position - transform.position).normalized;
         if(passedPlayer)
         {

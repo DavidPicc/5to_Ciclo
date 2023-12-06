@@ -71,7 +71,7 @@ public class GameScore : MonoBehaviour
     {
         gearScore = gearScore + amount;
         AudioManager.instance.PlaySFX(GetComponent<AudioSource>(), GearSound, 1f);
-        Debug.Log("SONIDO");
+        //Debug.Log("SONIDO");
         //invisibleScore = invisibleScore + amount;
         CanvasUI.instance.gearsText.text = gearScore.ToString();
     }

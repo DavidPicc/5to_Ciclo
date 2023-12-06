@@ -16,7 +16,7 @@ public class LevelSelector : MonoBehaviour
     private void Start()
     {
         LevelUnlock.Instance.CheckUnlockedLevels();
-        Debug.Log("checking");
+        //Debug.Log("checking");
 
         if (LevelUnlock.Instance.levels > 0)
         {
@@ -46,7 +46,7 @@ public class LevelSelector : MonoBehaviour
     public void LoadingUnlockedLevel(string levelName)
     {
         LevelUnlock.Instance.loadedUnlockedLevel = true;
-        Debug.Log("Loading unlocked level.");
+        //Debug.Log("Loading unlocked level.");
         SceneManager.LoadScene(levelName);
     }
 }

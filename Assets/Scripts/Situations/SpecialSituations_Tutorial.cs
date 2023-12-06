@@ -17,7 +17,7 @@ public class SpecialSituations_Tutorial : MonoBehaviour
 
     public void TutorialBoss()
     {
-        Debug.Log("BOOOOOSSSSS!");
+        //Debug.Log("BOOOOOSSSSS!");
         TutorialManager.instance.ActivateBoss();
     }
 }

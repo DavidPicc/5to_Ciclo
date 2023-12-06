@@ -44,7 +44,7 @@ public class CheckPointScript : MonoBehaviour
         }
         
 
-        Debug.Log("WAVE: " + savedWave);
+        //Debug.Log("WAVE: " + savedWave);
     }
 
     void Update()
@@ -52,7 +52,7 @@ public class CheckPointScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.B))
         {
             //Debug.Log("CHECKPOINT: " + savedPoint.x + ", " + savedPoint.y + ", " + savedPoint.z);
-            Debug.Log("WAVE: " + savedWave);
+            //Debug.Log("WAVE: " + savedWave);
         }
     }
 
@@ -87,8 +87,8 @@ public class CheckPointScript : MonoBehaviour
 
         FindObjectOfType<Player_Health>().GetFullHealth();
 
-        Debug.Log("WAVE SAVED: " + savedWave);
-        Debug.Log("Player position: " + FindObjectOfType<Player_Health>().transform.position);
+        //Debug.Log("WAVE SAVED: " + savedWave);
+        //Debug.Log("Player position: " + FindObjectOfType<Player_Health>().transform.position);
     }
 
     public void LoadCheckpoints()

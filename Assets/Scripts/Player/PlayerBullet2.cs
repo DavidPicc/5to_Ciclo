@@ -28,7 +28,7 @@ public class PlayerBullet2 : MonoBehaviour
             if (collider.GetComponentInParent<objet_destrur>() != null)
             {
                 collider.GetComponentInParent<objet_destrur>().TakeDamage(explosionDamage*20);
-                Debug.Log("Explosion range: " + collider.gameObject.name);
+                //Debug.Log("Explosion range: " + collider.gameObject.name);
             }
         }
         Destroy(gameObject, 0.1f);

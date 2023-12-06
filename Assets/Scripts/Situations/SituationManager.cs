@@ -37,7 +37,7 @@ public class SituationManager : MonoBehaviour
         }
         SpawnSituation();
         //currentWave = waveIndex - 1;
-        Debug.Log("Current wave: " + (waveIndex-1));
+        //Debug.Log("Current wave: " + (waveIndex-1));
     }
 
     public void ActivateSituation(int wave)

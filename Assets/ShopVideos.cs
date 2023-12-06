@@ -28,7 +28,7 @@ public class ShopVideos : MonoBehaviour
             _videoPlayer.targetTexture = VideoRenderTexture;
             _videoPlayer.clip = clip;
 
-            Debug.Log(clip);
+            //Debug.Log(clip);
             _isChanging = true;
         }
     }

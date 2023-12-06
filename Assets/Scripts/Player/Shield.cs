@@ -22,7 +22,7 @@ public class Shield : MonoBehaviour
 
             //Destroy(other.gameObject);
 
-            Debug.Log("HOla");
+            //Debug.Log("HOla");
         }
     }
 }

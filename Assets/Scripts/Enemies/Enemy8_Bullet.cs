@@ -54,7 +54,7 @@ public class Enemy8_Bullet : MonoBehaviour
                 collider.GetComponentInParent<Enemy_Health>().TakeDamage(10);
             }
 
-            Debug.Log(collider.name + " has been damaged!");
+            //Debug.Log(collider.name + " has been damaged!");
         }
         Destroy(gameObject, 0.1f);
     }

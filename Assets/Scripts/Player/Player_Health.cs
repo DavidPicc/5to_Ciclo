@@ -123,7 +123,7 @@ public class Player_Health : MonoBehaviour
                 }
             }
             UpdateFacePlayer();
-            Debug.Log("Player has been damaged!!!!");
+            //Debug.Log("Player has been damaged!!!!");
             canBeDamaged = false;
         }
     }
@@ -133,7 +133,7 @@ public class Player_Health : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealthBar();
         UpdateFacePlayer();
-        Debug.Log("Player has been fully healed!");
+        //Debug.Log("Player has been fully healed!");
     }
     public void Death()
     {

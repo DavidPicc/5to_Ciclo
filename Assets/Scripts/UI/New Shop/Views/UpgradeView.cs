@@ -41,7 +41,7 @@ public class UpgradeView : MonoBehaviour
         sectionButtonControl = FindObjectOfType<SectionNavigator>().hoverButton;
 
         normalColor = GetComponent<Image>().color;
-        Debug.Log(name + "    " + normalColor);
+        //Debug.Log(name + "    " + normalColor);
         rect = GetComponent<RectTransform>();
 
         lockedSign = Instantiate(lockedSignPrefab, transform);
