@@ -10,6 +10,7 @@ public class chain_life : MonoBehaviour
     bool canBeDamaged => transform.position.x - _camera.position.x <= 45f && timer >= invulnerabilityTime;
     [SerializeField] float invulnerabilityTime;
     float timer;
+    public GameObject explosionPrefab;
 
     void Start()
     {
@@ -46,7 +47,9 @@ public class chain_life : MonoBehaviour
 
     public void Death()
     {
-      Destroy(this);
+        GameObject impact = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(impact, 1f);
+        Destroy(this);
         Destroy(gameObject);
     }
 
@@ -56,6 +59,8 @@ public class chain_life : MonoBehaviour
         {
             if (canBeDamaged)
             {
+                GameObject impact = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(impact, 1f);
                 TakeDamage(10);
                 Destroy(other.gameObject);
 

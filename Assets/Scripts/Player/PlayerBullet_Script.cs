@@ -6,8 +6,10 @@ public class PlayerBullet_Script : MonoBehaviour
 {
     [SerializeField] public float damage;
     [SerializeField] public float dissapearAfterColliding;
-   
-        public void Start()
+    public GameObject explosionPrefab;
+    public bool Lanzallamas;
+
+    public void Start()
     {
         Destroy(gameObject, 20f);
     }
@@ -16,6 +18,12 @@ public class PlayerBullet_Script : MonoBehaviour
     {
         if(other.CompareTag("Obstacle")|| other.CompareTag("destructible"))
         {
+            if(Lanzallamas == false)
+            {
+                GameObject impact = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(impact, 1f);
+            }
+           
             Destroy(gameObject);
         }
         if (other.CompareTag("Enemy"))
@@ -29,7 +37,13 @@ public class PlayerBullet_Script : MonoBehaviour
                     other.GetComponent<Enemy_Health>().TakeDamage(damage);
                 }
             }
-            Destroy(gameObject);
+            if(Lanzallamas == false)
+            {
+                GameObject impact = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(impact, 1f);
+                Destroy(gameObject);
+            }
+          
         }
         if (other.CompareTag("EnemyBullet"))
         {
