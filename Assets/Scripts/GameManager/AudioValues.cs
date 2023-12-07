@@ -27,10 +27,6 @@ public class AudioValues : MonoBehaviour
 
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);
-    }
-
-    void Start()
-    {
         if (isMainMenu)
         {
             _masterVolume = 0.5f;
