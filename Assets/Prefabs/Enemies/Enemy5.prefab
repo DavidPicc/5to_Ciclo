@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 2270881831400750509}
   - component: {fileID: 7548324477599776179}
   - component: {fileID: 5799057363814013765}
+  - component: {fileID: 1269910801355487202}
   m_Layer: 8
   m_Name: Enemy5
   m_TagString: Enemy
@@ -265,8 +266,12 @@ MonoBehaviour:
   HealthBarr: {fileID: 0}
   timerdeath: 0
   deathT: 0
+  Boss: {fileID: 0}
+  Boss2: {fileID: 0}
   Form1: {fileID: 0}
   Form2: {fileID: 0}
+  Arena1: {fileID: 0}
+  Arena2: {fileID: 0}
   HitBoss: {fileID: 0}
   DeathBoss: {fileID: 0}
   TauntBoss: []
@@ -288,6 +293,7 @@ MonoBehaviour:
   phase2: {fileID: 0}
   phase3: {fileID: 0}
   phase4: {fileID: 0}
+  game: {fileID: 0}
   FinishGame: 
 --- !u!65 &5517978649688884003
 BoxCollider:
@@ -411,6 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d705f632b65b048837515175770ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
   movementScript: {fileID: 2306539701729206812}
   enemyShooting: {fileID: 0}
   enemyHealth: {fileID: 0}
@@ -443,6 +450,20 @@ MonoBehaviour:
   ShootSound: {fileID: 8300000, guid: e5565cf589719d64db4121aa2580382a, type: 3}
   distanceToShoot: 70
   antiSphere: {fileID: 1730544752869789959}
+--- !u!114 &1269910801355487202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357955088167139633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa5ac9a766ae174298bc503a80493b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glowColor: {r: 1, g: 1, b: 1, a: 0.627451}
+  _meshRenderers: []
 --- !u!1 &8065179853421830430
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -994555737183410473}
   - component: {fileID: 1719580620040150790}
   - component: {fileID: 5562160571099675381}
+  - component: {fileID: 5451231882352148582}
   m_Layer: 8
   m_Name: Enemy3
   m_TagString: Enemy
@@ -128,8 +129,12 @@ MonoBehaviour:
   HealthBarr: {fileID: 0}
   timerdeath: 0
   deathT: 0
+  Boss: {fileID: 0}
+  Boss2: {fileID: 0}
   Form1: {fileID: 0}
   Form2: {fileID: 0}
+  Arena1: {fileID: 0}
+  Arena2: {fileID: 0}
   HitBoss: {fileID: 0}
   DeathBoss: {fileID: 0}
   TauntBoss: []
@@ -151,6 +156,7 @@ MonoBehaviour:
   phase2: {fileID: 0}
   phase3: {fileID: 0}
   phase4: {fileID: 0}
+  game: {fileID: 0}
   FinishGame: 
 --- !u!65 &8722422789986847479
 BoxCollider:
@@ -274,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d705f632b65b048837515175770ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
   movementScript: {fileID: 4056143835864080832}
   enemyShooting: {fileID: 7789555798762171189}
   enemyHealth: {fileID: 1545970297421064227}
@@ -290,6 +297,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.9271877
   m_Center: {x: 0, y: -0.029126406, z: 0}
+--- !u!114 &5451231882352148582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635872565209331696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa5ac9a766ae174298bc503a80493b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glowColor: {r: 1, g: 1, b: 1, a: 0.627451}
+  _meshRenderers: []
 --- !u!1 &834574703529191074
 GameObject:
   m_ObjectHideFlags: 0

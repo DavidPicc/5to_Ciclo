@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 3480903255657912212}
   - component: {fileID: 2461097958516140388}
   - component: {fileID: 3159825842693706545}
+  - component: {fileID: 3114448176749611366}
   m_Layer: 8
   m_Name: Enemy6_N3
   m_TagString: Enemy
@@ -475,8 +476,12 @@ MonoBehaviour:
   HealthBarr: {fileID: 0}
   timerdeath: 0
   deathT: 0
+  Boss: {fileID: 0}
+  Boss2: {fileID: 0}
   Form1: {fileID: 0}
   Form2: {fileID: 0}
+  Arena1: {fileID: 0}
+  Arena2: {fileID: 0}
   HitBoss: {fileID: 0}
   DeathBoss: {fileID: 0}
   TauntBoss: []
@@ -498,6 +503,7 @@ MonoBehaviour:
   phase2: {fileID: 0}
   phase3: {fileID: 0}
   phase4: {fileID: 0}
+  game: {fileID: 0}
   FinishGame: 
 --- !u!114 &3791781360948065705
 MonoBehaviour:
@@ -647,9 +653,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d705f632b65b048837515175770ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
   movementScript: {fileID: 5773088670868570740}
   enemyShooting: {fileID: 0}
   enemyHealth: {fileID: 0}
+--- !u!114 &3114448176749611366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980567321753719373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa5ac9a766ae174298bc503a80493b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glowColor: {r: 1, g: 1, b: 1, a: 0.627451}
+  _meshRenderers: []
 --- !u!1001 &7010715712758871194
 PrefabInstance:
   m_ObjectHideFlags: 0
