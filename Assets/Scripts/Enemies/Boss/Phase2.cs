@@ -13,6 +13,7 @@ public class Phase2 : MonoBehaviour
     public AudioSource audioManager;
     public Animator Boss;
     bool Attack = false;
+    public bool SetAnimation;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class Phase2 : MonoBehaviour
         {
             attackObjects.Add(attackPrefab);
         }
+
     }
 
     void Update()
@@ -31,6 +33,12 @@ public class Phase2 : MonoBehaviour
 
     void ActivatePhase2()
     {
+
+        if (!SetAnimation)
+        {
+            Boss.SetTrigger("Phase");
+            SetAnimation = true;
+        }
 
         Vector3 randomPos = new Vector3(Random.Range(area.bounds.min.x, area.bounds.max.x), Random.Range(area.bounds.min.y, area.bounds.max.y), area.transform.position.z);
         timer += Time.deltaTime;

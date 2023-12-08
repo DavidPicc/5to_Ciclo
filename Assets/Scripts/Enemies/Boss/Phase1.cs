@@ -14,6 +14,7 @@ public class Phase1 : MonoBehaviour
     public Animator Boss;
     public bool Attack = false;
 
+
     void Start()
     {
         area = GameObject.Find("Area").GetComponent<Collider>();
@@ -30,7 +31,8 @@ public class Phase1 : MonoBehaviour
     }
 
     void ActivatePhase1()
-    {
+    {        
+
         Vector3 randomPos = new Vector3(Random.Range(area.bounds.min.x, area.bounds.max.x), Random.Range(area.bounds.min.y, area.bounds.max.y), area.transform.position.z);
         timer += Time.deltaTime;
         if (timer >= maxTimer)

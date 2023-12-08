@@ -13,6 +13,7 @@ public class Phase3 : MonoBehaviour
     public AudioSource audioManager;
     public Animator Boss;
     bool Attack = false;
+    public bool SetAnimation;
 
     void Start()
     {
@@ -31,6 +32,12 @@ public class Phase3 : MonoBehaviour
 
     void ActivatePhase3()
     {
+        if (!SetAnimation)
+        {
+            Boss.SetTrigger("Phase");
+            SetAnimation = true;
+        }
+
         Vector3 randomPos = new Vector3(Random.Range(area2.bounds.min.x, area2.bounds.max.x), Random.Range(area2.bounds.min.y, area2.bounds.max.y), area2.transform.position.z);
         timer += Time.deltaTime;
         if (timer >= maxTimer)
