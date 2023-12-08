@@ -112,6 +112,7 @@ public class Player_Shoot3 : MonoBehaviour
         Quaternion offsetVector = Quaternion.Euler(0, 0, angle);
         var bullet = Instantiate(bulletPrefab, shootPoints[0].position, shootPoints[0].rotation * offsetVector);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.right * bulletSpeed, ForceMode.Impulse);
+        bullet.GetComponent<PlayerBullet_Script>().damage = shootDamage;
         Destroy(bullet, distance);
         shotBullet = true;
     }

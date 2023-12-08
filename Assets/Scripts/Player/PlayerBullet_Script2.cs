@@ -20,6 +20,7 @@ public class PlayerBullet_Script2 : MonoBehaviour
                 if (other.GetComponent<Enemy_Health>().canBeDamaged && !other.GetComponent<Enemy_Health>().invulnerable && other.GetComponent<Enemy_Health>().IsBoss)
                 {
                     other.GetComponent<Enemy_Health>().TakeDamage(damage / 4);
+                    //other.GetComponent<Enemy_Health>().TakeDamage(damage*Time.deltaTime);
                 }
                 if (other.GetComponent<Enemy_Health>().canBeDamaged && !other.GetComponent<Enemy_Health>().invulnerable && !other.GetComponent<Enemy_Health>().IsBoss)
                 {
