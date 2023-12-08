@@ -208,6 +208,15 @@ public class Enemy_Health : MonoBehaviour
         {
             HealthBarr.maxValue = maxHealth;
             HealthBarr.value = currentHealth;
+
+            if (game.ShopActive)
+            {
+                HealthBarr.gameObject.SetActive(false);
+            }
+            else
+            {
+                HealthBarr.gameObject.SetActive(true);
+            }
         }
       
     }

@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     public bool close = false;
 
+    public bool ShopActive;
+
     void Awake()
     {
         instance = this;
@@ -121,7 +123,7 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-
+    
         AudioManager.masterVolume *= 2;
         AudioManager.instance.inGameSFX.audioMixer.SetFloat("InGameSFXVolume", 0f);
         AudioManager.instance.menuSFX.audioMixer.SetFloat("MenuSFXVolume", -80f);
@@ -133,6 +135,8 @@ public class GameManager : MonoBehaviour
 
         Invoke("UseAbilitesAfterTime", 1f);
         Invoke("CanPauseAfterTime", 1f);
+
+        ShopActive = false;
     }
 
     public void DeathMenu()
@@ -181,6 +185,8 @@ public class GameManager : MonoBehaviour
         CheckPointScript.savedPlayerY = player.localPosition.y;
         PlayerPrefs.SetFloat("savedPlayerX", CheckPointScript.savedPlayerX);
         PlayerPrefs.SetFloat("savedPlayerY", CheckPointScript.savedPlayerY);
+
+        ShopActive = true;
     }
 
     public void OpenShopAfterTransition()
@@ -223,6 +229,8 @@ public class GameManager : MonoBehaviour
         Invoke("CanPauseAfterTime", 1f);
 
         close = true;
+
+
     }
 
     public void FinishedLevel()
