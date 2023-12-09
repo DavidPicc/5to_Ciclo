@@ -23,7 +23,15 @@ public class PlayerBullet2 : MonoBehaviour
         {
             if (collider.GetComponentInParent<Enemy_Health>() != null)
             {
-                collider.GetComponentInParent<Enemy_Health>().TakeDamage(explosionDamage);
+                if(collider.GetComponentInParent<Enemy_Health>().IsBoss)
+                {
+                  collider.GetComponentInParent<Enemy_Health>().TakeDamage(explosionDamage*.25f);
+                }
+                else
+                {
+                    collider.GetComponentInParent<Enemy_Health>().TakeDamage(explosionDamage);
+                }
+                
             }
             if (collider.GetComponentInParent<objet_destrur>() != null)
             {
