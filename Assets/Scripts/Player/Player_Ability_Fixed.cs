@@ -58,7 +58,7 @@ public class Player_Ability_Fixed: MonoBehaviour
     void Shield()
     {
         //Activation
-        if(!GameManager.instance.isPaused && GameManager.instance.canUseAbilities && Input.GetKeyDown(skillKey) && !active && rechargeBar >= maxRechargeBar && equipped)
+        if(!GameManager.instance.isPaused && GetComponent<Player_Health>().currentHealth > 0 && GameManager.instance.canUseAbilities && Input.GetKeyDown(skillKey) && !active && rechargeBar >= maxRechargeBar && equipped)
         {
             AudioManager.instance.PlaySFX(audioManagerSecondary, ActivationSound, 1.0f);
             PlayShieldSound();

@@ -41,7 +41,7 @@ public class Player_Ability2 : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.instance.isPaused && GameManager.instance.canUseAbilities && Input.GetKey(KeyCode.X) && rechargeBar >= maxRechargeBar && !activate && equipped)
+        if (!GameManager.instance.isPaused && GetComponent<Player_Health>().currentHealth > 0 && GameManager.instance.canUseAbilities && Input.GetKey(KeyCode.X) && rechargeBar >= maxRechargeBar && !activate && equipped)
         {
             SpawnBulletShield();
             PlayShieldSound();
