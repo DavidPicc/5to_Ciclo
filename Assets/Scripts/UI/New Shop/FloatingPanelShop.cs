@@ -10,6 +10,7 @@ public class FloatingPanelShop : MonoBehaviour
 
     [Header("Labels")]
     [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] TextMeshProUGUI simpleDescriptionText;
     [SerializeField] TextMeshProUGUI descriptionText;
     [SerializeField] TextMeshProUGUI priceGearText;
     [SerializeField] TextMeshProUGUI priceCoreText;
@@ -56,6 +57,12 @@ public class FloatingPanelShop : MonoBehaviour
     public void SetName(string name)
     {
         nameText.text = name;
+    }
+
+    public void SetSimpleDescription(string description)
+    {
+        if (description != null) simpleDescriptionText.text = description;
+        else simpleDescriptionText.text = "";
     }
 
     public void SetDescription(string description)

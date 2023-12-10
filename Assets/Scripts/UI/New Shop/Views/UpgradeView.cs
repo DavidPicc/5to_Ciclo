@@ -31,6 +31,9 @@ public class UpgradeView : MonoBehaviour
 
     [Header("Floating Panel")]
     public string nameText;
+    [TextArea]
+    public string simpleDescriptionText;
+    [TextArea]
     public string descriptionText;
     public GameObject floatingPanelPrefab;
     [SerializeField] GameObject floatingPanelObj;
@@ -104,6 +107,7 @@ public class UpgradeView : MonoBehaviour
                 }
 
                 floatingPanel.SetName(nameText);
+                floatingPanel.SetSimpleDescription(simpleDescriptionText);
                 floatingPanel.SetDescription(descriptionText);
                 floatingPanel.SetPrice(upgradeControl.gearsCost, upgradeControl.coresCost, !upgradeControl.Purchased);
             }
