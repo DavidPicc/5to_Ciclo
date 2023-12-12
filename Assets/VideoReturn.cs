@@ -5,18 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class VideoReturn : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float timer;
     void Start()
     {
-        
+        Invoke("ChangeScene", timer);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.anyKeyDown)
         {
             SceneManager.LoadScene("Test_Menu");
         }
+    }
+
+    void ChangeScene()
+    {
+        SceneManager.LoadScene("Test_Menu"); 
     }
 }
