@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class VideoReturn : MonoBehaviour
 {
     public float timer;
+    public bool press;
+    public string SceneName;
     void Start()
     {
         Invoke("ChangeScene", timer);
@@ -13,14 +15,14 @@ public class VideoReturn : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && press == true || Input.GetKeyDown(KeyCode.X))
         {
-            SceneManager.LoadScene("Test_Menu");
+            SceneManager.LoadScene(SceneName);
         }
     }
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("Test_Menu"); 
+        SceneManager.LoadScene(SceneName); 
     }
 }
