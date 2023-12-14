@@ -30,10 +30,10 @@ public class CursorManager : MonoBehaviour
     private void Update()
     {
         // Unlock and show the cursor when the L key is pressed
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
     }
 }

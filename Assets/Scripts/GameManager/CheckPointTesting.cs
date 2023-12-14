@@ -7,14 +7,14 @@ public class CheckPointTesting : MonoBehaviour
 {
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            ReloadSceneWithoutCheckPoint();
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ReloadScene();
-        }
+        //if(Input.GetKeyDown(KeyCode.R))
+        //{
+        //    ReloadSceneWithoutCheckPoint();
+        //}
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    ReloadScene();
+        //}
     }
     public void ReloadSceneWithoutCheckPoint()
     {
