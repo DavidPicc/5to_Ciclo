@@ -183,6 +183,13 @@ public class Player_Health : MonoBehaviour
                 TakeDamage(1);
             }
         }
+        if (other.CompareTag("LimitDead"))
+        {
+            if (canBeDamaged)
+            {
+                TakeDamage(6);
+            }
+        }
     }
 
     public void SetHealth(float health)
